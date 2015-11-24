@@ -1,0 +1,16 @@
+{
+  "name": "decentraleyes-audit",
+  "version": "1.1.5",
+  "author": "Thomas Rientjes",
+  "license": "MIT",
+  "description": "Library audit tool for Decentraleyes.",
+  "repository": "https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/",
+  "keywords": [
+    "decentraleyes",
+    "audit"
+  ],
+  "main": "run.js",
+  "dependencies": {
+    "source-map-url": "~0.4.0"
+  }
+}
