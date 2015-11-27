@@ -9,6 +9,11 @@ A [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes)
 
 Now that there's a solid, Mozilla approved, foundation, it's time to move forward. Mobility, extensibility (through support for community-powered resource packages), and usability, will be the main points of attention during this phase.
 
+#### Essential Next Steps
+
+* Start work on a resource bundle standard, to allow users to create and import custom resources. With support for these bundles in place, Decentraleyes will still work out of the box, but can be extended if needed.
+* To keep this add-on from turning into bloatware, it's important to find out which versions of which libraries are most commonly used on websites, so that less popular resources can be removed from the default bundle.
+
 #### Planned Features
 
 * Advanced policy management for users who block requests for missing resources.
