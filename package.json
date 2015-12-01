@@ -1,31 +1,31 @@
 {
-    "description": "Local emulation of Content Delivery Networks.", 
-    "author": "Thomas Rientjes", 
-    "license": "MPL 2.0", 
-    "title": "Decentraleyes", 
-    "version": "1.1.5", 
-    "main": "lib/main.js", 
-    "homepage": "https://addons.mozilla.org/en-US/firefox/addon/decentraleyes", 
-    "name": "decentraleyes",
-    "id": "id1-BoFifL9Vbdl2zQ@jetpack", 
-    "engines": {
-        "firefox": ">=21.0", 
-        "fennec": ">=21.0"
-    }, 
-    "preferences": [
-        {
-            "description": "Automatically prepend a notice to retrieved documents to signal local delivery.", 
-            "type": "bool", 
-            "name": "addNotice", 
-            "value": true, 
-            "title": "Add comments to locally fetched files"
-        }, 
-        {
-            "description": "Cancel the intercepted request if the required resource is not locally available.", 
-            "type": "bool", 
-            "name": "blockMissing", 
-            "value": false, 
-            "title": "Block requests for missing resources"
-        }
-    ]
+  "description": "Local emulation of Content Delivery Networks.",
+  "author": "Thomas Rientjes",
+  "license": "MPL 2.0",
+  "title": "Decentraleyes",
+  "version": "1.1.5",
+  "main": "lib/main.js",
+  "homepage": "https://addons.mozilla.org/en-US/firefox/addon/decentraleyes",
+  "name": "decentraleyes",
+  "id": "id1-BoFifL9Vbdl2zQ@jetpack",
+  "engines": {
+    "firefox": ">=21.0",
+    "fennec": ">=21.0"
+  },
+  "preferences": [
+    {
+      "description": "Automatically prepend a notice to retrieved documents to signal local delivery.",
+      "type": "bool",
+      "name": "addNotice",
+      "value": true,
+      "title": "Add comments to locally fetched files"
+    },
+    {
+      "description": "Cancel the intercepted request if the required resource is not locally available.",
+      "type": "bool",
+      "name": "blockMissing",
+      "value": false,
+      "title": "Block requests for missing resources"
+    }
+  ]
 }

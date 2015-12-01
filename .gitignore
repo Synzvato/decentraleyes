@@ -1,2 +1,4 @@
+data/_audit/node_modules
+data/_audit/report.txt
 *.xpi
-.idea/
+.idea

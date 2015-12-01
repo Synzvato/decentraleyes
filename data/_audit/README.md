@@ -20,14 +20,10 @@ USAGE INSTRUCTIONS
 2. Open up a terminal and 'cd' into this directory.
     Description: Navigate to this directory.
 
-3. Execute 'rm -r ./node_modules; npm install' to ensure dependency integrity.
-    Description: Remove the node modules folder and reinstall dependencies using npm.
-
-Note: If this fails, compare dependency file hashes and leave the folder in place.
+3. Execute 'npm install' to fetch any dependencies.
 
 4. Run the audit script by executing 'node run'.
     Description: Run the script through Node.js and view the output.
 
 Note: If you'd like to store the report, run 'node run > report.txt'.
     Note description: It's possible to write the console output to a file.
-

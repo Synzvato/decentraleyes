@@ -1,8 +1,8 @@
 {
   "name": "decentraleyes-audit",
-  "version": "1.1.5",
+  "version": "1.3.0",
   "author": "Thomas Rientjes",
-  "license": "MIT",
+  "license": "MPL 2.0",
   "description": "Library audit tool for Decentraleyes.",
   "repository": "https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/",
   "keywords": [
