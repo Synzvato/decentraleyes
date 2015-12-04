@@ -21,11 +21,25 @@
       "title": "Add comments to locally fetched files"
     },
     {
-      "description": "Cancel the intercepted request if the required resource is not locally available.",
+      "description": "Cancel intercepted request if the required resource is not locally available.",
       "type": "bool",
       "name": "blockMissing",
       "value": false,
       "title": "Block requests for missing resources"
+    },
+    {
+      "description": "Enter domains to whitelist them. Separate multipe entries with semi-colons (;).",
+      "type": "string",
+      "name": "domainWhitelist",
+      "value": "",
+      "title": "Exclude domains from inspections"
+    },
+    {
+      "description": "Amount of requests to Content Delivery Networks blocked since installation.",
+      "type": "integer",
+      "name": "amountBlocked",
+      "value": 0,
+      "title": "Counter for intercepted requests"
     }
   ]
 }
