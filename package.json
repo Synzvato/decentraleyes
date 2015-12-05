@@ -9,7 +9,7 @@
   "name": "decentraleyes",
   "id": "id1-BoFifL9Vbdl2zQ@jetpack",
   "engines": {
-    "firefox": ">=21.0",
-    "fennec": ">=21.0"
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
   }
 }
