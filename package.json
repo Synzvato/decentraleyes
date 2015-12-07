@@ -7,7 +7,7 @@
   "main": "lib/main.js",
   "homepage": "https://addons.mozilla.org/en-US/firefox/addon/decentraleyes",
   "name": "decentraleyes",
-  "id": "id1-BoFifL9Vbdl2zQ@jetpack",
+  "id": "jid1-BoFifL9Vbdl2zQ@jetpack",
   "engines": {
     "firefox": ">=38.0a1",
     "fennec": ">=38.0a1"
