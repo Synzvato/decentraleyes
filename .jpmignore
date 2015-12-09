@@ -1,0 +1,8 @@
+data/_audit/node_modules
+data/_audit/report.txt
+.jpmignore
+.gitignore
+.idea
+*.xpi
+test
+.git
