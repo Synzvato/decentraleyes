@@ -1,7 +1,7 @@
 {
   "description": "Local emulation of Content Delivery Networks.",
   "author": "Thomas Rientjes",
-  "license": "MPL 2.0",
+  "license": "MPL-2.0",
   "title": "Decentraleyes",
   "version": "1.2.0",
   "main": "lib/main.js",
