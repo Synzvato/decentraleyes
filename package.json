@@ -10,6 +10,6 @@
   "id": "jid1-BoFifL9Vbdl2zQ@jetpack",
   "engines": {
     "firefox": ">=38.0a1",
-    "fennec": ">=38.0a1"
+    "fennec": ">=38.0"
   }
 }
