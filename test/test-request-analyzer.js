@@ -1,4 +1,12 @@
+/**
+ * Imports
+ */
+
 var requestAnalyzer = require("../lib/request-analyzer");
+
+/**
+ * Variables
+ */
 
 var localPaths = {
     angular: 'resources/angularjs/1.2.19/angular.min.js.dec',
@@ -34,7 +42,50 @@ var localPaths = {
 };
 
 /**
- * Generic Tests
+ * Is Valid Candidate Tests
+ */
+
+exports['test get request to known cdn'] = function (assert) {
+    
+    var result = requestAnalyzer.isValidCandidate({
+        requestMethod: 'GET', URI: { host: 'ajax.googleapis.com' }
+    });
+
+    assert.ok(result, 'Valid candidate was successfully identified.');
+};
+
+exports['test post request to known cdn'] = function (assert) {
+    
+    var result = requestAnalyzer.isValidCandidate({
+        requestMethod: 'POST', URI: { host: 'ajax.googleapis.com' }
+    });
+
+    assert.equal(result, false, 'Invalid candidate was successfully identified.');
+};
+
+exports['test get request to unknown domain'] = function (assert) {
+    
+    var result = requestAnalyzer.isValidCandidate({
+        requestMethod: 'GET', URI: { host: 'ajax.example.com' }
+    });
+
+    assert.equal(result, false, 'Invalid candidate was successfully identified.');
+};
+
+exports['test get request from whitelisted domain'] = function (assert) {
+    
+    require('sdk/simple-prefs').prefs.domainWhitelist = 'example.com';
+
+    var result = requestAnalyzer.isValidCandidate({
+        requestMethod: 'GET', URI: { host: 'ajax.googleapis.com' },
+            referrer: { host: 'example.com' }, setRequestHeader: function () { return false; }
+    });
+
+    assert.equal(result, false, 'Whitelisted request was successfully ignored.');
+};
+
+/**
+ * Get Local Target Tests
  */
 
 exports['test regular resource'] = function (assert) {
@@ -77,9 +128,7 @@ exports['test webfont debug library'] = function (assert) {
     assert.equal(target.path, localPaths.webfont[0], 'Target was determined.');
 };
 
-/**
- * Google Hosted Libraries
- */
+// Google Hosted Libraries
 
 exports['test angular on google hosted libraries'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('ajax.googleapis.com', '/ajax/libs/angularjs/1.2.19/angular.min.js');
@@ -131,9 +180,7 @@ exports['test webfont on google hosted libraries'] = function (assert) {
     assert.equal(target.path, localPaths.webfont[1], 'Target was determined.');
 };
 
-/**
- * Microsoft Ajax CDN
- */
+// Microsoft Ajax CDN
 
 exports['test jquery on microsoft ajax cdn'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('ajax.aspnetcdn.com', '/ajax/jQuery/jquery-1.11.1.min.js');
@@ -155,9 +202,7 @@ exports['test modernizr on old microsoft ajax cdn'] = function (assert) {
     assert.equal(target.path, localPaths.modernizr, 'Target was determined.');
 };
 
-/**
- * CDNJS (Cloudflare)
- */
+// CDNJS (Cloudflare)
 
 exports['test angular on cdnjs'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('cdnjs.cloudflare.com', '/ajax/libs/angular.js/1.2.19/angular.min.js');
@@ -224,9 +269,7 @@ exports['test webfont on cdnjs'] = function (assert) {
     assert.equal(target.path, localPaths.webfont[1], 'Target was determined.');
 };
 
-/**
- * jQuery CDN (MaxCDN)
- */
+// jQuery CDN (MaxCDN)
 
 exports['test jquery on jquery cdn'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('code.jquery.com', '/jquery-1.11.1.min.js');
@@ -238,9 +281,7 @@ exports['test jquery-ui on jquery cdn'] = function (assert) {
     assert.equal(target.path, localPaths.jQueryUI, 'Target was determined.');
 };
 
-/**
- * jsDelivr (MaxCDN)
- */
+// jsDelivr (MaxCDN)
 
 exports['test angular on jsdelivr'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('cdn.jsdelivr.net', '/angularjs/1.2.19/angular.min.js');
@@ -292,9 +333,7 @@ exports['test webfont on jsdelivr'] = function (assert) {
     assert.equal(target.path, localPaths.webfont[1], 'Target was determined.');
 };
 
-/**
- * Yandex CDN
- */
+// Yandex CDN
 
 exports['test angular on yandex cdn'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('yandex.st', '/angularjs/1.2.19/angular.min.js');
@@ -351,9 +390,7 @@ exports['test underscore on yandex cdn'] = function (assert) {
     assert.equal(target.path, localPaths.underscore[2], 'Target was determined.');
 };
 
-/**
- * Baidu CDN
- */
+// Baidu CDN
 
 exports['test backbone on baidu cdn'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('libs.baidu.com', '/backbone/0.9.2/backbone-min.js');
@@ -410,9 +447,7 @@ exports['test webfont on baidu cdn'] = function (assert) {
     assert.equal(target.path, localPaths.webfont[0], 'Target was determined.');
 };
 
-/**
- * Sina Public Resources
- */
+// Sina Public Resources
 
 exports['test angular on sina public resources'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('lib.sinaapp.com', '/js/angular.js/angular-1.2.19/angular.min.js');
@@ -474,9 +509,7 @@ exports['test webfont on sina public resources'] = function (assert) {
     assert.equal(target.path, localPaths.webfont[0], 'Target was determined.');
 };
 
-/**
- * UpYun Library
- */
+// UpYun Library
 
 exports['test dojo on upyun library'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('upcdn.b0.upaiyun.com', '/libs/dojo/dojo-1.8.3.min.js');
@@ -507,5 +540,9 @@ exports['test mootools on upyun library'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('upcdn.b0.upaiyun.com', '/libs/mootoolscore/mootools.core-1.4.5.min.js');
     assert.equal(target.path, localPaths.mootools, 'Target was determined.');
 };
+
+/**
+ * Run Tests
+ */
 
 require("sdk/test").run(exports);
