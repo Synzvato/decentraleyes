@@ -3,3 +3,4 @@ pref('extensions.jid1-BoFifL9Vbdl2zQ@jetpack.blockMissing', false);
 pref('extensions.jid1-BoFifL9Vbdl2zQ@jetpack.domainWhitelist', '');
 pref('extensions.jid1-BoFifL9Vbdl2zQ@jetpack.amountInjected', 0);
 pref('extensions.jid1-BoFifL9Vbdl2zQ@jetpack.showReleaseNotes', true);
+pref('extensions.jid1-BoFifL9Vbdl2zQ@jetpack.taintedDomainList', '');
