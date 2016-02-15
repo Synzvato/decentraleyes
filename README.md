@@ -23,7 +23,11 @@ Now that there's a solid, Mozilla approved, foundation, it's time to move forwar
 
 > **Note:** These long-term goals are subjective to change, and can be discussed. That is, as long as the suggestions do not conflict with the ultimate goal of realizing a free and open standard for exchanging web resource bundles.
 
-## Contributing
+## Submitting Translations
+
+Do you master a non-supported language? Please help out by translating this add-on on [Crowdin](https://crowdin.com/project/decentraleyes).
+
+## Contributing Code
 
 Suggestions in the form of **Issues** and contributions in the form of **Pull Requests** are highly welcome. You can also use the contact details and PGP key on the add-on [download page](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes) to get in touch.
 
