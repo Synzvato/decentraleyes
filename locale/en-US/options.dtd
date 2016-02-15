@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "Add comments to locally fetched files">
+<!ENTITY options.addNotice.description "Automatically prepend a notice to retrieved documents to signal local delivery.">
+<!ENTITY options.blockMissing.title "Block requests for missing resources">
+<!ENTITY options.blockMissing.description "Cancel intercepted request if the required resource is not locally available.">
+<!ENTITY options.domainWhitelist.title "Exclude domains from inspections">
+<!ENTITY options.domainWhitelist.description "Enter domains to whitelist them. Separate multiple entries with semi-colons (;).">
+<!ENTITY options.amountInjected.title "Counter for locally injected resources">
+<!ENTITY options.amountInjected.description "Amount of local Content Delivery Network resource injections since installation.">
