@@ -5,7 +5,7 @@
   "title": "Decentraleyes",
   "version": "1.2.2",
   "main": "lib/main.js",
-  "homepage": "https://addons.mozilla.org/en-US/firefox/addon/decentraleyes",
+  "homepage": "https://addons.mozilla.org/firefox/addon/decentraleyes",
   "name": "decentraleyes",
   "id": "jid1-BoFifL9Vbdl2zQ@jetpack",
   "engines": {

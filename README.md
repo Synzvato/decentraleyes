@@ -1,7 +1,7 @@
 Decentraleyes
 =============
 
-A [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes) that emulates Content Delivery Networks locally by intercepting requests, finding the required resource and injecting it into the environment. This all happens instantaneously, automatically, and no prior configuration is required.
+A [Firefox add-on](https://addons.mozilla.org/firefox/addon/decentraleyes) that emulates Content Delivery Networks locally by intercepting requests, finding the required resource and injecting it into the environment. This all happens instantaneously, automatically, and no prior configuration is required.
 
 > **Note:** Decentraleyes is no silver bullet, but it does prevent a lot of websites from making you send these kinds of requests. Ultimately, you can make Decentraleyes block requests for any missing CDN resources, too.
 
@@ -29,12 +29,12 @@ Do you master a non-supported language? Please help out by translating this add-
 
 ## Contributing Code
 
-Suggestions in the form of **Issues** and contributions in the form of **Pull Requests** are highly welcome. You can also use the contact details and PGP key on the add-on [download page](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes) to get in touch.
+Suggestions in the form of **Issues** and contributions in the form of **Pull Requests** are highly welcome. You can also use the contact details and PGP key on the add-on [download page](https://addons.mozilla.org/firefox/addon/decentraleyes) to get in touch.
 
 #### Prerequisites
 
-* Jetpack Manager [jpm](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm#Installation) (a Node-based replacement for cfx).
-* Firefox version 38 or later. *If you need to work with earlier versions of Firefox, you'll need to use the old cfx tool. See instructions for [getting started with cfx](https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Getting_started).
+* Jetpack Manager [jpm](https://developer.mozilla.org/Add-ons/SDK/Tools/jpm#Installation) (a Node-based replacement for cfx).
+* Firefox version 38 or later. *If you need to work with earlier versions of Firefox, you'll need to use the old cfx tool. See instructions for [getting started with cfx](https://developer.mozilla.org/Add-ons/SDK/Tutorials/Getting_started).
 
 #### Build Instructions (Unix)
 
@@ -44,4 +44,4 @@ Suggestions in the form of **Issues** and contributions in the form of **Pull Re
 
 ## License
 
-[MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0).
+[MPL 2.0](https://www.mozilla.org/MPL/2.0).
