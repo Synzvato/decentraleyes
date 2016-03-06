@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "Добавяне на коментари към местно извлечени файлове">
+<!ENTITY options.addNotice.description "Автоматично вмъкване на известие към извлечените документи, за да се сигнализира местна доставка.">
+<!ENTITY options.blockMissing.title "Блокиране на заявки за липсващи ресурси">
+<!ENTITY options.blockMissing.description "Отмяна на прехванатата заявка, ако изисквания ресурс не е наличен на местно ниво.">
+<!ENTITY options.domainWhitelist.title "Изключване на домейните от инспекции">
+<!ENTITY options.domainWhitelist.description "Въведете домейни, които да се добавят в белия списък. Отделете стойностите с точка и запетая.">
+<!ENTITY options.amountInjected.title "Брояч за местно вмъкнати ресурси">
+<!ENTITY options.amountInjected.description "Количество на местни вмъквания на ресурси от началото на инсталацията.">
