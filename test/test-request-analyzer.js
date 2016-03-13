@@ -336,56 +336,111 @@ exports['test webfont on jsdelivr'] = function (assert) {
 // Yandex CDN
 
 exports['test angular on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/angularjs/1.2.19/angular.min.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/angularjs/1.2.19/angular.min.js');
     assert.equal(target.path, localPaths.angular, 'Target was determined.');
 };
 
 exports['test backbone on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/backbone/1.1.2/backbone-min.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/backbone/1.1.2/backbone-min.js');
     assert.equal(target.path, localPaths.backbone[1], 'Target was determined.');
 };
 
 exports['test dojo on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/dojo/1.8.3/dojo/dojo.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/dojo/1.8.3/dojo/dojo.js');
     assert.equal(target.path, localPaths.dojo, 'Target was determined.');
 };
 
 exports['test ext-core on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/ext-core/3.1.0/ext-core.min.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/ext-core/3.1.0/ext-core.min.js');
     assert.equal(target.path, localPaths.extCore, 'Target was determined.');
 };
 
 exports['test jquery on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/jquery/1.11.1/jquery.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/jquery/1.11.1/jquery.js');
     assert.equal(target.path, localPaths.jQuery[1], 'Target was determined.');
 };
 
 exports['test jquery-ui on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/jquery-ui/1.10.2/jquery-ui.min.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/jquery-ui/1.10.2/jquery-ui.min.js');
     assert.equal(target.path, localPaths.jQueryUI, 'Target was determined.');
 };
 
 exports['test modernizr on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/modernizr/2.6.2/modernizr.min.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/modernizr/2.6.2/modernizr.min.js');
     assert.equal(target.path, localPaths.modernizr, 'Target was determined.');
 };
 
 exports['test prototype on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/prototype/1.6.1.0/prototype.min.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/prototype/1.6.1.0/prototype.min.js');
     assert.equal(target.path, localPaths.prototypeJS, 'Target was determined.');
 };
 
 exports['test scriptaculous on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/scriptaculous/1.9.0/scriptaculous.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/scriptaculous/1.9.0/scriptaculous.js');
     assert.equal(target.path, localPaths.scriptaculous, 'Target was determined.');
 };
 
 exports['test swfobject on yandex cdn'] = function (assert) {
-    var target = requestAnalyzer.getLocalTarget('yandex.st', '/swfobject/2.2/swfobject.min.js');
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/swfobject/2.2/swfobject.min.js');
     assert.equal(target.path, localPaths.swfobject, 'Target was determined.');
 };
 
 exports['test underscore on yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yastatic.net', '/underscore/1.6.0/underscore-min.js');
+    assert.equal(target.path, localPaths.underscore[2], 'Target was determined.');
+};
+
+exports['test angular on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/angularjs/1.2.19/angular.min.js');
+    assert.equal(target.path, localPaths.angular, 'Target was determined.');
+};
+
+exports['test backbone on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/backbone/1.1.2/backbone-min.js');
+    assert.equal(target.path, localPaths.backbone[1], 'Target was determined.');
+};
+
+exports['test dojo on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/dojo/1.8.3/dojo/dojo.js');
+    assert.equal(target.path, localPaths.dojo, 'Target was determined.');
+};
+
+exports['test ext-core on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/ext-core/3.1.0/ext-core.min.js');
+    assert.equal(target.path, localPaths.extCore, 'Target was determined.');
+};
+
+exports['test jquery on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/jquery/1.11.1/jquery.js');
+    assert.equal(target.path, localPaths.jQuery[1], 'Target was determined.');
+};
+
+exports['test jquery-ui on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/jquery-ui/1.10.2/jquery-ui.min.js');
+    assert.equal(target.path, localPaths.jQueryUI, 'Target was determined.');
+};
+
+exports['test modernizr on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/modernizr/2.6.2/modernizr.min.js');
+    assert.equal(target.path, localPaths.modernizr, 'Target was determined.');
+};
+
+exports['test prototype on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/prototype/1.6.1.0/prototype.min.js');
+    assert.equal(target.path, localPaths.prototypeJS, 'Target was determined.');
+};
+
+exports['test scriptaculous on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/scriptaculous/1.9.0/scriptaculous.js');
+    assert.equal(target.path, localPaths.scriptaculous, 'Target was determined.');
+};
+
+exports['test swfobject on old yandex cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('yandex.st', '/swfobject/2.2/swfobject.min.js');
+    assert.equal(target.path, localPaths.swfobject, 'Target was determined.');
+};
+
+exports['test underscore on old yandex cdn'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('yandex.st', '/underscore/1.6.0/underscore-min.js');
     assert.equal(target.path, localPaths.underscore[2], 'Target was determined.');
 };
