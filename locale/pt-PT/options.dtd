@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "Adicionar comentários aos ficheiros obtidos localmente">
+<!ENTITY options.addNotice.description "Preceder automaticamente um aviso aos documentos readquiridos para sinalizar a entrega local.">
+<!ENTITY options.blockMissing.title "Bloquear pedidos por falta de recursos">
+<!ENTITY options.blockMissing.description "Cancelar pedido intercetado se o recurso necessário não estiver disponível localmente.">
+<!ENTITY options.domainWhitelist.title "Excluir domínios de inspeções">
+<!ENTITY options.domainWhitelist.description "Insira domínios para os colocar na lista branca. Separe múltiplas entradas com pontos e vírgulas (;).">
+<!ENTITY options.amountInjected.title "Contador para recursos injetados localmente">
+<!ENTITY options.amountInjected.description "Quantidade de injeções de recurso Content Delivery Network locais desde a instalação.">
