@@ -46,7 +46,7 @@ var localPaths = {
  */
 
 exports['test get request to known cdn'] = function (assert) {
-    
+
     var result = requestAnalyzer.isValidCandidate({
         requestMethod: 'GET', URI: { host: 'ajax.googleapis.com' }
     });
@@ -55,7 +55,7 @@ exports['test get request to known cdn'] = function (assert) {
 };
 
 exports['test post request to known cdn'] = function (assert) {
-    
+
     var result = requestAnalyzer.isValidCandidate({
         requestMethod: 'POST', URI: { host: 'ajax.googleapis.com' }
     });
@@ -64,7 +64,7 @@ exports['test post request to known cdn'] = function (assert) {
 };
 
 exports['test get request to unknown domain'] = function (assert) {
-    
+
     var result = requestAnalyzer.isValidCandidate({
         requestMethod: 'GET', URI: { host: 'ajax.example.com' }
     });
@@ -73,7 +73,7 @@ exports['test get request to unknown domain'] = function (assert) {
 };
 
 exports['test get request from whitelisted domain'] = function (assert) {
-    
+
     require('sdk/simple-prefs').prefs.domainWhitelist = 'example.com';
 
     var result = requestAnalyzer.isValidCandidate({

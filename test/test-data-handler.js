@@ -9,7 +9,7 @@ var dataHandler = require("../lib/data-handler");
  */
 
 exports['test get redirection uri for existing file'] = function (assert) {
-    
+
     var result = dataHandler.getRedirectionURI(
         'resources/jquery/2.1.4/jquery.min.js.dec', 'UTF-8', 'application/javascript'
     );
