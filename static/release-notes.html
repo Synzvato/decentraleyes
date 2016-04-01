@@ -27,6 +27,13 @@
 
             h1, h2, h3, h4, h5, h6 {
                 font-family: "Trebuchet MS", Helvetica, sans-serif;
+                max-width: 750px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h3 {
+                text-align: left;
             }
 
             a {
@@ -45,16 +52,55 @@
                 font-family: "Trebuchet MS", Helvetica, sans-serif;
             }
 
-            .text-highlight {
-                font-weight: bold;
-                color: #4a856d;
-            }
-
             .logo {
                 margin-left: auto;
                 margin-right: auto;
                 display: block;
                 height: 128px;
+            }
+
+            .subtle-hint {
+                color: #777;
+                font-style: italic;
+                font-size: 14px;
+            }
+
+            .subtle-text {
+                color: #777;
+            }
+
+            .topic-label {
+                text-transform: uppercase;
+                color: #4a856d;
+                font-weight: bold;
+                font-style: normal;
+            }
+
+            .help-panel {
+                border-bottom: 2px #bbb dotted;
+                cursor: help;
+                position: relative;
+                display: inline-block;
+            }
+
+            .help-panel:before {
+                padding: 3px 4px;
+                display: none;
+                content: attr(data-title);
+                position: absolute;
+                white-space: nowrap;
+                background-color: #fef4c5;
+                border: 1px solid #d4b943;
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, .15);
+                border-radius: 2px;
+                color: #594c16;
+                font-size: 14px;
+                margin-top: 22px;
+                z-index: 1;
+            }
+
+            .help-panel:hover:before {
+                display: inline;
             }
 
         </style>
@@ -65,25 +111,13 @@
 
         <div class="container">
 
-            <h1>Decentraleyes <i>v1.2.2</i></h1>
+            <h1>Decentraleyes <i>v1.3.0</i></h1>
 
             <br><br>
 
             <div class="notice">
 
-                <span class="text-highlight">NEW:</span> <strong>Get a first glimpse of what this add-on actually does for you!</strong> Navigate to the main menu and click <i>"Add-ons" > "Decentraleyes" > "Preferences"</i> to get familiar with the new <i>"local injections"</i> counter. <i>Please note: it's new and will start from <strong>zero</strong> (ignoring prior injections).</i>
-
-                <br><br>
-
-                <span class="text-highlight">NEW:</span> <strong>Support for Fennec (or Firefox for mobile).</strong> If you're running Firefox on your smartphone, then you might be happy to know that this is the very first release to be fully compatible with mobile versions of Firefox. Take this add-on with you to protect yourself on-the-go!
-
-                <br><br>
-
-                <span class="text-highlight">EXPERIMENTAL:</span> <strong>Whitelist specific domains to force Decentraleyes to ignore them.</strong> Navigate to the main menu and click <i>"Add-ons" > "Decentraleyes" > "Preferences"</i>. From there, you can add domains to the <i>"whitelist"</i> field. This might come in handy if you run into issues with a certain website.
-
-                <br><br><hr><br>
-
-                <span class="text-highlight">NOTE:</span> Decentraleyes works right out of the box and no manual configuration is required! You can check if you're properly protected by using the <strong><a href="https://decentraleyes.org/test" target="_blank">testing utility</a></strong>.
+                <span class="subtle-hint"><span class="topic-label">Pro Tip:</span> Would you rather not see this page after installations or updates? You can disable it by navigating to <strong>about:config</strong> (in a new tab), then searching for <strong>BoFifL9V</strong>, and setting <strong>showReleaseNotes</strong> to false.</span>
 
                 <br><br><hr>
 
@@ -93,9 +127,25 @@
 
             <div class="notice">
 
-                <i>General information:</i>
+                <span class="topic-label">New:</span> <strong>Let there be languages.</strong> This version supports locales and features fourteen initial translations: <span class="subtle-text"> <span class="help-panel" data-title="Thanks to AdmiralAnimE.">Bulgarian</span>, <span class="help-panel" data-title="Thanks to Louy2 and YFdyh000.">Chinese <i>(Simplified)</i></span>, Dutch, English <i>(United Kingdom)</i>, English <i>(United States)</i>, <span class="help-panel" data-title="Thanks to Semired.">Finnish</span>, <span class="help-panel" data-title="Thanks to Simpson, Thuban, and TraderStf."> French</span>, <span class="help-panel" data-title="Thanks to C4R2T3N, Flysch, Sabajo, and Schnaidar.">German</span>, <span class="help-panel" data-title="Thanks to Zmni.">Indonesian</span>,  <span class="help-panel" data-title="Thanks to Mtvento.">Italian</span>, <span class="help-panel" data-title="Thanks to Brindflontia.">Japanese</span>, <span class="help-panel" data-title="Thanks to Marekjm.">Polish</span>, <span class="help-panel" data-title="Thanks to SW1FTmeister.">Portuguese <i>(European)</i></span>, and <span class="help-panel" data-title="Thanks to Adri and Ergotronix.">Spanish</span></span>.
 
-                <p>Decentraleyes is a very young project, so expect many improvements in the realms of clear, present, user feedback and ease-of-use as it matures. It does a lot to protect you, but is a tad shy about it.</p>
+                <br><br>
+
+                <span class="topic-label">New:</span> <strong>Official support for SeaMonkey.</strong> If you use SeaMonkey <i>(a free and open-source internet suite consisting of a web browser, an e-mail client, and a news aggregator)</i>, you might be glad to know that this release is fully compatible with all modern versions of the application.
+
+                <br><br>
+
+                <span class="topic-label">Enhanced:</span> <strong>A large amount of internal changes for improved performance and stability.</strong> A lot of work has gone into making this version as fast and reliable as possible. As a result, this release proudly brings you an even more optimized, carefree, and stable overall experience.
+
+                <br><br><hr><br>
+
+                <span class="subtle-hint"><span class="topic-label">Getting started:</span> Decentraleyes works right out of the box and no manual configuration is required! You can check if you're properly protected by using the following <strong><a href="https://decentraleyes.org/test" target="_blank">testing utility</a></strong>.</span>
+
+                <br><br>
+
+                <span class="subtle-hint">To get a glimpse of what this add-on actually does for you, go to this application's main menu, click <strong>"Add-ons" > "Decentraleyes" > "Preferences"</strong>, scroll down, and familiarize yourself with the local injections counter.</span>
+
+                <br><br><hr>
 
             </div>
 
@@ -103,7 +153,33 @@
 
             <div class="notice">
 
-                <i>Detailed changelog:</i>
+                <i>General notice:</i><br><br>
+
+                Decentraleyes is a young project. Expect many improvements in the realms of clear user feedback and ease-of-use as it matures. It does a lot to protect you, and is becoming less and less shy about it.
+
+                <br><br><hr>
+
+            </div>
+
+            <br>
+
+            <div class="notice">
+
+                <i>Detailed v1.3.0 changelog:</i>
+
+                <ul>
+                    <li>Decentraleyes now officially supports modern versions of SeaMonkey.</li>
+                    <li>Created mappings for yastatic.net and deprecated its predecessor (yandex.st).</li>
+                    <li>Added test cases, and <span class="help-panel" data-title="With contributions by Ngksternhagen.">improved existing unit tests</span> and exception handling.</li>
+                    <li>Applied a wide range of performance optimalizations and stability improvements.</li>
+                    <li>Added support for localizations and embedded fourteen initial translations.</li>
+                    <li>Implemented a watcher that keeps pages with specific security policies from breaking.</li>
+                    <li><span class="help-panel" data-title="With contributions by Thegoodthings.">Added a preference</span> to allow users to hide release notes upon install and upgrade.</li>
+                </ul>
+
+                <br>
+
+                <i>Detailed v1.2.2 changelog:</i>
 
                 <ul>
                     <li>Decentraleyes now supports Fennec (better known as Firefox for mobile).</li>
@@ -112,7 +188,7 @@
                     <li>Fixed a rare bug where shorthand mapping notations broke specific websites.</li>
                     <li>Removed Pale Moon compatibility as it will receive separate, tailored, builds.</li>
                     <li>Took out rare resources to make room for more common candidates.</li>
-                    <li>Added new AngularJS, Dojo, and jQuery UI scripts to the resource bundle.</li>
+                    <li>Added new AngularJS, Dojo, and <span class="help-panel" data-title="With contributions by Matthieuy.">jQuery UI</span> scripts to the resource bundle.</li>
                 </ul>
 
             </div>
@@ -121,7 +197,7 @@
 
             <div class="notice">
                 <p>
-                    <a href="https://github.com/Synzvato/decentraleyes" target="_blank">Github</a> / <a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes" target="_blank">Add-on Listing</a>
+                    <a href="https://github.com/Synzvato/decentraleyes" target="_blank">Github</a> / <a href="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes" target="_blank">Add-on Listing</a> / <a href="https://github.com/Synzvato/decentraleyes/issues/44" target="_blank">Help Translate</a>
                 </p>
             </div>
 
