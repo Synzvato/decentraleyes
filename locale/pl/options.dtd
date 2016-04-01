@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "Dodaj komentarz do plików przechowywanych lokalnie">
+<!ENTITY options.addNotice.description "Automatycznie dodawaj powiadomienie do pobranych dokumentów aby zasygnalizować lokalne dostarczanie.">
+<!ENTITY options.blockMissing.title "Blokuj żądania brakujących zasobów">
+<!ENTITY options.blockMissing.description "Anuluj przechwycone żądania jeśli wymagany zasób nie jest dostępny lokalnie.">
+<!ENTITY options.domainWhitelist.title "Wyklucz domeny z analizy">
+<!ENTITY options.domainWhitelist.description "Podaj domeny aby dodać je do białej listy. Oddziel wpisy średnikami (;).">
+<!ENTITY options.amountInjected.title "Licznik zasobów podanych lokalnie">
+<!ENTITY options.amountInjected.description "Ilość wstrzyknięć z lokalnego Content Delivery Network od czasu instalacji.">
