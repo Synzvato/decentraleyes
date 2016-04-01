@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "Aggiungere commenti a file raccolti localmente">
+<!ENTITY options.addNotice.description "Antepone automaticamente un avviso ai documenti recuperati per segnalare la distribuzione locale.">
+<!ENTITY options.blockMissing.title "Bloccare richieste di risorse mancanti">
+<!ENTITY options.blockMissing.description "Annullare la richiesta intercettata se la risorsa necessaria non è disponibile localmente.">
+<!ENTITY options.domainWhitelist.title "Escludere domini dalle ispezioni">
+<!ENTITY options.domainWhitelist.description "Inserire domini nella whitelist per escluderli. Separare voci multiple con punti e virgola (;).">
+<!ENTITY options.amountInjected.title "Contatore per risorse iniettate localmente">
+<!ENTITY options.amountInjected.description "Quantità di iniezioni di risorse dalla Rete di Distribuzione di Contenuti locale sin dall'installazione.">
