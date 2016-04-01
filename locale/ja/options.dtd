@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "ローカルからのファイルにコメントを追加する">
+<!ENTITY options.addNotice.description "ローカルCDNから取得したドキュメントにその旨を記載する。">
+<!ENTITY options.blockMissing.title "存在しないリソースへの要求をブロック">
+<!ENTITY options.blockMissing.description "必要なリソースがローカルで利用できない場合、リクエストを取り消す。">
+<!ENTITY options.domainWhitelist.title "保護から除外するドメイン">
+<!ENTITY options.domainWhitelist.description "ホワイト リストにドメインを入力します。複数のエントリをセミコロン (;) で区切ります。">
+<!ENTITY options.amountInjected.title "ローカルから挿入されたリソースの数">
+<!ENTITY options.amountInjected.description "インストールから起算した、ローカルCDNのリソース使用数。">
