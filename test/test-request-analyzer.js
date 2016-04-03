@@ -281,6 +281,11 @@ exports['test jquery-ui on jquery cdn'] = function (assert) {
     assert.equal(target.path, localPaths.jQueryUI, 'Target was determined.');
 };
 
+exports['test jquery shorthand on jquery cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('code.jquery.com', '/jquery-1.5.min.js');
+    assert.equal(target.path, 'resources/jquery/1.5.0/jquery.min.js.dec', 'Target found for jquery shorthand on jquery cdn.');
+};
+
 // jsDelivr (MaxCDN)
 
 exports['test angular on jsdelivr'] = function (assert) {
