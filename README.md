@@ -1,7 +1,7 @@
 Decentraleyes
 =============
 
-A [Firefox add-on](https://addons.mozilla.org/firefox/addon/decentraleyes) that emulates Content Delivery Networks (CDN's) locally by intercepting requests, finding the required resource and injecting it into the environment. This all happens instantaneously, automatically, and no prior configuration is required.  The extension can easily be tested by visiting: https://decentraleyes.org/test
+A [Firefox add-on](https://addons.mozilla.org/firefox/addon/decentraleyes) that emulates Content Delivery Networks (CDNs) locally by intercepting requests, finding the required resource and injecting it into the environment. This all happens instantaneously, automatically, and no prior configuration is required. Feel free to use this [testing utility](https://decentraleyes.org/test) to see if it's properly installed, enabled, and correctly configured.
 
 > **Note:** Decentraleyes is no silver bullet, but it does prevent a lot of websites from making you send these kinds of requests. Ultimately, you can make Decentraleyes block requests for any missing CDN resources, too.
 
@@ -44,4 +44,4 @@ Suggestions in the form of **Issues** and contributions in the form of **Pull Re
 
 ## License
 
-[MPL 2.0](https://www.mozilla.org/MPL/2.0).
+[MPL-2.0](https://www.mozilla.org/MPL/2.0).
