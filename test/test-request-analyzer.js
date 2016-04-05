@@ -128,6 +128,11 @@ exports['test webfont debug library'] = function (assert) {
     assert.equal(target.path, localPaths.webfont[0], 'Target was determined.');
 };
 
+exports['test case sensitivity rules'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('lib.sinaapp.com', '/js/WebFont/1.0.19/webfont_debug.js');
+    assert.equal(target, false, 'Case sensitivity rules were properly enforced.');
+};
+
 // Google Hosted Libraries
 
 exports['test angular on google hosted libraries'] = function (assert) {
@@ -187,6 +192,11 @@ exports['test jquery on microsoft ajax cdn'] = function (assert) {
     assert.equal(target.path, localPaths.jQuery[1], 'Target was determined.');
 };
 
+exports['test lowercase jquery notation on microsoft ajax cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('ajax.aspnetcdn.com', '/ajax/jquery/jquery-1.11.1.min.js');
+    assert.equal(target.path, localPaths.jQuery[1], 'Target was determined.');
+};
+
 exports['test modernizr on microsoft ajax cdn'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('ajax.aspnetcdn.com', '/ajax/modernizr/modernizr-2.6.2.js');
     assert.equal(target.path, localPaths.modernizr, 'Target was determined.');
@@ -194,6 +204,11 @@ exports['test modernizr on microsoft ajax cdn'] = function (assert) {
 
 exports['test jquery on old microsoft ajax cdn'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('ajax.microsoft.com', '/ajax/jQuery/jquery-1.11.1.min.js');
+    assert.equal(target.path, localPaths.jQuery[1], 'Target was determined.');
+};
+
+exports['test lowercase jquery notation on old microsoft ajax cdn'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('ajax.microsoft.com', '/ajax/jquery/jquery-1.11.1.min.js');
     assert.equal(target.path, localPaths.jQuery[1], 'Target was determined.');
 };
 
