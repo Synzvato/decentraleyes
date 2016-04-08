@@ -20,16 +20,16 @@
             }
 
             header {
+                height: 128px;
                 position: relative;
                 width: 400px;
-                height: 128px;
             }
 
             h1, h2, h3, h4, h5, h6 {
                 font-family: "Trebuchet MS", Helvetica, sans-serif;
-                max-width: 750px;
                 margin-left: auto;
                 margin-right: auto;
+                max-width: 750px;
             }
 
             h3 {
@@ -45,24 +45,24 @@
             }
 
             .notice {
-                max-width: 750px;
+                font-family: "Trebuchet MS", Helvetica, sans-serif;
                 margin-left: auto;
                 margin-right: auto;
+                max-width: 750px;
                 text-align: left;
-                font-family: "Trebuchet MS", Helvetica, sans-serif;
             }
 
             .logo {
-                margin-left: auto;
-                margin-right: auto;
                 display: block;
                 height: 128px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .subtle-hint {
                 color: #777;
-                font-style: italic;
                 font-size: 14px;
+                font-style: italic;
             }
 
             .subtle-text {
@@ -70,32 +70,32 @@
             }
 
             .topic-label {
-                text-transform: uppercase;
                 color: #4a856d;
-                font-weight: bold;
                 font-style: normal;
+                font-weight: bold;
+                text-transform: uppercase;
             }
 
             .help-panel {
                 border-bottom: 2px #bbb dotted;
                 cursor: help;
-                position: relative;
                 display: inline-block;
+                position: relative;
             }
 
             .help-panel:before {
-                padding: 3px 4px;
-                display: none;
-                content: attr(data-title);
-                position: absolute;
-                white-space: nowrap;
                 background-color: #fef4c5;
+                border-radius: 2px;
                 border: 1px solid #d4b943;
                 box-shadow: 2px 2px 2px rgba(0, 0, 0, .15);
-                border-radius: 2px;
                 color: #594c16;
+                content: attr(data-title);
+                display: none;
                 font-size: 14px;
                 margin-top: 22px;
+                padding: 3px 4px;
+                position: absolute;
+                white-space: nowrap;
                 z-index: 1;
             }
 
@@ -127,7 +127,7 @@
 
             <div class="notice">
 
-                <span class="topic-label">New:</span> <strong>Let there be languages.</strong> This version supports locales and features fourteen initial translations: <span class="subtle-text"> <span class="help-panel" data-title="Thanks to AdmiralAnimE.">Bulgarian</span>, <span class="help-panel" data-title="Thanks to Louy2 and YFdyh000.">Chinese <i>(Simplified)</i></span>, Dutch, English <i>(United Kingdom)</i>, English <i>(United States)</i>, <span class="help-panel" data-title="Thanks to Semired.">Finnish</span>, <span class="help-panel" data-title="Thanks to Simpson, Thuban, and TraderStf."> French</span>, <span class="help-panel" data-title="Thanks to C4R2T3N, Flysch, Sabajo, and Schnaidar.">German</span>, <span class="help-panel" data-title="Thanks to Zmni.">Indonesian</span>,  <span class="help-panel" data-title="Thanks to Mtvento.">Italian</span>, <span class="help-panel" data-title="Thanks to Brindflontia.">Japanese</span>, <span class="help-panel" data-title="Thanks to Marekjm.">Polish</span>, <span class="help-panel" data-title="Thanks to SW1FTmeister.">Portuguese <i>(European)</i></span>, and <span class="help-panel" data-title="Thanks to Adri and Ergotronix.">Spanish</span></span>.
+                <span class="topic-label">New:</span> <strong>Let there be languages.</strong> This version supports locales and features fourteen <a href="https://github.com/Synzvato/decentraleyes/issues/44" target="_blank">initial translations</a>: <span class="subtle-text"> <span class="help-panel" data-title="Thanks to AdmiralAnimE.">Bulgarian</span>, <span class="help-panel" data-title="Thanks to Louy2 and YFdyh000.">Chinese <i>(Simplified)</i></span>, Dutch, English <i>(United Kingdom)</i>, English <i>(United States)</i>, <span class="help-panel" data-title="Thanks to Semired.">Finnish</span>, <span class="help-panel" data-title="Thanks to Simpson, Thuban, and TraderStf."> French</span>, <span class="help-panel" data-title="Thanks to C4R2T3N, Flysch, Sabajo, and Schnaidar.">German</span>, <span class="help-panel" data-title="Thanks to Zmni.">Indonesian</span>,  <span class="help-panel" data-title="Thanks to Mtvento.">Italian</span>, <span class="help-panel" data-title="Thanks to Brindflontia.">Japanese</span>, <span class="help-panel" data-title="Thanks to Marekjm.">Polish</span>, <span class="help-panel" data-title="Thanks to SW1FTmeister.">Portuguese <i>(European)</i></span>, and <span class="help-panel" data-title="Thanks to Adri and Ergotronix.">Spanish</span></span>.
 
                 <br><br>
 
@@ -170,11 +170,12 @@
                 <ul>
                     <li>Decentraleyes now officially supports modern versions of SeaMonkey.</li>
                     <li>Created mappings for yastatic.net and deprecated its predecessor (yandex.st).</li>
-                    <li>Added test cases, and <span class="help-panel" data-title="With contributions by Ngksternhagen.">improved existing unit tests</span> and exception handling.</li>
+                    <li>Added test cases, and <span class="help-panel" data-title="With code contributions by Ngksternhagen.">improved existing unit tests</span> and exception handling.</li>
                     <li>Applied a wide range of performance optimalizations and stability improvements.</li>
                     <li>Added support for localizations and embedded fourteen initial translations.</li>
                     <li>Implemented a watcher that keeps pages with specific security policies from breaking.</li>
-                    <li><span class="help-panel" data-title="With contributions by Thegoodthings.">Added a preference</span> to allow users to hide release notes upon install and upgrade.</li>
+                    <li><span class="help-panel" data-title="With code contributions by Thegoodthings.">Added a preference</span> to allow users to hide release notes upon install and upgrade.</li>
+                    <li>Optimized mapping expressions to reveal uncommon injection opportunities.</li>
                 </ul>
 
                 <br>
@@ -188,7 +189,7 @@
                     <li>Fixed a rare bug where shorthand mapping notations broke specific websites.</li>
                     <li>Removed Pale Moon compatibility as it will receive separate, tailored, builds.</li>
                     <li>Took out rare resources to make room for more common candidates.</li>
-                    <li>Added new AngularJS, Dojo, and <span class="help-panel" data-title="With contributions by Matthieuy.">jQuery UI</span> scripts to the resource bundle.</li>
+                    <li>Added new AngularJS, Dojo, and <span class="help-panel" data-title="With code contributions by Matthieuy.">jQuery UI</span> scripts to the resource bundle.</li>
                 </ul>
 
             </div>
