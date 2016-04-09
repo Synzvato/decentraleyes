@@ -137,7 +137,7 @@ function _hashFileContents(fileContents) {
 
     var hash;
 
-    hash = crypto.createHash('md5');
+    hash = crypto.createHash('sha512');
 
     hash.setEncoding('hex');
     hash.write(fileContents);
@@ -148,20 +148,19 @@ function _hashFileContents(fileContents) {
 
 function _compareResources(localResourceContents, remoteResourceContents, URL) {
 
-    var hadSourceMappingURL = sourceMappingURL.existsIn(remoteResourceContents);
-    remoteResourceContents = sourceMappingURL.removeFrom(remoteResourceContents);
-
+    var hasSourceMappingURL = sourceMappingURL.existsIn(remoteResourceContents);
     var sourceMappingNotice = '[ ] REMOTE RESOURCE HAD SOURCE MAPPING URL';
 
-    if (hadSourceMappingURL) {
+    if (hasSourceMappingURL) {
+        remoteResourceContents = sourceMappingURL.removeFrom(remoteResourceContents);
         sourceMappingNotice = '[X] REMOTE RESOURCE HAD SOURCE MAPPING URL';
     }
 
     var localResourceHash = _hashFileContents(localResourceContents);
     var remoteResourceHash = _hashFileContents(remoteResourceContents);
 
-    console.log(localResourceHash);
-    console.log(remoteResourceHash);
+    console.log('RESOURCE HASH (SHA512): ' + localResourceHash);
+    console.log('RESOURCE HASH (SHA512): ' + remoteResourceHash);
 
     var fileHashesMatch = (localResourceHash === remoteResourceHash);
 
@@ -172,9 +171,8 @@ function _compareResources(localResourceContents, remoteResourceContents, URL) {
     }
 
     console.log();
-    console.log(sourceMappingNotice);
     console.log('[X] LOCAL AND REMOTE RESOURCE HASHES MATCH');
-
+    console.log(sourceMappingNotice);
 }
 
 function _showCompletedMessage() {
