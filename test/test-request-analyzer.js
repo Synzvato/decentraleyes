@@ -98,9 +98,14 @@ exports['test minified resource'] = function (assert) {
     assert.equal(target.path, 'resources/jquery/2.1.4/jquery.min.js.dec', 'Target found for minified resource.');
 };
 
-exports['test resource shorthand'] = function (assert) {
+exports['test major resource shorthand'] = function (assert) {
     var target = requestAnalyzer.getLocalTarget('ajax.googleapis.com', '/ajax/libs/jquery/1/jquery.js');
     assert.equal(target.path, 'resources/jquery/1.11.1/jquery.min.js.dec', 'Target found for resource shorthand.');
+};
+
+exports['test minor resource shorthand'] = function (assert) {
+    var target = requestAnalyzer.getLocalTarget('ajax.googleapis.com', '/ajax/libs/jquery/1.8/jquery.js');
+    assert.equal(target.path, 'resources/jquery/1.8.3/jquery.min.js.dec', 'Target found for resource shorthand.');
 };
 
 exports['test precision of mapping expression'] = function (assert) {
