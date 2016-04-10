@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE vbox SYSTEM "chrome://decentraleyes/locale/options.dtd">
-<vbox xmlns="https://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <setting data-jetpack-id="jid1-BoFifL9Vbdl2zQ@jetpack" pref="extensions.jid1-BoFifL9Vbdl2zQ@jetpack.addNotice" pref-name="addNotice" title="&options.addNotice.title;" type="bool">&options.addNotice.description;</setting>
   <setting data-jetpack-id="jid1-BoFifL9Vbdl2zQ@jetpack" pref="extensions.jid1-BoFifL9Vbdl2zQ@jetpack.blockMissing" pref-name="blockMissing" title="&options.blockMissing.title;" type="bool">&options.blockMissing.description;</setting>
   <setting data-jetpack-id="jid1-BoFifL9Vbdl2zQ@jetpack" pref="extensions.jid1-BoFifL9Vbdl2zQ@jetpack.domainWhitelist" pref-name="domainWhitelist" title="&options.domainWhitelist.title;" type="string">&options.domainWhitelist.description;</setting>
