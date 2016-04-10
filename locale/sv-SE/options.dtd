@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "Kommentera hämtade filer">
+<!ENTITY options.addNotice.description "Lägg automatiskt in en notis i böjan av hämtade filer för att påvisa att de finns lokalt.">
+<!ENTITY options.blockMissing.title "Blockera förfrågningar när resurs saknas">
+<!ENTITY options.blockMissing.description "Avbryt uppsnappning om resurs inte finns lokalt.">
+<!ENTITY options.domainWhitelist.title "Utelämna domäner från uppsnappningar">
+<!ENTITY options.domainWhitelist.description "Ange domäner för vitlistning. Spearera domänerna med semikolon (;).">
+<!ENTITY options.amountInjected.title "Räknare för lokalt insatta resurser">
+<!ENTITY options.amountInjected.description "Antalet insatta Content Delivery Network-resurser sedan installationen.">
