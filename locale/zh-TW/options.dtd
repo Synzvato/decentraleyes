@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "在從本機取得的檔案中加入註解">
+<!ENTITY options.addNotice.description "自動在取回的文件前方加入提示，以表示這是從本機提供的檔案。">
+<!ENTITY options.blockMissing.title "封鎖缺少資源時的連線請求">
+<!ENTITY options.blockMissing.description "若本機沒有所請求的資源，就取消該請求。">
+<!ENTITY options.domainWhitelist.title "要排除檢查的網域">
+<!ENTITY options.domainWhitelist.description "輸入網域即可將其加入白名單。使用分號（;）分隔多個網域。">
+<!ENTITY options.amountInjected.title "由本機提供的資源計數器">
+<!ENTITY options.amountInjected.description "安裝以來，由本機檔案所取代的 CDN 資源數量。">
