@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "Tilføj kommentarer til lokalt hentede filer">
+<!ENTITY options.addNotice.description "Tilføj automatiskt en notits til filer, så det fremgår at de er leveret lokalt.">
+<!ENTITY options.blockMissing.title "Bloker anmodninger om manglende ressourcer">
+<!ENTITY options.blockMissing.description "Annullerer en anmodning hvis den forespurgte ressource ikke findes lokalt.">
+<!ENTITY options.domainWhitelist.title "Udeluk disse domæner fra inspektion">
+<!ENTITY options.domainWhitelist.description "Tilføj domæner der ikke skal opfanges. Separer flere med semikolon (;).">
+<!ENTITY options.amountInjected.title "Optælling af lokalt leverede ressourcer">
+<!ENTITY options.amountInjected.description "Antal injektioner af lokale ressourcer siden installation.">
