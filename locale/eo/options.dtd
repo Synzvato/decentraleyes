@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "Aldoni komentojn al lokaj dosieroj">
+<!ENTITY options.addNotice.description "Aldoni sciigon al enmetitaj dokumentoj por marki ke ili estas lokaj risurcoj.">
+<!ENTITY options.blockMissing.title "Bloki petojn por mankaj risurcoj">
+<!ENTITY options.blockMissing.description "Bloki petojn interkaptitajn se la petitan risurcon ne loke haveblas.">
+<!ENTITY options.domainWhitelist.title "Neinspektendaj domajnoj">
+<!ENTITY options.domainWhitelist.description "Entajpu demajnojn, kiujn Decentraleyes ne devas inspekti. Disigu domajnojn per punktokomoj (;).">
+<!ENTITY options.amountInjected.title "Nombrilo de loke enmetiaj risurcoj">
+<!ENTITY options.amountInjected.description "Kvanto de lokaj CDN-risurcoj enmetitaj ekde instaliĝo.">
