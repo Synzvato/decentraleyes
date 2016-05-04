@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "Добавить комментарии к локальным файлам">
+<!ENTITY options.addNotice.description "Автоматически добавляет комментарий к скачанным «документам» для обозначения локальной «доставки».">
+<!ENTITY options.blockMissing.title "Блокировать запросы недостающих ресурсов">
+<!ENTITY options.blockMissing.description "Отменить перехваченный запрос, если требуемый ресурс не доступен локально (может «ломать» сайты).">
+<!ENTITY options.domainWhitelist.title "Исключить домены из проверки">
+<!ENTITY options.domainWhitelist.description "«Белый список» доменов. Контент, расположенный на них не будет фильтроваться. Записи (при количестве более одной) разделяются точкой с запятой (;).">
+<!ENTITY options.amountInjected.title "Счётчик файлов «доставленных» локально">
+<!ENTITY options.amountInjected.description "Количество локально «доставленных» файлов с момента установки.">
