@@ -42,6 +42,8 @@ Suggestions in the form of **Issues** and contributions in the form of **Pull Re
     cd decentraleyes
     jpm xpi
 
+> **Important:** All commits since 26 October 2016 are signed with GPG. It's likely best to ignore unsigned commits, unless you really know what you're doing. Please send an email if you have any questions or security concerns.
+
 ## License
 
 [MPL-2.0](https://www.mozilla.org/MPL/2.0).
