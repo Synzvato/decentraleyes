@@ -3,7 +3,7 @@
   "author": "Thomas Rientjes",
   "license": "MPL-2.0",
   "title": "Decentraleyes",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "main": "lib/main.js",
   "homepage": "https://addons.mozilla.org/firefox/addon/decentraleyes",
   "name": "decentraleyes",
