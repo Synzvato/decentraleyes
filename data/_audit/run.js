@@ -156,6 +156,9 @@ function _compareResources(localResourceContents, remoteResourceContents, URL) {
         sourceMappingNotice = '[X] REMOTE RESOURCE HAD SOURCE MAPPING URL';
     }
 
+    // Remove the syntax invalidation character from the local contents.
+    localResourceContents = localResourceContents.substring(1);
+
     var localResourceHash = _hashFileContents(localResourceContents);
     var remoteResourceHash = _hashFileContents(remoteResourceContents);
 

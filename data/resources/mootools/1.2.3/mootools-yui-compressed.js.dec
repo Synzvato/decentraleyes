@@ -1,4 +1,4 @@
-//MooTools, <http://mootools.net>, My Object Oriented (JavaScript) Tools. Copyright (c) 2006-2009 Valerio Proietti, <http://mad4milk.net>, MIT Style License.
+@//MooTools, <http://mootools.net>, My Object Oriented (JavaScript) Tools. Copyright (c) 2006-2009 Valerio Proietti, <http://mad4milk.net>, MIT Style License.
 
 var MooTools={version:"1.2.3",build:"4980aa0fb74d2f6eb80bcd9f5b8e1fd6fbb8f607"};var Native=function(k){k=k||{};var a=k.name;var i=k.legacy;var b=k.protect;
 var c=k.implement;var h=k.generics;var f=k.initialize;var g=k.afterImplement||function(){};var d=f||i;h=h!==false;d.constructor=Native;d.$family={name:"native"};
