@@ -1,13 +1,13 @@
 Decentraleyes
 =============
 
-A [Firefox add-on](https://addons.mozilla.org/firefox/addon/decentraleyes) that emulates Content Delivery Networks (CDNs) locally by intercepting requests, finding the required resource and injecting it into the environment. This all happens instantaneously, automatically, and no prior configuration is required. Feel free to use this [testing utility](https://decentraleyes.org/test) to see if it's properly installed, enabled, and correctly configured.
+A [Firefox add-on](https://addons.mozilla.org/firefox/addon/decentraleyes) that emulates Content Delivery Networks (CDNs) locally by intercepting requests, finding the required resource, and injecting it into the environment. This all happens instantaneously and automatically. No prior configuration is required. Feel free to use this [testing utility](https://decentraleyes.org/test) to see if it's properly installed, enabled, and correctly configured.
 
-> **Note:** Decentraleyes is no silver bullet, but it does prevent a lot of websites from making you send these kinds of requests. Ultimately, you can make Decentraleyes block requests for any missing CDN resources, too.
+> **Note:** Decentraleyes is no silver bullet, but it does prevent many websites from forcing you to send these kinds of requests. You can even make Decentraleyes block requests for any missing CDN resources.
 
 ## Roadmap
 
-Now that there's a solid, Mozilla approved, foundation, it's time to move forward. Mobility, extensibility (through support for community-powered resource packages), and usability, will be the main points of attention during this phase.
+Now that there's a solid, Mozilla-approved foundation, it's time to move forward. Mobility, extensibility (through support for community-powered resource packages), and usability, will be the main points of attention during this phase.
 
 #### Essential Next Steps
 
@@ -21,7 +21,7 @@ Now that there's a solid, Mozilla approved, foundation, it's time to move forwar
 * A minimalistic and non-essential graphical user interface.
 * Support for custom, importable, library repositories.
 
-> **Note:** These long-term goals are subjective to change, and can be discussed. That is, as long as the suggestions do not conflict with the ultimate goal of realizing a free and open standard for exchanging web resource bundles.
+> **Note:** These long-term goals are subjective to change, and can be discussed. That is, as long as the suggestions do not conflict with the **ultimate goal of realizing a free and open standard for exchanging web resource bundles**.
 
 ## Submitting Translations
 
@@ -34,7 +34,7 @@ Suggestions in the form of **Issues** and contributions in the form of **Pull Re
 #### Prerequisites
 
 * Jetpack Manager [jpm](https://developer.mozilla.org/Add-ons/SDK/Tools/jpm#Installation) (a Node-based replacement for cfx).
-* Firefox version 38 or later. *If you need to work with earlier versions of Firefox, you'll need to use the old cfx tool. See instructions for [getting started with cfx](https://developer.mozilla.org/Add-ons/SDK/Tutorials/Getting_started).
+* Firefox version 38 or later. *If you need to work with earlier versions of Firefox, you'll need to use the old cfx tool. See instructions for [getting started with cfx](https://developer.mozilla.org/Add-ons/SDK/Tutorials/Getting_started).*
 
 #### Build Instructions (Unix)
 
