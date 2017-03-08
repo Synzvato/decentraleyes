@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Local emulation of Content Delivery Networks.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Stop verzoeken voor ontbrekende items",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Annuleer een onderschept verzoek wanneer het bestand niet lokaal beschikbaar is.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Sluit domeinen uit van inspecties",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Voer de te negeren domeinen in. Scheid de waarden met puntkomma's (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Teller voor lokaal geïnjecteerde bestanden",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Aantal lokale Content Delivery Network-bestandsinjecties sinds installatie.",
+    "description": "Amount injected description."
+  }
+}

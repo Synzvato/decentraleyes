@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Local emulation of Content Delivery Networks.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Estä pyynnöt puuttuviin resursseihin",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Estää pyynnöt jos paikallista sisältöä ei ole saatavilla.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Poissulje verkkotunnukset",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Lisää verkkotunnus jottei sitä korvata. Erota rivit puolipisteellä (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Korvatut pyynnöt",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Korvatut sisältöpyynnöt lisäosan asennuksen jälkeen.",
+    "description": "Amount injected description."
+  }
+}

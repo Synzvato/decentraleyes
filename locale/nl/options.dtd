@@ -1,8 +1,0 @@
-<!ENTITY options.addNotice.title "Notities aan lokale bestanden toevoegen">
-<!ENTITY options.addNotice.description "Voorzie alle door deze add-on opgehaalde bestanden automatisch van een notitie.">
-<!ENTITY options.blockMissing.title "Stop verzoeken voor ontbrekende items">
-<!ENTITY options.blockMissing.description "Annuleer een onderschept verzoek wanneer het bestand niet lokaal beschikbaar is.">
-<!ENTITY options.domainWhitelist.title "Sluit domeinen uit van inspecties">
-<!ENTITY options.domainWhitelist.description "Voer de te negeren domeinen in. Scheid de waarden met puntkomma's (;).">
-<!ENTITY options.amountInjected.title "Teller voor lokaal geïnjecteerde bestanden">
-<!ENTITY options.amountInjected.description "Aantal lokale Content Delivery Network-bestandsinjecties sinds installatie.">

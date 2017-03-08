@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Local emulation of Content Delivery Networks.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Блокировать запросы недостающих ресурсов",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Отменить перехваченный запрос, если требуемый ресурс не доступен локально (может «ломать» сайты).",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Исключить домены из проверки",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "«Белый список» доменов. Контент, расположенный на них не будет фильтроваться. Записи (при количестве более одной) разделяются точкой с запятой (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Счётчик файлов «доставленных» локально",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Количество местных инъекций ресурсов сети доставки контента с момента установки.",
+    "description": "Amount injected description."
+  }
+}

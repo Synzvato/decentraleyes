@@ -1,8 +1,0 @@
-<!ENTITY options.addNotice.title "Añadir notas a archivos obtenidos localmente">
-<!ENTITY options.addNotice.description "Anteponer un aviso a documentos obtenidos para señalar entrega local.">
-<!ENTITY options.blockMissing.title "Bloquear peticiones de fuentes faltantes">
-<!ENTITY options.blockMissing.description "Cancelar peticiones detenidas si la fuente requerida no se encuentra localmente.">
-<!ENTITY options.domainWhitelist.title "Excluir dominios de inspecciones">
-<!ENTITY options.domainWhitelist.description "Ingresar dominios a ser ignorados. Separar múltiples entradas con punto y coma (;).">
-<!ENTITY options.amountInjected.title "Contador para fuentes inyectadas localmente">
-<!ENTITY options.amountInjected.description "Cifra de inyecciones de fuentes de Redes de Entrega de Contenido desde instalación.">

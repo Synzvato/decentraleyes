@@ -1,0 +1,160 @@
+body {
+    background-color: #f0f0f0;
+    color: #555;
+    font-family: Noto Sans, Arial, sans-serif !important;
+    font-size: 75%;
+    margin: 0;
+    padding: 0;
+    width: 350px;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 12px 0 0 0;
+    text-align: center;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.description {
+    color: #777;
+    font-style: italic;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.popup-content {
+    padding: 10px;
+}
+
+.button-panel {
+    padding: 6px;
+    text-align: right;
+}
+
+.text-link {
+    color: #adadad;
+    float: left;
+    padding-left: 4px;
+    padding-top: 5px;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    color: #777;
+    text-decoration: underline;
+}
+
+#extension-options-overlay-header {
+    align-items: center;
+    border-bottom: solid lightgray 1px;
+    display: flex;
+    position: relative;
+}
+
+#extension-options-overlay-icon {
+    padding: 8px;
+}
+
+#extension-options-overlay-icon {
+    height: 32px;
+    width: 32px;
+}
+
+#extension-options-overlay-title {
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 0;
+}
+
+:enabled:hover:-webkit-any(
+    select,
+    input[type='checkbox'],
+    input[type='radio'],
+    :-webkit-any(
+        button,
+        input[type='button'],
+        input[type='submit']):not(.custom-appearance)) {
+    background-image: -webkit-linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
+    border-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+    color: black;
+}
+
+:enabled:active:-webkit-any(
+    select,
+    input[type='checkbox'],
+    input[type='radio'],
+    :-webkit-any(
+        button,
+        input[type='button'],
+        input[type='submit']):not(.custom-appearance)) {
+    background-image: -webkit-linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7);
+    box-shadow: none;
+    text-shadow: none;
+}
+
+:enabled:focus:-webkit-any(
+    select,
+    input[type='checkbox'],
+    input[type='number'],
+    input[type='password'],
+    input[type='radio'],
+    input[type='search'],
+    input[type='text'],
+    input[type='url'],
+    input:not([type]),
+    :-webkit-any(
+        button,
+        input[type='button'],
+        input[type='submit']):not(.custom-appearance)) {
+    /* OVERRIDE */
+    -webkit-transition: border-color 200ms;
+    /* We use border color because it follows the border radius (unlike outline).
+     * This is particularly noticeable on mac. */
+    border-color: rgb(77, 144, 254);
+    outline: none;
+}
+
+:-webkit-any(button,
+             input[type='button'],
+             input[type='submit']):not(.custom-appearance),
+select,
+input[type='checkbox'],
+input[type='radio'] {
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    background-image: -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.75);
+    color: #444;
+    font: inherit;
+    margin: 0 1px 0 0;
+    outline: none;
+    text-shadow: 0 1px 0 rgb(240, 240, 240);
+}
+
+:-webkit-any(button,
+             input[type='button'],
+             input[type='submit']):not(.custom-appearance),
+select {
+    min-height: 2em;
+    min-width: 4em;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+}
+
+:-webkit-any(button,
+             input[type='button'],
+             input[type='submit']):not(.custom-appearance) {
+    -webkit-padding-end: 10px;
+    -webkit-padding-start: 10px;
+}

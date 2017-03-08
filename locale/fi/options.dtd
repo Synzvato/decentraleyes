@@ -1,8 +1,0 @@
-<!ENTITY options.addNotice.title "Merkitse korvatut tiedostot">
-<!ENTITY options.addNotice.description "Lisää alkuun ilmoituksen paikallisesti noudetuille tiedostoille.">
-<!ENTITY options.blockMissing.title "Estä pyynnöt puuttuviin resursseihin">
-<!ENTITY options.blockMissing.description "Estää pyynnöt jos paikallista sisältöä ei ole saatavilla.">
-<!ENTITY options.domainWhitelist.title "Poissulje verkkotunnukset">
-<!ENTITY options.domainWhitelist.description "Lisää verkkotunnus jottei sitä korvata. Erota rivit puolipisteellä (;).">
-<!ENTITY options.amountInjected.title "Korvatut pyynnöt">
-<!ENTITY options.amountInjected.description "Korvatut sisältöpyynnöt lisäosan asennuksen jälkeen.">

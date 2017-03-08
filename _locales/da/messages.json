@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Local emulation of Content Delivery Networks.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Bloker anmodninger om manglende ressourcer",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Annullerer en anmodning hvis den forespurgte ressource ikke findes lokalt.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Udeluk disse domæner fra inspektion",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Tilføj domæner der ikke skal opfanges. Separer flere med semikolon (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Optælling af lokalt leverede ressourcer",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Antal injektioner af lokale ressourcer siden installation.",
+    "description": "Amount injected description."
+  }
+}

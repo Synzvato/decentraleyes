@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Local emulation of Content Delivery Networks.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Bloccare richieste di risorse mancanti",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Annulla la richiesta intercettata se la risorsa necessaria non è disponibile localmente.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Escludere domini dalle ispezioni",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Inserire domini nella whitelist per escluderli. Separare voci multiple con punti e virgola (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Contatore per risorse iniettate localmente",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Quantità di iniezioni di risorse dalla Rete di Distribuzione di Contenuti locale sin dall'installazione.",
+    "description": "Amount injected description."
+  }
+}

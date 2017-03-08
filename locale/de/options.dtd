@@ -1,8 +1,0 @@
-<!ENTITY options.addNotice.title "Kennzeichne lokal abgerufene Dateien">
-<!ENTITY options.addNotice.description "Füge automatisch Kommentare an lokal ausgelieferte Bibliotheken hinzu.">
-<!ENTITY options.blockMissing.title "Blockiere Anfordern fehlender Inhalte">
-<!ENTITY options.blockMissing.description "Abgefangene Anforderung unterbinden, falls angeforderte Datei nicht lokal verfügbar ist.">
-<!ENTITY options.domainWhitelist.title "Domains von Prüfung ausschließen">
-<!ENTITY options.domainWhitelist.description "Gebe zu ignorierende Domains an. Trenne mehrere Einträge durch Semikolons (;).">
-<!ENTITY options.amountInjected.title "Zähler für lokal injizierte Ressourcen">
-<!ENTITY options.amountInjected.description "Anzahl der lokalen Injektionen von den CDN-Ressourcen seit der Installation.">

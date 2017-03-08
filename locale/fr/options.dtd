@@ -1,8 +1,0 @@
-<!ENTITY options.addNotice.title "Pointer les documents joints localement">
-<!ENTITY options.addNotice.description "Accoler une notice aux documents récupérés pour en signaler l'origine locale.">
-<!ENTITY options.blockMissing.title "Bloquer les ressources manquantes">
-<!ENTITY options.blockMissing.description "Annuler une demande de ressource si elle est indisponible localement.">
-<!ENTITY options.domainWhitelist.title "Ne pas inspecter certains domaines">
-<!ENTITY options.domainWhitelist.description "Indiquez les domaines à exclure. Séparer les noms par un point-virgule (;).">
-<!ENTITY options.amountInjected.title "Compteur des ressources injectées">
-<!ENTITY options.amountInjected.description "Total des ressources des CDN injectées localement depuis l'installation.">

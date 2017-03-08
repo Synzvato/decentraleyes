@@ -1,0 +1,17 @@
+section {
+    padding-left: 32px;
+}
+
+section .title {
+    -webkit-margin-start: -32px;
+    font-weight: bold;
+}
+
+section .description {
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.button-panel {
+    text-align: right;
+}

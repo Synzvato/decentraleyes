@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Local emulation of Content Delivery Networks.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "アドオンに含まれないリソースへのリクエストをブロックする",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "必要なリソースがローカルで利用できない場合、リクエストを取り消します。",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "保護から除外するドメイン",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "ホワイトリストに登録したいドメインを入力してください。エントリが複数ある場合、セミコロン (;) で区切ってください。",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "ローカルのリソースを使用した回数",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "インストール後にローカルのCDNリソースを使用した回数です。",
+    "description": "Amount injected description."
+  }
+}

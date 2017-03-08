@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "Decentraleyes",
+  "version": "1.3.7",
+
+  "author": "Thomas Rientjes",
+
+  "default_locale": "en_US",
+
+  "description": "__MSG_extensionDescription__",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png",
+    "128": "icons/icon128.png"
+  },
+
+  "permissions": [
+    "*://*/*",
+    "storage",
+    "webRequest",
+    "tabs",
+    "webRequestBlocking"
+  ],
+
+  "background": {
+    "page": "pages/background/background.html"
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "18": "icons/action/icon18.png",
+      "19": "icons/action/icon19.png",
+      "32": "icons/action/icon32.png",
+      "36": "icons/action/icon36.png",
+      "38": "icons/action/icon38.png",
+      "64": "icons/action/icon64.png"
+    },
+    "default_popup": "pages/popup/popup.html"
+  },
+
+  "options_ui": {
+    "page": "pages/options/options.html",
+    "chrome_style": true
+  },
+
+  "web_accessible_resources": [
+    "resources/*"
+  ]
+}

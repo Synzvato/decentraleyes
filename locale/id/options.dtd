@@ -1,8 +1,0 @@
-<!ENTITY options.addNotice.title "Tambahkan komentar ke berkas lokal yang disimpan">
-<!ENTITY options.addNotice.description "Secara otomatis menambahkan pemberitahuan untuk mengambil dokumen untuk sinyal pengiriman lokal.">
-<!ENTITY options.blockMissing.title "Blokir permintaan untuk sumber daya yang hilang">
-<!ENTITY options.blockMissing.description "Batalkan intersep permintaan jika sumber daya yang dibutuhkan tidak tersedia secara lokal.">
-<!ENTITY options.domainWhitelist.title "Cegah inspeksi domain">
-<!ENTITY options.domainWhitelist.description "Masukkan domain ke daftar putih. Pisahkan entri dengan titik koma (;).">
-<!ENTITY options.amountInjected.title "Sumber daya lokal yang disematkan">
-<!ENTITY options.amountInjected.description "Jumlah penyematan sumber daya Jaringan Distribusi Konten lokal sejak pemasangan.">
