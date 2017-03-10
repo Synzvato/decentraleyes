@@ -14,10 +14,16 @@
 'use strict';
 
 /**
- * Variables
+ * Interceptor
  */
 
 var interceptor = {};
+
+/**
+ * Constants
+ */
+
+const HTTP_EXPRESSION = /^http?:\/\//;
 
 /**
  * Public Methods
@@ -56,11 +62,11 @@ interceptor._handleRequest = function (requestDetails, tabIdentifier, tabDetails
     targetPath = requestAnalyzer.getLocalTarget(requestDetails);
 
     if (!targetPath) {
-        return interceptor._handleMissingCandidate();
+        return interceptor._handleMissingCandidate(requestDetails.url);
     }
 
     if (!files[targetPath]) {
-        return interceptor._handleMissingCandidate();
+        return interceptor._handleMissingCandidate(requestDetails.url);
     }
 
     chrome.storage.local.get('amountInjected', function (items) {
@@ -79,11 +85,29 @@ interceptor._handleRequest = function (requestDetails, tabIdentifier, tabDetails
     };
 };
 
-interceptor._handleMissingCandidate = function () {
+interceptor._handleMissingCandidate = function (requestUrl) {
 
-    return {
-        'cancel': interceptor.blockMissing
-    };
+    if (interceptor.blockMissing === true) {
+
+        return {
+            'cancel': true
+        };
+    }
+
+    if (requestUrl.match(HTTP_EXPRESSION)) {
+
+        requestUrl = requestUrl.replace(HTTP_EXPRESSION, 'https://');
+
+        return {
+            'redirectUrl': requestUrl
+        };
+
+    } else {
+
+        return {
+            'cancel': false
+        };
+    }
 };
 
 interceptor._applyBlockMissingPreference = function () {

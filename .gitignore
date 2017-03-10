@@ -1,4 +1,5 @@
-data/_audit/node_modules
-data/_audit/report.txt
+audit/node_modules
+audit/report.txt
 *.xpi
+*.crx
 .idea
