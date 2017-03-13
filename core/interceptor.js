@@ -29,28 +29,11 @@ const HTTP_EXPRESSION = /^http?:\/\//;
  * Public Methods
  */
 
-interceptor.register = function () {
+interceptor.handleRequest = function (requestDetails, tabIdentifier, tabUrl) {
 
-    chrome.tabs.onUpdated.addListener(function (tabIdentifier, changeInformation, tabDetails) {
+    let validCandidate, targetDetails, targetPath, amountInjected;
 
-        if (changeInformation.status === 'loading') {
-
-            chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
-                return interceptor._handleRequest(requestDetails, tabIdentifier, tabDetails);
-            }, { 'urls': ['*://*/*'], 'tabId': tabIdentifier }, ['blocking']);
-        }
-    });
-};
-
-/**
- * Private Methods
- */
-
-interceptor._handleRequest = function (requestDetails, tabIdentifier, tabDetails) {
-
-    let validCandidate, targetPath;
-
-    validCandidate = requestAnalyzer.isValidCandidate(requestDetails, tabDetails);
+    validCandidate = requestAnalyzer.isValidCandidate(requestDetails, tabUrl);
 
     if (!validCandidate) {
 
@@ -59,7 +42,8 @@ interceptor._handleRequest = function (requestDetails, tabIdentifier, tabDetails
         };
     }
 
-    targetPath = requestAnalyzer.getLocalTarget(requestDetails);
+    targetDetails = requestAnalyzer.getLocalTarget(requestDetails);
+    targetPath = targetDetails.path;
 
     if (!targetPath) {
         return interceptor._handleMissingCandidate(requestDetails.url);
@@ -69,21 +53,20 @@ interceptor._handleRequest = function (requestDetails, tabIdentifier, tabDetails
         return interceptor._handleMissingCandidate(requestDetails.url);
     }
 
-    chrome.storage.local.get('amountInjected', function (items) {
+    stateManager.registerInjection(tabIdentifier, targetDetails);
 
-        let amountInjected;
-
-        amountInjected = items.amountInjected || 0;
-
-        chrome.storage.local.set({
-            'amountInjected': (parseInt(amountInjected) + 1)
-        });
+    chrome.storage.local.set({
+        'amountInjected': ++interceptor.amountInjected
     });
 
     return {
         'redirectUrl': chrome.extension.getURL(targetPath)
     };
 };
+
+/**
+ * Private Methods
+ */
 
 interceptor._handleMissingCandidate = function (requestUrl) {
 
@@ -110,22 +93,28 @@ interceptor._handleMissingCandidate = function (requestUrl) {
     }
 };
 
-interceptor._applyBlockMissingPreference = function () {
+interceptor._handleStorageChanged = function (changes) {
 
-    chrome.storage.local.get('blockMissing', function (items) {
-        interceptor.blockMissing = items.blockMissing || false;
-    });
+    if ('blockMissing' in changes) {
+        interceptor.blockMissing = changes.blockMissing.newValue;
+    }
 };
 
 /**
  * Initializations
  */
 
+interceptor.amountInjected = 0;
 interceptor.blockMissing = false;
-interceptor._applyBlockMissingPreference();
+
+chrome.storage.local.get(['amountInjected', 'blockMissing'], function (items) {
+
+    interceptor.amountInjected = items.amountInjected || 0;
+    interceptor.blockMissing = items.blockMissing || false;
+});
 
 /**
  * Event Handlers
  */
 
-chrome.storage.onChanged.addListener(interceptor._applyBlockMissingPreference);
+chrome.storage.onChanged.addListener(interceptor._handleStorageChanged);

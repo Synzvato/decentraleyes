@@ -79,7 +79,7 @@ requestAnalyzer.getLocalTarget = function (requestDetails) {
     }
 
     // Return either the local target's path or false.
-    return requestAnalyzer._findLocalTarget(resourceMappings, basePath, destinationPath);
+    return requestAnalyzer._findLocalTarget(resourceMappings, basePath, destinationHost, destinationPath);
 };
 
 /**
@@ -98,7 +98,7 @@ requestAnalyzer._matchBasePath = function (hostMappings, channelPath) {
     return false;
 };
 
-requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channelPath) {
+requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channelHost, channelPath) {
 
     var resourcePath, versionNumber, resourcePattern;
 
@@ -114,10 +114,14 @@ requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channel
             let targetPath, localPath;
 
             targetPath = resourceMappings[resourceMold].path;
-            return targetPath.replace(VERSION_PLACEHOLDER, versionNumber);
+            targetPath = targetPath.replace(VERSION_PLACEHOLDER, versionNumber);
 
             // Prepare and return a local target.
-            return localPath;
+            return {
+                source: channelHost,
+                version: versionNumber[0],
+                path: targetPath
+            };
         }
     }
 

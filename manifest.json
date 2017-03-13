@@ -17,9 +17,10 @@
 
   "permissions": [
     "*://*/*",
+    "privacy",
     "storage",
-    "webRequest",
     "tabs",
+    "webRequest",
     "webRequestBlocking"
   ],
 

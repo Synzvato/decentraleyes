@@ -17,4 +17,8 @@
  * Initializations
  */
 
-interceptor.register();
+chrome.privacy.network.networkPredictionEnabled.set({'value': false});
+
+chrome.browserAction.setBadgeBackgroundColor({
+    'color': [74, 130, 108, 255]
+});

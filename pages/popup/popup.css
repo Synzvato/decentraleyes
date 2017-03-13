@@ -1,16 +1,18 @@
 body {
     background-color: #f0f0f0;
     color: #555;
+    cursor: default;
     font-family: Noto Sans, Arial, sans-serif !important;
     font-size: 75%;
     margin: 0;
     padding: 0;
+    user-select: none;
     width: 350px;
 }
 
 h1 {
     font-size: 36px;
-    margin: 12px 0 0 0;
+    margin: 0;
     text-align: center;
 }
 
@@ -23,12 +25,72 @@ h1 {
 .description {
     color: #777;
     font-style: italic;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     text-align: center;
 }
 
 .popup-content {
+    padding: 0;
+}
+
+.list {
+    border-bottom: 1px solid #d8d8d8;
+    margin: 0;
+    padding: 10px 8px;
+}
+
+.list-item {
+    background-color: #f7f7f7;
+    border-bottom: none !important;
+    border: 1px solid #e4e4e4;
+    color: #737373;
+    font-weight: 600;
+    list-style: none;
+    margin: 0;
     padding: 10px;
+}
+
+.sub-list {
+    align-items: center;
+    background-color: #ececec;
+    border-bottom: none !important;
+    border: 1px solid #e0e0e0;
+    box-shadow: inset 0px 2px 10px #e2e2e2;
+    list-style: none;
+    padding-left: 8px;
+    padding: 0;
+}
+
+.sub-list:last-child {
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.sub-list-item {
+    border-bottom: 1px solid #e0e0e0;
+    color: #737373;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.sub-list-item:last-child {
+    border-bottom: none;
+}
+
+.side-note {
+    color: #a5a5a5;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.badge {
+    background-color: #6bb798;
+    border-radius: 10px;
+    color: #fff;
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 8px;
+    padding: 3px 15px;
 }
 
 .button-panel {
@@ -41,11 +103,11 @@ h1 {
 }
 
 .text-link {
-    color: #adadad;
+    color: #bdbdbd;
     float: left;
     font-size: 13px;
     padding-left: 4px;
-    padding-top: 5px;
+    padding-top: 2px;
     text-decoration: none;
 }
 
@@ -54,10 +116,15 @@ h1 {
     text-decoration: underline;
 }
 
+#injection-counter {
+    padding-top: 14px;
+}
+
 #extension-options-overlay-header {
     align-items: center;
     border-bottom: solid lightgray 1px;
     display: flex;
+    padding: 4px 0;
     position: relative;
 }
 
