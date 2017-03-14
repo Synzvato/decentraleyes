@@ -53,11 +53,10 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tabUrl) {
         return interceptor._handleMissingCandidate(requestDetails.url);
     }
 
-    stateManager.registerInjection(tabIdentifier, targetDetails);
-
-    chrome.storage.local.set({
-        'amountInjected': ++interceptor.amountInjected
-    });
+    stateManager.requests[requestDetails.requestId] = {
+        'tabIdentifier': tabIdentifier,
+        'targetDetails': targetDetails
+    };
 
     return {
         'redirectUrl': chrome.extension.getURL(targetPath)

@@ -46,7 +46,11 @@ requestAnalyzer.isValidCandidate = function (requestDetails, tabDetails) {
         return false;
     }
 
-    initiatorHost = tabDetails.url.match(WEB_DOMAIN_EXPRESSION)[1];
+    try {
+        initiatorHost = tabDetails.url.match(WEB_DOMAIN_EXPRESSION)[1];
+    } catch (exception) {
+        initiatorHost = 'example.org';
+    }
 
     if (initiatorHost && requestAnalyzer.whitelistedDomains[requestAnalyzer._normalizeDomain(initiatorHost)]) {
         return false;

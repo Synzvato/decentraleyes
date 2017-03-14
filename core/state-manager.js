@@ -20,6 +20,12 @@
 var stateManager = {};
 
 /**
+ * Constants
+ */
+
+const BLOCKED_BY_CLIENT = 'net::ERR_BLOCKED_BY_CLIENT';
+
+/**
  * Public Methods
  */
 
@@ -47,6 +53,10 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
             text: ''
         });
     }
+
+    chrome.storage.local.set({
+        'amountInjected': ++interceptor.amountInjected
+    });
 };
 
 /**
@@ -63,7 +73,7 @@ stateManager._createTab = function (tab) {
 
     chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
         return interceptor.handleRequest(requestDetails, tabIdentifier, tab);
-    }, { 'urls': ['*://*/*'], 'tabId': tabIdentifier }, ['blocking']);
+    }, {'urls': ['*://*/*'], 'tabId': tabIdentifier}, ['blocking']);
 };
 
 stateManager._removeTab = function (tabIdentifier) {
@@ -86,6 +96,7 @@ stateManager._updateTab = function (details) {
  * Initializations
  */
 
+stateManager.requests = {};
 stateManager.tabs = {};
 
 chrome.tabs.query({}, function (tabs) {
@@ -102,3 +113,23 @@ chrome.tabs.onRemoved.addListener(stateManager._removeTab);
 chrome.webRequest.onBeforeRequest.addListener(stateManager._updateTab, {
     urls: ['<all_urls>'], types: ['main_frame']
 });
+
+chrome.webRequest.onErrorOccurred.addListener(function (requestDetails) {
+
+    if (stateManager.requests[requestDetails.requestId]) {
+        delete stateManager.requests[requestDetails.requestId];
+    }
+
+}, {'urls': ['*://*/*']});
+
+chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
+
+    let knownRequest = stateManager.requests[requestDetails.requestId];
+
+    if (knownRequest) {
+
+        stateManager.registerInjection(knownRequest.tabIdentifier, knownRequest.targetDetails);
+        delete stateManager.requests[requestDetails.requestId];
+    }
+
+}, {'urls': ['*://*/*']});
