@@ -54,9 +54,23 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
         });
     }
 
-    chrome.storage.local.set({
-        'amountInjected': ++interceptor.amountInjected
-    });
+    if (isNaN(interceptor.amountInjected)) {
+
+        chrome.storage.local.get('amountInjected', function (items) {
+
+            interceptor.amountInjected = items.amountInjected;
+
+            chrome.storage.local.set({
+                'amountInjected': ++interceptor.amountInjected
+            });
+        });
+
+    } else {
+
+        chrome.storage.local.set({
+            'amountInjected': ++interceptor.amountInjected
+        });
+    }
 };
 
 /**
