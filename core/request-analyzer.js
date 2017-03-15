@@ -39,13 +39,6 @@ requestAnalyzer.isValidCandidate = function (requestDetails, tabDetails) {
 
     let destinationHost, initiatorHost;
 
-    destinationHost = requestDetails.url.match(WEB_DOMAIN_EXPRESSION)[1];
-
-    // See if the request is targeted at a Content Delivery Network.
-    if (mappings[destinationHost] === undefined) {
-        return false;
-    }
-
     try {
         initiatorHost = tabDetails.url.match(WEB_DOMAIN_EXPRESSION)[1];
     } catch (exception) {

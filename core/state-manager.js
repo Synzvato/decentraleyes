@@ -24,6 +24,11 @@ var stateManager = {};
  */
 
 const BLOCKED_BY_CLIENT = 'net::ERR_BLOCKED_BY_CLIENT';
+const BLOCKING_ACTION = 'blocking';
+const HOST_PREFIX = '*://';
+const HOST_SUFFIX = '/*';
+const JAVASCRIPT_REQUEST_TYPE = 'script';
+const XML_HTTP_REQUEST_TYPE = 'xmlhttprequest';
 
 /**
  * Public Methods
@@ -79,15 +84,24 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
 
 stateManager._createTab = function (tab) {
 
-    let tabIdentifier = tab.id;
+    let tabIdentifier, requestFilters;
+
+    tabIdentifier = tab.id;
 
     stateManager.tabs[tabIdentifier] = {
         'injections': {}
     };
 
+    requestFilters = {
+
+        'tabId': tabIdentifier,
+        'types': stateManager.validTypes,
+        'urls': stateManager.validHosts
+    };
+
     chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
         return interceptor.handleRequest(requestDetails, tabIdentifier, tab);
-    }, {'urls': ['*://*/*'], 'tabId': tabIdentifier}, ['blocking']);
+    }, requestFilters, [BLOCKING_ACTION]);
 };
 
 stateManager._removeTab = function (tabIdentifier) {
@@ -112,6 +126,24 @@ stateManager._updateTab = function (details) {
 
 stateManager.requests = {};
 stateManager.tabs = {};
+
+stateManager.validTypes = [
+
+    JAVASCRIPT_REQUEST_TYPE,
+    XML_HTTP_REQUEST_TYPE
+];
+
+stateManager.validHosts = [];
+
+for (let mapping in mappings) {
+
+    if (!mappings.hasOwnProperty(mapping)) {
+        continue;
+    }
+
+    let supportedHost = HOST_PREFIX + mapping + HOST_SUFFIX;
+    stateManager.validHosts.push(supportedHost);
+}
 
 chrome.tabs.query({}, function (tabs) {
     tabs.forEach(stateManager._createTab);
