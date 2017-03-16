@@ -7,6 +7,12 @@ A reimplementation of current features of Decentraleyes. This project will help 
 
 Below is a list of all notable changes made to the reimplementation project to date. This includes, but is most certainly not limited to, records of changes such as bug fixes, and new, removed, and updated features.
 
+### v1.3.7.5
+
+* Fix Subresource Integrity (SRI) validation issues.
+* Implement context stripping for allowed CDN requests.
+* Implement request filters to improve performance.
+
 ### v1.3.7.4
 
 * Fix rare injection counter issue.
