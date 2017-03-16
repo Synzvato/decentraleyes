@@ -149,11 +149,10 @@ function _hashFileContents(fileContents) {
 function _compareResources(localResourceContents, remoteResourceContents, URL) {
 
     var hasSourceMappingURL = sourceMappingURL.existsIn(remoteResourceContents);
-    var sourceMappingNotice = '[ ] REMOTE RESOURCE HAD SOURCE MAPPING URL';
+    var sourceMappingNotice = '[ ] RESOURCE CONTAINS A SOURCE MAPPING URL';
 
     if (hasSourceMappingURL) {
-        remoteResourceContents = sourceMappingURL.removeFrom(remoteResourceContents);
-        sourceMappingNotice = '[X] REMOTE RESOURCE HAD SOURCE MAPPING URL';
+        sourceMappingNotice = '[X] RESOURCE CONTAINS A SOURCE MAPPING URL';
     }
 
     var localResourceHash = _hashFileContents(localResourceContents);
