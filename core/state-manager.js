@@ -28,6 +28,7 @@ const BLOCKING_ACTION = 'blocking';
 const HOST_PREFIX = '*://';
 const HOST_SUFFIX = '/*';
 const JAVASCRIPT_REQUEST_TYPE = 'script';
+const REQUEST_HEADERS = 'requestHeaders';
 const XML_HTTP_REQUEST_TYPE = 'xmlhttprequest';
 
 /**
@@ -179,3 +180,18 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
     }
 
 }, {'urls': ['*://*/*']});
+
+chrome.webRequest.onBeforeSendHeaders.addListener(function (requestDetails) {
+
+    for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
+
+        if (requestDetails.requestHeaders[i].name === 'Origin') {
+            requestDetails.requestHeaders.splice(i, 1);
+        } else if (requestDetails.requestHeaders[i].name === 'Referer') {
+            requestDetails.requestHeaders.splice(i, 1);
+        }
+    }
+
+    return {requestHeaders: requestDetails.requestHeaders};
+
+}, {urls: stateManager.validHosts}, [BLOCKING_ACTION, REQUEST_HEADERS]);
