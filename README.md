@@ -1,7 +1,7 @@
 Decentraleyes
 =============
 
-A [web browser add-on](https://decentraleyes.org) that emulates Content Delivery Networks locally by intercepting requests, finding the required resource and injecting it into the environment. This all happens instantaneously, automatically, and no prior configuration is required. Feel free to use this [testing utility](https://decentraleyes.org/test) to see if it's properly installed, enabled, and correctly configured.
+A [web browser extension](https://decentraleyes.org) that emulates Content Delivery Networks locally by intercepting requests, finding the required resource and injecting it into the environment. This all happens instantaneously, automatically, and no prior configuration is required. Feel free to use this [testing utility](https://decentraleyes.org/test) to see if it's properly installed, enabled, and correctly configured.
 
 > **Note:** Decentraleyes is no silver bullet, but it does prevent a lot of websites from making you send these kinds of requests. Ultimately, you can make Decentraleyes block requests for any missing CDN resources, too.
 
