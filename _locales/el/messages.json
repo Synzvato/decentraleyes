@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Προστατεύει από παρακολούθηση μέσω \"δωρεάν\" διανομής περιεχόμενου.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Μπλοκ αιτήσεων για ανύπαρκτους πόρους",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Ακύρωση απομακρυσμένης αίτησης, αν ο απαιτούμενος πόρος δεν είναι τοπικά διαθέσιμος.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Εξαίρεση διευθύνσεων από επιθεωρήσεις",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Εισαγωγή διευθύνσεων στις επιτρεπόμενες. Διαχωρίστε πολλαπλές καταχωρήσεις με ερωτηματικά (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Μετρητής εμβόλιμων τοπικών πόρων",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Ποσοστό εμβόλιμων τοπικών πόρων Δικτύων Παροχής Περιεχομένου από την στιγμή της εγκατάστασης.",
+    "description": "Amount injected description."
+  }
+}
