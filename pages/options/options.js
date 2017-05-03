@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     i18nElements.forEach(function (i18nElement) {
 
         let i18nMessageName = i18nElement.getAttribute('data-i18n-content');
-        i18nElement.innerHTML = chrome.i18n.getMessage(i18nMessageName);
+        i18nElement.innerText = chrome.i18n.getMessage(i18nMessageName);
     });
 
     blockMissingElement = document.querySelector('[data-option=blockMissing]');

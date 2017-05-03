@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
     i18nElements.forEach(function (i18nElement) {
 
         let i18nMessageName = i18nElement.getAttribute('data-i18n-content');
-        i18nElement.innerHTML = chrome.i18n.getMessage(i18nMessageName);
+        i18nElement.innerText = chrome.i18n.getMessage(i18nMessageName);
     });
 
     chrome.storage.local.get('amountInjected', function (items) {
 
         let amountInjected = items.amountInjected || 0;
-        document.getElementById('injection-counter').innerHTML = amountInjected;
+        document.getElementById('injection-counter').innerText = amountInjected;
 
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
