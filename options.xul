@@ -5,4 +5,5 @@
   <setting data-jetpack-id="jid1-BoFifL9Vbdl2zQ@jetpack" pref="extensions.jid1-BoFifL9Vbdl2zQ@jetpack.blockMissing" pref-name="blockMissing" title="&options.blockMissing.title;" type="bool">&options.blockMissing.description;</setting>
   <setting data-jetpack-id="jid1-BoFifL9Vbdl2zQ@jetpack" pref="extensions.jid1-BoFifL9Vbdl2zQ@jetpack.domainWhitelist" pref-name="domainWhitelist" title="&options.domainWhitelist.title;" type="string">&options.domainWhitelist.description;</setting>
   <setting data-jetpack-id="jid1-BoFifL9Vbdl2zQ@jetpack" pref="extensions.jid1-BoFifL9Vbdl2zQ@jetpack.amountInjected" pref-name="amountInjected" title="&options.amountInjected.title;" type="integer">&options.amountInjected.description;</setting>
+  <setting data-jetpack-id="jid1-BoFifL9Vbdl2zQ@jetpack" pref="extensions.jid1-BoFifL9Vbdl2zQ@jetpack.userContentDir" pref-name="userContentDir" title="&options.userContentDir.title;" type="directory">&options.userContentDir.description;</setting>
 </vbox>
