@@ -5,6 +5,11 @@ A [web browser extension](https://decentraleyes.org) that emulates Content Deliv
 
 > **Note:** Decentraleyes is no silver bullet, but it does prevent a lot of websites from making you send these kinds of requests. Ultimately, you can make Decentraleyes block requests for any missing CDN resources, too.
 
+## Custom Resources
+
+You can set a folder path to a custom resource folder in Addon options menu. Place your versions of supported resources, complying with the sheme of bundeled resources (without .dec extension). See resources.js paths for currently supported resources and file names.
+Example: [YourFolder]/resources/jquery/3.2.1/jquery.min.js
+
 ## Roadmap
 
 Now that there's a solid, Mozilla approved, foundation, it's time to move forward. Mobility, extensibility (through support for community-powered resource packages), and usability, will be the main points of attention during this phase.
