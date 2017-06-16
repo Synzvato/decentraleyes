@@ -6,3 +6,5 @@
 <!ENTITY options.domainWhitelist.description "Enter domains to whitelist them. Separate multiple entries with semi-colons (;).">
 <!ENTITY options.amountInjected.title "Counter for locally injected resources">
 <!ENTITY options.amountInjected.description "Amount of local Content Delivery Network resource injections since installation.">
+<!ENTITY options.userContentDir.title "Folder for additional custom resources">
+<!ENTITY options.userContentDir.description "Specify a local folder path as source for additional resources">

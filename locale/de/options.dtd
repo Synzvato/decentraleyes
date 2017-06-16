@@ -6,3 +6,5 @@
 <!ENTITY options.domainWhitelist.description "Gebe zu ignorierende Domains an. Trenne mehrere Einträge durch Semikolons (;).">
 <!ENTITY options.amountInjected.title "Zähler für lokal injizierte Ressourcen">
 <!ENTITY options.amountInjected.description "Anzahl der lokalen Injektionen von den CDN-Ressourcen seit der Installation.">
+<!ENTITY options.userContentDir.title "Ordner für zusätzliche Ressourcen">
+<!ENTITY options.userContentDir.description "Lokaler Ordner als Quelle für weitere Ressourcen">
