@@ -7,7 +7,7 @@ A [web browser extension](https://decentraleyes.org) that emulates Content Deliv
 
 ## Custom Resources
 
-You can set a folder path to a custom resource folder in Addon options menu. Place your versions of supported resources, complying with the sheme of bundeled resources (without .dec extension). See resources.js paths for currently supported resources and file names.
+You can set a folder path to a custom resource folder in Addon options menu. Place your versions of supported resources, complying with the scheme of bundled resources (without .dec extension). See resources.js paths for currently supported resources and file names.
 Example: [YourFolder]/resources/jquery/3.2.1/jquery.min.js
 
 ## Roadmap
