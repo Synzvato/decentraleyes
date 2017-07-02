@@ -237,3 +237,6 @@ var mappings = {
         }
     }
 };
+
+// Mirror
+mappings['ajax.proxy.ustclug.org'] = mappings['ajax.googleapis.com'];
