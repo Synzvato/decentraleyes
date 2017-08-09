@@ -111,13 +111,22 @@ stateManager._removeTab = function (tabIdentifier) {
 
 stateManager._updateTab = function (details) {
 
-    let tabIdentifier = details.tabId;
+    let tabIdentifier, frameIdentifier;
 
-    if (tabIdentifier !== -1) {
+    tabIdentifier = details.tabId;
+    frameIdentifier = details.frameId;
 
-        if (stateManager.tabs[tabIdentifier]) {
-            stateManager.tabs[tabIdentifier].injections = {};
-        }
+    if (tabIdentifier === -1 || frameIdentifier !== 0) {
+        return;
+    }
+
+    chrome.browserAction.setBadgeText({
+        tabId: tabIdentifier,
+        text: ''
+    });
+
+    if (stateManager.tabs[tabIdentifier]) {
+        stateManager.tabs[tabIdentifier].injections = {};
     }
 };
 
@@ -157,8 +166,8 @@ chrome.tabs.query({}, function (tabs) {
 chrome.tabs.onCreated.addListener(stateManager._createTab);
 chrome.tabs.onRemoved.addListener(stateManager._removeTab);
 
-chrome.webRequest.onBeforeRequest.addListener(stateManager._updateTab, {
-    urls: ['<all_urls>'], types: ['main_frame']
+chrome.webNavigation.onCommitted.addListener(stateManager._updateTab, {
+    url: [{urlContains: ':'}]
 });
 
 chrome.webRequest.onErrorOccurred.addListener(function (requestDetails) {

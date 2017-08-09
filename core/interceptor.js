@@ -29,11 +29,11 @@ const HTTP_EXPRESSION = /^http?:\/\//;
  * Public Methods
  */
 
-interceptor.handleRequest = function (requestDetails, tabIdentifier, tabUrl) {
+interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
 
-    let validCandidate, targetDetails, targetPath, amountInjected;
+    let validCandidate, targetDetails, targetPath;
 
-    validCandidate = requestAnalyzer.isValidCandidate(requestDetails, tabUrl);
+    validCandidate = requestAnalyzer.isValidCandidate(requestDetails, tab);
 
     if (!validCandidate) {
 
