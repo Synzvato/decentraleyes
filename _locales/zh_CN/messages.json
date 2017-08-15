@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "保护您免受集中式的内容交付网络（CDN）的跟踪。",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "阻止缺失资源的请求",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "取消被拦截的请求，如果请求的资源在本地不可用。",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "排除要检查的域名",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "输入白名单的域名。用分号 (;) 分隔多项。",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "本地发送资源的计数器",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "自安装以来，从本地的“内容交付网络”发送的资源总量。",
+    "description": "Amount injected description."
+  }
+}

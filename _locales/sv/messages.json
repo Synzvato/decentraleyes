@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Skyddar dig mot att spåras av \"gratis\", centraliserat, innehållsleverans.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Blockera förfrågningar när resurs saknas",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Avbryt uppsnappning om resurs inte finns lokalt.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Utelämna domäner från uppsnappningar",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Ange domäner för vitlistning. Spearera domänerna med semikolon (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Räknare för lokalt insatta resurser",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Antalet insatta Content Delivery Network-resurser sedan installationen.",
+    "description": "Amount injected description."
+  }
+}

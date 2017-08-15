@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Protects you against tracking through \"free\", centralised, content delivery.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Block requests for missing resources",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Cancel intercepted request if the required resource is not locally available.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Exclude domains from inspections",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Enter domains to whitelist them. Separate multiple entries with semi-colons (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Counter for locally injected resources",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Amount of local Content Delivery Network resource injections since installation.",
+    "description": "Amount injected description."
+  }
+}

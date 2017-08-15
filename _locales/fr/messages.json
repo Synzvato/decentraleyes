@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Protège du pistage lié à l'accès à des contenus \"gratuits\", centralisés.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Bloquer les ressources manquantes",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Annuler une demande de ressource si elle est indisponible localement.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Ne pas inspecter certains domaines",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Indiquez les domaines à exclure. Séparer les noms par un point-virgule (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Compteur des ressources injectées",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Total des ressources des CDN injectées localement depuis l'installation.",
+    "description": "Amount injected description."
+  }
+}

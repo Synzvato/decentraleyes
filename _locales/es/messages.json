@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Protégete contra rastreo a través de entrega de contenido centralizado \"gratis\".",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Bloquear peticiones de fuentes faltantes",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Cancelar peticiones detenidas si la fuente requerida no se encuentra localmente.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Excluir dominios de inspecciones",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Ingresar dominios a ser ignorados. Separar múltiples entradas con punto y coma (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Contador para fuentes inyectadas localmente",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Cifra de inyecciones de fuentes de Redes de Entrega de Contenido desde instalación.",
+    "description": "Amount injected description."
+  }
+}

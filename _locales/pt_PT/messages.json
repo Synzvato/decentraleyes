@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Protege contra monitorização através de entrega de conteúdo centralizado.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Bloquear pedidos por falta de recursos",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Cancelar pedido intercetado se o recurso necessário não estiver disponível localmente.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Excluir domínios de inspeções",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Insira domínios para os colocar na lista branca. Separe múltiplas entradas com pontos e vírgulas (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Contador para recursos injetados localmente",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Quantidade de injeções de recurso Content Delivery Network locais desde a instalação.",
+    "description": "Amount injected description."
+  }
+}

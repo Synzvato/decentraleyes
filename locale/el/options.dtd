@@ -1,8 +1,0 @@
-<!ENTITY options.addNotice.title "Προσθήκη σχολίων σε τοπικά τοποθετημένα αρχεία">
-<!ENTITY options.addNotice.description "Πρόσθεση αυτόματης ειδοποίησης ανάκτησης εγγράφων ώστε να σηματοδοτηθεί τοπική παράδοση.">
-<!ENTITY options.blockMissing.title "Μπλοκ αιτήσεων για ανύπαρκτους πόρους">
-<!ENTITY options.blockMissing.description "Ακύρωση απομακρυσμένης αίτησης, αν ο απαιτούμενος πόρος δεν είναι τοπικά διαθέσιμος.">
-<!ENTITY options.domainWhitelist.title "Εξαίρεση διευθύνσεων από επιθεωρήσεις">
-<!ENTITY options.domainWhitelist.description "Εισαγωγή διευθύνσεων στις επιτρεπόμενες. Διαχωρίστε πολλαπλές καταχωρήσεις με ερωτηματικά (;).">
-<!ENTITY options.amountInjected.title "Μετρητής εμβόλιμων τοπικών πόρων">
-<!ENTITY options.amountInjected.description "Ποσοστό εμβόλιμων τοπικών πόρων Δικτύων Παροχής Περιεχομένου από την στιγμή της εγκατάστασης.">

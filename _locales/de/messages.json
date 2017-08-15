@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Schützt vor Tracking durch \"gratis\", zentralisiertes, Abliefern von Content.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Blockiere Anfordern fehlender Inhalte",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Abgefangene Anforderung unterbinden, falls angeforderte Datei nicht lokal verfügbar ist.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Domains von Prüfung ausschließen",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Gebe zu ignorierende Domains an. Trenne mehrere Einträge durch Semikolons (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Zähler für lokal injizierte Ressourcen",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Anzahl der lokalen Injektionen von den CDN-Ressourcen seit der Installation.",
+    "description": "Amount injected description."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "Melindungi dari pelacakan melalui distribusi konten yang bebas dan terpusat.",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "Blokir permintaan untuk sumber daya yang hilang",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Batalkan intersep permintaan jika sumber daya yang dibutuhkan tidak tersedia secara lokal.",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "Cegah inspeksi domain",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "Masukkan domain ke daftar putih. Pisahkan entri dengan titik koma (;).",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "Sumber daya lokal yang disematkan",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Jumlah penyematan sumber daya Jaringan Distribusi Konten lokal sejak pemasangan.",
+    "description": "Amount injected description."
+  }
+}

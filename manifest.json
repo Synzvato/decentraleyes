@@ -1,0 +1,60 @@
+{
+  "manifest_version": 2,
+  "name": "Decentraleyes",
+  "version": "2.0.0-beta1",
+
+  "author": "Thomas Rientjes",
+
+  "default_locale": "en_US",
+
+  "description": "__MSG_extensionDescription__",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png",
+    "128": "icons/icon128.png"
+  },
+
+  "permissions": [
+    "*://*/*",
+    "storage",
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+
+  "background": {
+    "page": "pages/background/background.html"
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "18": "icons/action/icon18.png",
+      "19": "icons/action/icon19.png",
+      "32": "icons/action/icon32.png",
+      "36": "icons/action/icon36.png",
+      "38": "icons/action/icon38.png",
+      "64": "icons/action/icon64.png"
+    },
+      "default_popup": "pages/popup/popup.html",
+      "browser_style": false
+  },
+
+  "options_ui": {
+    "page": "pages/options/options.html",
+    "browser_style": true,
+    "chrome_style": true
+  },
+
+  "applications": {
+    "gecko": {
+        "id": "jid1-BoFifL9Vbdl2zQ@jetpack",
+        "strict_min_version": "56.0a1"
+    }
+  },
+
+  "web_accessible_resources": [
+    "resources/*"
+  ]
+}

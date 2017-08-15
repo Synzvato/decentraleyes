@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Decentraleyes Popup</title>
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="popup.css">
+
+    <script defer src="../../modules/fontawesome/packs/solid.js"></script>
+    <script defer src="../../modules/fontawesome/fontawesome.js"></script>
+
+</head>
+
+<body>
+
+    <script src="popup.js"></script>
+
+    <div id="extension-options-overlay-header">
+        <img id="extension-options-overlay-icon" src="icon.png" alt="Extension Icon">
+        <div id="extension-options-overlay-title">Decentraleyes <sup class="label-beta">BETA</sup></div>
+        <div style="float: right;"></div>
+    </div>
+
+    <section id="popup-content" class="popup-content">
+
+        <h1 id="injection-counter">0</h1>
+
+        <div class="title" data-i18n-content="amountInjectedTitle"></div>
+        <div class="description" data-i18n-content="amountInjectedDescription"></div>
+
+    </section>
+
+    <section class="button-panel">
+
+        <span id="testing-utility-link" class="text-link">decentraleyes.org/test</span>
+
+        <button id="options-button" class="btn-sm" title="Options">
+            <i class="btn-icon fas fa-cog" data-fa-transform="grow-2"></i>
+        </button>
+
+    </section>
+</body>
+
+</html>

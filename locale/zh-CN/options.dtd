@@ -1,8 +1,0 @@
-<!ENTITY options.addNotice.title "添加注释到从本地获取的文件">
-<!ENTITY options.addNotice.description "自动预置一个通知到获取的文档以标记从本地交付。">
-<!ENTITY options.blockMissing.title "阻止缺失资源的请求">
-<!ENTITY options.blockMissing.description "取消被拦截的请求，如果请求的资源在本地不可用。">
-<!ENTITY options.domainWhitelist.title "排除要检查的域名">
-<!ENTITY options.domainWhitelist.description "输入白名单的域名。用分号 (;) 分隔多项。">
-<!ENTITY options.amountInjected.title "本地发送资源的计数器">
-<!ENTITY options.amountInjected.description "自安装以来，从本地的“内容交付网络”发送的资源总量。">

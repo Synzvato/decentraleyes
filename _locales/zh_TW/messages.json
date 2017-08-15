@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "message": "保護您不受「免費」、中心化的內容傳遞網路（CDN）的追蹤。",
+    "description": "Extension description."
+  },
+  "blockMissingTitle": {
+    "message": "封鎖缺少資源時的連線請求",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "若本機沒有所請求的資源，就取消該請求。",
+    "description": "Block requests for missing resources description."
+  },
+  "domainWhitelistTitle": {
+    "message": "要排除檢查的網域",
+    "description": "Domain whitelist title."
+  },
+  "domainWhitelistDescription": {
+    "message": "輸入網域即可將其加入白名單。使用分號（;）分隔多個網域。",
+    "description": "Domain whitelist description."
+  },
+  "amountInjectedTitle": {
+    "message": "由本機提供的資源計數器",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "安裝以來，由本機檔案所取代的 CDN 資源數量。",
+    "description": "Amount injected description."
+  }
+}
