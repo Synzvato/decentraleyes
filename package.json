@@ -8,6 +8,7 @@
   "homepage": "https://addons.mozilla.org/firefox/addon/decentraleyes",
   "name": "decentraleyes",
   "id": "jid1-BoFifL9Vbdl2zQ@jetpack",
+  "hasEmbeddedWebExtension": true,
   "permissions": {
     "multiprocess": true
   },
