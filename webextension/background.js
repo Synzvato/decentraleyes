@@ -79,8 +79,5 @@ webextensionPort.onMessage.addListener((message) => {
                 'amountInjected': ++amountInjected
             });
         }
-
-        console.log('*** INCREMENTED');
-        console.log(amountInjected);
     }
 });
