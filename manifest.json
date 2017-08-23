@@ -17,6 +17,7 @@
 
   "permissions": [
     "*://*/*",
+    "privacy",
     "storage",
     "tabs",
     "webNavigation",
