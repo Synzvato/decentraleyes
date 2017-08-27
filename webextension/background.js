@@ -18,7 +18,9 @@
  */
 
 var webextensionPort = {};
-var amountInjected = 0;
+
+var amountInjected = null;
+var pendingCount = 0;
 
 /**
  * Initializations
@@ -30,31 +32,25 @@ webextensionPort = browser.runtime.connect({name: 'webextension'});
  * Event Handlers
  */
 
-// browser.storage.local.remove('amountInjected');
-
 webextensionPort.onMessage.addListener((message) => {
 
     if (message.subject === 'migrate-preferences') {
 
         browser.storage.local.get(function (items) {
 
+            // Covers storage API failures.
+            if (items === null) {
+                return;
+            }
+
             for (let preference of Object.keys(message.content)) {
 
-                if (items.hasOwnProperty(preference)) {
-
-                    if (preference === 'amountInjected') {
-                        amountInjected = items.amountInjected;
-                    }
-
-                } else {
+                // Makes sure no existing preferences are overwritten.
+                if (!items.hasOwnProperty(preference)) {
 
                     browser.storage.local.set({
                         [preference]: message.content[preference]
                     });
-
-                    if (preference === 'amountInjected') {
-                        amountInjected = message.content[preference];
-                    }
                 }
             }
         });
@@ -62,22 +58,33 @@ webextensionPort.onMessage.addListener((message) => {
 
     if (message.subject === 'register-injection') {
 
-        if (isNaN(amountInjected)) {
+        if (amountInjected !== null  && !isNaN(amountInjected)) {
 
-            chrome.storage.local.get('amountInjected', function (items) {
-
-                amountInjected = items.amountInjected;
-
-                chrome.storage.local.set({
-                    'amountInjected': ++amountInjected
-                });
-            });
-
-        } else {
-
-            chrome.storage.local.set({
-                'amountInjected': ++amountInjected
-            });
+            ++amountInjected;
+            browser.storage.local.set({amountInjected});
         }
+
+        ++pendingCount;
+
+        if (pendingCount > 1) {
+            return;
+        }
+
+        chrome.storage.local.get({
+
+            // The stored amount, or zero.
+            amountInjected: 0
+
+        }, function (items) {
+
+            // Accounts for the fact that the storage API is asynchronous.
+            amountInjected = (items && items.amountInjected || 0) + pendingCount;
+            browser.storage.local.set({amountInjected});
+        });
+
+    }
+
+    if (message.subject === 'update-preferences') {
+        chrome.storage.local.set(message.content);
     }
 });
