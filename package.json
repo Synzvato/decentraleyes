@@ -13,8 +13,8 @@
     "multiprocess": true
   },
   "engines": {
-    "firefox": ">=51.0a1",
-    "fennec": ">=51.0a1",
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1",
     "seamonkey": ">=2.0a1 <=2.46",
     "{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}": ">=27.1.0b1"
   }
