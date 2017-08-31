@@ -107,13 +107,17 @@ requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channel
 
         if (resourcePattern.startsWith(resourceMold)) {
 
-            let targetPath = resourceMappings[resourceMold].path;
+            let targetPath, version;
+
+            targetPath = resourceMappings[resourceMold].path;
             targetPath = targetPath.replace(VERSION_PLACEHOLDER, versionNumber);
+
+            version = versionNumber && versionNumber[0] || targetPath.match(VERSION_EXPRESSION);
 
             // Prepare and return a local target.
             return {
                 source: channelHost,
-                version: versionNumber[0],
+                version: version,
                 path: targetPath
             };
         }
