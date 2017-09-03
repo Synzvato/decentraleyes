@@ -27,10 +27,9 @@ const VALUE_SEPARATOR = ';';
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let i18nElements, saveButtonElement, blockMissingElement, domainWhitelistElement;
+    let i18nElements, blockMissingElement, domainWhitelistElement;
 
     i18nElements = document.querySelectorAll('[data-i18n-content]');
-    saveButtonElement = document.getElementById('save-button');
 
     i18nElements.forEach(function (i18nElement) {
 

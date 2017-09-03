@@ -1,17 +1,25 @@
-section {
-    padding-left: 32px;
-}
+/**
+ * Titles
+ */
 
-section .title {
-    -webkit-margin-start: -32px;
+.option-title {
     font-weight: bold;
 }
 
-section .description {
-    font-style: italic;
-    margin-bottom: 16px;
+/**
+ * Controls
+ */
+
+.text-input {
+    margin-left: 36px !important;
 }
 
-.button-panel {
-    text-align: right;
+/**
+ * Miscellaneous
+ */
+
+.option-description {
+    font-style: italic;
+    margin-bottom: 16px;
+    padding-left: 36px;
 }
