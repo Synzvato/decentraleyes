@@ -14,8 +14,18 @@
 'use strict';
 
 /**
+ * Main
+ */
+
+var main = {};
+
+/**
  * Initializations
  */
+
+chrome.runtime.getPlatformInfo(function (information) {
+    main.operatingSystem = information.os;
+});
 
 if (typeof chrome.browserAction.setBadgeBackgroundColor !== 'function') {
 

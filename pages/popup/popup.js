@@ -14,12 +14,29 @@
 'use strict';
 
 /**
+ * Popup
+ */
+
+var popup = {};
+
+/**
+ * Constants
+ */
+
+const WEB_DOMAIN_EXPRESSION = /:\/\/(.[^\/]+)(.*)/;
+const WEB_PREFIX_VALUE = 'www.';
+const WEB_PREFIX_LENGTH = WEB_PREFIX_VALUE.length;
+
+/**
  * Initializations
  */
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let i18nElements, saveButtonElement, blockMissingElement, domainWhitelistElement;
+    let optionsButtonElement, i18nElements;
+
+    optionsButtonElement = document.getElementById('options-button');
+    optionsButtonElement.setAttribute('title', 'Options');
 
     i18nElements = document.querySelectorAll('[data-i18n-content]');
 
@@ -36,9 +53,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
-            browser.runtime.getPlatformInfo(function (information) {
+            browser.runtime.getBackgroundPage().then(function (backgroundPage) {
 
-                if (information.os === 'android') {
+                if (backgroundPage === null) {
+                    return;
+                }
+
+                popup.backgroundPage = backgroundPage;
+
+                if (backgroundPage.main.operatingSystem === 'android') {
 
                     browser.tabs.getCurrent().then(function (tab) {
 
@@ -47,26 +70,85 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                     });
                 }
-            });
 
-            browser.runtime.getBackgroundPage().then(function (backgroundPage) {
-
-                if (backgroundPage == null) {
-                    return;
-                }
-
-                let injections, injectionOverview;
+                let injections, injectionOverview, domain;
 
                 injections = backgroundPage.stateManager.tabs[tabs[0].id].injections;
                 injectionOverview = {};
 
+                try {
+                    domain = tabs[0].url.match(WEB_DOMAIN_EXPRESSION)[1];
+                } catch (exception) {
+                    domain = null;
+                }
+
+                if (domain !== null) {
+
+                    let websiteContextElement, protectionToggleElement, domainIndicatorElement;
+
+                    websiteContextElement = document.getElementById('website-context');
+                    protectionToggleElement = document.getElementById('protection-toggle-button');
+                    domainIndicatorElement = document.getElementById('domain-indicator');
+
+                    if (domain.startsWith(WEB_PREFIX_VALUE)) {
+                        domain = domain.slice(WEB_PREFIX_LENGTH);
+                    }
+
+                    domainIndicatorElement.innerText = domain;
+
+                    if (!backgroundPage.requestAnalyzer.whitelistedDomains[domain]) {
+
+                        protectionToggleElement.setAttribute('class', 'button button-toggle active');
+                        protectionToggleElement.setAttribute('title', 'Disable protection for this site');
+
+                        protectionToggleElement.addEventListener('click', function () {
+
+                            backgroundPage.stateManager.addDomainToWhitelist(domain).then(function () {
+
+                                chrome.tabs.reload(tabs[0].id);
+
+                                if (backgroundPage.main.operatingSystem === 'android') {
+
+                                    return browser.tabs.getCurrent().then(function (tab) {
+                                        browser.tabs.remove(tab.id);
+                                    });
+                                }
+
+                                window.close();
+                            });
+                        });
+
+                    } else {
+
+                        protectionToggleElement.setAttribute('class', 'button button-toggle');
+                        protectionToggleElement.setAttribute('title', 'Enable protection for this site');
+
+                        protectionToggleElement.addEventListener('click', function () {
+
+                            backgroundPage.stateManager.deleteDomainFromWhitelist(domain).then(function () {
+
+                                chrome.tabs.reload(tabs[0].id);
+
+                                if (backgroundPage.main.operatingSystem === 'android') {
+
+                                    return browser.tabs.getCurrent().then(function (tab) {
+                                        browser.tabs.remove(tab.id);
+                                    });
+                                }
+
+                                window.close();
+                            });
+                        });
+                    }
+
+                    websiteContextElement.setAttribute('class', 'panel');
+                }
+
                 for (let injection in injections) {
 
-                    let injectionSource, libraryName;
-
                     injection = injections[injection];
-                    injectionSource = injection.source;
 
+                    let injectionSource = injection.source;
                     injectionOverview[injectionSource] = injectionOverview[injectionSource] || [];
 
                     injectionOverview[injectionSource].push({
@@ -139,17 +221,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     listElement.appendChild(listItemElement);
 
                     subListElement = document.createElement('ul');
-                    subListElement.setAttribute('class', 'sub-list');
+                    subListElement.setAttribute('class', 'sublist');
 
                     listElement.appendChild(subListElement);
 
-                    cdn.forEach(function (injection) {
+                    for (let injection of cdn) {
 
                         let subListItemElement, resourcePathDetails, resourceFilename, resourceName,
                             resourceNameTextNode, sideNoteElement, sideNoteTextNode;
 
                         subListItemElement = document.createElement('li');
-                        subListItemElement.setAttribute('class', 'sub-list-item');
+                        subListItemElement.setAttribute('class', 'sublist-item');
 
                         resourcePathDetails = injection.path.split('/');
                         resourceFilename = resourcePathDetails[resourcePathDetails.length - 1];
@@ -212,34 +294,29 @@ document.addEventListener('DOMContentLoaded', function () {
                         subListItemElement.appendChild(sideNoteElement);
 
                         subListElement.appendChild(subListItemElement);
-                    });
+                    }
                 }
 
                 if (Object.keys(injectionOverview).length > 0) {
 
-                    let popupContentElement = document.getElementById('popup-content');
-                    let injectionCounterElement = document.getElementById('injection-counter');
-
-                    popupContentElement.insertBefore(listElement, injectionCounterElement);
+                    let websiteContextElement = document.getElementById('website-context');
+                    websiteContextElement.append(listElement);
                 }
             });
         });
     });
 
-    document.getElementById('options-button').addEventListener('mouseup', function () {
+    optionsButtonElement.addEventListener('mouseup', function () {
 
-        browser.runtime.getPlatformInfo(function (information) {
+        if (popup.backgroundPage.main.operatingSystem === 'android') {
 
-            if (information.os === 'android') {
+            return chrome.tabs.create({
+                'url': chrome.extension.getURL('pages/options/options.html')
+            });
+        }
 
-                return chrome.tabs.create({
-                    'url': chrome.extension.getURL('pages/options/options.html')
-                });
-            }
-
-            chrome.runtime.openOptionsPage();
-            return window.close();
-        });
+        chrome.runtime.openOptionsPage();
+        return window.close();
     });
 
     document.getElementById('testing-utility-link').addEventListener('mouseup', function (event) {

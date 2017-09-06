@@ -21,28 +21,52 @@
     <script src="popup.js"></script>
 
     <header>
-        <img class="extension-icon" src="icon.svg" alt="Extension Icon">
-        <div class="extension-title">Decentraleyes <sup class="label-beta">BETA</sup></div>
+
+        <img class="icon-logo" src="icon.svg" alt="Extension Icon">
+        <div class="heading">Decentraleyes <sup class="label-beta">BETA</sup></div>
+
     </header>
 
-    <section id="popup-content" class="popup-content">
+    <section class="content">
 
-        <h1 id="injection-counter">0</h1>
+        <div id="website-context" class="panel hidden">
 
-        <div class="title" data-i18n-content="amountInjectedTitle"></div>
-        <div class="description" data-i18n-content="amountInjectedDescription"></div>
+            <div class="subpanel">
 
-    </section>
+                <div id="protection-toggle-button" class="button button-toggle active">
+                    <i class="fas fa-power-off" data-fa-transform="grow-2"></i>
+                </div>
 
-    <section class="button-panel">
+                <div class="label-domain">
+                    <i class="icon fas fa-globe fa-lg" data-fa-transform="down-1"></i>
+                    <span id="domain-indicator"></span>
+                </div>
 
-        <span id="testing-utility-link" class="text-link">decentraleyes.org/test</span>
+            </div>
 
-        <div id="options-button" class="btn-sm" title="Options">
-            <i class="btn-icon fas fa-cog" data-fa-transform="grow-2"></i>
+        </div>
+
+        <div id="extension-context" class="panel">
+
+            <div id="injection-counter" class="counter">0</div>
+
+            <div class="subheading" data-i18n-content="amountInjectedTitle"></div>
+            <div class="description" data-i18n-content="amountInjectedDescription"></div>
+
         </div>
 
     </section>
+
+    <footer>
+
+        <span id="testing-utility-link" class="link-text">decentraleyes.org/test</span>
+
+        <div id="options-button" class="button">
+            <i class="fas fa-cog" data-fa-transform="grow-2"></i>
+        </div>
+
+    </footer>
+
 </body>
 
 </html>
