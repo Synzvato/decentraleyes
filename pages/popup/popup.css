@@ -47,21 +47,24 @@ footer {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/noto-sans.woff2') format('woff2');
+  src: url('../../modules/noto-sans/noto-sans.woff2')
+       format('woff2');
 }
 
 @font-face {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 600;
-  src: url('fonts/noto-sans-bold.woff2') format('woff2');
+  src: url('../../modules/noto-sans/noto-sans-bold.woff2')
+       format('woff2');
 }
 
 @font-face {
   font-family: 'Noto Sans';
   font-style: italic;
   font-weight: 400;
-  src: url('fonts/noto-sans-italic.woff2') format('woff2');
+  src: url('../../modules/noto-sans/noto-sans-italic.woff2')
+       format('woff2');
 }
 
 /**
