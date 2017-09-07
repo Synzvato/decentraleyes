@@ -3,6 +3,18 @@
     "message": "Suojaa sinua \"ilmaisten\" keskitettyjen sisällön jakeluverkkojen jäljitykseltä.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Poista suojaus tältä sivustolta",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Ota suojaus käyttöön",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Asetukset",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Estä pyynnöt puuttuviin resursseihin",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Korvatut sisältöpyynnöt lisäosan asennuksen jälkeen.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Yksityiskohdat",
+    "description": "Advanced label."
   }
 }

@@ -3,6 +3,18 @@
     "message": "Protège du pistage lié à l'accès à des contenus \"gratuits\", centralisés.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Désactiver la protection pour ce site",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Activer la protection",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Options",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Bloquer les ressources manquantes",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Total des ressources des CDN injectées localement depuis l'installation.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Avancé",
+    "description": "Advanced label."
   }
 }

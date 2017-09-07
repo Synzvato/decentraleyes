@@ -3,6 +3,18 @@
     "message": "Beskytter dig imod sporing af \"gratis\", centraliserede indholdsleverandører.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Deaktiver beskyttelse for dette websted",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Aktiver beskyttelse",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Indstillinger",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Bloker anmodninger om manglende ressourcer",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Antal injektioner af lokale ressourcer siden installation.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Avanceret",
+    "description": "Advanced label."
   }
 }

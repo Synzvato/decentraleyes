@@ -36,7 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let optionsButtonElement, i18nElements;
 
     optionsButtonElement = document.getElementById('options-button');
-    optionsButtonElement.setAttribute('title', 'Options');
+
+    let optionsTitle = chrome.i18n.getMessage('optionsTitle');
+    optionsButtonElement.setAttribute('title', optionsTitle);
 
     i18nElements = document.querySelectorAll('[data-i18n-content]');
 
@@ -99,7 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (!backgroundPage.requestAnalyzer.whitelistedDomains[domain]) {
 
                         protectionToggleElement.setAttribute('class', 'button button-toggle active');
-                        protectionToggleElement.setAttribute('title', 'Disable protection for this site');
+
+                        let disableProtectionTitle = chrome.i18n.getMessage('disableProtectionTitle');
+                        protectionToggleElement.setAttribute('title', disableProtectionTitle);
 
                         protectionToggleElement.addEventListener('click', function () {
 
@@ -114,14 +118,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                     });
                                 }
 
-                                window.close();
+                                return window.close();
                             });
                         });
 
                     } else {
 
                         protectionToggleElement.setAttribute('class', 'button button-toggle');
-                        protectionToggleElement.setAttribute('title', 'Enable protection for this site');
+
+                        let enableProtectionTitle = chrome.i18n.getMessage('enableProtectionTitle');
+                        protectionToggleElement.setAttribute('title', enableProtectionTitle);
 
                         protectionToggleElement.addEventListener('click', function () {
 
@@ -136,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     });
                                 }
 
-                                window.close();
+                                return window.close();
                             });
                         });
                     }

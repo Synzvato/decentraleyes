@@ -3,6 +3,18 @@
     "message": "Προστατεύει από παρακολούθηση μέσω \"δωρεάν\" διανομής περιεχόμενου.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Απενεργοποίηση προστασίας για αυτή τη σελίδα",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Ενεργοποίηση προστασίας",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Επιλογές",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Μπλοκ αιτήσεων για ανύπαρκτους πόρους",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Ποσοστό εμβόλιμων τοπικών πόρων Δικτύων Παροχής Περιεχομένου από την στιγμή της εγκατάστασης.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Για προχωρημένους",
+    "description": "Advanced label."
   }
 }

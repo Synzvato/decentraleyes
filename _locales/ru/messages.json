@@ -3,6 +3,18 @@
     "message": "Защищает Вас от отслеживания через «бесплатные», централизованные CDN.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Отключить защиту для этого сайта",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Включить защиту",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Настройки",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Блокировать запросы недостающих ресурсов",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Количество местных инъекций ресурсов сети доставки контента с момента установки.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Дополнительно",
+    "description": "Advanced label."
   }
 }

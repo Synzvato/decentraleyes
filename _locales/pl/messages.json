@@ -3,6 +3,18 @@
     "message": "Chroni przed śledzeniem przez ośrodki CDN.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Wyłącz ochronę dla tej witryny",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Włącz ochronę",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Ustawienia",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Blokuj żądania brakujących zasobów",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Ilość wstrzyknięć z lokalnego Content Delivery Network od czasu instalacji.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Zaawansowane",
+    "description": "Advanced label."
   }
 }

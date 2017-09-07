@@ -3,6 +3,18 @@
     "message": "Защитава ви от следене чрез свободна, централизирана доставка на съдържание.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Изключване на защитата за страницата",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Включване на защита",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Настройки",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Блокиране на заявки за липсващи ресурси",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Количество на местни вмъквания на ресурси от началото на инсталацията.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Подробности",
+    "description": "Advanced label."
   }
 }

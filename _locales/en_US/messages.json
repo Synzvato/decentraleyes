@@ -3,6 +3,18 @@
     "message": "Protects you against tracking through \"free\", centralized, content delivery.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Disable protection for this site",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Enable protection",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Options",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Block requests for missing resources",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Amount of local Content Delivery Network resource injections since installation.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Advanced",
+    "description": "Advanced label."
   }
 }

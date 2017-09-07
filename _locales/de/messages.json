@@ -3,6 +3,18 @@
     "message": "Schützt vor Tracking durch \"gratis\", zentralisiertes, Abliefern von Content.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Schutz für diese Seite deaktivieren",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Schutz aktivieren",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Einstellungen",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Blockiere Anfordern fehlender Inhalte",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Anzahl der lokalen Injektionen von den CDN-Ressourcen seit der Installation.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Erweitert",
+    "description": "Advanced label."
   }
 }

@@ -3,6 +3,18 @@
     "message": "Verndar þig gegn eftirliti frá \"ókeypis\" miðlægum efnisveitum.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Slökkva á vörn fyrir þetta vefsvæði",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Virkja vernd",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Valkostir",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Loka á beiðnir vegna tilfanga sem vantar",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Fjöldi tilfanga frá miðlægum efnisveitum sem skipt hefur verið út síðan viðbótin var sett upp.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Ítarlegt",
+    "description": "Advanced label."
   }
 }

@@ -3,6 +3,18 @@
     "message": "保护您免受集中式的内容交付网络（CDN）的跟踪。",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "在此网站上禁用保护",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "启用保护",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "选项",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "阻止缺失资源的请求",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "自安装以来，从本地的“内容交付网络”发送的资源总量。",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "高级",
+    "description": "Advanced label."
   }
 }

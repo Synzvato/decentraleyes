@@ -3,6 +3,18 @@
     "message": "Protege contra monitorização através de entrega de conteúdo centralizado.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Desativar proteção para este site",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Ativar proteção",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Opções",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Bloquear pedidos por falta de recursos",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Quantidade de injeções de recurso Content Delivery Network locais desde a instalação.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Avançado",
+    "description": "Advanced label."
   }
 }

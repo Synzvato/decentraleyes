@@ -3,6 +3,18 @@
     "message": "Beschermt tegen tracking via het \"gratis\", gecentraliseerd, verzorgen van content.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Bescherming voor deze website uitschakelen",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Bescherming inschakelen",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Opties",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Stop verzoeken voor ontbrekende items",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Aantal lokale Content Delivery Network-bestandsinjecties sinds installatie.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Geavanceerd",
+    "description": "Advanced label."
   }
 }

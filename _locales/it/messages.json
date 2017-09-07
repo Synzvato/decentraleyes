@@ -3,6 +3,18 @@
     "message": "Protegge dal tracciamento tramite i CDN centralizzati \"gratuiti\".",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Disattiva protezione per questo sito",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Attiva protezione",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Opzioni",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Bloccare richieste di risorse mancanti",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Quantità di iniezioni di risorse dalla Rete di Distribuzione di Contenuti locale sin dall'installazione.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Avanzate",
+    "description": "Advanced label."
   }
 }

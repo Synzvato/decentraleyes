@@ -3,6 +3,18 @@
     "message": "保護您不受「免費」、中心化的內容傳遞網路（CDN）的追蹤。",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "為此網站停用保護",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "啟用保護",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "選項",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "封鎖缺少資源時的連線請求",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "安裝以來，由本機檔案所取代的 CDN 資源數量。",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "進階",
+    "description": "Advanced label."
   }
 }

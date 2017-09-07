@@ -3,6 +3,18 @@
     "message": "Melindungi dari pelacakan melalui distribusi konten yang bebas dan terpusat.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Nonaktifkan perlindungan untuk situs web ini",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Aktifkan perlindungan",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Opsi",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Blokir permintaan untuk sumber daya yang hilang",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Jumlah penyematan sumber daya Jaringan Distribusi Konten lokal sejak pemasangan.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Canggih",
+    "description": "Advanced label."
   }
 }

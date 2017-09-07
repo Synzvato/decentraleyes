@@ -3,6 +3,18 @@
     "message": "Skyddar dig mot att spåras av \"gratis\", centraliserat, innehållsleverans.",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "Inaktivera skydd för den här sidan",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Aktivera skydd",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "Inställningar",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "Blockera förfrågningar när resurs saknas",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "Antalet insatta Content Delivery Network-resurser sedan installationen.",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "Avancerad",
+    "description": "Advanced label."
   }
 }

@@ -3,6 +3,18 @@
     "message": "「無料」と称してあなたを追跡する大規模なCDNを迂回して、プライバシーを守ります。",
     "description": "Extension description."
   },
+  "disableProtectionTitle": {
+    "message": "このサイトでは保護を無効にする",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "保護を有効にする",
+    "description": "Enable protection title."
+  },
+  "optionsTitle": {
+    "message": "オプション",
+    "description": "Options title."
+  },
   "blockMissingTitle": {
     "message": "アドオンに含まれないリソースへのリクエストをブロックする",
     "description": "Block requests for missing resources title."
@@ -26,5 +38,9 @@
   "amountInjectedDescription": {
     "message": "インストール後にローカルのCDNリソースを使用した回数です。",
     "description": "Amount injected description."
+  },
+  "advancedLabel": {
+    "message": "エラー内容",
+    "description": "Advanced label."
   }
 }
