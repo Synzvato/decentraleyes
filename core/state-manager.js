@@ -26,9 +26,7 @@ var stateManager = {};
 const BLOCKING_ACTION = 'blocking';
 const HOST_PREFIX = '*://';
 const HOST_SUFFIX = '/*';
-const JAVASCRIPT_REQUEST_TYPE = 'script';
 const REQUEST_HEADERS = 'requestHeaders';
-const XML_HTTP_REQUEST_TYPE = 'xmlhttprequest';
 
 /**
  * Public Methods
@@ -163,13 +161,6 @@ stateManager._updateTab = function (details) {
 
 stateManager.requests = {};
 stateManager.tabs = {};
-
-stateManager.validTypes = [
-
-    JAVASCRIPT_REQUEST_TYPE,
-    XML_HTTP_REQUEST_TYPE
-];
-
 stateManager.validHosts = [];
 
 for (let mapping in mappings) {
