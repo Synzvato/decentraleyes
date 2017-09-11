@@ -1,0 +1,8 @@
+<!ENTITY options.addNotice.title "إضافة تعليقات إلى الملفات التي تم جلبها محليا">
+<!ENTITY options.addNotice.description "إلحاق إشعار إلى الوثائق التي تم إستيرادها للإشارة إلى مصدرها محليا.">
+<!ENTITY options.blockMissing.title "حظر طلبات الموارد المفقودة">
+<!ENTITY options.blockMissing.description "إلغاء طلب الموارد إذا كانت متوفرة محليا.">
+<!ENTITY options.domainWhitelist.title "لا تتفحص النطاقات">
+<!ENTITY options.domainWhitelist.description "حدد النطاقات اللتي سوف يتم تجاهلها. إفصل المداخل المتعددة بـفاصلة منقوطة (;).">
+<!ENTITY options.amountInjected.title "عداد محلي للموارد المحقونة">
+<!ENTITY options.amountInjected.description "إجمالي موارد الـ CDN اللتي تم حقنها محليا منذ التثبيت.">
