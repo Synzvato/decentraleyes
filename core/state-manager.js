@@ -117,7 +117,6 @@ stateManager._createTab = function (tab) {
     requestFilters = {
 
         'tabId': tabIdentifier,
-        'types': stateManager.validTypes,
         'urls': stateManager.validHosts
     };
 
