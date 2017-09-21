@@ -1,46 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Verndar þig gegn eftirliti frá \"ókeypis\" miðlægum efnisveitum.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Verndar þig gegn eftirliti frá \"ókeypis\" miðlægum efnisveitum.",
+    "description":"Extension description."
   },
-  "disableProtectionTitle": {
-    "message": "Slökkva á vörn fyrir þetta vefsvæði",
-    "description": "Disable protection title."
+  "disableProtectionTitle":{
+    "message":"Slökkva á vörn fyrir þetta vefsvæði",
+    "description":"Disable protection title."
   },
-  "enableProtectionTitle": {
-    "message": "Virkja vernd",
-    "description": "Enable protection title."
+  "enableProtectionTitle":{
+    "message":"Virkja vernd",
+    "description":"Enable protection title."
   },
-  "optionsTitle": {
-    "message": "Valkostir",
-    "description": "Options title."
+  "amountInjectedTitle":{
+    "message":"Fjöldi staðvært inspýttra tilfanga",
+    "description":"Amount injected title."
   },
-  "blockMissingTitle": {
-    "message": "Loka á beiðnir vegna tilfanga sem vantar",
-    "description": "Block requests for missing resources title."
+  "amountInjectedDescription":{
+    "message":"Fjöldi tilfanga frá miðlægum efnisveitum sem skipt hefur verið út síðan viðbótin var sett upp.",
+    "description":"Amount injected description."
   },
-  "blockMissingDescription": {
-    "message": "Hætta við veiddar beiðnir ef umbeðið tilfang er ekki til staðar á tölvunni.",
-    "description": "Block requests for missing resources description."
+  "optionsTitle":{
+    "message":"Valkostir",
+    "description":"Options title."
   },
-  "domainWhitelistTitle": {
-    "message": "Undanskilja lén frá athugun",
-    "description": "Domain whitelist title."
+  "showIconBadgeTitle":{
+    "message":"Birta fjölda innspýtinga á táknmynd",
+    "description":"Show icon badge title."
   },
-  "domainWhitelistDescription": {
-    "message": "Settu inn lén til að skrá þau á lista yfir leyfð lén. Aðgreindu færslur með semíkommum (;).",
-    "description": "Domain whitelist description."
+  "showIconBadgeDescription":{
+    "message":"Sýnir merki fyrir fjölda innspýttra tilfanga á táknmynd viðbótarinnar.",
+    "description":"Show icon badge description."
   },
-  "amountInjectedTitle": {
-    "message": "Fjöldi staðvært inspýttra tilfanga",
-    "description": "Amount injected title."
+  "blockMissingTitle":{
+    "message":"Loka á beiðnir vegna tilfanga sem vantar",
+    "description":"Block requests for missing resources title."
   },
-  "amountInjectedDescription": {
-    "message": "Fjöldi tilfanga frá miðlægum efnisveitum sem skipt hefur verið út síðan viðbótin var sett upp.",
-    "description": "Amount injected description."
+  "blockMissingDescription":{
+    "message":"Hætta við veiddar beiðnir ef umbeðið tilfang er ekki til staðar á tölvunni.",
+    "description":"Block requests for missing resources description."
   },
-  "advancedLabel": {
-    "message": "Ítarlegt",
-    "description": "Advanced label."
+  "disablePrefetchTitle":{
+    "message":"Gera forsöfnun tengla óvirka",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Kemur í veg fyrir að bannaðar beiðnir leki út til afhendingarveitna.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Hreinsa lýsigögn úr leyfðum beiðnum",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Þurrka viðkvæm gögn út úr leyfðum beiðnum til efnisveitna til að auka gagnaleynd.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Undanskilja lén frá athugun",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Settu inn lén til að skrá þau á lista yfir leyfð lén. Aðgreindu færslur með semíkommum (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Ítarlegt",
+    "description":"Advanced label."
   }
 }

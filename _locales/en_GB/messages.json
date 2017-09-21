@@ -1,46 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Protects you against tracking through \"free\", centralised, content delivery.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Protects you against tracking through \"free\", centralised, content delivery.",
+    "description":"Extension description."
   },
-  "disableProtectionTitle": {
-    "message": "Disable protection for this site",
-    "description": "Disable protection title."
+  "disableProtectionTitle":{
+    "message":"Disable protection for this site",
+    "description":"Disable protection title."
   },
-  "enableProtectionTitle": {
-    "message": "Enable protection",
-    "description": "Enable protection title."
+  "enableProtectionTitle":{
+    "message":"Enable protection",
+    "description":"Enable protection title."
   },
-  "optionsTitle": {
-    "message": "Options",
-    "description": "Options title."
+  "amountInjectedTitle":{
+    "message":"Counter for locally injected resources",
+    "description":"Amount injected title."
   },
-  "blockMissingTitle": {
-    "message": "Block requests for missing resources",
-    "description": "Block requests for missing resources title."
+  "amountInjectedDescription":{
+    "message":"Amount of local Content Delivery Network resource injections since installation.",
+    "description":"Amount injected description."
   },
-  "blockMissingDescription": {
-    "message": "Cancel intercepted request if the required resource is not locally available.",
-    "description": "Block requests for missing resources description."
+  "optionsTitle":{
+    "message":"Options",
+    "description":"Options title."
   },
-  "domainWhitelistTitle": {
-    "message": "Exclude domains from inspections",
-    "description": "Domain whitelist title."
+  "showIconBadgeTitle":{
+    "message":"Display injection counts on icon",
+    "description":"Show icon badge title."
   },
-  "domainWhitelistDescription": {
-    "message": "Enter domains to whitelist them. Separate multiple entries with semi-colons (;).",
-    "description": "Domain whitelist description."
+  "showIconBadgeDescription":{
+    "message":"Show the number of injected resources on the extension icon.",
+    "description":"Show icon badge description."
   },
-  "amountInjectedTitle": {
-    "message": "Counter for locally injected resources",
-    "description": "Amount injected title."
+  "blockMissingTitle":{
+    "message":"Block requests for missing resources",
+    "description":"Block requests for missing resources title."
   },
-  "amountInjectedDescription": {
-    "message": "Amount of local Content Delivery Network resource injections since installation.",
-    "description": "Amount injected description."
+  "blockMissingDescription":{
+    "message":"Cancel intercepted request if the required resource is not locally available.",
+    "description":"Block requests for missing resources description."
   },
-  "advancedLabel": {
-    "message": "Advanced",
-    "description": "Advanced label."
+  "disablePrefetchTitle":{
+    "message":"Disable link prefetching",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Strip metadata from allowed requests",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Erase sensitive data from allowed CDN-requests for improved privacy.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Exclude domains from inspections",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Enter domains to whitelist them. Separate multiple entries with semi-colons (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Advanced",
+    "description":"Advanced label."
   }
 }

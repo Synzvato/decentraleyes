@@ -1,46 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Melindungi dari pelacakan melalui distribusi konten yang bebas dan terpusat.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Melindungi dari pelacakan melalui distribusi konten yang bebas dan terpusat.",
+    "description":"Extension description."
   },
-  "disableProtectionTitle": {
-    "message": "Nonaktifkan perlindungan untuk situs web ini",
-    "description": "Disable protection title."
+  "disableProtectionTitle":{
+    "message":"Nonaktifkan perlindungan untuk situs web ini",
+    "description":"Disable protection title."
   },
-  "enableProtectionTitle": {
-    "message": "Aktifkan perlindungan",
-    "description": "Enable protection title."
+  "enableProtectionTitle":{
+    "message":"Aktifkan perlindungan",
+    "description":"Enable protection title."
   },
-  "optionsTitle": {
-    "message": "Opsi",
-    "description": "Options title."
+  "amountInjectedTitle":{
+    "message":"Jumlah sumber daya lokal yang disematkan",
+    "description":"Amount injected title."
   },
-  "blockMissingTitle": {
-    "message": "Blokir permintaan untuk sumber daya yang hilang",
-    "description": "Block requests for missing resources title."
+  "amountInjectedDescription":{
+    "message":"Jumlah penyematan sumber daya Jaringan Distribusi Konten lokal sejak pemasangan.",
+    "description":"Amount injected description."
   },
-  "blockMissingDescription": {
-    "message": "Batalkan intersep permintaan jika sumber daya yang dibutuhkan tidak tersedia secara lokal.",
-    "description": "Block requests for missing resources description."
+  "optionsTitle":{
+    "message":"Opsi",
+    "description":"Options title."
   },
-  "domainWhitelistTitle": {
-    "message": "Cegah inspeksi domain",
-    "description": "Domain whitelist title."
+  "showIconBadgeTitle":{
+    "message":"Tampilkan jumlah penyematan pada ikon",
+    "description":"Show icon badge title."
   },
-  "domainWhitelistDescription": {
-    "message": "Masukkan domain ke daftar putih. Pisahkan entri dengan titik koma (;).",
-    "description": "Domain whitelist description."
+  "showIconBadgeDescription":{
+    "message":"Tampilkan jumlah sumber yang disematkan pada ekstensi ikon.",
+    "description":"Show icon badge description."
   },
-  "amountInjectedTitle": {
-    "message": "Sumber daya lokal yang disematkan",
-    "description": "Amount injected title."
+  "blockMissingTitle":{
+    "message":"Blokir permintaan untuk sumber daya yang hilang",
+    "description":"Block requests for missing resources title."
   },
-  "amountInjectedDescription": {
-    "message": "Jumlah penyematan sumber daya Jaringan Distribusi Konten lokal sejak pemasangan.",
-    "description": "Amount injected description."
+  "blockMissingDescription":{
+    "message":"Batalkan pencegatan permintaan jika sumber daya yang dibutuhkan tidak tersedia secara lokal.",
+    "description":"Block requests for missing resources description."
   },
-  "advancedLabel": {
-    "message": "Canggih",
-    "description": "Advanced label."
+  "disablePrefetchTitle":{
+    "message":"Nonaktifkan tautan pra pengambilan",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Mencegah permintaan yang tidak diizinkan bocor ke jaringan pengiriman.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Kupas metadata dari permintaan yang diizinkan",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Hapus data sensitif dari permintaan CDN yang diizinkan untuk meningkatkan privasi.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Cegah pemeriksaan domain",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Masukkan domain ke daftar putih. Pisahkan entri dengan titik koma (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Canggih",
+    "description":"Advanced label."
   }
 }

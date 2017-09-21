@@ -1,46 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Защитава ви от следене чрез свободна, централизирана доставка на съдържание.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Защитава ви от следене чрез свободна, централизирана доставка на съдържание.",
+    "description":"Extension description."
   },
-  "disableProtectionTitle": {
-    "message": "Изключване на защитата за страницата",
-    "description": "Disable protection title."
+  "disableProtectionTitle":{
+    "message":"Изключване на защитата за страницата",
+    "description":"Disable protection title."
   },
-  "enableProtectionTitle": {
-    "message": "Включване на защита",
-    "description": "Enable protection title."
+  "enableProtectionTitle":{
+    "message":"Включване на защита",
+    "description":"Enable protection title."
   },
-  "optionsTitle": {
-    "message": "Настройки",
-    "description": "Options title."
+  "amountInjectedTitle":{
+    "message":"Брояч за местно вмъкнати ресурси",
+    "description":"Amount injected title."
   },
-  "blockMissingTitle": {
-    "message": "Блокиране на заявки за липсващи ресурси",
-    "description": "Block requests for missing resources title."
+  "amountInjectedDescription":{
+    "message":"Количество на местни вмъквания на ресурси от началото на инсталацията.",
+    "description":"Amount injected description."
   },
-  "blockMissingDescription": {
-    "message": "Отмяна на прехванатата заявка, ако изисквания ресурс не е наличен на местно ниво.",
-    "description": "Block requests for missing resources description."
+  "optionsTitle":{
+    "message":"Настройки",
+    "description":"Options title."
   },
-  "domainWhitelistTitle": {
-    "message": "Изключване на домейните от инспекции",
-    "description": "Domain whitelist title."
+  "showIconBadgeTitle":{
+    "message":"Показване на броя на вмъкванията в иконката",
+    "description":"Show icon badge title."
   },
-  "domainWhitelistDescription": {
-    "message": "Въведете домейни, които да се добавят в белия списък. Отделете стойностите с точка и запетая.",
-    "description": "Domain whitelist description."
+  "showIconBadgeDescription":{
+    "message":"Показване на броя на вмъкнатите ресурси в иконката на разширението.",
+    "description":"Show icon badge description."
   },
-  "amountInjectedTitle": {
-    "message": "Брояч за местно вмъкнати ресурси",
-    "description": "Amount injected title."
+  "blockMissingTitle":{
+    "message":"Блокиране на заявки за липсващи ресурси",
+    "description":"Block requests for missing resources title."
   },
-  "amountInjectedDescription": {
-    "message": "Количество на местни вмъквания на ресурси от началото на инсталацията.",
-    "description": "Amount injected description."
+  "blockMissingDescription":{
+    "message":"Отмяна на прехванатата заявка, ако изисквания ресурс не е наличен на местно ниво.",
+    "description":"Block requests for missing resources description."
   },
-  "advancedLabel": {
-    "message": "Подробности",
-    "description": "Advanced label."
+  "disablePrefetchTitle":{
+    "message":"Изключване на предварителното извличане на препратки",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Предотвратява изтичането на забранени заявки към мрежи за доставка.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Премахване на метаданните от разрешени заявки",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Изтриване на чувствителни данни от допустимите заявки от МДС за подобряване на неприкосновеността.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Изключване на домейни от проверки",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Въведете домейни, които да се добавят в белия списък. Отделете стойностите с точка и запетая.",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Подробности",
+    "description":"Advanced label."
   }
 }

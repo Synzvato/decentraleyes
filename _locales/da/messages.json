@@ -1,46 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Beskytter dig imod sporing af \"gratis\", centraliserede indholdsleverandører.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Beskytter dig imod sporing af \"gratis\", centraliserede indholdsleverandører.",
+    "description":"Extension description."
   },
-  "disableProtectionTitle": {
-    "message": "Deaktiver beskyttelse for dette websted",
-    "description": "Disable protection title."
+  "disableProtectionTitle":{
+    "message":"Deaktiver beskyttelse for dette websted",
+    "description":"Disable protection title."
   },
-  "enableProtectionTitle": {
-    "message": "Aktiver beskyttelse",
-    "description": "Enable protection title."
+  "enableProtectionTitle":{
+    "message":"Aktiver beskyttelse",
+    "description":"Enable protection title."
   },
-  "optionsTitle": {
-    "message": "Indstillinger",
-    "description": "Options title."
+  "amountInjectedTitle":{
+    "message":"Optælling af lokalt leverede ressourcer",
+    "description":"Amount injected title."
   },
-  "blockMissingTitle": {
-    "message": "Bloker anmodninger om manglende ressourcer",
-    "description": "Block requests for missing resources title."
+  "amountInjectedDescription":{
+    "message":"Antal injektioner af lokale ressourcer siden installation.",
+    "description":"Amount injected description."
   },
-  "blockMissingDescription": {
-    "message": "Annullerer en anmodning hvis den forespurgte ressource ikke findes lokalt.",
-    "description": "Block requests for missing resources description."
+  "optionsTitle":{
+    "message":"Indstillinger",
+    "description":"Options title."
   },
-  "domainWhitelistTitle": {
-    "message": "Udeluk disse domæner fra inspektion",
-    "description": "Domain whitelist title."
+  "showIconBadgeTitle":{
+    "message":"Vis antal af injektioner på ikon",
+    "description":"Show icon badge title."
   },
-  "domainWhitelistDescription": {
-    "message": "Tilføj domæner der ikke skal opfanges. Separer flere med semikolon (;).",
-    "description": "Domain whitelist description."
+  "showIconBadgeDescription":{
+    "message":"Viser antallet af injicerede ressourcer på udvidelsens ikon.",
+    "description":"Show icon badge description."
   },
-  "amountInjectedTitle": {
-    "message": "Optælling af lokalt leverede ressourcer",
-    "description": "Amount injected title."
+  "blockMissingTitle":{
+    "message":"Bloker forespørgsler efter manglende ressourcer",
+    "description":"Block requests for missing resources title."
   },
-  "amountInjectedDescription": {
-    "message": "Antal injektioner af lokale ressourcer siden installation.",
-    "description": "Amount injected description."
+  "blockMissingDescription":{
+    "message":"Annullerer en forespørgsel hvis den forespurgte ressource ikke findes lokalt.",
+    "description":"Block requests for missing resources description."
   },
-  "advancedLabel": {
-    "message": "Avanceret",
-    "description": "Advanced label."
+  "disablePrefetchTitle":{
+    "message":"Deaktiver forhåndshentning af link",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Forhindrer ikke-tilladte forespørgsler i at blive lækket til indholdsleverandør-netværk (CDN).",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Fjern metadata fra tilladte forespørgsler",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Sletter følsomme data fra tilladte CDN-forespørgsler for at mindste eksponeringen.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Udeluk disse domæner fra inspektion",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Tilføj domæner der ikke skal inspiceres. Separer flere med semikolon (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Avanceret",
+    "description":"Advanced label."
   }
 }

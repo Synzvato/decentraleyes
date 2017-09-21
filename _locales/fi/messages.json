@@ -1,46 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Suojaa sinua \"ilmaisten\" keskitettyjen sisällön jakeluverkkojen jäljitykseltä.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Suojaa sinua \"ilmaisten\" keskitettyjen sisällön jakeluverkkojen jäljitykseltä.",
+    "description":"Extension description."
   },
-  "disableProtectionTitle": {
-    "message": "Poista suojaus tältä sivustolta",
-    "description": "Disable protection title."
+  "disableProtectionTitle":{
+    "message":"Poista suojaus tältä sivustolta",
+    "description":"Disable protection title."
   },
-  "enableProtectionTitle": {
-    "message": "Ota suojaus käyttöön",
-    "description": "Enable protection title."
+  "enableProtectionTitle":{
+    "message":"Ota suojaus käyttöön",
+    "description":"Enable protection title."
   },
-  "optionsTitle": {
-    "message": "Asetukset",
-    "description": "Options title."
+  "amountInjectedTitle":{
+    "message":"Korvatut pyynnöt",
+    "description":"Amount injected title."
   },
-  "blockMissingTitle": {
-    "message": "Estä pyynnöt puuttuviin resursseihin",
-    "description": "Block requests for missing resources title."
+  "amountInjectedDescription":{
+    "message":"Korvatut sisältöpyynnöt lisäosan asennuksen jälkeen.",
+    "description":"Amount injected description."
   },
-  "blockMissingDescription": {
-    "message": "Estää pyynnöt jos paikallista sisältöä ei ole saatavilla.",
-    "description": "Block requests for missing resources description."
+  "optionsTitle":{
+    "message":"Asetukset",
+    "description":"Options title."
   },
-  "domainWhitelistTitle": {
-    "message": "Poissulje verkkotunnukset",
-    "description": "Domain whitelist title."
+  "showIconBadgeTitle":{
+    "message":"Display injection counts on icon",
+    "description":"Show icon badge title."
   },
-  "domainWhitelistDescription": {
-    "message": "Lisää verkkotunnus jottei sitä korvata. Erota rivit puolipisteellä (;).",
-    "description": "Domain whitelist description."
+  "showIconBadgeDescription":{
+    "message":"Show the number of injected resources on the extension icon.",
+    "description":"Show icon badge description."
   },
-  "amountInjectedTitle": {
-    "message": "Korvatut pyynnöt",
-    "description": "Amount injected title."
+  "blockMissingTitle":{
+    "message":"Estä pyynnöt puuttuviin resursseihin",
+    "description":"Block requests for missing resources title."
   },
-  "amountInjectedDescription": {
-    "message": "Korvatut sisältöpyynnöt lisäosan asennuksen jälkeen.",
-    "description": "Amount injected description."
+  "blockMissingDescription":{
+    "message":"Estää pyynnöt jos paikallista sisältöä ei ole saatavilla.",
+    "description":"Block requests for missing resources description."
   },
-  "advancedLabel": {
-    "message": "Yksityiskohdat",
-    "description": "Advanced label."
+  "disablePrefetchTitle":{
+    "message":"Disable link prefetching",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Strip metadata from allowed requests",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Poissulje verkkotunnukset",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Lisää verkkotunnus jottei sitä korvata. Erota rivit puolipisteellä (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Yksityiskohdat",
+    "description":"Advanced label."
   }
 }

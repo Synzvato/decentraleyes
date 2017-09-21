@@ -1,46 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Protege contra monitorização através de entrega de conteúdo centralizado.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Protege contra monitorização através de entrega de conteúdo centralizado.",
+    "description":"Extension description."
   },
-  "disableProtectionTitle": {
-    "message": "Desativar proteção para este site",
-    "description": "Disable protection title."
+  "disableProtectionTitle":{
+    "message":"Desativar proteção para este site",
+    "description":"Disable protection title."
   },
-  "enableProtectionTitle": {
-    "message": "Ativar proteção",
-    "description": "Enable protection title."
+  "enableProtectionTitle":{
+    "message":"Ativar proteção",
+    "description":"Enable protection title."
   },
-  "optionsTitle": {
-    "message": "Opções",
-    "description": "Options title."
+  "amountInjectedTitle":{
+    "message":"Contador para recursos injetados localmente",
+    "description":"Amount injected title."
   },
-  "blockMissingTitle": {
-    "message": "Bloquear pedidos por falta de recursos",
-    "description": "Block requests for missing resources title."
+  "amountInjectedDescription":{
+    "message":"Quantidade de injeções de recurso Content Delivery Network locais desde a instalação.",
+    "description":"Amount injected description."
   },
-  "blockMissingDescription": {
-    "message": "Cancelar pedido intercetado se o recurso necessário não estiver disponível localmente.",
-    "description": "Block requests for missing resources description."
+  "optionsTitle":{
+    "message":"Opções",
+    "description":"Options title."
   },
-  "domainWhitelistTitle": {
-    "message": "Excluir domínios de inspeções",
-    "description": "Domain whitelist title."
+  "showIconBadgeTitle":{
+    "message":"Mostrar contagem de injeções no ícone",
+    "description":"Show icon badge title."
   },
-  "domainWhitelistDescription": {
-    "message": "Insira domínios para os colocar na lista branca. Separe múltiplas entradas com pontos e vírgulas (;).",
-    "description": "Domain whitelist description."
+  "showIconBadgeDescription":{
+    "message":"Mostrar o número de recursos injetados no ícone da extensão.",
+    "description":"Show icon badge description."
   },
-  "amountInjectedTitle": {
-    "message": "Contador para recursos injetados localmente",
-    "description": "Amount injected title."
+  "blockMissingTitle":{
+    "message":"Bloquear pedidos por falta de recursos",
+    "description":"Block requests for missing resources title."
   },
-  "amountInjectedDescription": {
-    "message": "Quantidade de injeções de recurso Content Delivery Network locais desde a instalação.",
-    "description": "Amount injected description."
+  "blockMissingDescription":{
+    "message":"Cancelar pedido intercetado se o recurso necessário não estiver disponível localmente.",
+    "description":"Block requests for missing resources description."
   },
-  "advancedLabel": {
-    "message": "Avançado",
-    "description": "Advanced label."
+  "disablePrefetchTitle":{
+    "message":"Desativar pré-obtenção de ligações",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Impedir recursos não permitidos de vazar para as redes de entrega.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Retirar metadados dos pedidos permitidos",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Limpar dados sensíveis de recursos CDN permitidos para melhoria de privacidade.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Excluir domínios de inspeções",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Insira domínios para os colocar na lista branca. Separe múltiplas entradas com pontos e vírgulas (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Avançado",
+    "description":"Advanced label."
   }
 }

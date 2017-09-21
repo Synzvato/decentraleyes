@@ -1,46 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Chroni przed śledzeniem przez ośrodki CDN.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Chroni przed śledzeniem przez ośrodki CDN.",
+    "description":"Extension description."
   },
-  "disableProtectionTitle": {
-    "message": "Wyłącz ochronę dla tej witryny",
-    "description": "Disable protection title."
+  "disableProtectionTitle":{
+    "message":"Wyłącz ochronę dla tej witryny",
+    "description":"Disable protection title."
   },
-  "enableProtectionTitle": {
-    "message": "Włącz ochronę",
-    "description": "Enable protection title."
+  "enableProtectionTitle":{
+    "message":"Włącz ochronę",
+    "description":"Enable protection title."
   },
-  "optionsTitle": {
-    "message": "Ustawienia",
-    "description": "Options title."
+  "amountInjectedTitle":{
+    "message":"Licznik zasobów podanych lokalnie",
+    "description":"Amount injected title."
   },
-  "blockMissingTitle": {
-    "message": "Blokuj żądania brakujących zasobów",
-    "description": "Block requests for missing resources title."
+  "amountInjectedDescription":{
+    "message":"Ilość wstrzyknięć z lokalnego Content Delivery Network od czasu instalacji.",
+    "description":"Amount injected description."
   },
-  "blockMissingDescription": {
-    "message": "Anuluj przechwycone żądania jeśli wymagany zasób nie jest dostępny lokalnie.",
-    "description": "Block requests for missing resources description."
+  "optionsTitle":{
+    "message":"Ustawienia",
+    "description":"Options title."
   },
-  "domainWhitelistTitle": {
-    "message": "Wyklucz domeny z analizy",
-    "description": "Domain whitelist title."
+  "showIconBadgeTitle":{
+    "message":"Wyświetl licznik wstrzyknięć na ikonie",
+    "description":"Show icon badge title."
   },
-  "domainWhitelistDescription": {
-    "message": "Podaj domeny aby dodać je do białej listy. Oddziel wpisy średnikami (;).",
-    "description": "Domain whitelist description."
+  "showIconBadgeDescription":{
+    "message":"Pokaż ilość wstrzykniętych zasobów na ikonie rozszerzenia.",
+    "description":"Show icon badge description."
   },
-  "amountInjectedTitle": {
-    "message": "Licznik zasobów podanych lokalnie",
-    "description": "Amount injected title."
+  "blockMissingTitle":{
+    "message":"Blokuj żądania brakujących zasobów",
+    "description":"Block requests for missing resources title."
   },
-  "amountInjectedDescription": {
-    "message": "Ilość wstrzyknięć z lokalnego Content Delivery Network od czasu instalacji.",
-    "description": "Amount injected description."
+  "blockMissingDescription":{
+    "message":"Anuluj przechwycone żądania jeśli wymagany zasób nie jest dostępny lokalnie.",
+    "description":"Block requests for missing resources description."
   },
-  "advancedLabel": {
-    "message": "Zaawansowane",
-    "description": "Advanced label."
+  "disablePrefetchTitle":{
+    "message":"Wyłącz wczesne pobieranie linków",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Usuwaj metadane z dozwolonych zapytań",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Usuwaj wrażliwe dane z dozwolonych zapytań do CDN aby zwiększyć prywatność.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Wyklucz domeny z analizy",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Podaj domeny aby dodać je do białej listy. Oddziel wpisy średnikami (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Zaawansowane",
+    "description":"Advanced label."
   }
 }
