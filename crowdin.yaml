@@ -1,0 +1,29 @@
+"project_identifier": "decentraleyes"
+"preserve_hierarchy": true
+"files":
+  -
+    "source": "/_locales/en_US/messages.json"
+    "translation": "/_locales/%locale_with_underscore%/messages.json"
+    "languages_mapping":
+      "locale_with_underscore":
+        "ar": "ar"
+        "bg": "bg"
+        "da": "da"
+        "de": "de"
+        "el": "el"
+        "eo": "eo"
+        "es-ES": "es"
+        "fi": "fi"
+        "fr": "fr"
+        "he": "he"
+        "hu": "hu"
+        "id": "id"
+        "is": "is"
+        "it": "it"
+        "ja": "ja"
+        "nl": "nl"
+        "pl": "pl"
+        "ro": "ro"
+        "ru": "ru"
+        "sv-SE": "sv"
+        "tr": "tr"
