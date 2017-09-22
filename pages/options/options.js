@@ -31,6 +31,21 @@ const VALUE_SEPARATOR = ';';
  * Private Methods
  */
 
+options._determineScriptDirection = function (language) {
+
+    let rightToLeftLanguages, scriptDirection;
+
+    rightToLeftLanguages = ['ar', 'he'];
+
+    if (rightToLeftLanguages.indexOf(language) !== -1) {
+        scriptDirection = 'rtl';
+    } else {
+        scriptDirection = 'ltr';
+    }
+
+    return scriptDirection;
+};
+
 options._getOptionElement = function (optionKey) {
     return document.querySelector('[data-option=' + optionKey + ']');
 };
@@ -41,9 +56,11 @@ options._getOptionElement = function (optionKey) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let i18nElements, optionElements;
+    let i18nElements, scriptDirection, optionElements;
 
     i18nElements = document.querySelectorAll('[data-i18n-content]');
+    scriptDirection = options._determineScriptDirection(navigator.language);
+    document.body.setAttribute('dir', scriptDirection);
 
     i18nElements.forEach(function (i18nElement) {
 

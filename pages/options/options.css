@@ -62,7 +62,7 @@ body {
 }
 
 .input-text {
-    margin-left: 29px !important;
+    margin-left: 29px;
 }
 
 /**
@@ -91,4 +91,27 @@ body {
 .label-checkbox {
 	align-items: center;
 	display: flex;
+}
+
+/**
+ * Right to Left
+ */
+
+body[dir="rtl"] .badge {
+    margin-left: 0;
+    margin-right: 6px;
+}
+
+body[dir="rtl"] .description-option {
+    margin-left: 0;
+    margin-right: 29px;
+}
+
+body[dir="rtl"] .input-checkbox {
+    margin: 0 0 0 4px;
+}
+
+body[dir="rtl"] .input-text {
+    margin-left: 0;
+    margin-right: 29px;
 }

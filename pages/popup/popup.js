@@ -28,24 +28,48 @@ const WEB_PREFIX_VALUE = 'www.';
 const WEB_PREFIX_LENGTH = WEB_PREFIX_VALUE.length;
 
 /**
+ * Private Methods
+ */
+
+popup._determineScriptDirection = function (language) {
+
+    let rightToLeftLanguages, scriptDirection;
+
+    rightToLeftLanguages = ['ar', 'he'];
+
+    if (rightToLeftLanguages.indexOf(language) !== -1) {
+        scriptDirection = 'rtl';
+    } else {
+        scriptDirection = 'ltr';
+    }
+
+    return scriptDirection;
+};
+
+/**
  * Initializations
  */
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let optionsButtonElement, i18nElements;
+    let optionsButtonElement, optionsTitle, scriptDirection, i18nElements;
 
     optionsButtonElement = document.getElementById('options-button');
+    optionsTitle = chrome.i18n.getMessage('optionsTitle');
 
-    let optionsTitle = chrome.i18n.getMessage('optionsTitle');
+    scriptDirection = popup._determineScriptDirection(navigator.language);
+
     optionsButtonElement.setAttribute('title', optionsTitle);
+    optionsButtonElement.setAttribute('dir', scriptDirection);
 
     i18nElements = document.querySelectorAll('[data-i18n-content]');
 
     i18nElements.forEach(function (i18nElement) {
 
         let i18nMessageName = i18nElement.getAttribute('data-i18n-content');
+
         i18nElement.innerText = chrome.i18n.getMessage(i18nMessageName);
+        i18nElement.setAttribute('dir', scriptDirection);
     });
 
     chrome.storage.local.get('amountInjected', function (items) {
@@ -103,7 +127,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         protectionToggleElement.setAttribute('class', 'button button-toggle active');
 
                         let disableProtectionTitle = chrome.i18n.getMessage('disableProtectionTitle');
+                        
                         protectionToggleElement.setAttribute('title', disableProtectionTitle);
+                        protectionToggleElement.setAttribute('dir', scriptDirection);
 
                         protectionToggleElement.addEventListener('click', function () {
 
