@@ -24,11 +24,11 @@
     "description":"Options title."
   },
   "showIconBadgeTitle":{
-    "message":"Display injection counts on icon",
+    "message":"Näytä kohteiden määrä kuvakkeessa",
     "description":"Show icon badge title."
   },
   "showIconBadgeDescription":{
-    "message":"Show the number of injected resources on the extension icon.",
+    "message":"Näyttää turvattujen kohteiden määrän lisäosan kuvakkeessa.",
     "description":"Show icon badge description."
   },
   "blockMissingTitle":{
@@ -40,19 +40,19 @@
     "description":"Block requests for missing resources description."
   },
   "disablePrefetchTitle":{
-    "message":"Disable link prefetching",
+    "message":"Estä linkkien esihaku",
     "description":"Disable prefetch title."
   },
   "disablePrefetchDescription":{
-    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "message":"Estä kiellettyjä sisältöpyyntöjä vuotamasta keskitettyihin jakeluverkkoihin.",
     "description":"Disable prefetch description."
   },
   "stripMetadataTitle":{
-    "message":"Strip metadata from allowed requests",
+    "message":"Poista metatiedot sallituista sisältöpyynnöistä",
     "description":"Strip metadata title."
   },
   "stripMetadataDescription":{
-    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
+    "message":"Poista arkaluontoiset tiedot jakeluverkkojen sisältöpyynnöistä yksityisyyden parantamiseksi.",
     "description":"Strip metadata description."
   },
   "whitelistedDomainsTitle":{
