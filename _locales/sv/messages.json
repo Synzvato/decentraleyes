@@ -60,7 +60,7 @@
     "description":"Whitelisted domains title."
   },
   "whitelistedDomainsDescription":{
-    "message":"Ange domäner för vitlistning. Spearera domänerna med semikolon (;).",
+    "message":"Ange domäner för vitlistning. Separera flera domänposter med semikolon (;).",
     "description":"Whitelisted domains description."
   },
   "advancedLabel":{
