@@ -42,19 +42,22 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
     registeredTab.injections[injectionIdentifier] = injection;
     injectionCount = Object.keys(registeredTab.injections).length || 0;
 
-    if (injectionCount > 0) {
+    if (stateManager.showIconBadge === true) {
 
-        chrome.browserAction.setBadgeText({
-            tabId: tabIdentifier,
-            text: injectionCount.toString()
-        });
+        if (injectionCount > 0) {
 
-    } else {
+            chrome.browserAction.setBadgeText({
+                tabId: tabIdentifier,
+                text: injectionCount.toString()
+            });
 
-        chrome.browserAction.setBadgeText({
-            tabId: tabIdentifier,
-            text: ''
-        });
+        } else {
+
+            chrome.browserAction.setBadgeText({
+                tabId: tabIdentifier,
+                text: ''
+            });
+        }
     }
 
     if (isNaN(interceptor.amountInjected)) {
@@ -145,14 +148,40 @@ stateManager._updateTab = function (details) {
         return;
     }
 
-    chrome.browserAction.setBadgeText({
-        tabId: tabIdentifier,
-        text: ''
-    });
+    if (stateManager.showIconBadge === true) {
+
+        chrome.browserAction.setBadgeText({
+            tabId: tabIdentifier,
+            text: ''
+        });
+    }
 
     if (stateManager.tabs[tabIdentifier]) {
         stateManager.tabs[tabIdentifier].injections = {};
     }
+};
+
+stateManager._handleStorageChanged = function (changes) {
+
+    if ('showIconBadge' in changes) {
+        
+        stateManager.showIconBadge = changes.showIconBadge.newValue;
+
+        if (changes.showIconBadge.newValue !== true) {
+
+            chrome.tabs.query({}, function (tabs) {
+                tabs.forEach(stateManager._removeIconBadgeFromTab);
+            });
+        }
+    }
+};
+
+stateManager._removeIconBadgeFromTab = function (tab) {
+
+    chrome.browserAction.setBadgeText({
+        tabId: tab.id,
+        text: ''
+    });
 };
 
 /**
@@ -175,6 +204,10 @@ for (let mapping in mappings) {
 
 chrome.tabs.query({}, function (tabs) {
     tabs.forEach(stateManager._createTab);
+});
+
+chrome.storage.local.get('showIconBadge', function (items) {
+    stateManager.showIconBadge = items.showIconBadge || true;
 });
 
 /**
@@ -222,3 +255,5 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function (requestDetails) {
     return {requestHeaders: requestDetails.requestHeaders};
 
 }, {urls: stateManager.validHosts}, [BLOCKING_ACTION, REQUEST_HEADERS]);
+
+chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);
