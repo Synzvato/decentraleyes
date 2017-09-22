@@ -161,6 +161,22 @@ stateManager._updateTab = function (details) {
     }
 };
 
+stateManager._stripMetadata = function (requestDetails) {
+
+    for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
+
+        if (requestDetails.requestHeaders[i].name === 'Origin') {
+            requestDetails.requestHeaders.splice(i, 1);
+        } else if (requestDetails.requestHeaders[i].name === 'Referer') {
+            requestDetails.requestHeaders.splice(i, 1);
+        }
+    }
+
+    return {
+        'requestHeaders': requestDetails.requestHeaders
+    };
+};
+
 stateManager._handleStorageChanged = function (changes) {
 
     if ('showIconBadge' in changes) {
@@ -172,6 +188,24 @@ stateManager._handleStorageChanged = function (changes) {
             chrome.tabs.query({}, function (tabs) {
                 tabs.forEach(stateManager._removeIconBadgeFromTab);
             });
+        }
+    }
+
+    if ('stripMetadata' in changes) {
+
+        let onBeforeSendHeaders;
+
+        onBeforeSendHeaders = chrome.webRequest.onBeforeSendHeaders;
+
+        onBeforeSendHeaders.removeListener(stateManager._stripMetadata, {
+            'urls': stateManager.validHosts
+        }, [BLOCKING_ACTION, REQUEST_HEADERS]);
+
+        if (changes.stripMetadata.newValue !== false) {
+            
+            onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
+                'urls': stateManager.validHosts
+            }, [BLOCKING_ACTION, REQUEST_HEADERS]);
         }
     }
 };
@@ -241,19 +275,8 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
 
 }, {'urls': ['*://*/*']});
 
-chrome.webRequest.onBeforeSendHeaders.addListener(function (requestDetails) {
-
-    for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
-
-        if (requestDetails.requestHeaders[i].name === 'Origin') {
-            requestDetails.requestHeaders.splice(i, 1);
-        } else if (requestDetails.requestHeaders[i].name === 'Referer') {
-            requestDetails.requestHeaders.splice(i, 1);
-        }
-    }
-
-    return {requestHeaders: requestDetails.requestHeaders};
-
-}, {urls: stateManager.validHosts}, [BLOCKING_ACTION, REQUEST_HEADERS]);
+chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
+    'urls': stateManager.validHosts
+}, [BLOCKING_ACTION, REQUEST_HEADERS]);
 
 chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);
