@@ -20,8 +20,41 @@
 var main = {};
 
 /**
+ * Private Methods
+ */
+
+main._initializeOptions = function () {
+
+    let optionDefaults = {
+        'showIconBadge': true,
+        'blockMissing': false,
+        'disablePrefetch': true,
+        'stripMetadata': true,
+        'whitelistedDomains': {}
+    };
+
+    chrome.storage.local.get(optionDefaults, function (options) {
+
+        if (options === null) {
+            options = optionDefaults;
+        }
+
+        if (options.disablePrefetch !== false) {
+
+            chrome.privacy.network.networkPredictionEnabled.set({
+                'value': false
+            });
+        }
+
+        chrome.storage.local.set(options);
+    });
+};
+
+/**
  * Initializations
  */
+
+main._initializeOptions();
 
 chrome.runtime.getPlatformInfo(function (information) {
     main.operatingSystem = information.os;
@@ -40,8 +73,6 @@ if (typeof chrome.browserAction.setBadgeBackgroundColor !== 'function') {
         });
     });
 }
-
-chrome.privacy.network.networkPredictionEnabled.set({'value': false});
 
 chrome.browserAction.setBadgeBackgroundColor({
     'color': [74, 130, 108, 255]

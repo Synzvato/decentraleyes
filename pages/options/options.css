@@ -4,8 +4,14 @@
 
 body {
     color: #555;
+    cursor: default;
     font-family: 'Noto Sans', Arial, sans-serif !important;
     font-size: 12px;
+    padding: 10px !important;
+}
+
+.option {
+    margin-bottom: 22px;
 }
 
 /**
@@ -13,27 +19,27 @@ body {
  */
 
 @font-face {
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../../modules/noto-sans/noto-sans.woff2')
-       format('woff2');
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../modules/noto-sans/noto-sans.woff2')
+         format('woff2');
 }
 
 @font-face {
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../../modules/noto-sans/noto-sans-bold.woff2')
-       format('woff2');
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../../modules/noto-sans/noto-sans-bold.woff2')
+         format('woff2');
 }
 
 @font-face {
-  font-family: 'Noto Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: url('../../modules/noto-sans/noto-sans-italic.woff2')
-       format('woff2');
+    font-family: 'Noto Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../../modules/noto-sans/noto-sans-italic.woff2')
+         format('woff2');
 }
 
 /**
@@ -52,6 +58,7 @@ body {
 
 .input-checkbox {
     margin: 0 4px 0 0;
+    outline: 0;
 }
 
 .input-text {
@@ -65,11 +72,10 @@ body {
 .description-option {
     color: #777;
     font-style: italic;
-    margin-bottom: 18px;
     padding-left: 29px;
 }
 
-.label {
+.badge {
     border-radius: 3px;
     color: #fff;
     font-size: 8px;
@@ -78,6 +84,11 @@ body {
     text-transform: uppercase;
 }
 
-.label-warning {
+.badge-warning {
     background-color: #ffa500;
+}
+
+.label-checkbox {
+	align-items: center;
+	display: flex;
 }
