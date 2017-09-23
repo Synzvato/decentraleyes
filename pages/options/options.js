@@ -46,6 +46,25 @@ options._determineScriptDirection = function (language) {
     return scriptDirection;
 };
 
+options._languageIsFullySupported = function (language) {
+
+    let languageSupported, supportedLanguages;
+
+    languageSupported = false;
+
+    supportedLanguages = ['ar', 'bg', 'zh-CN', 'zh-TW', 'nl', 'en', 'fi', 'fr',
+        'de', 'is', 'id', 'pl', 'pt-PT', 'ro', 'es', 'tr'];
+
+    for (let supportedLanguage of supportedLanguages) {
+
+        if (language.search(supportedLanguage) !== -1) {
+            languageSupported = true;
+        }
+    }
+
+    return languageSupported;
+};
+
 options._getOptionElement = function (optionKey) {
     return document.querySelector('[data-option=' + optionKey + ']');
 };
@@ -56,11 +75,19 @@ options._getOptionElement = function (optionKey) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let i18nElements, scriptDirection, optionElements;
+    let i18nElements, scriptDirection, languageSupported, optionElements;
 
     i18nElements = document.querySelectorAll('[data-i18n-content]');
     scriptDirection = options._determineScriptDirection(navigator.language);
     document.body.setAttribute('dir', scriptDirection);
+
+    languageSupported = options._languageIsFullySupported(navigator.language);
+
+    if (languageSupported === false) {
+
+        let localeNoticeElement = document.getElementById('notice-locale');
+        localeNoticeElement.setAttribute('class', 'notice');
+    }
 
     i18nElements.forEach(function (i18nElement) {
 
