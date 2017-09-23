@@ -19,6 +19,7 @@
     "*://*/*",
     "privacy",
     "storage",
+    "unlimitedStorage",
     "tabs",
     "webNavigation",
     "webRequest",
@@ -44,8 +45,7 @@
 
   "options_ui": {
     "page": "pages/options/options.html",
-    "browser_style": true,
-    "chrome_style": true
+    "browser_style": false
   },
 
   "applications": {
