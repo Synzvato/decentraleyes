@@ -44,7 +44,7 @@
     "description":"Disable prefetch title."
   },
   "disablePrefetchDescription":{
-    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "message":"Zapobiegaj wyciekaniu zabronionych zapytań do systemów dostarczania.",
     "description":"Disable prefetch description."
   },
   "stripMetadataTitle":{
