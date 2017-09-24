@@ -1,0 +1,70 @@
+{
+  "extensionDescription":{
+    "message":"Decentraleyes protektas vin kontraŭ sekvado per senkosta, centra enhavoprovizado.",
+    "description":"Extension description."
+  },
+  "disableProtectionTitle":{
+    "message":"Malaktivigi protekton por tiu ĉi retejo",
+    "description":"Disable protection title."
+  },
+  "enableProtectionTitle":{
+    "message":"Aktivigi protekton",
+    "description":"Enable protection title."
+  },
+  "amountInjectedTitle":{
+    "message":"Nombrilo de loke enmetiaj risurcoj",
+    "description":"Amount injected title."
+  },
+  "amountInjectedDescription":{
+    "message":"Kvanto de lokaj CDN-risurcoj enmetitaj ekde instaliĝo.",
+    "description":"Amount injected description."
+  },
+  "optionsTitle":{
+    "message":"Elektebloj",
+    "description":"Options title."
+  },
+  "showIconBadgeTitle":{
+    "message":"Display injection counts on icon",
+    "description":"Show icon badge title."
+  },
+  "showIconBadgeDescription":{
+    "message":"Show the number of injected resources on the extension icon.",
+    "description":"Show icon badge description."
+  },
+  "blockMissingTitle":{
+    "message":"Bloki petojn por mankaj risurcoj",
+    "description":"Block requests for missing resources title."
+  },
+  "blockMissingDescription":{
+    "message":"Bloki petojn interkaptitajn se la petitan risurcon ne loke haveblas.",
+    "description":"Block requests for missing resources description."
+  },
+  "disablePrefetchTitle":{
+    "message":"Disable link prefetching",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Strip metadata from allowed requests",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Neinspektendaj domajnoj",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Entajpu demajnojn, kiujn Decentraleyes ne devas inspekti. Disigu domajnojn per punktokomoj (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Spertula",
+    "description":"Advanced label."
+  }
+}
