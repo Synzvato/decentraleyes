@@ -1,0 +1,70 @@
+{
+  "extensionDescription":{
+    "message":"מגן עליך מפני מעקב המבוצע דרך רשתות אספקת תוכן ריכוזיות ו\"חינמיות\".",
+    "description":"Extension description."
+  },
+  "disableProtectionTitle":{
+    "message":"נטרול ההגנה עבור אתר זה",
+    "description":"Disable protection title."
+  },
+  "enableProtectionTitle":{
+    "message":"הפעלת הגנה",
+    "description":"Enable protection title."
+  },
+  "amountInjectedTitle":{
+    "message":"מונה משאבים מקומיים שהוזרקו",
+    "description":"Amount injected title."
+  },
+  "amountInjectedDescription":{
+    "message":"כמות תוכן מקומי שהוזרק במקום רשתות אספקת תוכן מאז התקנת התוכנה.",
+    "description":"Amount injected description."
+  },
+  "optionsTitle":{
+    "message":"אפשרויות",
+    "description":"Options title."
+  },
+  "showIconBadgeTitle":{
+    "message":"הצג מונה הזרקות תוכן על סמל התכנה",
+    "description":"Show icon badge title."
+  },
+  "showIconBadgeDescription":{
+    "message":"הצג את מספר התכנים המוזרקים על סמלון התוספת.",
+    "description":"Show icon badge description."
+  },
+  "blockMissingTitle":{
+    "message":"חסום בקשות למשאבים חסרים",
+    "description":"Block requests for missing resources title."
+  },
+  "blockMissingDescription":{
+    "message":"בטל בקשה מיורטת, אם המשאב הדרוש אינו זמין באופן מקומי.",
+    "description":"Block requests for missing resources description."
+  },
+  "disablePrefetchTitle":{
+    "message":"בטל הורדה-מוקדמת של לינקים",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"מנע הדלפה של בקשות לא-מאושרות לתוך רשתות אספקת תכנים.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"מחק מטא-דאטה מבקשות שאושרו",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"להגברת הפרטיות, מחק מידע רגיש מבקשות מאושרות לרשתות אספקת תוכן.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"אל תכלול דומיינים כחלק מהבדיקה",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"הזן דומיינים שברצונך להוסיף לרשימת התרים. הפרד ערכים מרובים באמצעות נקודה-פסיק (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"מתקדם",
+    "description":"Advanced label."
+  }
+}
