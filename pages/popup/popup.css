@@ -11,7 +11,7 @@ body {
     margin: 0 auto;
     overflow: hidden;
     padding: 0;
-    width: 348px;
+    max-width: 348px;
 }
 
 header {
