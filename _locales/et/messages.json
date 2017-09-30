@@ -1,0 +1,70 @@
+{
+  "extensionDescription":{
+    "message":"Kaitseb sind \"tasuta\", tsentraliseeritud sisu edastamisest tuleneva jälitamise vastu.",
+    "description":"Extension description."
+  },
+  "disableProtectionTitle":{
+    "message":"Keela kaitse sellel saidil",
+    "description":"Disable protection title."
+  },
+  "enableProtectionTitle":{
+    "message":"Luba kaitse",
+    "description":"Enable protection title."
+  },
+  "amountInjectedTitle":{
+    "message":"Kohalikult sisestatud ressursside loendur",
+    "description":"Amount injected title."
+  },
+  "amountInjectedDescription":{
+    "message":"Kohalike sisuedastusvõrkude ressursisisestuste arv alates installimisest.",
+    "description":"Amount injected description."
+  },
+  "optionsTitle":{
+    "message":"Valikud",
+    "description":"Options title."
+  },
+  "showIconBadgeTitle":{
+    "message":"Kuva sisestuste arvu ikoonil",
+    "description":"Show icon badge title."
+  },
+  "showIconBadgeDescription":{
+    "message":"Kuva sisestatud ressursside arvu laienduse ikoonil.",
+    "description":"Show icon badge description."
+  },
+  "blockMissingTitle":{
+    "message":"Blokeeri puuduvate ressursside taotlused",
+    "description":"Block requests for missing resources title."
+  },
+  "blockMissingDescription":{
+    "message":"Tühista kinnipüütud taotlus, kui vajaminev ressurss ei ole kohalikult saadaval.",
+    "description":"Block requests for missing resources description."
+  },
+  "disablePrefetchTitle":{
+    "message":"Keela lingi eellaadimine",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Väldi keelatud taotluste väljalekkimist edastusvõrkudele.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Eemalda lubatud taotlustelt metaandmed",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Kustuta tundlikud andmed lubatud sisuedastusvõrkude taotlustest parema privaatsuse saamiseks.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Välista uuritavaid domeene",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Sisesta domeenid, et lisada need valgesse nimekirja. Eralda mitu üksust semikoolonitega (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Edasijõudnuile",
+    "description":"Advanced label."
+  }
+}
