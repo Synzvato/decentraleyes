@@ -1,6 +1,6 @@
 {
   "extensionDescription":{
-    "message":"保护您免受集中式的内容交付网络（CDN）的跟踪。",
+    "message":"保护你免受中心化的内容分发网络（CDN）的跟踪。",
     "description":"Extension description."
   },
   "disableProtectionTitle":{
@@ -12,11 +12,11 @@
     "description":"Enable protection title."
   },
   "amountInjectedTitle":{
-    "message":"本地发送资源的计数器",
+    "message":"本地注入资源的计数器",
     "description":"Amount injected title."
   },
   "amountInjectedDescription":{
-    "message":"自安装以来，从本地的“内容交付网络”发送的资源总量。",
+    "message":"自安装以来，从本地“内容分发网络”资源注入数量。",
     "description":"Amount injected description."
   },
   "optionsTitle":{
@@ -28,7 +28,7 @@
     "description":"Show icon badge title."
   },
   "showIconBadgeDescription":{
-    "message":"在扩展图标上显示已注入资源的数量。",
+    "message":"在扩展图标上显示注入资源的数量。",
     "description":"Show icon badge description."
   },
   "blockMissingTitle":{
@@ -36,7 +36,7 @@
     "description":"Block requests for missing resources title."
   },
   "blockMissingDescription":{
-    "message":"取消被拦截的请求，如果请求的资源在本地不可用。",
+    "message":"如果请求的资源在本地不可用，则取消被拦截的请求。",
     "description":"Block requests for missing resources description."
   },
   "disablePrefetchTitle":{
@@ -48,11 +48,11 @@
     "description":"Disable prefetch description."
   },
   "stripMetadataTitle":{
-    "message":"允许的请求剥去元数据",
+    "message":"清除被允许的请求中的元数据",
     "description":"Strip metadata title."
   },
   "stripMetadataDescription":{
-    "message":"被允许的 CDN 请求剥去敏感数据以保护隐私。",
+    "message":"从被允许的 CDN 请求中擦除敏感数据以保护隐私。",
     "description":"Strip metadata description."
   },
   "whitelistedDomainsTitle":{
@@ -60,7 +60,7 @@
     "description":"Whitelisted domains title."
   },
   "whitelistedDomainsDescription":{
-    "message":"输入白名单的域名。用分号 (;) 分隔多项。",
+    "message":"输入要添加到白名单的域名。用分号 (;) 分隔多项。",
     "description":"Whitelisted domains description."
   },
   "advancedLabel":{
