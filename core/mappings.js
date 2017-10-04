@@ -226,9 +226,11 @@ var mappings = {
     // Baidu CDN
     'libs.baidu.com': {
         '/': {
+			'angular.js/{version}/angular.min.js': resources.angularjs,
             'backbone/{version}/backbone.': resources.backbone,
             'backbone/{version}/backbone-min.': resources.backbone,
             'dojo/{version}/dojo.': resources.dojo,
+			'ember.js/{version}/ember.min.js': resources.ember.js,
             'ext-core/{version}/ext-core.': resources.extCore,
             'jquery/{version}/jquery.': resources.jQuery,
             'jqueryui/{version}/jquery-ui.js': resources.jQueryUI,
@@ -242,7 +244,48 @@ var mappings = {
             'webfont/{version}/webfont.': resources.webfont,
             'webfont/{version}/webfont_debug.': resources.webfont
         }
+		'/libs/'{
+			'angular.js/{version}/angular.min.js': resources.angularjs,
+            'backbone/{version}/backbone.': resources.backbone,
+            'backbone/{version}/backbone-min.': resources.backbone,
+            'dojo/{version}/dojo.': resources.dojo,
+			'ember.js/{version}/ember.min.js': resources.ember.js,
+            'ext-core/{version}/ext-core.': resources.extCore,
+            'jquery/{version}/jquery.': resources.jQuery,
+            'jqueryui/{version}/jquery-ui.js': resources.jQueryUI,
+            'jqueryui/{version}/jquery-ui.min.js': resources.jQueryUI,
+            'mootools/{version}/mootools-yui-compressed.': resources.mootools,
+            'prototype/{version}/prototype.': resources.prototypeJS,
+            'scriptaculous/{version}/scriptaculous.': resources.scriptaculous,
+            'swfobject/{version}/swfobject.': resources.swfobject,
+            'underscore/{version}/underscore.': resources.underscore,
+            'underscore/{version}/underscore-min.': resources.underscore,
+            'webfont/{version}/webfont.': resources.webfont,
+            'webfont/{version}/webfont_debug.': resources.webfont
+		}
     },
+	// Baidu CDN
+	'apps.bdimg.com': {
+		'/libs/': {
+			'angular.js/{version}/angular.min.js': resources.angularjs,
+			'backbone/{version}/backbone.': resources.backbone,
+			'backbone/{version}/backbone-min.': resources.backbone,
+			'dojo/{version}/dojo.': resources.dojo,
+			'ember.js/{version}/ember.min.js': resources.ember.js,
+			'ext-core/{version}/ext-core.': resources.extCore,
+			'jquery/{version}/jquery.': resources.jQuery,
+            'jqueryui/{version}/jquery-ui.js': resources.jQueryUI,
+            'jqueryui/{version}/jquery-ui.min.js': resources.jQueryUI,
+			'mootools/{version}/mootools-yui-compressed.': resources.mootools,
+            'prototype/{version}/prototype.': resources.prototypeJS,
+            'scriptaculous/{version}/scriptaculous.': resources.scriptaculous,
+            'swfobject/{version}/swfobject.': resources.swfobject,
+            'underscore/{version}/underscore.': resources.underscore,
+            'underscore/{version}/underscore-min.': resources.underscore,
+            'webfont/{version}/webfont.': resources.webfont,
+            'webfont/{version}/webfont_debug.': resources.webfont
+		}
+	}
     // Sina Public Resources
     'lib.sinaapp.com': {
         '/js/': {
