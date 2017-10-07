@@ -53,7 +53,7 @@ options._languageIsFullySupported = function (language) {
     languageSupported = false;
 
     supportedLanguages = ['ar', 'bg', 'zh-CN', 'zh-TW', 'nl', 'en', 'et', 'fi',
-        'fr', 'de', 'he', 'is', 'id', 'pl', 'pt-PT', 'ro', 'es', 'tr'];
+        'fr', 'de', 'he', 'hu', 'is', 'id', 'pl', 'pt-PT', 'ro', 'es', 'tr'];
 
     for (let supportedLanguage of supportedLanguages) {
 

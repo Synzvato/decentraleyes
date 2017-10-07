@@ -1,70 +1,70 @@
 {
   "extensionDescription":{
-    "message":"Protects you against tracking through \"free\", centralized, content delivery.",
+    "message":"Védelem az \"ingyenes\" centralizált Content Delivery hálózatok megfigyelésétől.",
     "description":"Extension description."
   },
   "disableProtectionTitle":{
-    "message":"Disable protection for this site",
+    "message":"Védelem letiltása ezen az oldalon",
     "description":"Disable protection title."
   },
   "enableProtectionTitle":{
-    "message":"Enable protection",
+    "message":"Védelem engedélyezése",
     "description":"Enable protection title."
   },
   "amountInjectedTitle":{
-    "message":"Counter for locally injected resources",
+    "message":"Helyből beszúrt erőforrások számlálója",
     "description":"Amount injected title."
   },
   "amountInjectedDescription":{
-    "message":"Amount of local Content Delivery Network resource injections since installation.",
+    "message":"Telepítés óta beszúrt helyi CDN erőforrások száma.",
     "description":"Amount injected description."
   },
   "optionsTitle":{
-    "message":"Options",
+    "message":"Beállítások",
     "description":"Options title."
   },
   "showIconBadgeTitle":{
-    "message":"Display injection counts on icon",
+    "message":"Beszúrások számlálójának megjelenítése az ikonon",
     "description":"Show icon badge title."
   },
   "showIconBadgeDescription":{
-    "message":"Show the number of injected resources on the extension icon.",
+    "message":"A beszúrt erőforrások számának megjelenítése a bővítmény ikonján.",
     "description":"Show icon badge description."
   },
   "blockMissingTitle":{
-    "message":"Block requests for missing resources",
+    "message":"Hiányzó erőforrások blokkolása",
     "description":"Block requests for missing resources title."
   },
   "blockMissingDescription":{
-    "message":"Cancel intercepted request if the required resource is not locally available.",
+    "message":"Megszakított kérések blokkolása, amennyiben a kért erőforrás nem érhető el helyben.",
     "description":"Block requests for missing resources description."
   },
   "disablePrefetchTitle":{
-    "message":"Disable link prefetching",
+    "message":"Link prefetching letiltása",
     "description":"Disable prefetch title."
   },
   "disablePrefetchDescription":{
-    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "message":"Letiltott kérések kiszivárgásának megakadályozása.",
     "description":"Disable prefetch description."
   },
   "stripMetadataTitle":{
-    "message":"Strip metadata from allowed requests",
+    "message":"Metaadatok törlése az engedélyezett kérésekből",
     "description":"Strip metadata title."
   },
   "stripMetadataDescription":{
-    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
+    "message":"Érzékeny adatok törlése az engedélyezett CDN kérésekből.",
     "description":"Strip metadata description."
   },
   "whitelistedDomainsTitle":{
-    "message":"Exclude domains from inspections",
+    "message":"Domainek vizsgálatának elhagyása",
     "description":"Whitelisted domains title."
   },
   "whitelistedDomainsDescription":{
-    "message":"Enter domains to whitelist them. Separate multiple entries with semi-colons (;).",
+    "message":"Írj be domaineket, amik ne legyenek megvizsgálva. Az egyes elemeket pontosvesszővel (;) kell elválasztani.",
     "description":"Whitelisted domains description."
   },
   "advancedLabel":{
-    "message":"Advanced",
+    "message":"Haladó",
     "description":"Advanced label."
   }
 }
