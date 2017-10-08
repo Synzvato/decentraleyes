@@ -52,7 +52,15 @@ popup._determineScriptDirection = function (language) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let optionsButtonElement, optionsTitle, scriptDirection, i18nElements;
+    let version, optionsButtonElement, optionsTitle, scriptDirection, i18nElements;
+
+    version = browser.runtime.getManifest().version;
+
+    if (version.indexOf('beta') !== -1) {
+        version = 'BETA';
+    }
+
+    document.getElementById('version-label').innerText = version;
 
     optionsButtonElement = document.getElementById('options-button');
     optionsTitle = chrome.i18n.getMessage('optionsTitle');
