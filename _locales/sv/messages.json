@@ -1,6 +1,6 @@
 {
   "extensionDescription":{
-    "message":"Skyddar dig mot att spåras av \"gratis\", centraliserat, innehållsleverans.",
+    "message":"Skyddar dig mot att spåras av \"gratis\", centraliserad, innehållsleverans.",
     "description":"Extension description."
   },
   "disableProtectionTitle":{
@@ -24,11 +24,11 @@
     "description":"Options title."
   },
   "showIconBadgeTitle":{
-    "message":"Display injection counts on icon",
+    "message":"Visa insättningsantal på ikonen",
     "description":"Show icon badge title."
   },
   "showIconBadgeDescription":{
-    "message":"Show the number of injected resources on the extension icon.",
+    "message":"Visa antalet insatta resurser på ikonen.",
     "description":"Show icon badge description."
   },
   "blockMissingTitle":{
@@ -36,27 +36,27 @@
     "description":"Block requests for missing resources title."
   },
   "blockMissingDescription":{
-    "message":"Avbryt uppsnappning om resurs inte finns lokalt.",
+    "message":"Avbryt avlyssnad begäran om den begärda resursen inte finns lokalt.",
     "description":"Block requests for missing resources description."
   },
   "disablePrefetchTitle":{
-    "message":"Disable link prefetching",
+    "message":"Inaktivera länkförhandshämtning",
     "description":"Disable prefetch title."
   },
   "disablePrefetchDescription":{
-    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "message":"Förhindra otillåtna förfrågningar från att läcka ut till leveransnätverk.",
     "description":"Disable prefetch description."
   },
   "stripMetadataTitle":{
-    "message":"Strip metadata from allowed requests",
+    "message":"Skala bort metadata från tillåtna förfrågningar",
     "description":"Strip metadata title."
   },
   "stripMetadataDescription":{
-    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
+    "message":"Radera känslig data från tillåtna CDN-förfrågningar för förbättrad integritet.",
     "description":"Strip metadata description."
   },
   "whitelistedDomainsTitle":{
-    "message":"Utelämna domäner från uppsnappningar",
+    "message":"Exkludera domäner från inspektioner",
     "description":"Whitelisted domains title."
   },
   "whitelistedDomainsDescription":{

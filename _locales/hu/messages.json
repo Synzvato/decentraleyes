@@ -1,14 +1,14 @@
 {
   "extensionDescription":{
-    "message":"Védelem az \"ingyenes\" centralizált Content Delivery hálózatok megfigyelésétől.",
+    "message":"Védelem az \"ingyenes\" centralizált content delivery hálózatok megfigyelésétől.",
     "description":"Extension description."
   },
   "disableProtectionTitle":{
-    "message":"Védelem letiltása ezen az oldalon",
+    "message":"Védelem kikapcsolása ezen az oldalon",
     "description":"Disable protection title."
   },
   "enableProtectionTitle":{
-    "message":"Védelem engedélyezése",
+    "message":"Védelem bekapcsolása",
     "description":"Enable protection title."
   },
   "amountInjectedTitle":{
@@ -16,7 +16,7 @@
     "description":"Amount injected title."
   },
   "amountInjectedDescription":{
-    "message":"Telepítés óta beszúrt helyi CDN erőforrások száma.",
+    "message":"Telepítés óta beszúrt helyi Content Delivery Network erőforrások száma.",
     "description":"Amount injected description."
   },
   "optionsTitle":{
@@ -64,7 +64,7 @@
     "description":"Whitelisted domains description."
   },
   "advancedLabel":{
-    "message":"Haladó",
+    "message":"Speciális",
     "description":"Advanced label."
   }
 }
