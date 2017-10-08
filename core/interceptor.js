@@ -31,7 +31,7 @@ const HTTP_EXPRESSION = /^http?:\/\//;
 
 interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
 
-    let validCandidate, targetDetails, targetPath;
+    let validCandidate, tabDomain, targetDetails, targetPath;
 
     validCandidate = requestAnalyzer.isValidCandidate(requestDetails, tab);
 
@@ -40,6 +40,31 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         return {
             'cancel': false
         };
+    }
+
+    try {
+        tabDomain = tab.url.match(WEB_DOMAIN_EXPRESSION)[1];
+        tabDomain = requestAnalyzer._normalizeDomain(tabDomain);
+    } catch (exception) {
+        tabDomain = 'example.org';
+    }
+
+    // Temporary list of undetectable tainted domains.
+    let undetectableTaintedDomains = {
+        'cdnjs.com': true,
+        'dropbox.com': true,
+        'minigames.mail.ru': true,
+        'report-uri.io': true,
+        'securityheaders.io': true,
+        'stefansundin.github.io': true,
+        'udacity.com': true
+    };
+
+    if (undetectableTaintedDomains[tabDomain] || /yandex\./.test(tabDomain)) {
+
+        if (tabDomain !== 'yandex.ru') {
+            return interceptor._handleMissingCandidate(requestDetails.url);
+        }
     }
 
     targetDetails = requestAnalyzer.getLocalTarget(requestDetails);
