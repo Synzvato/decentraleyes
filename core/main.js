@@ -50,10 +50,35 @@ main._initializeOptions = function () {
     });
 };
 
+main._showReleaseNotes = function (details) {
+
+    let location = browser.extension.getURL('pages/welcome/welcome.html');
+
+    if (details.reason === 'install' || details.reason === 'update') {
+
+        if (details.temporary === false) {
+
+            browser.storage.local.get({
+                'showReleaseNotes': true
+            }, function (options) {
+
+                if (options.showReleaseNotes === true) {
+
+                    browser.tabs.create({
+                        'url': location,
+                        'active': false
+                    });
+                }
+            });
+        }
+    }
+};
+
 /**
  * Initializations
  */
 
+browser.runtime.onInstalled.addListener(main._showReleaseNotes);
 main._initializeOptions();
 
 chrome.runtime.getPlatformInfo(function (information) {
