@@ -166,9 +166,9 @@ stateManager._stripMetadata = function (requestDetails) {
     for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
 
         if (requestDetails.requestHeaders[i].name === 'Origin') {
-            requestDetails.requestHeaders.splice(i, 1);
+            requestDetails.requestHeaders.splice(i--, 1);
         } else if (requestDetails.requestHeaders[i].name === 'Referer') {
-            requestDetails.requestHeaders.splice(i, 1);
+            requestDetails.requestHeaders.splice(i--, 1);
         }
     }
 
