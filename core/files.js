@@ -265,5 +265,11 @@ var files = {
     },
 
     // Files [Staging]
-    'staging': {}
+    'staging': {
+
+        // jQuery
+        'resources/jquery/3.1.0/jquery.min.jsm': true,
+        'resources/jquery/3.1.1/jquery.min.jsm': true,
+        'resources/jquery/3.2.1/jquery.min.jsm': true
+    }
 };
