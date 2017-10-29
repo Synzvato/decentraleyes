@@ -1,5 +1,2 @@
 audit/node_modules
 audit/report.txt
-*.xpi
-*.crx
-.idea

@@ -1,47 +1,99 @@
+/**
+* Sections
+*/
+
 body {
     background-color: #f0f0f0;
     color: #555;
     cursor: default;
-    font-family: Noto Sans, Arial, sans-serif !important;
+    font-family: 'Noto Sans', Arial, sans-serif !important;
     font-size: 75%;
-    margin: 0;
+    margin: 0 auto;
+    overflow: hidden;
     padding: 0;
-    user-select: none;
-    width: 350px;
+    width: 348px;
 }
 
-h1 {
-    font-size: 36px;
-    margin: 0;
-    text-align: center;
+header {
+    align-items: center;
+    border-bottom: solid #d3d3d3 1px;
+    display: flex;
+    position: relative;
 }
 
-.title {
-    font-weight: bold;
+.panel {
+    overflow: hidden;
+    padding: 10px 8px;
+}
+
+.panel:not(:last-child) {
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.subpanel {
+    overflow: hidden;
+}
+
+footer {
+    overflow: hidden;
+    padding: 8px;
+}
+
+/**
+ * Fonts
+ */
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../modules/noto-sans/noto-sans.woff2')
+       format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../modules/noto-sans/noto-sans-bold.woff2')
+       format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../../modules/noto-sans/noto-sans-italic.woff2')
+       format('woff2');
+}
+
+/**
+ * Headings
+ */
+
+.heading {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 0;
+}
+
+.subheading {
+    font-weight: 600;
     margin-bottom: 2px;
     text-align: center;
 }
 
-.description {
-    color: #777;
-    font-style: italic;
-    margin-bottom: 18px;
-    text-align: center;
-}
-
-.popup-content {
-    padding: 0;
-}
+/**
+ * Lists
+ */
 
 .list {
-    border-bottom: 1px solid #d8d8d8;
     margin: 0;
-    padding: 10px 8px;
+    padding: 8px 0 0;
 }
 
 .list-item {
     background-color: #f7f7f7;
-    border-bottom: none !important;
     border: 1px solid #e4e4e4;
     color: #737373;
     font-weight: 600;
@@ -50,10 +102,9 @@ h1 {
     padding: 10px;
 }
 
-.sub-list {
+.sublist {
     align-items: center;
     background-color: #ececec;
-    border-bottom: none !important;
     border: 1px solid #e0e0e0;
     box-shadow: inset 0px 2px 10px #e2e2e2;
     list-style: none;
@@ -61,26 +112,92 @@ h1 {
     padding: 0;
 }
 
-.sub-list:last-child {
-    border-bottom: 1px solid #e0e0e0 !important;
+.sublist:last-child {
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.sub-list-item {
+.sublist-item {
     border-bottom: 1px solid #e0e0e0;
     color: #737373;
-    font-weight: bold;
+    font-weight: 600;
     padding: 10px;
 }
 
-.sub-list-item:last-child {
+.sublist-item:last-child {
     border-bottom: none;
 }
 
-.side-note {
-    color: #a5a5a5;
-    font-style: italic;
-    font-weight: normal;
+/**
+ * Icons
+ */
+
+.icon {
+    margin-right: 6px;
 }
+
+.icon-logo {
+    height: 26px;
+    padding: 14px 6px 14px 8px;
+    width: 26px;
+}
+
+/**
+ * Buttons
+ */
+
+.button {
+    -moz-user-select: none;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    border: 1px solid #cfcfcf;
+    color: #5f5f5f;
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    padding: 5px 22px;
+    user-select: none;
+}
+
+.button:hover {
+    background-color: #fff;
+}
+
+.button:active {
+    background-color: #dedede;
+}
+
+.button-toggle {
+    border-color: #d8d8d8;
+    color: #bbb;
+}
+
+.button-toggle.active {
+    border-color: #cfcfcf;
+    color: #339a6f;
+}
+
+/**
+* Links
+*/
+
+.link-text {
+    color: #bdbdbd;
+    cursor: pointer;
+    float: left;
+    font-size: 13px;
+    padding-left: 4px;
+    padding-top: 5px;
+    text-decoration: none;
+}
+
+.link-text:hover {
+    color: #777;
+    text-decoration: underline;
+}
+
+/**
+ * Miscellaneous
+ */
 
 .badge {
     background-color: #6bb798;
@@ -88,145 +205,45 @@ h1 {
     color: #fff;
     font-family: monospace;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 600;
     margin-right: 8px;
     padding: 3px 15px;
 }
 
-.button-panel {
-    padding: 6px;
-    text-align: right;
+.counter {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 4px;
+    text-align: center;
 }
 
-.btn-sm {
-    font-size: 12px !important;
-}
-
-.text-link {
-    color: #bdbdbd;
-    float: left;
-    font-size: 13px;
-    padding-left: 4px;
-    padding-top: 2px;
-    text-decoration: none;
-}
-
-.text-link:hover {
+.description {
     color: #777;
-    text-decoration: underline;
+    font-style: italic;
+    margin: 0 6px;
+    text-align: center;
 }
 
-#injection-counter {
-    padding-top: 14px;
+.hidden {
+    display: none;
 }
 
-#extension-options-overlay-header {
-    align-items: center;
-    border-bottom: solid lightgray 1px;
+.label-version {
+    color: #6aac91;
+    font-size: 9px;
+}
+
+.label-domain {
+    color: #bbb;
     display: flex;
-    padding: 4px 0;
-    position: relative;
+    font-style: italic;
+    overflow: hidden;
+    padding: 6px 0 0 4px;
+    white-space: nowrap;
 }
 
-#extension-options-overlay-icon {
-    padding: 8px;
-}
-
-#extension-options-overlay-icon {
-    height: 32px;
-    width: 32px;
-}
-
-#extension-options-overlay-title {
-    font-size: 14px;
-    font-weight: bold;
-    padding-left: 0;
-}
-
-:enabled:hover:-webkit-any(
-    select,
-    input[type='checkbox'],
-    input[type='radio'],
-    :-webkit-any(
-        button,
-        input[type='button'],
-        input[type='submit']):not(.custom-appearance)) {
-    background-image: -webkit-linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
-    border-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12),
-    inset 0 1px 2px rgba(255, 255, 255, 0.95);
-    color: black;
-}
-
-:enabled:active:-webkit-any(
-    select,
-    input[type='checkbox'],
-    input[type='radio'],
-    :-webkit-any(
-        button,
-        input[type='button'],
-        input[type='submit']):not(.custom-appearance)) {
-    background-image: -webkit-linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7);
-    box-shadow: none;
-    text-shadow: none;
-}
-
-:enabled:focus:-webkit-any(
-    select,
-    input[type='checkbox'],
-    input[type='number'],
-    input[type='password'],
-    input[type='radio'],
-    input[type='search'],
-    input[type='text'],
-    input[type='url'],
-    input:not([type]),
-    :-webkit-any(
-        button,
-        input[type='button'],
-        input[type='submit']):not(.custom-appearance)) {
-    /* OVERRIDE */
-    -webkit-transition: border-color 200ms;
-    /* We use border color because it follows the border radius (unlike outline).
-     * This is particularly noticeable on mac. */
-    border-color: rgb(77, 144, 254);
-    outline: none;
-}
-
-:-webkit-any(button,
-             input[type='button'],
-             input[type='submit']):not(.custom-appearance),
-select,
-input[type='checkbox'],
-input[type='radio'] {
-    -webkit-appearance: none;
-    -webkit-user-select: none;
-    background-image: -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    border-radius: 2px;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08),
-    inset 0 1px 2px rgba(255, 255, 255, 0.75);
-    color: #444;
-    font: inherit;
-    margin: 0 1px 0 0;
-    outline: none;
-    text-shadow: 0 1px 0 rgb(240, 240, 240);
-}
-
-:-webkit-any(button,
-             input[type='button'],
-             input[type='submit']):not(.custom-appearance),
-select {
-    min-height: 2em;
-    min-width: 4em;
-    padding-top: 1px;
-    padding-bottom: 1px;
-
-}
-
-:-webkit-any(button,
-             input[type='button'],
-             input[type='submit']):not(.custom-appearance) {
-    -webkit-padding-end: 10px;
-    -webkit-padding-start: 10px;
+.side-note {
+    color: #a5a5a5;
+    font-style: italic;
+    font-weight: 400;
 }

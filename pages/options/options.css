@@ -1,17 +1,152 @@
-section {
-    padding-left: 32px;
+/**
+ * Sections
+ */
+
+body {
+    color: #555;
+    cursor: default;
+    font-family: 'Noto Sans', Arial, sans-serif !important;
+    font-size: 12px;
+    padding: 10px !important;
 }
 
-section .title {
-    -webkit-margin-start: -32px;
-    font-weight: bold;
+.option {
+    margin-bottom: 22px;
 }
 
-section .description {
+.notice {
+    margin-top: 12px;
+}
+
+/**
+ * Fonts
+ */
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../modules/noto-sans/noto-sans.woff2')
+         format('woff2');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../../modules/noto-sans/noto-sans-bold.woff2')
+         format('woff2');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
     font-style: italic;
-    margin-bottom: 16px;
+    font-weight: 400;
+    src: url('../../modules/noto-sans/noto-sans-italic.woff2')
+         format('woff2');
 }
 
-.button-panel {
-    text-align: right;
+/**
+ * Titles
+ */
+
+.title-option {
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+}
+
+/**
+ * Controls
+ */
+
+.input-checkbox {
+    margin: 0 4px 0 0;
+    outline: 0;
+}
+
+.input-text {
+    margin-left: 29px;
+}
+
+/**
+ * Icons
+ */
+
+.icon {
+    color: #777;
+    margin-right: 3px;
+}
+
+/**
+* Links
+*/
+
+.link-text {
+    color: #999;
+}
+
+/**
+ * Miscellaneous
+ */
+
+.description-option {
+    color: #777;
+    font-style: italic;
+    padding-left: 29px;
+}
+
+.badge {
+    border-radius: 3px;
+    color: #fff;
+    font-size: 8px;
+    margin-left: 6px;
+    padding: 3px 5px;
+    text-transform: uppercase;
+}
+
+.badge-warning {
+    background-color: #ffa500;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.label-checkbox {
+    align-items: center;
+    display: flex;
+}
+
+.notice-body {
+    background-color: #fbfbfb;
+    border-radius: 3px;
+    border: 1px solid #e7e7e7;
+    color: #595959;
+    display: inline-block;
+    font-size: 11px;
+    padding: 8px 10px;
+}
+
+/**
+ * Right to Left
+ */
+
+body[dir="rtl"] .badge {
+    margin-left: 0;
+    margin-right: 6px;
+}
+
+body[dir="rtl"] .description-option {
+    margin-left: 0;
+    margin-right: 29px;
+}
+
+body[dir="rtl"] .input-checkbox {
+    margin: 0 0 0 4px;
+}
+
+body[dir="rtl"] .input-text {
+    margin-left: 0;
+    margin-right: 29px;
 }

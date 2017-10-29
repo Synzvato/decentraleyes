@@ -1,0 +1,180 @@
+/**
+* Sections
+*/
+
+body {
+    background-color: #eff4e2;
+    color: #777;
+    font-size: 14px;
+    min-width: 256px;
+    padding: 25px 10px;
+}
+
+h1 {
+    font-family: 'Noto Sans', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 15px auto 20px;
+    max-width: 750px;
+}
+
+a {
+    color: #777;
+}
+
+.btn-panel {
+    font-family: 'Noto Sans', Arial, sans-serif;
+    margin: 35px auto;
+    max-width: 750px;
+}
+
+.topic-badge {
+    background-color: #fcfcfc;
+    border-radius: 100px;
+    border: 4px solid #e6e6e6;
+    color: #5a8f79;
+    display: inline-block;
+    font-size: 48px;
+    line-height: 0;
+    margin: 0 20px 20px;
+    padding: 16px;
+}
+
+.topic-badge:first-child {
+    margin-left: 0;
+}
+
+.topic-badge:last-child {
+    margin-right: 0;
+}
+
+/**
+ * Fonts
+ */
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../modules/noto-sans/noto-sans.woff2')
+       format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../modules/noto-sans/noto-sans-bold.woff2')
+       format('woff2');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../../modules/noto-sans/noto-sans-italic.woff2')
+       format('woff2');
+}
+
+/**
+ * Buttons
+ */
+
+.btn {
+    color: #fff;
+    font-weight: 600;
+    margin-right: 15px;
+    padding: 11px 17px;
+    text-decoration: none;
+}
+
+.btn-text {
+    margin-left: 10px;
+}
+
+.btn-github {
+    background-color: #24292e;
+}
+
+.btn-github:hover {
+    background-color: #42474c;
+}
+
+.btn-website {
+    background-color: #169cff;
+}
+
+.btn-website:hover {
+    background-color: #008ff5;
+}
+
+.btn-bitcoin {
+    background-color: #f7931a;
+}
+
+.btn-bitcoin:hover {
+    background-color: #f58700;
+}
+
+.btn-monero {
+    background-color: #f26822;
+}
+
+.btn-monero:hover {
+    background-color: #ed5407;
+}
+
+/**
+ * Miscellaneous
+ */
+
+.notice {
+    align-items: center;
+    display: flex;
+    font-family: 'Noto Sans', Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 750px;
+    text-align: left;
+}
+
+.logo {
+    display: block;
+    height: 145px;
+    margin: 15px auto 50px;
+}
+
+.subtle-hint {
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    border: 1px solid #e6e6e6;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 8px 11px;
+}
+
+.topic-label {
+    color: #5a8f79;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.color-purple {
+    color: #9e608e;
+}
+
+/**
+ * Media Queries
+ */
+
+@media screen and (max-width: 550px) {
+    
+    .btn {
+        padding: 13px 18px 12px
+    }
+    
+    .btn-text {
+        display: none
+    }
+}

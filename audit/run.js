@@ -31,6 +31,7 @@ sourceMappingURL = require('source-map-url');
 var localResourceLocation = '../resources';
 var localResourceLocationLength = localResourceLocation.length;
 var localResourcePaths = [];
+var comparedResourceAmount = 0;
 var resourceAmount = 0;
 
 /**
@@ -40,10 +41,6 @@ var resourceAmount = 0;
 function _fetchLocalResourcePaths(folderPath) {
 
     fileSystem.readdirSync(folderPath).forEach(function (resourceName) {
-
-        if (resourceName === '_audit') {
-            return localResourcePaths;
-        }
 
         var resourcePath = folderPath + '/' + resourceName;
         var resourceStatistics = fileSystem.statSync(resourcePath);
@@ -75,7 +72,7 @@ function _getLocalResourceContents(fileLocation, callback) {
 
                         var localFileContents = buffer.toString('utf8', 0, buffer.length);
 
-                        fileSystem.close(fileDescriptor);
+                        fileSystem.close(fileDescriptor, function () {});
                         callback(localFileContents);
                     });
                 });
@@ -149,10 +146,11 @@ function _hashFileContents(fileContents) {
 function _compareResources(localResourceContents, remoteResourceContents, URL) {
 
     var hasSourceMappingURL = sourceMappingURL.existsIn(remoteResourceContents);
-    var sourceMappingNotice = '[ ] RESOURCE CONTAINS A SOURCE MAPPING URL';
+    var sourceMappingNotice = '[ ] REMOTE RESOURCE HAD SOURCE MAPPING URL';
 
     if (hasSourceMappingURL) {
-        sourceMappingNotice = '[X] RESOURCE CONTAINS A SOURCE MAPPING URL';
+        remoteResourceContents = sourceMappingURL.removeFrom(remoteResourceContents);
+        sourceMappingNotice = '[X] REMOTE RESOURCE HAD SOURCE MAPPING URL';
     }
 
     var localResourceHash = _hashFileContents(localResourceContents);
@@ -172,6 +170,8 @@ function _compareResources(localResourceContents, remoteResourceContents, URL) {
     console.log();
     console.log('[X] LOCAL AND REMOTE RESOURCE HASHES MATCH');
     console.log(sourceMappingNotice);
+
+    _incrementComparedResourceAmount();
 }
 
 function _showCompletedMessage() {
@@ -180,6 +180,18 @@ function _showCompletedMessage() {
     console.log('       *** FILE INTEGRITY CHECKS COMPLETED');
     console.log('       *** ' + resourceAmount + '/' + resourceAmount + ' RESOURCES WERE ANALYZED');
     console.log();
+}
+
+function _incrementComparedResourceAmount() {
+
+    comparedResourceAmount++;
+
+    if (comparedResourceAmount === resourceAmount) {
+
+        setTimeout(function () {
+            _showCompletedMessage();
+        }, 500);
+    }
 }
 
 /**
@@ -211,13 +223,6 @@ localResourcePaths.forEach(function (resourcePath, index) {
 
             console.log();
             console.log('------------------------------------------');
-
-            if (index === resourceAmount - 1) {
-
-                setTimeout(function () {
-                    _showCompletedMessage();
-                }, 500);
-            }
         });
     });
 

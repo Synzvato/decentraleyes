@@ -23,13 +23,10 @@ var stateManager = {};
  * Constants
  */
 
-const BLOCKED_BY_CLIENT = 'net::ERR_BLOCKED_BY_CLIENT';
 const BLOCKING_ACTION = 'blocking';
 const HOST_PREFIX = '*://';
 const HOST_SUFFIX = '/*';
-const JAVASCRIPT_REQUEST_TYPE = 'script';
 const REQUEST_HEADERS = 'requestHeaders';
-const XML_HTTP_REQUEST_TYPE = 'xmlhttprequest';
 
 /**
  * Public Methods
@@ -45,19 +42,22 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
     registeredTab.injections[injectionIdentifier] = injection;
     injectionCount = Object.keys(registeredTab.injections).length || 0;
 
-    if (injectionCount > 0) {
+    if (stateManager.showIconBadge === true) {
 
-        chrome.browserAction.setBadgeText({
-            tabId: tabIdentifier,
-            text: injectionCount.toString()
-        });
+        if (injectionCount > 0) {
 
-    } else {
+            chrome.browserAction.setBadgeText({
+                tabId: tabIdentifier,
+                text: injectionCount.toString()
+            });
 
-        chrome.browserAction.setBadgeText({
-            tabId: tabIdentifier,
-            text: ''
-        });
+        } else {
+
+            chrome.browserAction.setBadgeText({
+                tabId: tabIdentifier,
+                text: ''
+            });
+        }
     }
 
     if (isNaN(interceptor.amountInjected)) {
@@ -79,6 +79,28 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
     }
 };
 
+stateManager.addDomainToWhitelist = function (domain) {
+
+    return new Promise((resolve) => {
+
+        let whitelistedDomains = requestAnalyzer.whitelistedDomains;
+        whitelistedDomains[domain] = true;
+
+        chrome.storage.local.set({whitelistedDomains}, resolve);
+    });
+};
+
+stateManager.deleteDomainFromWhitelist = function (domain) {
+
+    return new Promise((resolve) => {
+
+        let whitelistedDomains = requestAnalyzer.whitelistedDomains;
+        delete whitelistedDomains[domain];
+
+        chrome.storage.local.set({whitelistedDomains}, resolve);
+    });
+};
+
 /**
  * Private Methods
  */
@@ -96,7 +118,6 @@ stateManager._createTab = function (tab) {
     requestFilters = {
 
         'tabId': tabIdentifier,
-        'types': stateManager.validTypes,
         'urls': stateManager.validHosts
     };
 
@@ -120,14 +141,74 @@ stateManager._updateTab = function (details) {
         return;
     }
 
-    chrome.browserAction.setBadgeText({
-        tabId: tabIdentifier,
-        text: ''
-    });
+    if (stateManager.showIconBadge === true) {
+
+        chrome.browserAction.setBadgeText({
+            tabId: tabIdentifier,
+            text: ''
+        });
+    }
 
     if (stateManager.tabs[tabIdentifier]) {
         stateManager.tabs[tabIdentifier].injections = {};
     }
+};
+
+stateManager._stripMetadata = function (requestDetails) {
+
+    for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
+
+        if (requestDetails.requestHeaders[i].name === 'Origin') {
+            requestDetails.requestHeaders.splice(i--, 1);
+        } else if (requestDetails.requestHeaders[i].name === 'Referer') {
+            requestDetails.requestHeaders.splice(i--, 1);
+        }
+    }
+
+    return {
+        'requestHeaders': requestDetails.requestHeaders
+    };
+};
+
+stateManager._handleStorageChanged = function (changes) {
+
+    if ('showIconBadge' in changes) {
+        
+        stateManager.showIconBadge = changes.showIconBadge.newValue;
+
+        if (changes.showIconBadge.newValue !== true) {
+
+            chrome.tabs.query({}, function (tabs) {
+                tabs.forEach(stateManager._removeIconBadgeFromTab);
+            });
+        }
+    }
+
+    if ('stripMetadata' in changes) {
+
+        let onBeforeSendHeaders;
+
+        onBeforeSendHeaders = chrome.webRequest.onBeforeSendHeaders;
+
+        onBeforeSendHeaders.removeListener(stateManager._stripMetadata, {
+            'urls': stateManager.validHosts
+        }, [BLOCKING_ACTION, REQUEST_HEADERS]);
+
+        if (changes.stripMetadata.newValue !== false) {
+            
+            onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
+                'urls': stateManager.validHosts
+            }, [BLOCKING_ACTION, REQUEST_HEADERS]);
+        }
+    }
+};
+
+stateManager._removeIconBadgeFromTab = function (tab) {
+
+    chrome.browserAction.setBadgeText({
+        tabId: tab.id,
+        text: ''
+    });
 };
 
 /**
@@ -136,13 +217,6 @@ stateManager._updateTab = function (details) {
 
 stateManager.requests = {};
 stateManager.tabs = {};
-
-stateManager.validTypes = [
-
-    JAVASCRIPT_REQUEST_TYPE,
-    XML_HTTP_REQUEST_TYPE
-];
-
 stateManager.validHosts = [];
 
 for (let mapping in mappings) {
@@ -157,6 +231,10 @@ for (let mapping in mappings) {
 
 chrome.tabs.query({}, function (tabs) {
     tabs.forEach(stateManager._createTab);
+});
+
+chrome.storage.local.get('showIconBadge', function (items) {
+    stateManager.showIconBadge = items.showIconBadge || true;
 });
 
 /**
@@ -190,17 +268,8 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
 
 }, {'urls': ['*://*/*']});
 
-chrome.webRequest.onBeforeSendHeaders.addListener(function (requestDetails) {
+chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
+    'urls': stateManager.validHosts
+}, [BLOCKING_ACTION, REQUEST_HEADERS]);
 
-    for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
-
-        if (requestDetails.requestHeaders[i].name === 'Origin') {
-            requestDetails.requestHeaders.splice(i, 1);
-        } else if (requestDetails.requestHeaders[i].name === 'Referer') {
-            requestDetails.requestHeaders.splice(i, 1);
-        }
-    }
-
-    return {requestHeaders: requestDetails.requestHeaders};
-
-}, {urls: stateManager.validHosts}, [BLOCKING_ACTION, REQUEST_HEADERS]);
+chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);

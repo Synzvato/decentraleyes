@@ -29,7 +29,6 @@ const VERSION_PLACEHOLDER = '{version}';
 const WEB_DOMAIN_EXPRESSION = /:\/\/(.[^\/]+)(.*)/;
 const WEB_PREFIX_VALUE = 'www.';
 const WEB_PREFIX_LENGTH = WEB_PREFIX_VALUE.length;
-const VALUE_SEPARATOR = ';';
 
 /**
  * Public Methods
@@ -37,7 +36,7 @@ const VALUE_SEPARATOR = ';';
 
 requestAnalyzer.isValidCandidate = function (requestDetails, tabDetails) {
 
-    let destinationHost, initiatorHost;
+    let initiatorHost;
 
     try {
         initiatorHost = tabDetails.url.match(WEB_DOMAIN_EXPRESSION)[1];
@@ -108,15 +107,17 @@ requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channel
 
         if (resourcePattern.startsWith(resourceMold)) {
 
-            let targetPath, localPath;
+            let targetPath, version;
 
             targetPath = resourceMappings[resourceMold].path;
             targetPath = targetPath.replace(VERSION_PLACEHOLDER, versionNumber);
 
+            version = versionNumber && versionNumber[0] || targetPath.match(VERSION_EXPRESSION);
+
             // Prepare and return a local target.
             return {
                 source: channelHost,
-                version: versionNumber[0],
+                version: version,
                 path: targetPath
             };
         }

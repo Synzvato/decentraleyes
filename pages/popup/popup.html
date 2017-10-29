@@ -6,7 +6,13 @@
 
     <title>Decentraleyes Popup</title>
 
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8" />
+
     <link rel="stylesheet" type="text/css" href="popup.css">
+
+    <script defer src="../../modules/fontawesome/packs/solid.js"></script>
+    <script defer src="../../modules/fontawesome/fontawesome.js"></script>
 
 </head>
 
@@ -14,24 +20,52 @@
 
     <script src="popup.js"></script>
 
-    <div id="extension-options-overlay-header">
-        <img id="extension-options-overlay-icon" src="icon.png">
-        <div id="extension-options-overlay-title">Decentraleyes</div>
-    </div>
+    <header>
 
-    <section id="popup-content" class="popup-content">
+        <img class="icon-logo" src="icon.svg" alt="Extension Icon">
+        <div class="heading">Decentraleyes <sup id="version-label" class="label-version"></sup></div>
 
-        <h1 id="injection-counter">3</h1>
+    </header>
 
-        <div class="title" data-i18n-content="amountInjectedTitle"></div>
-        <div class="description" data-i18n-content="amountInjectedDescription"></div>
+    <section class="content">
+
+        <div id="website-context" class="panel hidden">
+
+            <div class="subpanel">
+
+                <div id="protection-toggle-button" class="button button-toggle active">
+                    <i class="fas fa-power-off" data-fa-transform="grow-2"></i>
+                </div>
+
+                <div class="label-domain">
+                    <i class="icon fas fa-globe fa-lg" data-fa-transform="down-1"></i>
+                    <span id="domain-indicator"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="extension-context" class="panel">
+
+            <div id="injection-counter" class="counter">0</div>
+
+            <div class="subheading" data-i18n-content="amountInjectedTitle"></div>
+            <div class="description" data-i18n-content="amountInjectedDescription"></div>
+
+        </div>
 
     </section>
 
-    <section class="button-panel">
-        <a href="https://decentraleyes.org/test" target="_blank" class="text-link">decentraleyes.org/test</a>
-        <button id="options-button" class="btn-sm">Options</button>
-    </section>
+    <footer>
+
+        <span id="testing-utility-link" class="link-text">decentraleyes.org/test</span>
+
+        <div id="options-button" class="button">
+            <i class="fas fa-cog" data-fa-transform="grow-2"></i>
+        </div>
+
+    </footer>
 
 </body>
 

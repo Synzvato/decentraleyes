@@ -14,6 +14,12 @@
 'use strict';
 
 /**
+ * Options
+ */
+
+var options = {};
+
+/**
  * Constants
  */
 
@@ -22,15 +28,66 @@ const WEB_PREFIX_LENGTH = WEB_PREFIX_VALUE.length;
 const VALUE_SEPARATOR = ';';
 
 /**
+ * Private Methods
+ */
+
+options._determineScriptDirection = function (language) {
+
+    let rightToLeftLanguages, scriptDirection;
+
+    rightToLeftLanguages = ['ar', 'he'];
+
+    if (rightToLeftLanguages.indexOf(language) !== -1) {
+        scriptDirection = 'rtl';
+    } else {
+        scriptDirection = 'ltr';
+    }
+
+    return scriptDirection;
+};
+
+options._languageIsFullySupported = function (language) {
+
+    let languageSupported, supportedLanguages;
+
+    languageSupported = false;
+
+    supportedLanguages = ['ar', 'bg', 'zh-CN', 'zh-TW', 'nl', 'en', 'et', 'fi',
+        'fr', 'de', 'he', 'hu', 'is', 'id', 'pl', 'pt-PT', 'ro', 'es', 'tr'];
+
+    for (let supportedLanguage of supportedLanguages) {
+
+        if (language.search(supportedLanguage) !== -1) {
+            languageSupported = true;
+        }
+    }
+
+    return languageSupported;
+};
+
+options._getOptionElement = function (optionKey) {
+    return document.querySelector('[data-option=' + optionKey + ']');
+};
+
+/**
  * Initializations
  */
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let i18nElements, saveButtonElement, blockMissingElement, domainWhitelistElement;
+    let i18nElements, scriptDirection, languageSupported, optionElements;
 
     i18nElements = document.querySelectorAll('[data-i18n-content]');
-    saveButtonElement = document.getElementById('save-button');
+    scriptDirection = options._determineScriptDirection(navigator.language);
+    document.body.setAttribute('dir', scriptDirection);
+
+    languageSupported = options._languageIsFullySupported(navigator.language);
+
+    if (languageSupported === false) {
+
+        let localeNoticeElement = document.getElementById('notice-locale');
+        localeNoticeElement.setAttribute('class', 'notice');
+    }
 
     i18nElements.forEach(function (i18nElement) {
 
@@ -38,41 +95,86 @@ document.addEventListener('DOMContentLoaded', function () {
         i18nElement.innerText = chrome.i18n.getMessage(i18nMessageName);
     });
 
-    blockMissingElement = document.querySelector('[data-option=blockMissing]');
-    domainWhitelistElement = document.querySelector('[data-option=domainWhitelist]');
+    optionElements = {
+        'showIconBadge': options._getOptionElement('showIconBadge'),
+        'blockMissing': options._getOptionElement('blockMissing'),
+        'disablePrefetch': options._getOptionElement('disablePrefetch'),
+        'stripMetadata': options._getOptionElement('stripMetadata'),
+        'whitelistedDomains': options._getOptionElement('whitelistedDomains')
+    };
 
-    chrome.storage.local.get(['blockMissing', 'whitelistedDomains'], function (items) {
+    chrome.storage.local.get(Object.keys(optionElements), function (items) {
 
-        let whitelistedDomains = items.whitelistedDomains || {};
-        let domainWhitelist = '';
+        let whitelistedDomains, domainWhitelist;
+
+        whitelistedDomains = items.whitelistedDomains;
+        domainWhitelist = '';
 
         Object.keys(whitelistedDomains).forEach(function (domain) {
             domainWhitelist = domainWhitelist + domain + ';';
         });
 
         domainWhitelist = domainWhitelist.slice(0, -1);
+        domainWhitelist = domainWhitelist.replace(/^;+|;+$/g, '');
 
-        blockMissingElement.checked = items.blockMissing || false;
-        domainWhitelistElement.value = domainWhitelist || '';
+        optionElements.showIconBadge.checked = items.showIconBadge;
+        optionElements.blockMissing.checked = items.blockMissing;
+        optionElements.disablePrefetch.checked = items.disablePrefetch;
+        optionElements.stripMetadata.checked = items.stripMetadata;
+        optionElements.whitelistedDomains.value = domainWhitelist;
     });
 
-    let optionChangedHandler = function () {
+    let optionChangedHandler = function ({target}) {
 
-        let whitelistedDomains = {};
+        let optionKey, optionType, optionValue;
 
-        domainWhitelistElement.value.split(VALUE_SEPARATOR).forEach(function (domain) {
-            whitelistedDomains[_normalizeDomain(domain)] = true;
-        });
+        optionKey = target.getAttribute('data-option');
+        optionType = target.getAttribute('type');
+
+        switch (optionType) {
+            case 'checkbox':
+                optionValue = target.checked;
+                break;
+            default:
+                optionValue = target.value;
+        }
+
+        if (optionKey === 'disablePrefetch') {
+
+            if (optionValue === false) {
+
+                // Restore default values of related preference values.
+                chrome.privacy.network.networkPredictionEnabled.clear({});
+            
+            } else {
+
+                chrome.privacy.network.networkPredictionEnabled.set({
+                    'value': false
+                });
+            }
+        }
+
+        if (optionKey === 'whitelistedDomains') {
+
+            let domainWhitelist = optionValue;
+            
+            optionValue = {};
+
+            domainWhitelist.split(VALUE_SEPARATOR).forEach(function (domain) {
+                optionValue[_normalizeDomain(domain)] = true;
+            });
+        }
 
         chrome.storage.local.set({
-
-            'blockMissing': blockMissingElement.checked,
-            'whitelistedDomains': whitelistedDomains
+            [optionKey]: optionValue
         });
     };
 
-    blockMissingElement.addEventListener('change', optionChangedHandler);
-    domainWhitelistElement.addEventListener('keyup', optionChangedHandler);
+    optionElements.showIconBadge.addEventListener('change', optionChangedHandler);
+    optionElements.blockMissing.addEventListener('change', optionChangedHandler);
+    optionElements.disablePrefetch.addEventListener('change', optionChangedHandler);
+    optionElements.stripMetadata.addEventListener('change', optionChangedHandler);
+    optionElements.whitelistedDomains.addEventListener('keyup', optionChangedHandler);
 });
 
 /**

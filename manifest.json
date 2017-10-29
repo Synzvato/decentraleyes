@@ -19,6 +19,7 @@
     "*://*/*",
     "privacy",
     "storage",
+    "unlimitedStorage",
     "tabs",
     "webNavigation",
     "webRequest",
@@ -38,12 +39,12 @@
       "38": "icons/action/icon38.png",
       "64": "icons/action/icon64.png"
     },
-    "default_popup": "pages/popup/popup.html"
+      "default_popup": "pages/popup/popup.html",
+      "browser_style": false
   },
 
   "options_ui": {
-    "page": "pages/options/options.html",
-    "chrome_style": true
+    "page": "pages/options/options.html"
   },
 
   "web_accessible_resources": [

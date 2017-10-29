@@ -14,10 +14,72 @@
 'use strict';
 
 /**
+ * Main
+ */
+
+var main = {};
+
+/**
+ * Private Methods
+ */
+
+main._initializeOptions = function () {
+
+    let optionDefaults = {
+        'showIconBadge': true,
+        'blockMissing': false,
+        'disablePrefetch': true,
+        'stripMetadata': true,
+        'whitelistedDomains': {}
+    };
+
+    chrome.storage.local.get(optionDefaults, function (options) {
+
+        if (options === null) {
+            options = optionDefaults;
+        }
+
+        if (options.disablePrefetch !== false) {
+
+            chrome.privacy.network.networkPredictionEnabled.set({
+                'value': false
+            });
+        }
+
+        chrome.storage.local.set(options);
+    });
+};
+
+main._showReleaseNotes = function (details) {
+
+    let location = chrome.extension.getURL('pages/welcome/welcome.html');
+
+    if (details.reason === 'install' || details.reason === 'update') {
+
+        if (details.temporary !== true) {
+
+            chrome.storage.local.get({
+                'showReleaseNotes': true
+            }, function (options) {
+
+                if (options.showReleaseNotes === true) {
+
+                    chrome.tabs.create({
+                        'url': location,
+                        'active': false
+                    });
+                }
+            });
+        }
+    }
+};
+
+/**
  * Initializations
  */
 
-chrome.privacy.network.networkPredictionEnabled.set({'value': false});
+chrome.runtime.onInstalled.addListener(main._showReleaseNotes);
+main._initializeOptions();
 
 chrome.browserAction.setBadgeBackgroundColor({
     'color': [74, 130, 108, 255]

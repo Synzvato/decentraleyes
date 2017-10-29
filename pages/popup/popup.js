@@ -14,19 +14,70 @@
 'use strict';
 
 /**
+ * Popup
+ */
+
+var popup = {};
+
+/**
+ * Constants
+ */
+
+const WEB_DOMAIN_EXPRESSION = /:\/\/(.[^\/]+)(.*)/;
+const WEB_PREFIX_VALUE = 'www.';
+const WEB_PREFIX_LENGTH = WEB_PREFIX_VALUE.length;
+
+/**
+ * Private Methods
+ */
+
+popup._determineScriptDirection = function (language) {
+
+    let rightToLeftLanguages, scriptDirection;
+
+    rightToLeftLanguages = ['ar', 'he'];
+
+    if (rightToLeftLanguages.indexOf(language) !== -1) {
+        scriptDirection = 'rtl';
+    } else {
+        scriptDirection = 'ltr';
+    }
+
+    return scriptDirection;
+};
+
+/**
  * Initializations
  */
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let i18nElements, saveButtonElement, blockMissingElement, domainWhitelistElement;
+    let version, optionsButtonElement, optionsTitle, scriptDirection, i18nElements;
+
+    version = chrome.runtime.getManifest().version;
+
+    if (version.indexOf('beta') !== -1) {
+        version = 'BETA';
+    }
+
+    document.getElementById('version-label').innerText = version;
+
+    optionsButtonElement = document.getElementById('options-button');
+    optionsTitle = chrome.i18n.getMessage('optionsTitle');
+
+    scriptDirection = popup._determineScriptDirection(navigator.language);
+
+    optionsButtonElement.setAttribute('title', optionsTitle);
+    optionsButtonElement.setAttribute('dir', scriptDirection);
 
     i18nElements = document.querySelectorAll('[data-i18n-content]');
 
     i18nElements.forEach(function (i18nElement) {
 
         let i18nMessageName = i18nElement.getAttribute('data-i18n-content');
+
         i18nElement.innerText = chrome.i18n.getMessage(i18nMessageName);
+        i18nElement.setAttribute('dir', scriptDirection);
     });
 
     chrome.storage.local.get('amountInjected', function (items) {
@@ -38,18 +89,86 @@ document.addEventListener('DOMContentLoaded', function () {
 
             chrome.runtime.getBackgroundPage(function (backgroundPage) {
 
-                let injections, injectionOverview;
+                if (backgroundPage === null) {
+                    return;
+                }
+
+                popup.backgroundPage = backgroundPage;
+
+                let injections, injectionOverview, domain;
 
                 injections = backgroundPage.stateManager.tabs[tabs[0].id].injections;
                 injectionOverview = {};
 
+                try {
+                    domain = tabs[0].url.match(WEB_DOMAIN_EXPRESSION)[1];
+                } catch (exception) {
+                    domain = null;
+                }
+
+                if (domain !== null) {
+
+                    let websiteContextElement, protectionToggleElement, domainIndicatorElement;
+
+                    websiteContextElement = document.getElementById('website-context');
+                    protectionToggleElement = document.getElementById('protection-toggle-button');
+                    domainIndicatorElement = document.getElementById('domain-indicator');
+
+                    if (domain.startsWith(WEB_PREFIX_VALUE)) {
+                        domain = domain.slice(WEB_PREFIX_LENGTH);
+                    }
+
+                    domainIndicatorElement.innerText = domain;
+
+                    if (!backgroundPage.requestAnalyzer.whitelistedDomains[domain]) {
+
+                        protectionToggleElement.setAttribute('class', 'button button-toggle active');
+
+                        let disableProtectionTitle = chrome.i18n.getMessage('disableProtectionTitle');
+                        
+                        protectionToggleElement.setAttribute('title', disableProtectionTitle);
+                        protectionToggleElement.setAttribute('dir', scriptDirection);
+
+                        protectionToggleElement.addEventListener('click', function () {
+
+                            backgroundPage.stateManager.addDomainToWhitelist(domain).then(function () {
+
+                                chrome.tabs.reload(tabs[0].id, {
+                                    'bypassCache': true
+                                });
+
+                                return window.close();
+                            });
+                        });
+
+                    } else {
+
+                        protectionToggleElement.setAttribute('class', 'button button-toggle');
+
+                        let enableProtectionTitle = chrome.i18n.getMessage('enableProtectionTitle');
+                        protectionToggleElement.setAttribute('title', enableProtectionTitle);
+
+                        protectionToggleElement.addEventListener('click', function () {
+
+                            backgroundPage.stateManager.deleteDomainFromWhitelist(domain).then(function () {
+
+                                chrome.tabs.reload(tabs[0].id, {
+                                    'bypassCache': true
+                                });
+
+                                return window.close();
+                            });
+                        });
+                    }
+
+                    websiteContextElement.setAttribute('class', 'panel');
+                }
+
                 for (let injection in injections) {
 
-                    let injectionSource, libraryName;
-
                     injection = injections[injection];
-                    injectionSource = injection.source;
 
+                    let injectionSource = injection.source;
                     injectionOverview[injectionSource] = injectionOverview[injectionSource] || [];
 
                     injectionOverview[injectionSource].push({
@@ -122,17 +241,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     listElement.appendChild(listItemElement);
 
                     subListElement = document.createElement('ul');
-                    subListElement.setAttribute('class', 'sub-list');
+                    subListElement.setAttribute('class', 'sublist');
 
                     listElement.appendChild(subListElement);
 
-                    cdn.forEach(function (injection) {
+                    for (let injection of cdn) {
 
                         let subListItemElement, resourcePathDetails, resourceFilename, resourceName,
                             resourceNameTextNode, sideNoteElement, sideNoteTextNode;
 
                         subListItemElement = document.createElement('li');
-                        subListItemElement.setAttribute('class', 'sub-list-item');
+                        subListItemElement.setAttribute('class', 'sublist-item');
 
                         resourcePathDetails = injection.path.split('/');
                         resourceFilename = resourcePathDetails[resourcePathDetails.length - 1];
@@ -195,15 +314,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         subListItemElement.appendChild(sideNoteElement);
 
                         subListElement.appendChild(subListItemElement);
-                    });
+                    }
                 }
 
                 if (Object.keys(injectionOverview).length > 0) {
 
-                    let popupContentElement = document.getElementById('popup-content');
-                    let injectionCounterElement = document.getElementById('injection-counter');
-
-                    popupContentElement.insertBefore(listElement, injectionCounterElement);
+                    let websiteContextElement = document.getElementById('website-context');
+                    websiteContextElement.append(listElement);
                 }
             });
         });
@@ -211,5 +328,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('options-button').addEventListener('click', function () {
         chrome.runtime.openOptionsPage();
+        return window.close();
+    });
+
+    document.getElementById('testing-utility-link').addEventListener('mouseup', function (event) {
+
+        if (event.button === 0 || event.button === 1) {
+
+            chrome.tabs.create({
+                'url': 'https://decentraleyes.org/test',
+                'active': (event.button === 0)
+            });
+        }
+
+        if (event.button === 0) {
+            window.close();
+        }
     });
 });
