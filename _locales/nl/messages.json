@@ -1,30 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Beschermt tegen tracking via het \"gratis\", gecentraliseerd, verzorgen van content.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Beschermt tegen tracking via het \"gratis\", gecentraliseerd, verzorgen van content.",
+    "description":"Extension description."
   },
-  "blockMissingTitle": {
-    "message": "Stop verzoeken voor ontbrekende items",
-    "description": "Block requests for missing resources title."
+  "disableProtectionTitle":{
+    "message":"Bescherming voor deze website uitschakelen",
+    "description":"Disable protection title."
   },
-  "blockMissingDescription": {
-    "message": "Annuleer een onderschept verzoek wanneer het bestand niet lokaal beschikbaar is.",
-    "description": "Block requests for missing resources description."
+  "enableProtectionTitle":{
+    "message":"Bescherming inschakelen",
+    "description":"Enable protection title."
   },
-  "domainWhitelistTitle": {
-    "message": "Sluit domeinen uit van inspecties",
-    "description": "Domain whitelist title."
+  "amountInjectedTitle":{
+    "message":"Teller voor lokaal geïnjecteerde bestanden",
+    "description":"Amount injected title."
   },
-  "domainWhitelistDescription": {
-    "message": "Voer de te negeren domeinen in. Scheid de waarden met puntkomma's (;).",
-    "description": "Domain whitelist description."
+  "amountInjectedDescription":{
+    "message":"Aantal lokale Content Delivery Network-bestandsinjecties sinds installatie.",
+    "description":"Amount injected description."
   },
-  "amountInjectedTitle": {
-    "message": "Teller voor lokaal geïnjecteerde bestanden",
-    "description": "Amount injected title."
+  "optionsTitle":{
+    "message":"Opties",
+    "description":"Options title."
   },
-  "amountInjectedDescription": {
-    "message": "Aantal lokale Content Delivery Network-bestandsinjecties sinds installatie.",
-    "description": "Amount injected description."
+  "showIconBadgeTitle":{
+    "message":"Getelde injecties op icoon weergeven",
+    "description":"Show icon badge title."
+  },
+  "showIconBadgeDescription":{
+    "message":"Toon het aantal geïnjecteerde bestanden op het extensie-icoon.",
+    "description":"Show icon badge description."
+  },
+  "blockMissingTitle":{
+    "message":"Verzoeken voor ontbrekende items blokkeren",
+    "description":"Block requests for missing resources title."
+  },
+  "blockMissingDescription":{
+    "message":"Annuleer een onderschept verzoek wanneer het bestand niet lokaal beschikbaar is.",
+    "description":"Block requests for missing resources description."
+  },
+  "disablePrefetchTitle":{
+    "message":"Link prefetching uitschakelen",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Voorkom dat geweigerde verzoeken naar afleveringsnetwerken uitlekken.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Metadata uit toegestane verzoeken verwijderen",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Wis gevoelige gegevens uit toegestane CDN-verzoeken voor verbeterde privacy.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Sluit domeinen uit van inspecties",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Voer de te negeren domeinen in. Scheid de waarden met puntkomma's (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Geavanceerd",
+    "description":"Advanced label."
   }
 }

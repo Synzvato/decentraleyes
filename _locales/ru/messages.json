@@ -1,30 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Защищает Вас от отслеживания через «бесплатные», централизованные CDN.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Защищает Вас от отслеживания через «бесплатные», централизованные CDN.",
+    "description":"Extension description."
   },
-  "blockMissingTitle": {
-    "message": "Блокировать запросы недостающих ресурсов",
-    "description": "Block requests for missing resources title."
+  "disableProtectionTitle":{
+    "message":"Отключить защиту для этого сайта",
+    "description":"Disable protection title."
   },
-  "blockMissingDescription": {
-    "message": "Отменить перехваченный запрос, если требуемый ресурс не доступен локально (может «ломать» сайты).",
-    "description": "Block requests for missing resources description."
+  "enableProtectionTitle":{
+    "message":"Включить защиту",
+    "description":"Enable protection title."
   },
-  "domainWhitelistTitle": {
-    "message": "Исключить домены из проверки",
-    "description": "Domain whitelist title."
+  "amountInjectedTitle":{
+    "message":"Счётчик файлов «доставленных» локально",
+    "description":"Amount injected title."
   },
-  "domainWhitelistDescription": {
-    "message": "«Белый список» доменов. Контент, расположенный на них не будет фильтроваться. Записи (при количестве более одной) разделяются точкой с запятой (;).",
-    "description": "Domain whitelist description."
+  "amountInjectedDescription":{
+    "message":"Количество локально «доставленных» файлов с момента установки.",
+    "description":"Amount injected description."
   },
-  "amountInjectedTitle": {
-    "message": "Счётчик файлов «доставленных» локально",
-    "description": "Amount injected title."
+  "optionsTitle":{
+    "message":"Настройки",
+    "description":"Options title."
   },
-  "amountInjectedDescription": {
-    "message": "Количество местных инъекций ресурсов сети доставки контента с момента установки.",
-    "description": "Amount injected description."
+  "showIconBadgeTitle":{
+    "message":"Display injection counts on icon",
+    "description":"Show icon badge title."
+  },
+  "showIconBadgeDescription":{
+    "message":"Show the number of injected resources on the extension icon.",
+    "description":"Show icon badge description."
+  },
+  "blockMissingTitle":{
+    "message":"Блокировать запросы недостающих ресурсов",
+    "description":"Block requests for missing resources title."
+  },
+  "blockMissingDescription":{
+    "message":"Отменить перехваченный запрос, если требуемый ресурс не доступен локально (может «ломать» сайты).",
+    "description":"Block requests for missing resources description."
+  },
+  "disablePrefetchTitle":{
+    "message":"Disable link prefetching",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Strip metadata from allowed requests",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Исключить домены из проверки",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"«Белый список» доменов. Контент, расположенный на них не будет фильтроваться. Записи (при количестве более одной) разделяются точкой с запятой (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Дополнительно",
+    "description":"Advanced label."
   }
 }

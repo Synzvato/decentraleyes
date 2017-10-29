@@ -1,70 +1,70 @@
 {
   "extensionDescription":{
-    "message":"保護您不受「免費」、中心化的內容傳遞網路（CDN）的追蹤。",
+    "message":"Sizi, \"ücretsiz\", merkezi, içerik dağıtımı aracılığıyla yapılan takipten korur.",
     "description":"Extension description."
   },
   "disableProtectionTitle":{
-    "message":"為此網站停用保護",
+    "message":"Bu sitede korumayı devre dışı bırak",
     "description":"Disable protection title."
   },
   "enableProtectionTitle":{
-    "message":"啟用保護",
+    "message":"Korumayı etkinleştir",
     "description":"Enable protection title."
   },
   "amountInjectedTitle":{
-    "message":"由本機提供的資源計數器",
+    "message":"Yerel olarak eklenen kaynaklar için sayaç",
     "description":"Amount injected title."
   },
   "amountInjectedDescription":{
-    "message":"安裝以來，由本機檔案所取代的 CDN 資源數量。",
+    "message":"Kurulumdan bu yana yerel İçerik Dağıtım Ağı kaynak eklemelerinin miktarı.",
     "description":"Amount injected description."
   },
   "optionsTitle":{
-    "message":"選項",
+    "message":"Seçenekler",
     "description":"Options title."
   },
   "showIconBadgeTitle":{
-    "message":"在圖示上顯示被取代的資源數量",
+    "message":"Simgede enjeksiyon sayaçlarını göster",
     "description":"Show icon badge title."
   },
   "showIconBadgeDescription":{
-    "message":"在擴充套件圖示上，顯示被取代的資源數量。",
+    "message":"Enjekte edilen kaynakların sayısını uzantı simgesinde gösterin.",
     "description":"Show icon badge description."
   },
   "blockMissingTitle":{
-    "message":"封鎖缺少資源時的連線請求",
+    "message":"Eksik kaynaklar için gelen istekleri engelle",
     "description":"Block requests for missing resources title."
   },
   "blockMissingDescription":{
-    "message":"若本機沒有所請求的資源，就取消該請求。",
+    "message":"İstenilen kaynak yerel olarak mevcut değilse, yakalanan isteği iptal et.",
     "description":"Block requests for missing resources description."
   },
   "disablePrefetchTitle":{
-    "message":"停用連結預讀功能",
+    "message":"Bağlantı önalımını devre dışı bırak",
     "description":"Disable prefetch title."
   },
   "disablePrefetchDescription":{
-    "message":"防止發出不被允許的請求到 CDN 網路。",
+    "message":"İzin verilmeyen isteklerin dağıtım ağlarına sızmasını engelleyin.",
     "description":"Disable prefetch description."
   },
   "stripMetadataTitle":{
-    "message":"移除放行請求當中的後設資料",
+    "message":"Meta verilerini izin verilen isteklerden ayır",
     "description":"Strip metadata title."
   },
   "stripMetadataDescription":{
-    "message":"清除放行的 CDN 請求當中的敏感資料，以保護隱私權。",
+    "message":"İzin verilen CDN isteklerine duyarlı verileri gelişmiş gizlilik için silin.",
     "description":"Strip metadata description."
   },
   "whitelistedDomainsTitle":{
-    "message":"要排除檢查的網域",
+    "message":"Alanları denetimlerden hariç tut",
     "description":"Whitelisted domains title."
   },
   "whitelistedDomainsDescription":{
-    "message":"輸入網域即可將其加入白名單。使用分號（;）分隔多個網域。",
+    "message":"Beyaz listeye eklemek için alan adlarını girin. Birden çok girdiyi noktalı virgül (;) ile ayırın.",
     "description":"Whitelisted domains description."
   },
   "advancedLabel":{
-    "message":"進階",
+    "message":"Gelişmiş",
     "description":"Advanced label."
   }
 }

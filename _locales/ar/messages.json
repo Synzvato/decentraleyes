@@ -1,0 +1,70 @@
+{
+  "extensionDescription":{
+    "message":"يحميك من التتبع المرتبط بالوصول للمحتوى \"مجاني\"، مركزية.",
+    "description":"Extension description."
+  },
+  "disableProtectionTitle":{
+    "message":"أوقف الحماية لهذا الموقع",
+    "description":"Disable protection title."
+  },
+  "enableProtectionTitle":{
+    "message":"فعّل الحماية",
+    "description":"Enable protection title."
+  },
+  "amountInjectedTitle":{
+    "message":"عداد محلي للموارد المحقونة",
+    "description":"Amount injected title."
+  },
+  "amountInjectedDescription":{
+    "message":"إجمالي موارد الـ CDN اللتي تم حقنها محليا منذ التثبيت.",
+    "description":"Amount injected description."
+  },
+  "optionsTitle":{
+    "message":"الخيارات",
+    "description":"Options title."
+  },
+  "showIconBadgeTitle":{
+    "message":"عرض مجموع الحقن على الأيقونة",
+    "description":"Show icon badge title."
+  },
+  "showIconBadgeDescription":{
+    "message":"إظهار عدد الموارد المحقونة على أيقونة الملحق.",
+    "description":"Show icon badge description."
+  },
+  "blockMissingTitle":{
+    "message":"حظر طلبات الموارد المفقودة",
+    "description":"Block requests for missing resources title."
+  },
+  "blockMissingDescription":{
+    "message":"إلغاء طلب الموارد إذا كانت متوفرة محليا.",
+    "description":"Block requests for missing resources description."
+  },
+  "disablePrefetchTitle":{
+    "message":"تعطيل الجلب المسبق للرابط",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"الحيلولة دون تسرّب الطلبات الممنوعة الى شبكات التوصيل.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"إزالة بيانات التعريف من الطلبات المسموحة",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"مسح البيانات الحساسة من طلبات CDN المسموحة لتحسين الخصوصية.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"لا تتفحص النطاقات",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"حدد النطاقات التي سوف يتم تجاهلها. إفصل المداخل المتعددة بـفاصلة منقوطة (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"متقدم",
+    "description":"Advanced label."
+  }
+}

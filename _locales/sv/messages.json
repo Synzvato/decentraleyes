@@ -1,30 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Skyddar dig mot att spåras av \"gratis\", centraliserat, innehållsleverans.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Skyddar dig mot att spåras av \"gratis\", centraliserad, innehållsleverans.",
+    "description":"Extension description."
   },
-  "blockMissingTitle": {
-    "message": "Blockera förfrågningar när resurs saknas",
-    "description": "Block requests for missing resources title."
+  "disableProtectionTitle":{
+    "message":"Inaktivera skydd för den här sidan",
+    "description":"Disable protection title."
   },
-  "blockMissingDescription": {
-    "message": "Avbryt uppsnappning om resurs inte finns lokalt.",
-    "description": "Block requests for missing resources description."
+  "enableProtectionTitle":{
+    "message":"Aktivera skydd",
+    "description":"Enable protection title."
   },
-  "domainWhitelistTitle": {
-    "message": "Utelämna domäner från uppsnappningar",
-    "description": "Domain whitelist title."
+  "amountInjectedTitle":{
+    "message":"Räknare för lokalt insatta resurser",
+    "description":"Amount injected title."
   },
-  "domainWhitelistDescription": {
-    "message": "Ange domäner för vitlistning. Spearera domänerna med semikolon (;).",
-    "description": "Domain whitelist description."
+  "amountInjectedDescription":{
+    "message":"Antalet insatta Content Delivery Network-resurser sedan installationen.",
+    "description":"Amount injected description."
   },
-  "amountInjectedTitle": {
-    "message": "Räknare för lokalt insatta resurser",
-    "description": "Amount injected title."
+  "optionsTitle":{
+    "message":"Inställningar",
+    "description":"Options title."
   },
-  "amountInjectedDescription": {
-    "message": "Antalet insatta Content Delivery Network-resurser sedan installationen.",
-    "description": "Amount injected description."
+  "showIconBadgeTitle":{
+    "message":"Visa insättningsantal på ikonen",
+    "description":"Show icon badge title."
+  },
+  "showIconBadgeDescription":{
+    "message":"Visa antalet insatta resurser på ikonen.",
+    "description":"Show icon badge description."
+  },
+  "blockMissingTitle":{
+    "message":"Blockera förfrågningar när resurs saknas",
+    "description":"Block requests for missing resources title."
+  },
+  "blockMissingDescription":{
+    "message":"Avbryt avlyssnad begäran om den begärda resursen inte finns lokalt.",
+    "description":"Block requests for missing resources description."
+  },
+  "disablePrefetchTitle":{
+    "message":"Inaktivera länkförhandshämtning",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Förhindra otillåtna förfrågningar från att läcka ut till leveransnätverk.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Skala bort metadata från tillåtna förfrågningar",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Radera känslig data från tillåtna CDN-förfrågningar för förbättrad integritet.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Exkludera domäner från inspektioner",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Ange domäner för vitlistning. Separera flera domänposter med semikolon (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Avancerad",
+    "description":"Advanced label."
   }
 }

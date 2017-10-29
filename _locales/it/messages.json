@@ -1,30 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Protegge dal tracciamento tramite i CDN centralizzati \"gratuiti\".",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Protegge dal tracciamento tramite i CDN centralizzati \"gratuiti\".",
+    "description":"Extension description."
   },
-  "blockMissingTitle": {
-    "message": "Bloccare richieste di risorse mancanti",
-    "description": "Block requests for missing resources title."
+  "disableProtectionTitle":{
+    "message":"Disattiva protezione per questo sito",
+    "description":"Disable protection title."
   },
-  "blockMissingDescription": {
-    "message": "Annulla la richiesta intercettata se la risorsa necessaria non è disponibile localmente.",
-    "description": "Block requests for missing resources description."
+  "enableProtectionTitle":{
+    "message":"Attiva protezione",
+    "description":"Enable protection title."
   },
-  "domainWhitelistTitle": {
-    "message": "Escludere domini dalle ispezioni",
-    "description": "Domain whitelist title."
+  "amountInjectedTitle":{
+    "message":"Contatore per risorse iniettate localmente",
+    "description":"Amount injected title."
   },
-  "domainWhitelistDescription": {
-    "message": "Inserire domini nella whitelist per escluderli. Separare voci multiple con punti e virgola (;).",
-    "description": "Domain whitelist description."
+  "amountInjectedDescription":{
+    "message":"Quantità di iniezioni di risorse dalla Rete di Distribuzione di Contenuti locale sin dall'installazione.",
+    "description":"Amount injected description."
   },
-  "amountInjectedTitle": {
-    "message": "Contatore per risorse iniettate localmente",
-    "description": "Amount injected title."
+  "optionsTitle":{
+    "message":"Opzioni",
+    "description":"Options title."
   },
-  "amountInjectedDescription": {
-    "message": "Quantità di iniezioni di risorse dalla Rete di Distribuzione di Contenuti locale sin dall'installazione.",
-    "description": "Amount injected description."
+  "showIconBadgeTitle":{
+    "message":"Display injection counts on icon",
+    "description":"Show icon badge title."
+  },
+  "showIconBadgeDescription":{
+    "message":"Show the number of injected resources on the extension icon.",
+    "description":"Show icon badge description."
+  },
+  "blockMissingTitle":{
+    "message":"Bloccare richieste di risorse mancanti",
+    "description":"Block requests for missing resources title."
+  },
+  "blockMissingDescription":{
+    "message":"Annulla la richiesta intercettata se la risorsa necessaria non è disponibile localmente.",
+    "description":"Block requests for missing resources description."
+  },
+  "disablePrefetchTitle":{
+    "message":"Disable link prefetching",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Prevent disallowed requests from leaking out to delivery networks.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Strip metadata from allowed requests",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Escludere domini dalle ispezioni",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Inserire domini nella whitelist per escluderli. Separare voci multiple con punti e virgola (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Avanzate",
+    "description":"Advanced label."
   }
 }

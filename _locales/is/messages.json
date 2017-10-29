@@ -1,70 +1,70 @@
 {
   "extensionDescription":{
-    "message":"保護您不受「免費」、中心化的內容傳遞網路（CDN）的追蹤。",
+    "message":"Verndar þig gegn eftirliti frá \"ókeypis\" miðlægum efnisveitum.",
     "description":"Extension description."
   },
   "disableProtectionTitle":{
-    "message":"為此網站停用保護",
+    "message":"Slökkva á vörn fyrir þetta vefsvæði",
     "description":"Disable protection title."
   },
   "enableProtectionTitle":{
-    "message":"啟用保護",
+    "message":"Virkja vernd",
     "description":"Enable protection title."
   },
   "amountInjectedTitle":{
-    "message":"由本機提供的資源計數器",
+    "message":"Fjöldi staðvært inspýttra tilfanga",
     "description":"Amount injected title."
   },
   "amountInjectedDescription":{
-    "message":"安裝以來，由本機檔案所取代的 CDN 資源數量。",
+    "message":"Fjöldi tilfanga frá miðlægum efnisveitum sem skipt hefur verið út síðan viðbótin var sett upp.",
     "description":"Amount injected description."
   },
   "optionsTitle":{
-    "message":"選項",
+    "message":"Valkostir",
     "description":"Options title."
   },
   "showIconBadgeTitle":{
-    "message":"在圖示上顯示被取代的資源數量",
+    "message":"Birta fjölda innspýtinga á táknmynd",
     "description":"Show icon badge title."
   },
   "showIconBadgeDescription":{
-    "message":"在擴充套件圖示上，顯示被取代的資源數量。",
+    "message":"Sýnir merki fyrir fjölda innspýttra tilfanga á táknmynd viðbótarinnar.",
     "description":"Show icon badge description."
   },
   "blockMissingTitle":{
-    "message":"封鎖缺少資源時的連線請求",
+    "message":"Loka á beiðnir vegna tilfanga sem vantar",
     "description":"Block requests for missing resources title."
   },
   "blockMissingDescription":{
-    "message":"若本機沒有所請求的資源，就取消該請求。",
+    "message":"Hætta við veiddar beiðnir ef umbeðið tilfang er ekki til staðar á tölvunni.",
     "description":"Block requests for missing resources description."
   },
   "disablePrefetchTitle":{
-    "message":"停用連結預讀功能",
+    "message":"Gera forsöfnun tengla óvirka",
     "description":"Disable prefetch title."
   },
   "disablePrefetchDescription":{
-    "message":"防止發出不被允許的請求到 CDN 網路。",
+    "message":"Kemur í veg fyrir að bannaðar beiðnir leki út til afhendingarveitna.",
     "description":"Disable prefetch description."
   },
   "stripMetadataTitle":{
-    "message":"移除放行請求當中的後設資料",
+    "message":"Hreinsa lýsigögn úr leyfðum beiðnum",
     "description":"Strip metadata title."
   },
   "stripMetadataDescription":{
-    "message":"清除放行的 CDN 請求當中的敏感資料，以保護隱私權。",
+    "message":"Þurrka viðkvæm gögn út úr leyfðum beiðnum til efnisveitna til að auka gagnaleynd.",
     "description":"Strip metadata description."
   },
   "whitelistedDomainsTitle":{
-    "message":"要排除檢查的網域",
+    "message":"Undanskilja lén frá athugun",
     "description":"Whitelisted domains title."
   },
   "whitelistedDomainsDescription":{
-    "message":"輸入網域即可將其加入白名單。使用分號（;）分隔多個網域。",
+    "message":"Settu inn lén til að skrá þau á lista yfir leyfð lén. Aðgreindu færslur með semíkommum (;).",
     "description":"Whitelisted domains description."
   },
   "advancedLabel":{
-    "message":"進階",
+    "message":"Ítarlegt",
     "description":"Advanced label."
   }
 }

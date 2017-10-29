@@ -1,30 +1,70 @@
 {
-  "extensionDescription": {
-    "message": "Suojaa sinua \"ilmaisten\" keskitettyjen sisällön jakeluverkkojen jäljitykseltä.",
-    "description": "Extension description."
+  "extensionDescription":{
+    "message":"Suojaa sinua \"ilmaisten\" keskitettyjen sisällön jakeluverkkojen jäljitykseltä.",
+    "description":"Extension description."
   },
-  "blockMissingTitle": {
-    "message": "Estä pyynnöt puuttuviin resursseihin",
-    "description": "Block requests for missing resources title."
+  "disableProtectionTitle":{
+    "message":"Poista suojaus tältä sivustolta",
+    "description":"Disable protection title."
   },
-  "blockMissingDescription": {
-    "message": "Estää pyynnöt jos paikallista sisältöä ei ole saatavilla.",
-    "description": "Block requests for missing resources description."
+  "enableProtectionTitle":{
+    "message":"Ota suojaus käyttöön",
+    "description":"Enable protection title."
   },
-  "domainWhitelistTitle": {
-    "message": "Poissulje verkkotunnukset",
-    "description": "Domain whitelist title."
+  "amountInjectedTitle":{
+    "message":"Korvatut pyynnöt",
+    "description":"Amount injected title."
   },
-  "domainWhitelistDescription": {
-    "message": "Lisää verkkotunnus jottei sitä korvata. Erota rivit puolipisteellä (;).",
-    "description": "Domain whitelist description."
+  "amountInjectedDescription":{
+    "message":"Korvatut sisältöpyynnöt lisäosan asennuksen jälkeen.",
+    "description":"Amount injected description."
   },
-  "amountInjectedTitle": {
-    "message": "Korvatut pyynnöt",
-    "description": "Amount injected title."
+  "optionsTitle":{
+    "message":"Asetukset",
+    "description":"Options title."
   },
-  "amountInjectedDescription": {
-    "message": "Korvatut sisältöpyynnöt lisäosan asennuksen jälkeen.",
-    "description": "Amount injected description."
+  "showIconBadgeTitle":{
+    "message":"Näytä kohteiden määrä kuvakkeessa",
+    "description":"Show icon badge title."
+  },
+  "showIconBadgeDescription":{
+    "message":"Näyttää turvattujen kohteiden määrän lisäosan kuvakkeessa.",
+    "description":"Show icon badge description."
+  },
+  "blockMissingTitle":{
+    "message":"Estä pyynnöt puuttuviin resursseihin",
+    "description":"Block requests for missing resources title."
+  },
+  "blockMissingDescription":{
+    "message":"Estää pyynnöt jos paikallista sisältöä ei ole saatavilla.",
+    "description":"Block requests for missing resources description."
+  },
+  "disablePrefetchTitle":{
+    "message":"Estä linkkien esihaku",
+    "description":"Disable prefetch title."
+  },
+  "disablePrefetchDescription":{
+    "message":"Estä kiellettyjä sisältöpyyntöjä vuotamasta keskitettyihin jakeluverkkoihin.",
+    "description":"Disable prefetch description."
+  },
+  "stripMetadataTitle":{
+    "message":"Poista metatiedot sallituista sisältöpyynnöistä",
+    "description":"Strip metadata title."
+  },
+  "stripMetadataDescription":{
+    "message":"Poista arkaluontoiset tiedot jakeluverkkojen sisältöpyynnöistä yksityisyyden parantamiseksi.",
+    "description":"Strip metadata description."
+  },
+  "whitelistedDomainsTitle":{
+    "message":"Poissulje verkkotunnukset",
+    "description":"Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription":{
+    "message":"Lisää verkkotunnus jottei sitä korvata. Erota rivit puolipisteellä (;).",
+    "description":"Whitelisted domains description."
+  },
+  "advancedLabel":{
+    "message":"Yksityiskohdat",
+    "description":"Advanced label."
   }
 }
