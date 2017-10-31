@@ -122,7 +122,10 @@ stateManager._createTab = function (tab) {
     };
 
     chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
+
+        let tab = stateManager.tabs[tabIdentifier].details || {};
         return interceptor.handleRequest(requestDetails, tabIdentifier, tab);
+    
     }, requestFilters, [BLOCKING_ACTION]);
 };
 
@@ -243,6 +246,17 @@ chrome.storage.local.get('showIconBadge', function (items) {
 
 chrome.tabs.onCreated.addListener(stateManager._createTab);
 chrome.tabs.onRemoved.addListener(stateManager._removeTab);
+
+chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
+
+    if (requestDetails.tabId !== -1) {
+        
+        stateManager.tabs[requestDetails.tabId].details = {
+            'url': requestDetails.url
+        }
+    }
+
+}, {'types': ['main_frame'], 'urls': ['*://*/*']});
 
 chrome.webNavigation.onCommitted.addListener(stateManager._updateTab, {
     url: [{urlContains: ':'}]
