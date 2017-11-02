@@ -37,11 +37,11 @@ var resourceAmount = 0;
  * Functions
  */
 
-function _fetchLocalResourcePaths(folderPath) {
+function _fetchLocalResourcePaths (folderPath) {
 
     fileSystem.readdirSync(folderPath).forEach(function (resourceName) {
 
-        var resourcePath = folderPath + '/' + resourceName;
+        var resourcePath = `${folderPath}/${resourceName}`;
         var resourceStatistics = fileSystem.statSync(resourcePath);
 
         if (resourceStatistics && resourceStatistics.isDirectory()) {
@@ -55,7 +55,7 @@ function _fetchLocalResourcePaths(folderPath) {
     return localResourcePaths;
 }
 
-function _getLocalResourceContents(fileLocation, callback) {
+function _getLocalResourceContents (fileLocation, callback) {
 
     fileSystem.exists(fileLocation, function (exists) {
 
@@ -81,16 +81,16 @@ function _getLocalResourceContents(fileLocation, callback) {
     });
 }
 
-function _getRemoteResourceContents(remoteResourceRoute, callback) {
+function _getRemoteResourceContents (remoteResourceRoute, callback) {
 
-    var resourceURL = 'https://ajax.googleapis.com/ajax/libs/' + remoteResourceRoute;
+    var resourceURL = `https://ajax.googleapis.com/ajax/libs/${remoteResourceRoute}`;
 
     https.get(resourceURL, function (response) {
 
         var resourceContents = '';
 
         response.on('data', function (chunk) {
-            resourceContents = resourceContents + chunk;
+            resourceContents += chunk;
         });
 
         response.on('end', function () {
@@ -101,20 +101,20 @@ function _getRemoteResourceContents(remoteResourceRoute, callback) {
 
             } else {
 
-                resourceURL = 'https://cdnjs.cloudflare.com/ajax/libs/' + remoteResourceRoute;
+                resourceURL = `https://cdnjs.cloudflare.com/ajax/libs/${remoteResourceRoute}`;
 
                 https.get(resourceURL, function (response) {
 
                     resourceContents = '';
 
                     response.on('data', function (chunk) {
-                        resourceContents = resourceContents + chunk;
+                        resourceContents += chunk;
                     });
 
                     response.on('end', function () {
 
                         if (response.statusCode !== 200) {
-                            throw 'Error: Resource ' + remoteResourceRoute + ' could not be fetched.';
+                            throw `Error: Resource ${remoteResourceRoute} could not be fetched.`;
                         }
 
                         callback(resourceContents, resourceURL);
@@ -129,7 +129,7 @@ function _getRemoteResourceContents(remoteResourceRoute, callback) {
     });
 }
 
-function _hashFileContents(fileContents) {
+function _hashFileContents (fileContents) {
 
     var hash;
 
@@ -142,7 +142,27 @@ function _hashFileContents(fileContents) {
     return hash.read();
 }
 
-function _compareResources(localResourceContents, remoteResourceContents, URL) {
+function _showCompletedMessage () {
+
+    console.log();
+    console.log('       *** FILE INTEGRITY CHECKS COMPLETED');
+    console.log(`       *** ${resourceAmount}/${resourceAmount} RESOURCES WERE ANALYZED`);
+    console.log();
+}
+
+function _incrementComparedResourceAmount () {
+
+    comparedResourceAmount++;
+
+    if (comparedResourceAmount === resourceAmount) {
+
+        setTimeout(function () {
+            _showCompletedMessage();
+        }, 500);
+    }
+}
+
+function _compareResources (localResourceContents, remoteResourceContents, URL) {
 
     var hasSourceMappingURL = sourceMappingURL.existsIn(remoteResourceContents);
     var sourceMappingNotice = '[ ] REMOTE RESOURCE HAD SOURCE MAPPING URL';
@@ -155,8 +175,8 @@ function _compareResources(localResourceContents, remoteResourceContents, URL) {
     var localResourceHash = _hashFileContents(localResourceContents);
     var remoteResourceHash = _hashFileContents(remoteResourceContents);
 
-    console.log('RESOURCE HASH (SHA512): ' + localResourceHash);
-    console.log('RESOURCE HASH (SHA512): ' + remoteResourceHash);
+    console.log(`RESOURCE HASH (SHA512): ${localResourceHash}`);
+    console.log(`RESOURCE HASH (SHA512): ${remoteResourceHash}`);
 
     var fileHashesMatch = (localResourceHash === remoteResourceHash);
 
@@ -171,26 +191,6 @@ function _compareResources(localResourceContents, remoteResourceContents, URL) {
     console.log(sourceMappingNotice);
 
     _incrementComparedResourceAmount();
-}
-
-function _showCompletedMessage() {
-
-    console.log();
-    console.log('       *** FILE INTEGRITY CHECKS COMPLETED');
-    console.log('       *** ' + resourceAmount + '/' + resourceAmount + ' RESOURCES WERE ANALYZED');
-    console.log();
-}
-
-function _incrementComparedResourceAmount() {
-
-    comparedResourceAmount++;
-
-    if (comparedResourceAmount === resourceAmount) {
-
-        setTimeout(function () {
-            _showCompletedMessage();
-        }, 500);
-    }
 }
 
 /**
