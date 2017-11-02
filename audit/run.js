@@ -15,12 +15,11 @@
  * Imports
  */
 
-var fileSystem, crypto, http, path, sourceMappingURL;
+var fileSystem, crypto, https, sourceMappingURL;
 
 fileSystem = require('fs');
 crypto = require('crypto');
 https = require('https');
-path = require('path');
 
 sourceMappingURL = require('source-map-url');
 
@@ -205,7 +204,7 @@ resourceAmount = localResourcePaths.length;
  * Script
  */
 
-localResourcePaths.forEach(function (resourcePath, index) {
+localResourcePaths.forEach(function (resourcePath) {
 
     var resourceRoute = resourcePath.substr(localResourceLocationLength + 1);
     resourceRoute = resourceRoute.substring(0, resourceRoute.length - 4);

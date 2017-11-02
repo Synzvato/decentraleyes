@@ -20,74 +20,30 @@
 var popup = {};
 
 /**
- * Constants
- */
-
-const WEB_DOMAIN_EXPRESSION = /:\/\/(.[^\/]+)(.*)/;
-const WEB_PREFIX_VALUE = 'www.';
-const WEB_PREFIX_LENGTH = WEB_PREFIX_VALUE.length;
-
-/**
- * Private Methods
- */
-
-popup._determineScriptDirection = function (language) {
-
-    let rightToLeftLanguages, scriptDirection;
-
-    rightToLeftLanguages = ['ar', 'he'];
-
-    if (rightToLeftLanguages.indexOf(language) !== -1) {
-        scriptDirection = 'rtl';
-    } else {
-        scriptDirection = 'ltr';
-    }
-
-    return scriptDirection;
-};
-
-/**
  * Initializations
  */
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let version, optionsButtonElement, optionsTitle, scriptDirection, i18nElements;
+    let version, optionsButtonElement, scriptDirection;
 
-    version = browser.runtime.getManifest().version;
-
-    if (version.indexOf('beta') !== -1) {
-        version = 'BETA';
-    }
-
+    version = helpers.formatVersion(browser.runtime.getManifest().version);
     document.getElementById('version-label').innerText = version;
 
+    scriptDirection = helpers.determineScriptDirection(navigator.language);
     optionsButtonElement = document.getElementById('options-button');
-    optionsTitle = chrome.i18n.getMessage('optionsTitle');
 
-    scriptDirection = popup._determineScriptDirection(navigator.language);
-
-    optionsButtonElement.setAttribute('title', optionsTitle);
-    optionsButtonElement.setAttribute('dir', scriptDirection);
-
-    i18nElements = document.querySelectorAll('[data-i18n-content]');
-
-    i18nElements.forEach(function (i18nElement) {
-
-        let i18nMessageName = i18nElement.getAttribute('data-i18n-content');
-
-        i18nElement.innerText = chrome.i18n.getMessage(i18nMessageName);
-        i18nElement.setAttribute('dir', scriptDirection);
-    });
+    helpers.insertI18nContentIntoDocument(document);
+    helpers.insertI18nTitlesIntoDocument(document);
 
     chrome.storage.local.get('amountInjected', function (items) {
 
         let amountInjected = items.amountInjected || 0;
         document.getElementById('injection-counter').innerText = amountInjected;
 
-        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
 
-            browser.runtime.getBackgroundPage().then(function (backgroundPage) {
+            chrome.runtime.getBackgroundPage(function (backgroundPage) {
 
                 if (backgroundPage === null) {
                     return;
@@ -130,18 +86,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     domainIndicatorElement.innerText = domain;
 
-                    if (!backgroundPage.requestAnalyzer.whitelistedDomains[domain]) {
+                    if (backgroundPage.requestAnalyzer.whitelistedDomains[domain]) {
 
-                        protectionToggleElement.setAttribute('class', 'button button-toggle active');
+                        protectionToggleElement.setAttribute('class', 'button button-toggle');
 
-                        let disableProtectionTitle = chrome.i18n.getMessage('disableProtectionTitle');
-                        
-                        protectionToggleElement.setAttribute('title', disableProtectionTitle);
-                        protectionToggleElement.setAttribute('dir', scriptDirection);
+                        let enableProtectionTitle = chrome.i18n.getMessage('enableProtectionTitle');
+                        protectionToggleElement.setAttribute('title', enableProtectionTitle);
 
                         protectionToggleElement.addEventListener('click', function () {
 
-                            backgroundPage.stateManager.addDomainToWhitelist(domain).then(function () {
+                            backgroundPage.stateManager.deleteDomainFromWhitelist(domain).then(function () {
 
                                 chrome.tabs.reload(tabs[0].id);
 
@@ -158,14 +112,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     } else {
 
-                        protectionToggleElement.setAttribute('class', 'button button-toggle');
+                        protectionToggleElement.setAttribute('class', 'button button-toggle active');
 
-                        let enableProtectionTitle = chrome.i18n.getMessage('enableProtectionTitle');
-                        protectionToggleElement.setAttribute('title', enableProtectionTitle);
+                        let disableProtectionTitle = chrome.i18n.getMessage('disableProtectionTitle');
+
+                        protectionToggleElement.setAttribute('title', disableProtectionTitle);
+                        protectionToggleElement.setAttribute('dir', scriptDirection);
 
                         protectionToggleElement.addEventListener('click', function () {
 
-                            backgroundPage.stateManager.deleteDomainFromWhitelist(domain).then(function () {
+                            backgroundPage.stateManager.addDomainToWhitelist(domain).then(function () {
 
                                 chrome.tabs.reload(tabs[0].id);
 
@@ -216,42 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     badgeTextNode = document.createTextNode(cdn.length);
                     badgeElement.appendChild(badgeTextNode);
 
-                    switch (injectionSource) {
-
-                    case 'ajax.googleapis.com':
-                        cdnName = 'Google Hosted Libraries';
-                        break;
-                    case 'ajax.aspnetcdn.com':
-                        cdnName = 'Microsoft Ajax CDN';
-                        break;
-                    case 'ajax.microsoft.com':
-                        cdnName = 'Microsoft Ajax CDN [Deprecated]';
-                        break;
-                        case 'cdnjs.cloudflare.com':
-                        cdnName = 'CDNJS (Cloudflare)';
-                        break;
-                    case 'code.jquery.com':
-                        cdnName = 'jQuery CDN (MaxCDN)';
-                        break;
-                    case 'cdn.jsdelivr.net':
-                        cdnName = 'jsDelivr (MaxCDN)';
-                        break;
-                    case 'yastatic.net':
-                        cdnName = 'Yandex CDN';
-                        break;
-                    case 'yandex.st':
-                        cdnName = 'Yandex CDN [Deprecated]';
-                        break;
-                    case 'libs.baidu.com':
-                        cdnName = 'Baidu CDN';
-                        break;
-                    case 'lib.sinaapp.com':
-                        cdnName = 'Sina Public Resources';
-                        break;
-                    case 'upcdn.b0.upaiyun.com':
-                        cdnName = 'UpYun Library';
-                        break;
-                    }
+                    cdnName = helpers.determineCdnName(injectionSource);
 
                     cdnNameTextNode = document.createTextNode(cdnName);
 
@@ -276,59 +197,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         resourcePathDetails = injection.path.split('/');
                         resourceFilename = resourcePathDetails[resourcePathDetails.length - 1];
 
-                        switch (resourceFilename) {
+                        resourceName = helpers.determineResourceName(resourceFilename);
 
-                        case 'angular.min.js.dec':
-                            resourceName = 'AngularJS';
-                            break;
-                        case 'backbone-min.js.dec':
-                            resourceName = 'Backbone.js';
-                            break;
-                        case 'dojo.js.dec':
-                            resourceName = 'Dojo';
-                            break;
-                        case 'ember.min.js.dec':
-                            resourceName = 'Ember.js';
-                            break;
-                        case 'ext-core.js.dec':
-                            resourceName = 'Ext Core';
-                            break;
-                        case 'jquery.min.js.dec':
-                            resourceName = 'jQuery';
-                            break;
-                        case 'jquery-ui.min.js.dec':
-                            resourceName = 'jQuery UI';
-                            break;
-                        case 'modernizr.min.js.dec':
-                            resourceName = 'Modernizr';
-                            break;
-                        case 'mootools-yui-compressed.js.dec':
-                            resourceName = 'MooTools';
-                            break;
-                        case 'prototype.js.dec':
-                            resourceName = 'Prototype';
-                            break;
-                        case 'scriptaculous.js.dec':
-                            resourceName = 'Scriptaculous';
-                            break;
-                        case 'swfobject.js.dec':
-                            resourceName = 'SWFObject';
-                            break;
-                        case 'underscore-min.js.dec':
-                            resourceName = 'Underscore.js';
-                            break;
-                        case 'webfont.js.dec':
-                            resourceName = 'Web Font Loader';
-                            break;
-                        }
-
-                        resourceNameTextNode = document.createTextNode('- ' + resourceName);
+                        resourceNameTextNode = document.createTextNode(`- ${resourceName}`);
                         subListItemElement.appendChild(resourceNameTextNode);
 
                         sideNoteElement = document.createElement('span');
                         sideNoteElement.setAttribute('class', 'side-note');
 
-                        sideNoteTextNode = document.createTextNode(' v' + injection.version);
+                        sideNoteTextNode = document.createTextNode(` v${injection.version}`);
 
                         sideNoteElement.appendChild(sideNoteTextNode);
                         subListItemElement.appendChild(sideNoteElement);
@@ -363,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (event.button === 0 || event.button === 1) {
 
-            browser.tabs.create({
+            chrome.tabs.create({
                 'url': 'https://decentraleyes.org/test',
                 'active': (event.button === 0)
             });

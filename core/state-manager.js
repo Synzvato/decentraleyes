@@ -20,15 +20,6 @@
 var stateManager = {};
 
 /**
- * Constants
- */
-
-const BLOCKING_ACTION = 'blocking';
-const HOST_PREFIX = '*://';
-const HOST_SUFFIX = '/*';
-const REQUEST_HEADERS = 'requestHeaders';
-
-/**
  * Public Methods
  */
 
@@ -47,15 +38,15 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
         if (injectionCount > 0) {
 
             chrome.browserAction.setBadgeText({
-                tabId: tabIdentifier,
-                text: injectionCount.toString()
+                'tabId': tabIdentifier,
+                'text': injectionCount.toString()
             });
 
         } else {
 
             chrome.browserAction.setBadgeText({
-                tabId: tabIdentifier,
-                text: ''
+                'tabId': tabIdentifier,
+                'text': ''
             });
         }
     }
@@ -130,7 +121,7 @@ stateManager._createTab = function (tab) {
             });
         });
 
-    }, requestFilters, [BLOCKING_ACTION]);
+    }, requestFilters, [REQUEST_BLOCKING]);
 };
 
 stateManager._removeTab = function (tabIdentifier) {
@@ -151,8 +142,8 @@ stateManager._updateTab = function (details) {
     if (stateManager.showIconBadge === true) {
 
         chrome.browserAction.setBadgeText({
-            tabId: tabIdentifier,
-            text: ''
+            'tabId': tabIdentifier,
+            'text': ''
         });
     }
 
@@ -180,7 +171,7 @@ stateManager._stripMetadata = function (requestDetails) {
 stateManager._handleStorageChanged = function (changes) {
 
     if ('showIconBadge' in changes) {
-        
+
         stateManager.showIconBadge = changes.showIconBadge.newValue;
 
         if (changes.showIconBadge.newValue !== true) {
@@ -199,13 +190,13 @@ stateManager._handleStorageChanged = function (changes) {
 
         onBeforeSendHeaders.removeListener(stateManager._stripMetadata, {
             'urls': stateManager.validHosts
-        }, [BLOCKING_ACTION, REQUEST_HEADERS]);
+        }, [REQUEST_BLOCKING, REQUEST_HEADERS]);
 
         if (changes.stripMetadata.newValue !== false) {
-            
+
             onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
                 'urls': stateManager.validHosts
-            }, [BLOCKING_ACTION, REQUEST_HEADERS]);
+            }, [REQUEST_BLOCKING, REQUEST_HEADERS]);
         }
     }
 };
@@ -213,8 +204,8 @@ stateManager._handleStorageChanged = function (changes) {
 stateManager._removeIconBadgeFromTab = function (tab) {
 
     chrome.browserAction.setBadgeText({
-        tabId: tab.id,
-        text: ''
+        'tabId': tab.id,
+        'text': ''
     });
 };
 
@@ -227,10 +218,6 @@ stateManager.tabs = {};
 stateManager.validHosts = [];
 
 for (let mapping in mappings) {
-
-    if (!mappings.hasOwnProperty(mapping)) {
-        continue;
-    }
 
     let supportedHost = HOST_PREFIX + mapping + HOST_SUFFIX;
     stateManager.validHosts.push(supportedHost);
@@ -252,7 +239,7 @@ chrome.tabs.onCreated.addListener(stateManager._createTab);
 chrome.tabs.onRemoved.addListener(stateManager._removeTab);
 
 chrome.webNavigation.onCommitted.addListener(stateManager._updateTab, {
-    url: [{urlContains: ':'}]
+    'url': [{'urlContains': ':'}]
 });
 
 chrome.webRequest.onErrorOccurred.addListener(function (requestDetails) {
@@ -277,6 +264,6 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
 
 chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
     'urls': stateManager.validHosts
-}, [BLOCKING_ACTION, REQUEST_HEADERS]);
+}, [REQUEST_BLOCKING, REQUEST_HEADERS]);
 
 chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);

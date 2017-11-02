@@ -37,40 +37,40 @@ var mappings = {
 
             // Common Shorthand Notations [Deprecated]
             'dojo/1/dojo/dojo.': {
-                path: 'resources/dojo/1.6.1/dojo/dojo.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/dojo/1.6.1/dojo/dojo.js.dec',
+                'type': 'application/javascript'
             },
             'jquery/1/jquery.': {
-                path: 'resources/jquery/1.11.1/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.11.1/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jqueryui/1/jquery-ui.js': {
-                path: 'resources/jqueryui/1.10.4/jquery-ui.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jqueryui/1.10.4/jquery-ui.min.js.dec',
+                'type': 'application/javascript'
             },
             'jqueryui/1/jquery-ui.min.js': {
-                path: 'resources/jqueryui/1.10.4/jquery-ui.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jqueryui/1.10.4/jquery-ui.min.js.dec',
+                'type': 'application/javascript'
             },
             'mootools/1/mootools-yui-compressed.': {
-                path: 'resources/mootools/1.1.2/mootools-yui-compressed.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/mootools/1.1.2/mootools-yui-compressed.js.dec',
+                'type': 'application/javascript'
             },
             'prototype/1/prototype.': {
-                path: 'resources/prototype/1.7.1.0/prototype.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/prototype/1.7.1.0/prototype.js.dec',
+                'type': 'application/javascript'
             },
             'scriptaculous/1/scriptaculous.': {
-                path: 'resources/scriptaculous/1.9.0/scriptaculous.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/scriptaculous/1.9.0/scriptaculous.js.dec',
+                'type': 'application/javascript'
             },
             'swfobject/2/swfobject.': {
-                path: 'resources/swfobject/2.2/swfobject.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/swfobject/2.2/swfobject.js.dec',
+                'type': 'application/javascript'
             },
             'webfont/1/webfont.': {
-                path: 'resources/webfont/1.5.18/webfont.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/webfont/1.5.18/webfont.js.dec',
+                'type': 'application/javascript'
             }
         }
     },
@@ -118,52 +118,52 @@ var mappings = {
 
             // Common Shorthand Notations [Deprecated]
             'jquery-latest.': {
-                path: 'resources/jquery/1.11.1/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.11.1/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery.': {
-                path: 'resources/jquery/1.11.1/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.11.1/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.3.min.js': {
-                path: 'resources/jquery/1.3.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.3.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.3.js': {
-                path: 'resources/jquery/1.3.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.3.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.4.min.js': {
-                path: 'resources/jquery/1.4.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.4.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.4.js': {
-                path: 'resources/jquery/1.4.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.4.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.5.min.js': {
-                path: 'resources/jquery/1.5.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.5.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.5.js': {
-                path: 'resources/jquery/1.5.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.5.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.6.min.js': {
-                path: 'resources/jquery/1.6.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.6.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.6.js': {
-                path: 'resources/jquery/1.6.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.6.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.7.min.js': {
-                path: 'resources/jquery/1.7.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.7.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             },
             'jquery-1.7.js': {
-                path: 'resources/jquery/1.7.0/jquery.min.js.dec',
-                type: 'application/javascript'
+                'path': 'resources/jquery/1.7.0/jquery.min.js.dec',
+                'type': 'application/javascript'
             }
         }
     },

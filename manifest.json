@@ -44,8 +44,7 @@
   },
 
   "options_ui": {
-    "page": "pages/options/options.html",
-    "browser_style": false
+    "page": "pages/options/options.html"
   },
 
   "applications": {

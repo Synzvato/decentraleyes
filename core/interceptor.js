@@ -20,12 +20,6 @@
 var interceptor = {};
 
 /**
- * Constants
- */
-
-const HTTP_EXPRESSION = /^http?:\/\//;
-
-/**
  * Public Methods
  */
 
@@ -60,7 +54,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         'udacity.com': true
     };
 
-    if (undetectableTaintedDomains[tabDomain] || /yandex\./.test(tabDomain)) {
+    if (undetectableTaintedDomains[tabDomain] || (/yandex\./).test(tabDomain)) {
 
         if (tabDomain !== 'yandex.ru') {
             return interceptor._handleMissingCandidate(requestDetails.url);
@@ -79,8 +73,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
     }
 
     stateManager.requests[requestDetails.requestId] = {
-        'tabIdentifier': tabIdentifier,
-        'targetDetails': targetDetails
+        tabIdentifier, targetDetails
     };
 
     return {
@@ -103,10 +96,10 @@ interceptor._handleMissingCandidate = function (requestUrl) {
 
     if (requestUrl.match(HTTP_EXPRESSION)) {
 
-        requestUrl = requestUrl.replace(HTTP_EXPRESSION, 'https://');
+        let secureRequestUrl = requestUrl.replace(HTTP_EXPRESSION, 'https://');
 
         return {
-            'redirectUrl': requestUrl
+            'redirectUrl': secureRequestUrl
         };
 
     } else {

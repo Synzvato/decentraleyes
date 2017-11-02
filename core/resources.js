@@ -20,73 +20,73 @@
 var resources = {
 
     // AngularJS
-    angular: {
-        path: 'resources/angularjs/{version}/angular.min.js.dec',
-        type: 'application/javascript'
+    'angular': {
+        'path': 'resources/angularjs/{version}/angular.min.js.dec',
+        'type': 'application/javascript'
     },
     // Backbone.js
-    backbone: {
-        path: 'resources/backbone.js/{version}/backbone-min.js.dec',
-        type: 'application/javascript'
+    'backbone': {
+        'path': 'resources/backbone.js/{version}/backbone-min.js.dec',
+        'type': 'application/javascript'
     },
     // Dojo
-    dojo: {
-        path: 'resources/dojo/{version}/dojo/dojo.js.dec',
-        type: 'application/javascript'
+    'dojo': {
+        'path': 'resources/dojo/{version}/dojo/dojo.js.dec',
+        'type': 'application/javascript'
     },
     // Ember.js
-    ember: {
-        path: 'resources/ember.js/{version}/ember.min.js.dec',
-        type: 'application/javascript'
+    'ember': {
+        'path': 'resources/ember.js/{version}/ember.min.js.dec',
+        'type': 'application/javascript'
     },
     // Ext Core
-    extCore: {
-        path: 'resources/ext-core/{version}/ext-core.js.dec',
-        type: 'application/javascript'
+    'extCore': {
+        'path': 'resources/ext-core/{version}/ext-core.js.dec',
+        'type': 'application/javascript'
     },
     // jQuery
-    jQuery: {
-        path: 'resources/jquery/{version}/jquery.min.js.dec',
-        type: 'application/javascript'
+    'jQuery': {
+        'path': 'resources/jquery/{version}/jquery.min.js.dec',
+        'type': 'application/javascript'
     },
     // jQuery UI
-    jQueryUI: {
-        path: 'resources/jqueryui/{version}/jquery-ui.min.js.dec',
-        type: 'application/javascript'
+    'jQueryUI': {
+        'path': 'resources/jqueryui/{version}/jquery-ui.min.js.dec',
+        'type': 'application/javascript'
     },
     // Modernizr
-    modernizr: {
-        path: 'resources/modernizr/{version}/modernizr.min.js.dec',
-        type: 'application/javascript'
+    'modernizr': {
+        'path': 'resources/modernizr/{version}/modernizr.min.js.dec',
+        'type': 'application/javascript'
     },
     // MooTools
-    mootools: {
-        path: 'resources/mootools/{version}/mootools-yui-compressed.js.dec',
-        type: 'application/javascript'
+    'mootools': {
+        'path': 'resources/mootools/{version}/mootools-yui-compressed.js.dec',
+        'type': 'application/javascript'
     },
     // Prototype
-    prototypeJS: {
-        path: 'resources/prototype/{version}/prototype.js.dec',
-        type: 'application/javascript'
+    'prototypeJS': {
+        'path': 'resources/prototype/{version}/prototype.js.dec',
+        'type': 'application/javascript'
     },
     // Scriptaculous
-    scriptaculous: {
-        path: 'resources/scriptaculous/{version}/scriptaculous.js.dec',
-        type: 'application/javascript'
+    'scriptaculous': {
+        'path': 'resources/scriptaculous/{version}/scriptaculous.js.dec',
+        'type': 'application/javascript'
     },
     // SWFObject
-    swfobject: {
-        path: 'resources/swfobject/{version}/swfobject.js.dec',
-        type: 'application/javascript'
+    'swfobject': {
+        'path': 'resources/swfobject/{version}/swfobject.js.dec',
+        'type': 'application/javascript'
     },
     // Underscore.js
-    underscore: {
-        path: 'resources/underscore.js/{version}/underscore-min.js.dec',
-        type: 'application/javascript'
+    'underscore': {
+        'path': 'resources/underscore.js/{version}/underscore-min.js.dec',
+        'type': 'application/javascript'
     },
     // Web Font Loader
-    webfont: {
-        path: 'resources/webfont/{version}/webfont.js.dec',
-        type: 'application/javascript'
+    'webfont': {
+        'path': 'resources/webfont/{version}/webfont.js.dec',
+        'type': 'application/javascript'
     }
 };

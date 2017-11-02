@@ -20,17 +20,6 @@
 var requestAnalyzer = {};
 
 /**
- * Constants
- */
-
-const MAPPING_FILE_EXPRESSION = new RegExp('\.map$', 'i');
-const VERSION_EXPRESSION = /(?:\d{1,2}\.){1,3}\d{1,2}/;
-const VERSION_PLACEHOLDER = '{version}';
-const WEB_DOMAIN_EXPRESSION = /:\/\/(.[^\/]+)(.*)/;
-const WEB_PREFIX_VALUE = 'www.';
-const WEB_PREFIX_LENGTH = WEB_PREFIX_VALUE.length;
-
-/**
  * Public Methods
  */
 
@@ -96,7 +85,7 @@ requestAnalyzer._matchBasePath = function (hostMappings, channelPath) {
 
 requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channelHost, channelPath) {
 
-    var resourcePath, versionNumber, resourcePattern;
+    let resourcePath, versionNumber, resourcePattern;
 
     resourcePath = channelPath.replace(basePath, '');
 
@@ -116,9 +105,9 @@ requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channel
 
             // Prepare and return a local target.
             return {
-                source: channelHost,
-                version: version,
-                path: targetPath
+                'source': channelHost,
+                'version': version,
+                'path': targetPath
             };
         }
     }
@@ -128,7 +117,6 @@ requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channel
 
 requestAnalyzer._applyWhitelistedDomains = function () {
 
-    //noinspection JSUnresolvedVariable
     chrome.storage.local.get('whitelistedDomains', function (items) {
         requestAnalyzer.whitelistedDomains = items.whitelistedDomains || {};
     });

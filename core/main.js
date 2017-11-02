@@ -52,19 +52,19 @@ main._initializeOptions = function () {
 
 main._showReleaseNotes = function (details) {
 
-    let location = browser.extension.getURL('pages/welcome/welcome.html');
+    let location = chrome.extension.getURL('pages/welcome/welcome.html');
 
     if (details.reason === 'install' || details.reason === 'update') {
 
-        if (details.temporary === false) {
+        if (details.temporary !== true) {
 
-            browser.storage.local.get({
+            chrome.storage.local.get({
                 'showReleaseNotes': true
             }, function (options) {
 
                 if (options.showReleaseNotes === true) {
 
-                    browser.tabs.create({
+                    chrome.tabs.create({
                         'url': location,
                         'active': false
                     });
@@ -78,7 +78,7 @@ main._showReleaseNotes = function (details) {
  * Initializations
  */
 
-browser.runtime.onInstalled.addListener(main._showReleaseNotes);
+chrome.runtime.onInstalled.addListener(main._showReleaseNotes);
 main._initializeOptions();
 
 chrome.runtime.getPlatformInfo(function (information) {
