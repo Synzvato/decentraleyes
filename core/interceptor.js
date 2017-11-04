@@ -47,11 +47,15 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
     let undetectableTaintedDomains = {
         'cdnjs.com': true,
         'dropbox.com': true,
+        'glowing-bear.org': true,
+        'jadi.sk': true,
         'minigames.mail.ru': true,
         'report-uri.io': true,
+        'scotthelme.co.uk': true,
         'securityheaders.io': true,
         'stefansundin.github.io': true,
-        'udacity.com': true
+        'udacity.com': true,
+        'yourvotematters.co.uk': true
     };
 
     if (undetectableTaintedDomains[tabDomain] || (/yandex\./).test(tabDomain)) {
