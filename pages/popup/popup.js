@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     case 'ajax.microsoft.com':
                         cdnName = 'Microsoft Ajax CDN [Deprecated]';
                         break;
-                        case 'cdnjs.cloudflare.com':
+                    case 'cdnjs.cloudflare.com':
                         cdnName = 'CDNJS (Cloudflare)';
                         break;
                     case 'code.jquery.com':

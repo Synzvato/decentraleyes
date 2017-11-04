@@ -1,0 +1,11 @@
+# Usage: `eslint --config .eslint.yml .`
+extends: "eslint:recommended"
+env:
+  browser: true
+rules:
+  indent:
+    - error
+    - 4
+  no-undef: 1 # warn
+  no-unused-vars: 1
+  no-console: 1

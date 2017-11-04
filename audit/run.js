@@ -1,3 +1,4 @@
+/* eslint-env node */
 /**
  * Resource Audit Script
  * Belongs to Decentraleyes.
@@ -15,12 +16,11 @@
  * Imports
  */
 
-var fileSystem, crypto, http, path, sourceMappingURL;
+var fileSystem, crypto, https, sourceMappingURL;
 
 fileSystem = require('fs');
 crypto = require('crypto');
 https = require('https');
-path = require('path');
 
 sourceMappingURL = require('source-map-url');
 
