@@ -176,6 +176,10 @@ var files = {
     'resources/mootools/1.5.0/mootools-yui-compressed.js.dec': true,
     'resources/mootools/1.5.1/mootools-yui-compressed.js.dec': true,
 
+    // React
+    'resources/react/16.0.0/react.production.min.js.dec': true,
+    'resources/react-dom/16.0.0/react-dom.production.min.js.dec': true,
+
     // Prototype
     'resources/prototype/1.6.0.2/prototype.js.dec': true,
     'resources/prototype/1.6.0.3/prototype.js.dec': true,

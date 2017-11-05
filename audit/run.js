@@ -20,6 +20,8 @@ var fileSystem, crypto, https, sourceMappingURL;
 fileSystem = require('fs');
 crypto = require('crypto');
 https = require('https');
+process = require('process');
+
 
 sourceMappingURL = require('source-map-url');
 
@@ -81,14 +83,10 @@ function _getLocalResourceContents (fileLocation, callback) {
     });
 }
 
-function _getRemoteResourceContents (remoteResourceRoute, callback) {
-
-    var resourceURL = `https://ajax.googleapis.com/ajax/libs/${remoteResourceRoute}`;
-
-    https.get(resourceURL, function (response) {
-
+function _getRemoteResourceImpl(resourceURL, success, fallback) {
+    https.get(resourceURL, function(response) {
         var resourceContents = '';
-
+        
         response.on('data', function (chunk) {
             resourceContents += chunk;
         });
@@ -97,35 +95,32 @@ function _getRemoteResourceContents (remoteResourceRoute, callback) {
 
             if (response.statusCode === 200) {
 
-                callback(resourceContents, resourceURL);
+                success(resourceContents, resourceURL);
 
             } else {
 
-                resourceURL = `https://cdnjs.cloudflare.com/ajax/libs/${remoteResourceRoute}`;
-
-                https.get(resourceURL, function (response) {
-
-                    resourceContents = '';
-
-                    response.on('data', function (chunk) {
-                        resourceContents += chunk;
-                    });
-
-                    response.on('end', function () {
-
-                        if (response.statusCode !== 200) {
-                            throw `Error: Resource ${remoteResourceRoute} could not be fetched.`;
-                        }
-
-                        callback(resourceContents, resourceURL);
-                    });
-
-                });
+                fallback();
 
             }
 
         });
+    });
+}
 
+function _getRemoteResourceContentsFromCdns (remoteResourceRoute, callback) {
+
+    _getRemoteResourceImpl(`https://ajax.googleapis.com/ajax/libs/${remoteResourceRoute}`, callback, function() {
+        _getRemoteResourceImpl(`https://cdnjs.cloudflare.com/ajax/libs/${remoteResourceRoute}`, callback, function()  {
+
+            var resourceRouteParts = remoteResourceRoute.split('/');
+            var resourceName = resourceRouteParts[0];
+            var resourceVersion = resourceRouteParts[1];
+            var resourceFileName = resourceRouteParts[2];
+
+            _getRemoteResourceImpl(`https://unpkg.com/${resourceName}@${resourceVersion}/umd/${resourceFileName}`, callback, function()  {
+                throw `Unable to resolve remote resource for: ${remoteResourceRoute}`
+            });
+        });
     });
 }
 
@@ -204,14 +199,20 @@ resourceAmount = localResourcePaths.length;
  * Script
  */
 
-localResourcePaths.forEach(function (resourcePath) {
+localResourcePaths.filter(p => {
+    let filterArg = process.argv.indexOf('--filter') + 1;
+    if (filterArg <= 0 || filterArg >= process.argv.length) {
+        return true;
+    }
+    return p.includes(process.argv[filterArg]);
+}).forEach(function (resourcePath) {
 
     var resourceRoute = resourcePath.substr(localResourceLocationLength + 1);
     resourceRoute = resourceRoute.substring(0, resourceRoute.length - 4);
 
     _getLocalResourceContents(resourcePath, function (localResourceContents) {
 
-        _getRemoteResourceContents(resourceRoute, function (remoteResourceContents, URL) {
+        _getRemoteResourceContentsFromCdns(resourceRoute, function (remoteResourceContents, URL) {
 
             console.log();
             console.log(resourceRoute.toUpperCase());

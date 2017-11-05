@@ -92,6 +92,8 @@ helpers.determineCdnName = function (domainName) {
         return 'jQuery CDN (MaxCDN)';
     case 'cdn.jsdelivr.net':
         return 'jsDelivr (MaxCDN)';
+    case 'unpkg.com':
+        return 'unpkg';
     case 'yastatic.net':
         return 'Yandex CDN';
     case 'yandex.st':
@@ -131,6 +133,10 @@ helpers.determineResourceName = function (filename) {
         return 'MooTools';
     case 'prototype.js.dec':
         return 'Prototype';
+    case 'react.production.min.js.dec':
+        return 'React';
+    case 'react-dom.production.min.js.dec':
+        return 'ReactDOM';
     case 'scriptaculous.js.dec':
         return 'Scriptaculous';
     case 'swfobject.js.dec':

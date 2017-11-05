@@ -264,6 +264,12 @@ var mappings = {
             'webfont/{version}/webfont_debug.': resources.webfont
         }
     },
+    'unpkg.com': {
+        '/': {
+            'react@{version}/umd/react.' : resources.react,
+            'react-dom@{version}/umd/react-dom.': resources.reactDom
+        }
+    },
     // UpYun Library
     'upcdn.b0.upaiyun.com': {
         '/libs/': {
