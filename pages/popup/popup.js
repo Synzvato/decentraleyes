@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 popup.backgroundPage = backgroundPage;
 
-                if (backgroundPage.main.operatingSystem === 'android') {
+                if (backgroundPage.main.operatingSystem === chrome.runtime.PlatformOs.ANDROID) {
 
                     browser.tabs.getCurrent().then(function (tab) {
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 injectionOverview = {};
 
                 try {
-                    domain = tabs[0].url.match(WEB_DOMAIN_EXPRESSION)[1];
+                    domain = tabs[0].url.match(Address.DOMAIN_EXPRESSION)[1];
                 } catch (exception) {
                     domain = null;
                 }
@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     protectionToggleElement = document.getElementById('protection-toggle-button');
                     domainIndicatorElement = document.getElementById('domain-indicator');
 
-                    if (domain.startsWith(WEB_PREFIX_VALUE)) {
-                        domain = domain.slice(WEB_PREFIX_LENGTH);
+                    if (domain.startsWith(Address.WWW_PREFIX)) {
+                        domain = domain.slice(Address.WWW_PREFIX_LENGTH);
                     }
 
                     domainIndicatorElement.innerText = domain;
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                                 chrome.tabs.reload(tabs[0].id);
 
-                                if (backgroundPage.main.operatingSystem === 'android') {
+                                if (backgroundPage.main.operatingSystem === chrome.runtime.PlatformOs.ANDROID) {
 
                                     return browser.tabs.getCurrent().then(function (tab) {
                                         browser.tabs.remove(tab.id);
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                                 chrome.tabs.reload(tabs[0].id);
 
-                                if (backgroundPage.main.operatingSystem === 'android') {
+                                if (backgroundPage.main.operatingSystem === chrome.runtime.PlatformOs.ANDROID) {
 
                                     return browser.tabs.getCurrent().then(function (tab) {
                                         browser.tabs.remove(tab.id);
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     optionsButtonElement.addEventListener('mouseup', function () {
 
-        if (popup.backgroundPage.main.operatingSystem === 'android') {
+        if (popup.backgroundPage.main.operatingSystem === chrome.runtime.PlatformOs.ANDROID) {
 
             return chrome.tabs.create({
                 'url': chrome.extension.getURL('pages/options/options.html')

@@ -17,15 +17,42 @@
  * Constants
  */
 
-const HOST_PREFIX = '*://';
-const HOST_SUFFIX = '/*';
-const HTTP_EXPRESSION = /^http?:\/\//;
-const MAPPING_FILE_EXPRESSION = /\.map$/i;
-const REQUEST_BLOCKING = 'blocking';
-const REQUEST_HEADERS = 'requestHeaders';
-const VALUE_SEPARATOR = ';';
-const VERSION_EXPRESSION = /(?:\d{1,2}\.){1,3}\d{1,2}/;
-const VERSION_PLACEHOLDER = '{version}';
-const WEB_DOMAIN_EXPRESSION = /:\/\/(.[^/]+)(.*)/;
-const WEB_PREFIX_LENGTH = 4;
-const WEB_PREFIX_VALUE = 'www.';
+const Address = {
+    'ANY': '*://*/*',
+    'ANY_PATH': '/*',
+    'ANY_PROTOCOL': '*://',
+    'DOMAIN_EXPRESSION': /:\/\/(.[^/]+)(.*)/,
+    'EXAMPLE': 'example.org',
+    'HTTP_EXPRESSION': /^http?:\/\//,
+    'HTTPS': 'https://',
+    'WWW_PREFIX': 'www.',
+    'WWW_PREFIX_LENGTH': 4
+};
+
+const Resource = {
+    'MAPPING_EXPRESSION': /\.map$/i,
+    'VERSION_EXPRESSION': /(?:\d{1,2}\.){1,3}\d{1,2}/,
+    'VERSION_PLACEHOLDER': '{version}'
+};
+
+const Setting = {
+    'AMOUNT_INJECTED': 'amountInjected',
+    'BLOCK_MISSING': 'blockMissing',
+    'DISABLE_PREFETCH': 'disablePrefetch',
+    'SHOW_ICON_BADGE': 'showIconBadge',
+    'STRIP_METADATA': 'stripMetadata',
+    'WHITELISTED_DOMAINS': 'whitelistedDomains'
+};
+
+const WebRequest = {
+    'GET': 'GET',
+    'BLOCKING': 'blocking',
+    'HEADERS': 'requestHeaders',
+    'ORIGIN_HEADER': 'Origin',
+    'REFERER_HEADER': 'Referer'
+};
+
+const Whitelist = {
+    'TRIM_EXPRESSION': /^;+|;+$/g,
+    'VALUE_SEPARATOR': ';'
+};

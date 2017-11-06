@@ -6,25 +6,18 @@
   },
   "extends": "eslint:recommended",
   "globals": {
+    "Address": true,
     "files": true,
     "helpers": true,
-    "HOST_PREFIX": true,
-    "HOST_SUFFIX": true,
-    "HTTP_EXPRESSION": true,
     "interceptor": true,
-    "MAPPING_FILE_EXPRESSION": true,
     "mappings": true,
-    "REQUEST_BLOCKING": true,
-    "REQUEST_HEADERS": true,
     "requestAnalyzer": true,
+    "Resource": true,
     "resources": true,
+    "Setting": true,
     "stateManager": true,
-    "VALUE_SEPARATOR": true,
-    "VERSION_EXPRESSION": true,
-    "VERSION_PLACEHOLDER": true,
-    "WEB_DOMAIN_EXPRESSION": true,
-    "WEB_PREFIX_LENGTH": true,
-    "WEB_PREFIX_VALUE": true
+    "WebRequest": true,
+    "Whitelist": true
   },
   "overrides": {
     "files": [

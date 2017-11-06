@@ -37,10 +37,10 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
     }
 
     try {
-        tabDomain = tab.url.match(WEB_DOMAIN_EXPRESSION)[1];
+        tabDomain = tab.url.match(Address.DOMAIN_EXPRESSION)[1];
         tabDomain = requestAnalyzer._normalizeDomain(tabDomain);
     } catch (exception) {
-        tabDomain = 'example.org';
+        tabDomain = Address.EXAMPLE;
     }
 
     // Temporary list of undetectable tainted domains.
@@ -98,9 +98,9 @@ interceptor._handleMissingCandidate = function (requestUrl) {
         };
     }
 
-    if (requestUrl.match(HTTP_EXPRESSION)) {
+    if (requestUrl.match(Address.HTTP_EXPRESSION)) {
 
-        let secureRequestUrl = requestUrl.replace(HTTP_EXPRESSION, 'https://');
+        let secureRequestUrl = requestUrl.replace(Address.HTTP_EXPRESSION, Address.HTTPS);
 
         return {
             'redirectUrl': secureRequestUrl
@@ -116,7 +116,7 @@ interceptor._handleMissingCandidate = function (requestUrl) {
 
 interceptor._handleStorageChanged = function (changes) {
 
-    if ('blockMissing' in changes) {
+    if (Setting.BLOCK_MISSING in changes) {
         interceptor.blockMissing = changes.blockMissing.newValue;
     }
 };
@@ -128,7 +128,7 @@ interceptor._handleStorageChanged = function (changes) {
 interceptor.amountInjected = 0;
 interceptor.blockMissing = false;
 
-chrome.storage.local.get(['amountInjected', 'blockMissing'], function (items) {
+chrome.storage.local.get([Setting.AMOUNT_INJECTED, Setting.BLOCK_MISSING], function (items) {
 
     interceptor.amountInjected = items.amountInjected || 0;
     interceptor.blockMissing = items.blockMissing || false;

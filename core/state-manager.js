@@ -53,7 +53,7 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
 
     if (isNaN(interceptor.amountInjected)) {
 
-        chrome.storage.local.get('amountInjected', function (items) {
+        chrome.storage.local.get(Setting.AMOUNT_INJECTED, function (items) {
 
             interceptor.amountInjected = items.amountInjected;
 
@@ -121,7 +121,7 @@ stateManager._createTab = function (tab) {
             });
         });
 
-    }, requestFilters, [REQUEST_BLOCKING]);
+    }, requestFilters, [WebRequest.BLOCKING]);
 };
 
 stateManager._removeTab = function (tabIdentifier) {
@@ -156,9 +156,9 @@ stateManager._stripMetadata = function (requestDetails) {
 
     for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
 
-        if (requestDetails.requestHeaders[i].name === 'Origin') {
+        if (requestDetails.requestHeaders[i].name === WebRequest.ORIGIN_HEADER) {
             requestDetails.requestHeaders.splice(i--, 1);
-        } else if (requestDetails.requestHeaders[i].name === 'Referer') {
+        } else if (requestDetails.requestHeaders[i].name === WebRequest.REFERER_HEADER) {
             requestDetails.requestHeaders.splice(i--, 1);
         }
     }
@@ -190,13 +190,13 @@ stateManager._handleStorageChanged = function (changes) {
 
         onBeforeSendHeaders.removeListener(stateManager._stripMetadata, {
             'urls': stateManager.validHosts
-        }, [REQUEST_BLOCKING, REQUEST_HEADERS]);
+        }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
 
         if (changes.stripMetadata.newValue !== false) {
 
             onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
                 'urls': stateManager.validHosts
-            }, [REQUEST_BLOCKING, REQUEST_HEADERS]);
+            }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
         }
     }
 };
@@ -219,7 +219,7 @@ stateManager.validHosts = [];
 
 for (let mapping in mappings) {
 
-    let supportedHost = HOST_PREFIX + mapping + HOST_SUFFIX;
+    let supportedHost = Address.ANY_PROTOCOL + mapping + Address.ANY_PATH;
     stateManager.validHosts.push(supportedHost);
 }
 
@@ -248,7 +248,7 @@ chrome.webRequest.onErrorOccurred.addListener(function (requestDetails) {
         delete stateManager.requests[requestDetails.requestId];
     }
 
-}, {'urls': ['*://*/*']});
+}, {'urls': [Address.ANY]});
 
 chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
 
@@ -260,10 +260,10 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
         delete stateManager.requests[requestDetails.requestId];
     }
 
-}, {'urls': ['*://*/*']});
+}, {'urls': [Address.ANY]});
 
 chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
     'urls': stateManager.validHosts
-}, [REQUEST_BLOCKING, REQUEST_HEADERS]);
+}, [WebRequest.BLOCKING, WebRequest.HEADERS]);
 
 chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);

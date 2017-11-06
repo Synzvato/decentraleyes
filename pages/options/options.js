@@ -31,8 +31,8 @@ function _normalizeDomain (domain) {
 
     domain = domain.toLowerCase().trim();
 
-    if (domain.startsWith(WEB_PREFIX_VALUE)) {
-        domain = domain.slice(WEB_PREFIX_LENGTH);
+    if (domain.startsWith(Address.WWW_PREFIX)) {
+        domain = domain.slice(Address.WWW_PREFIX_LENGTH);
     }
 
     return domain;
@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
     helpers.insertI18nContentIntoDocument(document);
 
     optionElements = {
-        'showIconBadge': options._getOptionElement('showIconBadge'),
-        'blockMissing': options._getOptionElement('blockMissing'),
-        'disablePrefetch': options._getOptionElement('disablePrefetch'),
-        'stripMetadata': options._getOptionElement('stripMetadata'),
-        'whitelistedDomains': options._getOptionElement('whitelistedDomains')
+        'showIconBadge': options._getOptionElement(Setting.SHOW_ICON_BADGE),
+        'blockMissing': options._getOptionElement(Setting.BLOCK_MISSING),
+        'disablePrefetch': options._getOptionElement(Setting.DISABLE_PREFETCH),
+        'stripMetadata': options._getOptionElement(Setting.STRIP_METADATA),
+        'whitelistedDomains': options._getOptionElement(Setting.WHITELISTED_DOMAINS)
     };
 
     chrome.storage.local.get(Object.keys(optionElements), function (items) {
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         domainWhitelist = domainWhitelist.slice(0, -1);
-        domainWhitelist = domainWhitelist.replace(/^;+|;+$/g, '');
+        domainWhitelist = domainWhitelist.replace(Whitelist.TRIM_EXPRESSION, '');
 
         optionElements.showIconBadge.checked = items.showIconBadge;
         optionElements.blockMissing.checked = items.blockMissing;
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
             optionValue = target.value;
         }
 
-        if (optionKey === 'disablePrefetch') {
+        if (optionKey === Setting.DISABLE_PREFETCH) {
 
             if (optionValue === false) {
 
@@ -118,13 +118,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        if (optionKey === 'whitelistedDomains') {
+        if (optionKey === Setting.WHITELISTED_DOMAINS) {
 
             let domainWhitelist = optionValue;
 
             optionValue = {};
 
-            domainWhitelist.split(VALUE_SEPARATOR).forEach(function (domain) {
+            domainWhitelist.split(Whitelist.VALUE_SEPARATOR).forEach(function (domain) {
                 optionValue[_normalizeDomain(domain)] = true;
             });
         }

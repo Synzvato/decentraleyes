@@ -17,6 +17,13 @@
       "unix"
     ],
     "no-console": "off",
+    "no-multiple-empty-lines": [
+      "error", {
+        "max": 1,
+        "maxEOF": 1,
+        "maxBOF": 0
+      }
+    ],
     "no-use-before-define": "error",
     "operator-assignment": "error",
     "prefer-template": "error",
