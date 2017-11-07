@@ -20,12 +20,6 @@
 var interceptor = {};
 
 /**
- * Constants
- */
-
-const HTTP_EXPRESSION = /^http?:\/\//;
-
-/**
  * Public Methods
  */
 
@@ -43,24 +37,28 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
     }
 
     try {
-        tabDomain = tab.url.match(WEB_DOMAIN_EXPRESSION)[1];
+        tabDomain = tab.url.match(Address.DOMAIN_EXPRESSION)[1];
         tabDomain = requestAnalyzer._normalizeDomain(tabDomain);
     } catch (exception) {
-        tabDomain = 'example.org';
+        tabDomain = Address.EXAMPLE;
     }
 
     // Temporary list of undetectable tainted domains.
     let undetectableTaintedDomains = {
         'cdnjs.com': true,
         'dropbox.com': true,
+        'glowing-bear.org': true,
+        'jadi.sk': true,
         'minigames.mail.ru': true,
         'report-uri.io': true,
+        'scotthelme.co.uk': true,
         'securityheaders.io': true,
         'stefansundin.github.io': true,
-        'udacity.com': true
+        'udacity.com': true,
+        'yourvotematters.co.uk': true
     };
 
-    if (undetectableTaintedDomains[tabDomain] || /yandex\./.test(tabDomain)) {
+    if (undetectableTaintedDomains[tabDomain] || (/yandex\./).test(tabDomain)) {
 
         if (tabDomain !== 'yandex.ru') {
             return interceptor._handleMissingCandidate(requestDetails.url);
@@ -79,8 +77,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
     }
 
     stateManager.requests[requestDetails.requestId] = {
-        'tabIdentifier': tabIdentifier,
-        'targetDetails': targetDetails
+        tabIdentifier, targetDetails
     };
 
     return {
@@ -101,12 +98,12 @@ interceptor._handleMissingCandidate = function (requestUrl) {
         };
     }
 
-    if (requestUrl.match(HTTP_EXPRESSION)) {
+    if (requestUrl.match(Address.HTTP_EXPRESSION)) {
 
-        requestUrl = requestUrl.replace(HTTP_EXPRESSION, 'https://');
+        let secureRequestUrl = requestUrl.replace(Address.HTTP_EXPRESSION, Address.HTTPS);
 
         return {
-            'redirectUrl': requestUrl
+            'redirectUrl': secureRequestUrl
         };
 
     } else {
@@ -119,7 +116,7 @@ interceptor._handleMissingCandidate = function (requestUrl) {
 
 interceptor._handleStorageChanged = function (changes) {
 
-    if ('blockMissing' in changes) {
+    if (Setting.BLOCK_MISSING in changes) {
         interceptor.blockMissing = changes.blockMissing.newValue;
     }
 };
@@ -131,7 +128,7 @@ interceptor._handleStorageChanged = function (changes) {
 interceptor.amountInjected = 0;
 interceptor.blockMissing = false;
 
-chrome.storage.local.get(['amountInjected', 'blockMissing'], function (items) {
+chrome.storage.local.get([Setting.AMOUNT_INJECTED, Setting.BLOCK_MISSING], function (items) {
 
     interceptor.amountInjected = items.amountInjected || 0;
     interceptor.blockMissing = items.blockMissing || false;

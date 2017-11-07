@@ -1,34 +1,11 @@
 {
   "env": {
-    "browser": true,
     "es6": true,
-    "webextensions": true
+    "node": true
   },
   "extends": "eslint:recommended",
-  "globals": {
-    "Address": true,
-    "files": true,
-    "helpers": true,
-    "interceptor": true,
-    "mappings": true,
-    "requestAnalyzer": true,
-    "Resource": true,
-    "resources": true,
-    "Setting": true,
-    "stateManager": true,
-    "WebRequest": true,
-    "Whitelist": true
-  },
-  "overrides": {
-    "files": [
-      "core/constants.js",
-      "core/files.js",
-      "core/mappings.js",
-      "core/resources.js"
-    ],
-    "rules": {
-      "no-unused-vars": "off"
-    }
+  "parserOptions": {
+    "sourceType": "module"
   },
   "rules": {
     "array-bracket-newline": "error",
@@ -64,6 +41,7 @@
     "no-array-constructor": "error",
     "no-bitwise": "error",
     "no-confusing-arrow": "error",
+    "no-console": "off",
     "no-continue": "error",
     "no-duplicate-imports": "error",
     "no-eval": "error",
@@ -85,11 +63,6 @@
         "maxBOF": 0
       }
     ],
-    "max-len": [
-      "error", {
-        "code": 120
-      }
-    ],
     "no-negated-condition": "error",
     "no-new": "error",
     "no-new-func": "error",
@@ -105,7 +78,6 @@
     "no-shadow-restricted-names": "error",
     "no-tabs": "error",
     "no-ternary": "error",
-    "no-throw-literal": "error",
     "no-trailing-spaces": "error",
     "no-undef-init": "error",
     "no-unmodified-loop-condition": "error",
@@ -129,16 +101,16 @@
     "operator-linebreak": "error",
     "prefer-numeric-literals": "error",
     "prefer-promise-reject-errors": "error",
-    "quote-props": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
+    "quote-props": "error",
     "quotes": [
       "error",
       "single"
     ],
-    "rest-spread-spacing": "error",
     "require-await": "error",
+    "rest-spread-spacing": "error",
     "semi": "error",
     "semi-spacing": "error",
     "semi-style": "error",
@@ -157,7 +129,6 @@
     "template-curly-spacing": "error",
     "template-tag-spacing": "error",
     "unicode-bom": "error",
-    "vars-on-top": "error",
     "wrap-regex": "error",
     "yield-star-spacing": "error",
     "yoda": "error"

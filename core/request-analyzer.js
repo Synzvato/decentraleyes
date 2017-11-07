@@ -20,17 +20,6 @@
 var requestAnalyzer = {};
 
 /**
- * Constants
- */
-
-const MAPPING_FILE_EXPRESSION = new RegExp('\.map$', 'i');
-const VERSION_EXPRESSION = /(?:\d{1,2}\.){1,3}\d{1,2}/;
-const VERSION_PLACEHOLDER = '{version}';
-const WEB_DOMAIN_EXPRESSION = /:\/\/(.[^\/]+)(.*)/;
-const WEB_PREFIX_VALUE = 'www.';
-const WEB_PREFIX_LENGTH = WEB_PREFIX_VALUE.length;
-
-/**
  * Public Methods
  */
 
@@ -39,9 +28,9 @@ requestAnalyzer.isValidCandidate = function (requestDetails, tabDetails) {
     let initiatorHost;
 
     try {
-        initiatorHost = tabDetails.url.match(WEB_DOMAIN_EXPRESSION)[1];
+        initiatorHost = tabDetails.url.match(Address.DOMAIN_EXPRESSION)[1];
     } catch (exception) {
-        initiatorHost = 'example.org';
+        initiatorHost = Address.EXAMPLE;
     }
 
     if (initiatorHost && requestAnalyzer.whitelistedDomains[requestAnalyzer._normalizeDomain(initiatorHost)]) {
@@ -49,21 +38,21 @@ requestAnalyzer.isValidCandidate = function (requestDetails, tabDetails) {
     }
 
     // Only requests of type GET can be valid candidates.
-    return requestDetails.method === 'GET';
+    return requestDetails.method === WebRequest.GET;
 };
 
 requestAnalyzer.getLocalTarget = function (requestDetails) {
 
     let destinationHost, destinationPath, hostMappings, basePath, resourceMappings;
 
-    destinationHost = requestDetails.url.match(WEB_DOMAIN_EXPRESSION)[1];
-    destinationPath = requestDetails.url.match(WEB_DOMAIN_EXPRESSION)[2];
+    destinationHost = requestDetails.url.match(Address.DOMAIN_EXPRESSION)[1];
+    destinationPath = requestDetails.url.match(Address.DOMAIN_EXPRESSION)[2];
 
     // Use the proper mappings for the targeted host.
     hostMappings = mappings[destinationHost];
 
     // Resource mapping files are never locally available.
-    if (MAPPING_FILE_EXPRESSION.test(destinationPath)) {
+    if (Resource.MAPPING_EXPRESSION.test(destinationPath)) {
         return false;
     }
 
@@ -96,12 +85,12 @@ requestAnalyzer._matchBasePath = function (hostMappings, channelPath) {
 
 requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channelHost, channelPath) {
 
-    var resourcePath, versionNumber, resourcePattern;
+    let resourcePath, versionNumber, resourcePattern;
 
     resourcePath = channelPath.replace(basePath, '');
 
-    versionNumber = resourcePath.match(VERSION_EXPRESSION);
-    resourcePattern = resourcePath.replace(versionNumber, VERSION_PLACEHOLDER);
+    versionNumber = resourcePath.match(Resource.VERSION_EXPRESSION);
+    resourcePattern = resourcePath.replace(versionNumber, Resource.VERSION_PLACEHOLDER);
 
     for (let resourceMold of Object.keys(resourceMappings)) {
 
@@ -110,15 +99,15 @@ requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channel
             let targetPath, version;
 
             targetPath = resourceMappings[resourceMold].path;
-            targetPath = targetPath.replace(VERSION_PLACEHOLDER, versionNumber);
+            targetPath = targetPath.replace(Resource.VERSION_PLACEHOLDER, versionNumber);
 
-            version = versionNumber && versionNumber[0] || targetPath.match(VERSION_EXPRESSION);
+            version = versionNumber && versionNumber[0] || targetPath.match(Resource.VERSION_EXPRESSION);
 
             // Prepare and return a local target.
             return {
-                source: channelHost,
-                version: version,
-                path: targetPath
+                'source': channelHost,
+                'version': version,
+                'path': targetPath
             };
         }
     }
@@ -128,8 +117,7 @@ requestAnalyzer._findLocalTarget = function (resourceMappings, basePath, channel
 
 requestAnalyzer._applyWhitelistedDomains = function () {
 
-    //noinspection JSUnresolvedVariable
-    chrome.storage.local.get('whitelistedDomains', function (items) {
+    chrome.storage.local.get(Setting.WHITELISTED_DOMAINS, function (items) {
         requestAnalyzer.whitelistedDomains = items.whitelistedDomains || {};
     });
 };
@@ -138,8 +126,8 @@ requestAnalyzer._normalizeDomain = function (domain) {
 
     domain = domain.toLowerCase().trim();
 
-    if (domain.startsWith(WEB_PREFIX_VALUE)) {
-        domain = domain.slice(WEB_PREFIX_LENGTH);
+    if (domain.startsWith(Address.WWW_PREFIX)) {
+        domain = domain.slice(Address.WWW_PREFIX_LENGTH);
     }
 
     return domain;

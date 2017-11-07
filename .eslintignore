@@ -1,0 +1,6 @@
+_locales
+audit
+icons
+modules/*
+!modules/internal
+resources

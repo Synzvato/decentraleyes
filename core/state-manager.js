@@ -20,15 +20,6 @@
 var stateManager = {};
 
 /**
- * Constants
- */
-
-const BLOCKING_ACTION = 'blocking';
-const HOST_PREFIX = '*://';
-const HOST_SUFFIX = '/*';
-const REQUEST_HEADERS = 'requestHeaders';
-
-/**
  * Public Methods
  */
 
@@ -47,22 +38,22 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
         if (injectionCount > 0) {
 
             chrome.browserAction.setBadgeText({
-                tabId: tabIdentifier,
-                text: injectionCount.toString()
+                'tabId': tabIdentifier,
+                'text': injectionCount.toString()
             });
 
         } else {
 
             chrome.browserAction.setBadgeText({
-                tabId: tabIdentifier,
-                text: ''
+                'tabId': tabIdentifier,
+                'text': ''
             });
         }
     }
 
     if (isNaN(interceptor.amountInjected)) {
 
-        chrome.storage.local.get('amountInjected', function (items) {
+        chrome.storage.local.get(Setting.AMOUNT_INJECTED, function (items) {
 
             interceptor.amountInjected = items.amountInjected;
 
@@ -126,7 +117,7 @@ stateManager._createTab = function (tab) {
         let tab = stateManager.tabs[tabIdentifier].details || {};
         return interceptor.handleRequest(requestDetails, tabIdentifier, tab);
     
-    }, requestFilters, [BLOCKING_ACTION]);
+    }, requestFilters, [WebRequest.BLOCKING]);
 };
 
 stateManager._removeTab = function (tabIdentifier) {
@@ -147,8 +138,8 @@ stateManager._updateTab = function (details) {
     if (stateManager.showIconBadge === true) {
 
         chrome.browserAction.setBadgeText({
-            tabId: tabIdentifier,
-            text: ''
+            'tabId': tabIdentifier,
+            'text': ''
         });
     }
 
@@ -161,9 +152,9 @@ stateManager._stripMetadata = function (requestDetails) {
 
     for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
 
-        if (requestDetails.requestHeaders[i].name === 'Origin') {
+        if (requestDetails.requestHeaders[i].name === WebRequest.ORIGIN_HEADER) {
             requestDetails.requestHeaders.splice(i--, 1);
-        } else if (requestDetails.requestHeaders[i].name === 'Referer') {
+        } else if (requestDetails.requestHeaders[i].name === WebRequest.REFERER_HEADER) {
             requestDetails.requestHeaders.splice(i--, 1);
         }
     }
@@ -176,7 +167,7 @@ stateManager._stripMetadata = function (requestDetails) {
 stateManager._handleStorageChanged = function (changes) {
 
     if ('showIconBadge' in changes) {
-        
+
         stateManager.showIconBadge = changes.showIconBadge.newValue;
 
         if (changes.showIconBadge.newValue !== true) {
@@ -195,13 +186,13 @@ stateManager._handleStorageChanged = function (changes) {
 
         onBeforeSendHeaders.removeListener(stateManager._stripMetadata, {
             'urls': stateManager.validHosts
-        }, [BLOCKING_ACTION, REQUEST_HEADERS]);
+        }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
 
         if (changes.stripMetadata.newValue !== false) {
-            
+
             onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
                 'urls': stateManager.validHosts
-            }, [BLOCKING_ACTION, REQUEST_HEADERS]);
+            }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
         }
     }
 };
@@ -209,8 +200,8 @@ stateManager._handleStorageChanged = function (changes) {
 stateManager._removeIconBadgeFromTab = function (tab) {
 
     chrome.browserAction.setBadgeText({
-        tabId: tab.id,
-        text: ''
+        'tabId': tab.id,
+        'text': ''
     });
 };
 
@@ -224,11 +215,7 @@ stateManager.validHosts = [];
 
 for (let mapping in mappings) {
 
-    if (!mappings.hasOwnProperty(mapping)) {
-        continue;
-    }
-
-    let supportedHost = HOST_PREFIX + mapping + HOST_SUFFIX;
+    let supportedHost = Address.ANY_PROTOCOL + mapping + Address.ANY_PATH;
     stateManager.validHosts.push(supportedHost);
 }
 
@@ -256,10 +243,10 @@ chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
         }
     }
 
-}, {'types': ['main_frame'], 'urls': ['*://*/*']});
+}, {'types': ['main_frame'], 'urls': [Address.ANY]});
 
 chrome.webNavigation.onCommitted.addListener(stateManager._updateTab, {
-    url: [{urlContains: ':'}]
+    'url': [{'urlContains': ':'}]
 });
 
 chrome.webRequest.onErrorOccurred.addListener(function (requestDetails) {
@@ -268,7 +255,7 @@ chrome.webRequest.onErrorOccurred.addListener(function (requestDetails) {
         delete stateManager.requests[requestDetails.requestId];
     }
 
-}, {'urls': ['*://*/*']});
+}, {'urls': [Address.ANY]});
 
 chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
 
@@ -280,10 +267,10 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
         delete stateManager.requests[requestDetails.requestId];
     }
 
-}, {'urls': ['*://*/*']});
+}, {'urls': [Address.ANY]});
 
 chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
     'urls': stateManager.validHosts
-}, [BLOCKING_ACTION, REQUEST_HEADERS]);
+}, [WebRequest.BLOCKING, WebRequest.HEADERS]);
 
 chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);

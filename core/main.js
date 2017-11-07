@@ -54,7 +54,8 @@ main._showReleaseNotes = function (details) {
 
     let location = chrome.extension.getURL('pages/welcome/welcome.html');
 
-    if (details.reason === 'install' || details.reason === 'update') {
+    if (details.reason === chrome.runtime.OnInstalledReason.INSTALL ||
+        details.reason === chrome.runtime.OnInstalledReason.UPDATE) {
 
         if (details.temporary !== true) {
 
