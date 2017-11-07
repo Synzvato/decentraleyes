@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let version, optionsButtonElement, scriptDirection;
 
-    version = helpers.formatVersion(browser.runtime.getManifest().version);
+    version = helpers.formatVersion(chrome.runtime.getManifest().version);
     document.getElementById('version-label').innerText = version;
 
     scriptDirection = helpers.determineScriptDirection(navigator.language);
@@ -223,17 +223,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    optionsButtonElement.addEventListener('mouseup', function () {
+    chrome.runtime.getPlatformInfo(function (information) {
 
-        if (popup.backgroundPage.main.operatingSystem === chrome.runtime.PlatformOs.ANDROID) {
+        optionsButtonElement.addEventListener('mouseup', function () {
 
-            return chrome.tabs.create({
-                'url': chrome.extension.getURL('pages/options/options.html')
-            });
-        }
+            if (information.os === chrome.runtime.PlatformOs.ANDROID) {
 
-        chrome.runtime.openOptionsPage();
-        return window.close();
+                return chrome.tabs.create({
+                    'url': chrome.extension.getURL('pages/options/options.html')
+                });
+            }
+
+            chrome.runtime.openOptionsPage();
+            return window.close();
+        });
     });
 
     document.getElementById('testing-utility-link').addEventListener('mouseup', function (event) {
