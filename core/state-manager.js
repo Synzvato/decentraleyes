@@ -262,8 +262,14 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
 
 }, {'urls': [Address.ANY]});
 
-chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
-    'urls': stateManager.validHosts
-}, [WebRequest.BLOCKING, WebRequest.HEADERS]);
+chrome.storage.local.get({'stripMetadata': true}, function (options) {
+
+    if (options === null || options.stripMetadata !== false) {
+
+        chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
+            'urls': stateManager.validHosts
+        }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
+    }
+});
 
 chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);
