@@ -52,10 +52,18 @@ main._initializeOptions = function () {
 
 main._showReleaseNotes = function (details) {
 
-    let location = chrome.extension.getURL('pages/welcome/welcome.html');
+    let location, previousVersion;
+
+    location = chrome.extension.getURL('pages/welcome/welcome.html');
 
     if (details.reason === chrome.runtime.OnInstalledReason.INSTALL ||
         details.reason === chrome.runtime.OnInstalledReason.UPDATE) {
+
+        previousVersion = details.previousVersion;
+
+        if (previousVersion && previousVersion.charAt(0) === '2') {
+            return; // Do not show release notes after minor updates.
+        }
 
         if (details.temporary !== true) {
 
