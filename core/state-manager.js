@@ -116,7 +116,7 @@ stateManager._createTab = function (tab) {
 
         let tab = stateManager.tabs[tabIdentifier].details || {};
         return interceptor.handleRequest(requestDetails, tabIdentifier, tab);
-    
+
     }, requestFilters, [WebRequest.BLOCKING]);
 };
 
@@ -237,10 +237,10 @@ chrome.tabs.onRemoved.addListener(stateManager._removeTab);
 chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
 
     if (requestDetails.tabId !== -1) {
-        
+
         stateManager.tabs[requestDetails.tabId].details = {
             'url': requestDetails.url
-        }
+        };
     }
 
 }, {'types': ['main_frame'], 'urls': [Address.ANY]});
@@ -269,8 +269,14 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
 
 }, {'urls': [Address.ANY]});
 
-chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
-    'urls': stateManager.validHosts
-}, [WebRequest.BLOCKING, WebRequest.HEADERS]);
+chrome.storage.local.get({'stripMetadata': true}, function (options) {
+
+    if (options === null || options.stripMetadata !== false) {
+
+        chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
+            'urls': stateManager.validHosts
+        }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
+    }
+});
 
 chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);

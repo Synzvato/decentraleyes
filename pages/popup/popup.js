@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let version, optionsButtonElement, scriptDirection;
 
-    version = helpers.formatVersion(browser.runtime.getManifest().version);
+    version = helpers.formatVersion(chrome.runtime.getManifest().version);
     document.getElementById('version-label').innerText = version;
 
     scriptDirection = helpers.determineScriptDirection(navigator.language);
@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     optionsButtonElement.addEventListener('mouseup', function () {
+
         chrome.runtime.openOptionsPage();
         return window.close();
     });
