@@ -1,70 +1,70 @@
 {
-  "extensionDescription":{
-    "message":"Προστατεύει από παρακολούθηση μέσω \"δωρεάν\" διανομής περιεχόμενου.",
-    "description":"Extension description."
+  "extensionDescription": {
+    "message": "Προστατεύει από παρακολούθηση μέσω \"δωρεάν\" διανομής περιεχόμενου.",
+    "description": "Extension description."
   },
-  "disableProtectionTitle":{
-    "message":"Απενεργοποίηση προστασίας για αυτή τη σελίδα",
-    "description":"Disable protection title."
+  "disableProtectionTitle": {
+    "message": "Απενεργοποίηση προστασίας για αυτή τη σελίδα",
+    "description": "Disable protection title."
   },
-  "enableProtectionTitle":{
-    "message":"Ενεργοποίηση προστασίας",
-    "description":"Enable protection title."
+  "enableProtectionTitle": {
+    "message": "Ενεργοποίηση προστασίας",
+    "description": "Enable protection title."
   },
-  "amountInjectedTitle":{
-    "message":"Μετρητής εμβόλιμων τοπικών πόρων",
-    "description":"Amount injected title."
+  "amountInjectedTitle": {
+    "message": "Μετρητής εμβόλιμων τοπικών πόρων",
+    "description": "Amount injected title."
   },
-  "amountInjectedDescription":{
-    "message":"Ποσοστό εμβόλιμων τοπικών πόρων Δικτύων Παροχής Περιεχομένου από την στιγμή της εγκατάστασης.",
-    "description":"Amount injected description."
+  "amountInjectedDescription": {
+    "message": "Ποσοστό εμβόλιμων τοπικών πόρων Δικτύων Παροχής Περιεχομένου από την στιγμή της εγκατάστασης.",
+    "description": "Amount injected description."
   },
-  "optionsTitle":{
-    "message":"Επιλογές",
-    "description":"Options title."
+  "optionsTitle": {
+    "message": "Επιλογές",
+    "description": "Options title."
   },
-  "showIconBadgeTitle":{
-    "message":"Display injection counts on icon",
-    "description":"Show icon badge title."
+  "showIconBadgeTitle": {
+    "message": "Προβολή αριθμού εμβόλιμων πόρων στο εικονίδιο",
+    "description": "Show icon badge title."
   },
-  "showIconBadgeDescription":{
-    "message":"Show the number of injected resources on the extension icon.",
-    "description":"Show icon badge description."
+  "showIconBadgeDescription": {
+    "message": "Προβολή του αριθμού των εμβόλιμων πόρων στο εικονίδιο του πρόσθετου.",
+    "description": "Show icon badge description."
   },
-  "blockMissingTitle":{
-    "message":"Μπλοκ αιτήσεων για ανύπαρκτους πόρους",
-    "description":"Block requests for missing resources title."
+  "blockMissingTitle": {
+    "message": "Μπλοκ αιτήσεων για ανύπαρκτους πόρους",
+    "description": "Block requests for missing resources title."
   },
-  "blockMissingDescription":{
-    "message":"Ακύρωση απομακρυσμένης αίτησης, αν ο απαιτούμενος πόρος δεν είναι τοπικά διαθέσιμος.",
-    "description":"Block requests for missing resources description."
+  "blockMissingDescription": {
+    "message": "Ακύρωση απομακρυσμένης αίτησης, αν ο απαιτούμενος πόρος δεν είναι τοπικά διαθέσιμος.",
+    "description": "Block requests for missing resources description."
   },
-  "disablePrefetchTitle":{
-    "message":"Disable link prefetching",
-    "description":"Disable prefetch title."
+  "disablePrefetchTitle": {
+    "message": "Απενεργοποίηση πρόωρης φόρτωσης συνδέσμου",
+    "description": "Disable prefetch title."
   },
-  "disablePrefetchDescription":{
-    "message":"Prevent disallowed requests from leaking out to delivery networks.",
-    "description":"Disable prefetch description."
+  "disablePrefetchDescription": {
+    "message": "Αποτροπή διαρροής αποκλεισμένων κλήσεων προς δίκτυα διανομής.",
+    "description": "Disable prefetch description."
   },
-  "stripMetadataTitle":{
-    "message":"Strip metadata from allowed requests",
-    "description":"Strip metadata title."
+  "stripMetadataTitle": {
+    "message": "Διαγραφή μεταδεδομένων από επιτρεπόμενες κλήσεις",
+    "description": "Strip metadata title."
   },
-  "stripMetadataDescription":{
-    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
-    "description":"Strip metadata description."
+  "stripMetadataDescription": {
+    "message": "Διαγραφή ευαίσθητων δεδομένων από CDN αιτήσεις για ενίσχυση ασφάλειας.",
+    "description": "Strip metadata description."
   },
-  "whitelistedDomainsTitle":{
-    "message":"Εξαίρεση διευθύνσεων από επιθεωρήσεις",
-    "description":"Whitelisted domains title."
+  "whitelistedDomainsTitle": {
+    "message": "Εξαίρεση διευθύνσεων από επιθεωρήσεις",
+    "description": "Whitelisted domains title."
   },
-  "whitelistedDomainsDescription":{
-    "message":"Εισαγωγή διευθύνσεων στις επιτρεπόμενες. Διαχωρίστε πολλαπλές καταχωρήσεις με ερωτηματικά (;).",
-    "description":"Whitelisted domains description."
+  "whitelistedDomainsDescription": {
+    "message": "Εισαγωγή διευθύνσεων στις επιτρεπόμενες. Διαχωρίστε πολλαπλές καταχωρήσεις με ερωτηματικά (;).",
+    "description": "Whitelisted domains description."
   },
-  "advancedLabel":{
-    "message":"Για προχωρημένους",
-    "description":"Advanced label."
+  "advancedLabel": {
+    "message": "Για προχωρημένους",
+    "description": "Advanced label."
   }
 }
