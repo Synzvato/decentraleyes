@@ -1,70 +1,70 @@
 {
-  "extensionDescription":{
-    "message":"Защищает Вас от отслеживания через «бесплатные», централизованные CDN.",
-    "description":"Extension description."
+  "extensionDescription": {
+    "message": "Защищает Вас от отслеживания через «бесплатные», централизованные CDN.",
+    "description": "Extension description."
   },
-  "disableProtectionTitle":{
-    "message":"Отключить защиту для этого сайта",
-    "description":"Disable protection title."
+  "disableProtectionTitle": {
+    "message": "Отключить защиту для этого сайта",
+    "description": "Disable protection title."
   },
-  "enableProtectionTitle":{
-    "message":"Включить защиту",
-    "description":"Enable protection title."
+  "enableProtectionTitle": {
+    "message": "Включить защиту",
+    "description": "Enable protection title."
   },
-  "amountInjectedTitle":{
-    "message":"Счётчик файлов «доставленных» локально",
-    "description":"Amount injected title."
+  "amountInjectedTitle": {
+    "message": "Счётчик файлов «доставленных» локально",
+    "description": "Amount injected title."
   },
-  "amountInjectedDescription":{
-    "message":"Количество локально «доставленных» файлов с момента установки.",
-    "description":"Amount injected description."
+  "amountInjectedDescription": {
+    "message": "Количество локально «доставленных» файлов с момента установки.",
+    "description": "Amount injected description."
   },
-  "optionsTitle":{
-    "message":"Настройки",
-    "description":"Options title."
+  "optionsTitle": {
+    "message": "Настройки",
+    "description": "Options title."
   },
-  "showIconBadgeTitle":{
-    "message":"Display injection counts on icon",
-    "description":"Show icon badge title."
+  "showIconBadgeTitle": {
+    "message": "Показывать количество инъекций на значке",
+    "description": "Show icon badge title."
   },
-  "showIconBadgeDescription":{
-    "message":"Show the number of injected resources on the extension icon.",
-    "description":"Show icon badge description."
+  "showIconBadgeDescription": {
+    "message": "Показывать количество «доставленных» локально ресурсов на значке расширения.",
+    "description": "Show icon badge description."
   },
-  "blockMissingTitle":{
-    "message":"Блокировать запросы недостающих ресурсов",
-    "description":"Block requests for missing resources title."
+  "blockMissingTitle": {
+    "message": "Блокировать запросы недостающих ресурсов",
+    "description": "Block requests for missing resources title."
   },
-  "blockMissingDescription":{
-    "message":"Отменить перехваченный запрос, если требуемый ресурс не доступен локально (может «ломать» сайты).",
-    "description":"Block requests for missing resources description."
+  "blockMissingDescription": {
+    "message": "Отменить перехваченный запрос, если требуемый ресурс не доступен локально (может «ломать» сайты).",
+    "description": "Block requests for missing resources description."
   },
-  "disablePrefetchTitle":{
-    "message":"Disable link prefetching",
-    "description":"Disable prefetch title."
+  "disablePrefetchTitle": {
+    "message": "Отключить предвыборку ссылок",
+    "description": "Disable prefetch title."
   },
-  "disablePrefetchDescription":{
-    "message":"Prevent disallowed requests from leaking out to delivery networks.",
-    "description":"Disable prefetch description."
+  "disablePrefetchDescription": {
+    "message": "Не давать запрещенным запросам выходить за сети доставки.",
+    "description": "Disable prefetch description."
   },
-  "stripMetadataTitle":{
-    "message":"Strip metadata from allowed requests",
-    "description":"Strip metadata title."
+  "stripMetadataTitle": {
+    "message": "Удалить метаданные из допущенных запросов",
+    "description": "Strip metadata title."
   },
-  "stripMetadataDescription":{
-    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
-    "description":"Strip metadata description."
+  "stripMetadataDescription": {
+    "message": "Очистить дополнительные данные из разрешенных CDN запросов, для усиления приватности.",
+    "description": "Strip metadata description."
   },
-  "whitelistedDomainsTitle":{
-    "message":"Исключить домены из проверки",
-    "description":"Whitelisted domains title."
+  "whitelistedDomainsTitle": {
+    "message": "Исключить домены из проверки",
+    "description": "Whitelisted domains title."
   },
-  "whitelistedDomainsDescription":{
-    "message":"«Белый список» доменов. Контент, расположенный на них не будет фильтроваться. Записи (при количестве более одной) разделяются точкой с запятой (;).",
-    "description":"Whitelisted domains description."
+  "whitelistedDomainsDescription": {
+    "message": "«Белый список» доменов. Контент, расположенный на них не будет фильтроваться. Записи (при количестве более одной) разделяются точкой с запятой (;).",
+    "description": "Whitelisted domains description."
   },
-  "advancedLabel":{
-    "message":"Дополнительно",
-    "description":"Advanced label."
+  "advancedLabel": {
+    "message": "Дополнительно",
+    "description": "Advanced label."
   }
 }

@@ -1,70 +1,70 @@
 {
-  "extensionDescription":{
-    "message":"「無料」と称してあなたを追跡する大規模なCDNを迂回して、プライバシーを守ります。",
-    "description":"Extension description."
+  "extensionDescription": {
+    "message": "「無料」と称してあなたを追跡する大規模なCDNを迂回して、プライバシーを守ります。",
+    "description": "Extension description."
   },
-  "disableProtectionTitle":{
-    "message":"このサイトでは保護を無効にする",
-    "description":"Disable protection title."
+  "disableProtectionTitle": {
+    "message": "このサイトでは保護を無効にする",
+    "description": "Disable protection title."
   },
-  "enableProtectionTitle":{
-    "message":"保護を有効にする",
-    "description":"Enable protection title."
+  "enableProtectionTitle": {
+    "message": "保護を有効にする",
+    "description": "Enable protection title."
   },
-  "amountInjectedTitle":{
-    "message":"ローカルのリソースを使用した回数",
-    "description":"Amount injected title."
+  "amountInjectedTitle": {
+    "message": "ローカルのリソースを使用した回数",
+    "description": "Amount injected title."
   },
-  "amountInjectedDescription":{
-    "message":"インストール後にローカルのCDNリソースを使用した回数です。",
-    "description":"Amount injected description."
+  "amountInjectedDescription": {
+    "message": "インストール後にローカルのCDNリソースを使用した回数です。",
+    "description": "Amount injected description."
   },
-  "optionsTitle":{
-    "message":"オプション",
-    "description":"Options title."
+  "optionsTitle": {
+    "message": "オプション",
+    "description": "Options title."
   },
-  "showIconBadgeTitle":{
-    "message":"Display injection counts on icon",
-    "description":"Show icon badge title."
+  "showIconBadgeTitle": {
+    "message": "ローカルのリソースを使用した回数をアイコンに表示する",
+    "description": "Show icon badge title."
   },
-  "showIconBadgeDescription":{
-    "message":"Show the number of injected resources on the extension icon.",
-    "description":"Show icon badge description."
+  "showIconBadgeDescription": {
+    "message": "拡張機能のアイコンに、ローカルのリソースを使用した回数を表示します。",
+    "description": "Show icon badge description."
   },
-  "blockMissingTitle":{
-    "message":"アドオンに含まれないリソースへのリクエストをブロックする",
-    "description":"Block requests for missing resources title."
+  "blockMissingTitle": {
+    "message": "アドオンに含まれないリソースへのリクエストをブロックする",
+    "description": "Block requests for missing resources title."
   },
-  "blockMissingDescription":{
-    "message":"必要なリソースがローカルで利用できない場合、リクエストを取り消します。",
-    "description":"Block requests for missing resources description."
+  "blockMissingDescription": {
+    "message": "必要なリソースがローカルで利用できない場合、リクエストを取り消します。",
+    "description": "Block requests for missing resources description."
   },
-  "disablePrefetchTitle":{
-    "message":"Disable link prefetching",
-    "description":"Disable prefetch title."
+  "disablePrefetchTitle": {
+    "message": "リンクプリフェッチを無効にする",
+    "description": "Disable prefetch title."
   },
-  "disablePrefetchDescription":{
-    "message":"Prevent disallowed requests from leaking out to delivery networks.",
-    "description":"Disable prefetch description."
+  "disablePrefetchDescription": {
+    "message": "Prevent disallowed requests from leaking out to delivery networks.",
+    "description": "Disable prefetch description."
   },
-  "stripMetadataTitle":{
-    "message":"Strip metadata from allowed requests",
-    "description":"Strip metadata title."
+  "stripMetadataTitle": {
+    "message": "Strip metadata from allowed requests",
+    "description": "Strip metadata title."
   },
-  "stripMetadataDescription":{
-    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
-    "description":"Strip metadata description."
+  "stripMetadataDescription": {
+    "message": "Erase sensitive data from allowed CDN requests for improved privacy.",
+    "description": "Strip metadata description."
   },
-  "whitelistedDomainsTitle":{
-    "message":"保護から除外するドメイン",
-    "description":"Whitelisted domains title."
+  "whitelistedDomainsTitle": {
+    "message": "保護から除外するドメイン",
+    "description": "Whitelisted domains title."
   },
-  "whitelistedDomainsDescription":{
-    "message":"ホワイトリストに登録したいドメインを入力してください。エントリが複数ある場合、セミコロン (;) で区切ってください。",
-    "description":"Whitelisted domains description."
+  "whitelistedDomainsDescription": {
+    "message": "ホワイトリストに登録したいドメインを入力してください。エントリが複数ある場合、セミコロン (;) で区切ってください。",
+    "description": "Whitelisted domains description."
   },
-  "advancedLabel":{
-    "message":"エラー内容",
-    "description":"Advanced label."
+  "advancedLabel": {
+    "message": "エラー内容",
+    "description": "Advanced label."
   }
 }

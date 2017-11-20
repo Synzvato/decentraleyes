@@ -1,70 +1,70 @@
 {
-  "extensionDescription":{
-    "message":"Skyddar dig mot att spåras av \"gratis\", centraliserad, innehållsleverans.",
-    "description":"Extension description."
+  "extensionDescription": {
+    "message": "Skyddar dig mot att spåras av \"gratis\", centraliserad, innehållsleverans.",
+    "description": "Extension description."
   },
-  "disableProtectionTitle":{
-    "message":"Inaktivera skydd för den här sidan",
-    "description":"Disable protection title."
+  "disableProtectionTitle": {
+    "message": "Inaktivera skydd för den här sidan",
+    "description": "Disable protection title."
   },
-  "enableProtectionTitle":{
-    "message":"Aktivera skydd",
-    "description":"Enable protection title."
+  "enableProtectionTitle": {
+    "message": "Aktivera skydd",
+    "description": "Enable protection title."
   },
-  "amountInjectedTitle":{
-    "message":"Räknare för lokalt insatta resurser",
-    "description":"Amount injected title."
+  "amountInjectedTitle": {
+    "message": "Räknare för lokalt insatta resurser",
+    "description": "Amount injected title."
   },
-  "amountInjectedDescription":{
-    "message":"Antalet insatta Content Delivery Network-resurser sedan installationen.",
-    "description":"Amount injected description."
+  "amountInjectedDescription": {
+    "message": "Antalet insatta Content Delivery Network-resurser sedan installationen.",
+    "description": "Amount injected description."
   },
-  "optionsTitle":{
-    "message":"Inställningar",
-    "description":"Options title."
+  "optionsTitle": {
+    "message": "Inställningar",
+    "description": "Options title."
   },
-  "showIconBadgeTitle":{
-    "message":"Visa insättningsantal på ikonen",
-    "description":"Show icon badge title."
+  "showIconBadgeTitle": {
+    "message": "Visa insättningsantal på ikonen",
+    "description": "Show icon badge title."
   },
-  "showIconBadgeDescription":{
-    "message":"Visa antalet insatta resurser på ikonen.",
-    "description":"Show icon badge description."
+  "showIconBadgeDescription": {
+    "message": "Visa antalet insatta resurser på tilläggsikonen.",
+    "description": "Show icon badge description."
   },
-  "blockMissingTitle":{
-    "message":"Blockera förfrågningar när resurs saknas",
-    "description":"Block requests for missing resources title."
+  "blockMissingTitle": {
+    "message": "Blockera förfrågningar när resurs saknas",
+    "description": "Block requests for missing resources title."
   },
-  "blockMissingDescription":{
-    "message":"Avbryt avlyssnad begäran om den begärda resursen inte finns lokalt.",
-    "description":"Block requests for missing resources description."
+  "blockMissingDescription": {
+    "message": "Avbryt avlyssnad begäran om den begärda resursen inte finns lokalt.",
+    "description": "Block requests for missing resources description."
   },
-  "disablePrefetchTitle":{
-    "message":"Inaktivera länkförhandshämtning",
-    "description":"Disable prefetch title."
+  "disablePrefetchTitle": {
+    "message": "Inaktivera länkförhandshämtning",
+    "description": "Disable prefetch title."
   },
-  "disablePrefetchDescription":{
-    "message":"Förhindra otillåtna förfrågningar från att läcka ut till leveransnätverk.",
-    "description":"Disable prefetch description."
+  "disablePrefetchDescription": {
+    "message": "Förhindra otillåtna förfrågningar från att läcka ut till leveransnätverk.",
+    "description": "Disable prefetch description."
   },
-  "stripMetadataTitle":{
-    "message":"Skala bort metadata från tillåtna förfrågningar",
-    "description":"Strip metadata title."
+  "stripMetadataTitle": {
+    "message": "Skala bort metadata från tillåtna förfrågningar",
+    "description": "Strip metadata title."
   },
-  "stripMetadataDescription":{
-    "message":"Radera känslig data från tillåtna CDN-förfrågningar för förbättrad integritet.",
-    "description":"Strip metadata description."
+  "stripMetadataDescription": {
+    "message": "Radera känslig data från tillåtna CDN-förfrågningar för förbättrad integritet.",
+    "description": "Strip metadata description."
   },
-  "whitelistedDomainsTitle":{
-    "message":"Exkludera domäner från inspektioner",
-    "description":"Whitelisted domains title."
+  "whitelistedDomainsTitle": {
+    "message": "Exkludera domäner från inspektioner",
+    "description": "Whitelisted domains title."
   },
-  "whitelistedDomainsDescription":{
-    "message":"Ange domäner för vitlistning. Separera flera domänposter med semikolon (;).",
-    "description":"Whitelisted domains description."
+  "whitelistedDomainsDescription": {
+    "message": "Ange domäner för vitlistning. Separera flera domänposter med semikolon (;).",
+    "description": "Whitelisted domains description."
   },
-  "advancedLabel":{
-    "message":"Avancerad",
-    "description":"Advanced label."
+  "advancedLabel": {
+    "message": "Avancerad",
+    "description": "Advanced label."
   }
 }
