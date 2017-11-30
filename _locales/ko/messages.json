@@ -1,0 +1,70 @@
+{
+  "extensionDescription": {
+    "message": "\"무료\"라는 미끼로 당신을 추적하는 대규모 CDN을 사용하지 않음으로써 개인 정보를 지킵니다.",
+    "description": "Extension description."
+  },
+  "disableProtectionTitle": {
+    "message": "이 사이트의 보호 비활성화",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "보호 활성화",
+    "description": "Enable protection title."
+  },
+  "amountInjectedTitle": {
+    "message": "로컬 리소스로 대체한 요청 횟수",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Decentraleyes를 설치한 뒤, CDN에서 다운로드 하는 대신 로컬 자원을 사용한 횟수입니다.",
+    "description": "Amount injected description."
+  },
+  "optionsTitle": {
+    "message": "옵션",
+    "description": "Options title."
+  },
+  "showIconBadgeTitle": {
+    "message": "차단한 횟수를 아이콘에 표시",
+    "description": "Show icon badge title."
+  },
+  "showIconBadgeDescription": {
+    "message": "로컬 리소스로 대체한 요청 수를 확장 기능 아이콘에 표시합니다.",
+    "description": "Show icon badge description."
+  },
+  "blockMissingTitle": {
+    "message": "존재하지 않는 리소스에 대한 요청을 차단",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "리소스를 로컬에서 가져올 수 없다면 리소스 요청을 취소합니다.",
+    "description": "Block requests for missing resources description."
+  },
+  "disablePrefetchTitle": {
+    "message": "링크 프리페치를 비활성화",
+    "description": "Disable prefetch title."
+  },
+  "disablePrefetchDescription": {
+    "message": "허가되지 않은 요청이 전달 네트워크(DN)로 전송되는 것을 차단합니다.",
+    "description": "Disable prefetch description."
+  },
+  "stripMetadataTitle": {
+    "message": "허용된 요청에서 메타데이터를 제거",
+    "description": "Strip metadata title."
+  },
+  "stripMetadataDescription": {
+    "message": "프라이버시 보호를 위해 허가된 CDN 요청에서 민감한 데이터를 지웁니다.",
+    "description": "Strip metadata description."
+  },
+  "whitelistedDomainsTitle": {
+    "message": "Decentraleyes를 사용하지 않을 도메인",
+    "description": "Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription": {
+    "message": "화이트 리스트에 등록할 도메인을 입력하세요. 여러 개를 입력할 경우 세미콜론 (;) 을 이용해 구분합니다.",
+    "description": "Whitelisted domains description."
+  },
+  "advancedLabel": {
+    "message": "고급",
+    "description": "Advanced label."
+  }
+}
