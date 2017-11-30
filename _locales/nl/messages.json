@@ -1,70 +1,70 @@
 {
-  "extensionDescription":{
-    "message":"Beschermt tegen tracking via het \"gratis\", gecentraliseerd, verzorgen van content.",
-    "description":"Extension description."
+  "extensionDescription": {
+    "message": "Beschermt tegen tracking via het \"gratis\", gecentraliseerd, verzorgen van content.",
+    "description": "Extension description."
   },
-  "disableProtectionTitle":{
-    "message":"Bescherming voor deze website uitschakelen",
-    "description":"Disable protection title."
+  "disableProtectionTitle": {
+    "message": "Bescherming voor deze website uitschakelen",
+    "description": "Disable protection title."
   },
-  "enableProtectionTitle":{
-    "message":"Bescherming inschakelen",
-    "description":"Enable protection title."
+  "enableProtectionTitle": {
+    "message": "Bescherming inschakelen",
+    "description": "Enable protection title."
   },
-  "amountInjectedTitle":{
-    "message":"Teller voor lokaal geïnjecteerde bestanden",
-    "description":"Amount injected title."
+  "amountInjectedTitle": {
+    "message": "Teller voor lokaal geïnjecteerde bestanden",
+    "description": "Amount injected title."
   },
-  "amountInjectedDescription":{
-    "message":"Aantal lokale Content Delivery Network-bestandsinjecties sinds installatie.",
-    "description":"Amount injected description."
+  "amountInjectedDescription": {
+    "message": "Aantal lokale Content Delivery Network-bestandsinjecties sinds installatie.",
+    "description": "Amount injected description."
   },
-  "optionsTitle":{
-    "message":"Opties",
-    "description":"Options title."
+  "optionsTitle": {
+    "message": "Opties",
+    "description": "Options title."
   },
-  "showIconBadgeTitle":{
-    "message":"Getelde injecties op icoon weergeven",
-    "description":"Show icon badge title."
+  "showIconBadgeTitle": {
+    "message": "Getelde injecties op icoon weergeven",
+    "description": "Show icon badge title."
   },
-  "showIconBadgeDescription":{
-    "message":"Toon het aantal geïnjecteerde bestanden op het extensie-icoon.",
-    "description":"Show icon badge description."
+  "showIconBadgeDescription": {
+    "message": "Toon het aantal geïnjecteerde bestanden op het extensie-icoon.",
+    "description": "Show icon badge description."
   },
-  "blockMissingTitle":{
-    "message":"Verzoeken voor ontbrekende items blokkeren",
-    "description":"Block requests for missing resources title."
+  "blockMissingTitle": {
+    "message": "Verzoeken voor ontbrekende items blokkeren",
+    "description": "Block requests for missing resources title."
   },
-  "blockMissingDescription":{
-    "message":"Annuleer een onderschept verzoek wanneer het bestand niet lokaal beschikbaar is.",
-    "description":"Block requests for missing resources description."
+  "blockMissingDescription": {
+    "message": "Annuleer een onderschept verzoek wanneer het bestand niet lokaal beschikbaar is.",
+    "description": "Block requests for missing resources description."
   },
-  "disablePrefetchTitle":{
-    "message":"Link prefetching uitschakelen",
-    "description":"Disable prefetch title."
+  "disablePrefetchTitle": {
+    "message": "Link prefetching uitschakelen",
+    "description": "Disable prefetch title."
   },
-  "disablePrefetchDescription":{
-    "message":"Voorkom dat geweigerde verzoeken naar afleveringsnetwerken uitlekken.",
-    "description":"Disable prefetch description."
+  "disablePrefetchDescription": {
+    "message": "Voorkom dat geweigerde verzoeken naar afleveringsnetwerken uitlekken.",
+    "description": "Disable prefetch description."
   },
-  "stripMetadataTitle":{
-    "message":"Metadata uit toegestane verzoeken verwijderen",
-    "description":"Strip metadata title."
+  "stripMetadataTitle": {
+    "message": "Metadata uit toegestane verzoeken verwijderen",
+    "description": "Strip metadata title."
   },
-  "stripMetadataDescription":{
-    "message":"Wis gevoelige gegevens uit toegestane CDN-verzoeken voor verbeterde privacy.",
-    "description":"Strip metadata description."
+  "stripMetadataDescription": {
+    "message": "Wis gevoelige gegevens uit toegestane CDN-verzoeken voor verbeterde privacy.",
+    "description": "Strip metadata description."
   },
-  "whitelistedDomainsTitle":{
-    "message":"Sluit domeinen uit van inspecties",
-    "description":"Whitelisted domains title."
+  "whitelistedDomainsTitle": {
+    "message": "Sluit domeinen uit van inspecties",
+    "description": "Whitelisted domains title."
   },
-  "whitelistedDomainsDescription":{
-    "message":"Voer de te negeren domeinen in. Scheid de waarden met puntkomma's (;).",
-    "description":"Whitelisted domains description."
+  "whitelistedDomainsDescription": {
+    "message": "Voer de te negeren domeinen in. Scheid de waarden met puntkomma's (;).",
+    "description": "Whitelisted domains description."
   },
-  "advancedLabel":{
-    "message":"Geavanceerd",
-    "description":"Advanced label."
+  "advancedLabel": {
+    "message": "Geavanceerd",
+    "description": "Advanced label."
   }
 }
