@@ -17,7 +17,8 @@
     "Setting": true,
     "stateManager": true,
     "WebRequest": true,
-    "Whitelist": true
+    "Whitelist": true,
+    "wrappers": true
   },
   "overrides": {
     "files": [
