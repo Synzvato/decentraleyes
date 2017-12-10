@@ -25,15 +25,17 @@ var requestAnalyzer = {};
 
 requestAnalyzer.isValidCandidate = function (requestDetails, tabDetails) {
 
-    let initiatorHost;
+    let initiatorDomain, isWhitelisted;
 
-    try {
-        initiatorHost = tabDetails.url.match(Address.DOMAIN_EXPRESSION)[1];
-    } catch (exception) {
-        initiatorHost = Address.EXAMPLE;
+    initiatorDomain = helpers.extractDomainFromUrl(tabDetails.url, true);
+
+    if (initiatorDomain === null) {
+        initiatorDomain = Address.EXAMPLE;
     }
 
-    if (initiatorHost && requestAnalyzer.whitelistedDomains[requestAnalyzer._normalizeDomain(initiatorHost)]) {
+    isWhitelisted = requestAnalyzer.whitelistedDomains[initiatorDomain];
+
+    if (isWhitelisted) {
         return false;
     }
 
@@ -43,10 +45,12 @@ requestAnalyzer.isValidCandidate = function (requestDetails, tabDetails) {
 
 requestAnalyzer.getLocalTarget = function (requestDetails) {
 
-    let destinationHost, destinationPath, hostMappings, basePath, resourceMappings;
+    let destinationUrl, destinationHost, destinationPath, hostMappings, basePath, resourceMappings;
 
-    destinationHost = requestDetails.url.match(Address.DOMAIN_EXPRESSION)[1];
-    destinationPath = requestDetails.url.match(Address.DOMAIN_EXPRESSION)[2];
+    destinationUrl = new URL(requestDetails.url);
+
+    destinationHost = destinationUrl.host;
+    destinationPath = destinationUrl.pathname;
 
     // Use the proper mappings for the targeted host.
     hostMappings = mappings[destinationHost];

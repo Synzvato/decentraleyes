@@ -66,11 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 injections = backgroundPage.stateManager.tabs[tabs[0].id].injections;
                 injectionOverview = {};
 
-                try {
-                    domain = tabs[0].url.match(Address.DOMAIN_EXPRESSION)[1];
-                } catch (exception) {
-                    domain = null;
-                }
+                domain = helpers.extractDomainFromUrl(tabs[0].url);
 
                 if (domain !== null) {
 

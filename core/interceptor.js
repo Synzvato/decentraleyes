@@ -36,10 +36,9 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         };
     }
 
-    try {
-        tabDomain = tab.url.match(Address.DOMAIN_EXPRESSION)[1];
-        tabDomain = requestAnalyzer._normalizeDomain(tabDomain);
-    } catch (exception) {
+    tabDomain = helpers.extractDomainFromUrl(tab.url, true);
+
+    if (tabDomain === null) {
         tabDomain = Address.EXAMPLE;
     }
 
@@ -98,12 +97,15 @@ interceptor._handleMissingCandidate = function (requestUrl) {
         };
     }
 
-    if (requestUrl.match(Address.HTTP_EXPRESSION)) {
+    let requestUrlSegments = new URL(requestUrl);
 
-        let secureRequestUrl = requestUrl.replace(Address.HTTP_EXPRESSION, Address.HTTPS);
+    if (requestUrlSegments.protocol === Address.HTTP) {
+
+        requestUrlSegments.protocol = Address.HTTPS;
+        requestUrl = requestUrlSegments.toString();
 
         return {
-            'redirectUrl': secureRequestUrl
+            'redirectUrl': requestUrl
         };
 
     } else {
