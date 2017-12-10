@@ -247,3 +247,14 @@ footer {
     font-style: italic;
     font-weight: 400;
 }
+
+/**
+ * Compatibility
+ */
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+    body {
+        width: 348px;
+    }
+}

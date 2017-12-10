@@ -37,14 +37,14 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
 
         if (injectionCount > 0) {
 
-            chrome.browserAction.setBadgeText({
+            wrappers.setBadgeText({
                 'tabId': tabIdentifier,
                 'text': injectionCount.toString()
             });
 
         } else {
 
-            chrome.browserAction.setBadgeText({
+            wrappers.setBadgeText({
                 'tabId': tabIdentifier,
                 'text': ''
             });
@@ -114,12 +114,8 @@ stateManager._createTab = function (tab) {
 
     chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
 
-        return new Promise((resolve) => {
-
-            browser.tabs.get(tabIdentifier).then(function (tab) {
-                resolve(interceptor.handleRequest(requestDetails, tabIdentifier, tab));
-            });
-        });
+        let tab = stateManager.tabs[tabIdentifier].details || {};
+        return interceptor.handleRequest(requestDetails, tabIdentifier, tab);
 
     }, requestFilters, [WebRequest.BLOCKING]);
 };
@@ -141,7 +137,7 @@ stateManager._updateTab = function (details) {
 
     if (stateManager.showIconBadge === true) {
 
-        chrome.browserAction.setBadgeText({
+        wrappers.setBadgeText({
             'tabId': tabIdentifier,
             'text': ''
         });
@@ -203,7 +199,7 @@ stateManager._handleStorageChanged = function (changes) {
 
 stateManager._removeIconBadgeFromTab = function (tab) {
 
-    chrome.browserAction.setBadgeText({
+    wrappers.setBadgeText({
         'tabId': tab.id,
         'text': ''
     });
@@ -237,6 +233,17 @@ chrome.storage.local.get('showIconBadge', function (items) {
 
 chrome.tabs.onCreated.addListener(stateManager._createTab);
 chrome.tabs.onRemoved.addListener(stateManager._removeTab);
+
+chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
+
+    if (requestDetails.tabId !== -1) {
+
+        stateManager.tabs[requestDetails.tabId].details = {
+            'url': requestDetails.url
+        };
+    }
+
+}, {'types': ['main_frame'], 'urls': [Address.ANY]});
 
 chrome.webNavigation.onCommitted.addListener(stateManager._updateTab, {
     'url': [{'urlContains': ':'}]

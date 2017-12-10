@@ -94,20 +94,6 @@ chrome.runtime.getPlatformInfo(function (information) {
     main.operatingSystem = information.os;
 });
 
-if (typeof chrome.browserAction.setBadgeBackgroundColor !== 'function') {
-
-    chrome.browserAction.setBadgeBackgroundColor = function () {};
-    chrome.browserAction.setBadgeText = function () {};
-
-    chrome.browserAction.onClicked.addListener(function () {
-
-        chrome.tabs.create({
-            'url': chrome.extension.getURL('pages/popup/popup.html'),
-            'active': false
-        });
-    });
-}
-
-chrome.browserAction.setBadgeBackgroundColor({
+wrappers.setBadgeBackgroundColor({
     'color': [74, 130, 108, 255]
 });
