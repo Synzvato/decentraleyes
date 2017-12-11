@@ -126,17 +126,6 @@ requestAnalyzer._applyWhitelistedDomains = function () {
     });
 };
 
-requestAnalyzer._normalizeDomain = function (domain) {
-
-    domain = domain.toLowerCase().trim();
-
-    if (domain.startsWith(Address.WWW_PREFIX)) {
-        domain = domain.slice(Address.WWW_PREFIX_LENGTH);
-    }
-
-    return domain;
-};
-
 /**
  * Initializations
  */

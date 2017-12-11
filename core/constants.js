@@ -24,8 +24,7 @@ const Address = {
     'EXAMPLE': 'example.org',
     'HTTP': 'http:',
     'HTTPS': 'https:',
-    'WWW_PREFIX': 'www.',
-    'WWW_PREFIX_LENGTH': 4
+    'WWW_PREFIX': 'www.'
 };
 
 const Resource = {
