@@ -90,10 +90,6 @@ main._showReleaseNotes = function (details) {
 chrome.runtime.onInstalled.addListener(main._showReleaseNotes);
 main._initializeOptions();
 
-chrome.runtime.getPlatformInfo(function (information) {
-    main.operatingSystem = information.os;
-});
-
 wrappers.setBadgeBackgroundColor({
     'color': [74, 130, 108, 255]
 });
