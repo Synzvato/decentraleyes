@@ -28,7 +28,7 @@ options._renderContents = function () {
     document.body.setAttribute('dir', options._scriptDirection);
     helpers.insertI18nContentIntoDocument(document);
 
-    options._determineOptionDetails()
+    options._determineOptionValues()
         .then(options._renderOptionsPanel);
 };
 
@@ -37,16 +37,9 @@ options._renderOptionsPanel = function () {
     let whitelistedDomains, domainWhitelist, elements;
 
     whitelistedDomains = options._optionValues.whitelistedDomains;
-    domainWhitelist = '';
+    domainWhitelist = options._serializeWhitelistedDomains(whitelistedDomains);
 
     elements = options._optionElements;
-
-    Object.keys(whitelistedDomains).forEach(function (domain) {
-        domainWhitelist = `${domainWhitelist}${domain};`;
-    });
-
-    domainWhitelist = domainWhitelist.slice(0, -1);
-    domainWhitelist = domainWhitelist.replace(Whitelist.TRIM_EXPRESSION, '');
 
     elements.showIconBadge.checked = options._optionValues.showIconBadge;
     elements.blockMissing.checked = options._optionValues.blockMissing;
@@ -76,23 +69,15 @@ options._registerOptionChangedEventListeners = function (elements) {
     elements.whitelistedDomains.addEventListener('keyup', options._onOptionChanged);
 };
 
-options._determineOptionDetails = function () {
+options._determineOptionValues = function () {
 
     return new Promise((resolve) => {
 
-        let optionElements = {
-            'showIconBadge': options._getOptionElement(Setting.SHOW_ICON_BADGE),
-            'blockMissing': options._getOptionElement(Setting.BLOCK_MISSING),
-            'disablePrefetch': options._getOptionElement(Setting.DISABLE_PREFETCH),
-            'stripMetadata': options._getOptionElement(Setting.STRIP_METADATA),
-            'whitelistedDomains': options._getOptionElement(Setting.WHITELISTED_DOMAINS)
-        };
+        let optionKeys = Object.keys(options._optionElements);
 
-        chrome.storage.local.get(Object.keys(optionElements), function (items) {
+        chrome.storage.local.get(optionKeys, function (items) {
 
-            options._optionElements = optionElements;
             options._optionValues = items;
-
             resolve();
         });
     });
@@ -100,6 +85,62 @@ options._determineOptionDetails = function () {
 
 options._getOptionElement = function (optionKey) {
     return document.querySelector(`[data-option=${optionKey}]`);
+};
+
+options._getOptionElements = function () {
+
+    let optionElements = {
+        'showIconBadge': options._getOptionElement(Setting.SHOW_ICON_BADGE),
+        'blockMissing': options._getOptionElement(Setting.BLOCK_MISSING),
+        'disablePrefetch': options._getOptionElement(Setting.DISABLE_PREFETCH),
+        'stripMetadata': options._getOptionElement(Setting.STRIP_METADATA),
+        'whitelistedDomains': options._getOptionElement(Setting.WHITELISTED_DOMAINS)
+    };
+
+    return optionElements;
+};
+
+options._configureLinkPrefetching = function (value) {
+
+    if (value === false) {
+
+        // Restore default values of related preference values.
+        chrome.privacy.network.networkPredictionEnabled.clear({});
+
+    } else {
+
+        chrome.privacy.network.networkPredictionEnabled.set({
+            'value': false
+        });
+    }
+};
+
+options._serializeWhitelistedDomains = function (whitelistedDomains) {
+
+    let domainWhitelist, whitelistedDomainKeys;
+
+    whitelistedDomainKeys = Object.keys(whitelistedDomains);
+    domainWhitelist = '';
+
+    whitelistedDomainKeys.forEach(function (domain) {
+        domainWhitelist = `${domainWhitelist}${domain};`;
+    });
+
+    domainWhitelist = domainWhitelist.slice(0, -1);
+    domainWhitelist = domainWhitelist.replace(Whitelist.TRIM_EXPRESSION, '');
+
+    return domainWhitelist;
+};
+
+options._parseDomainWhitelist = function (domainWhitelist) {
+
+    let whitelistedDomains = {};
+
+    domainWhitelist.split(Whitelist.VALUE_SEPARATOR).forEach(function (domain) {
+        whitelistedDomains[helpers.normalizeDomain(domain)] = true;
+    });
+
+    return whitelistedDomains;
 };
 
 /**
@@ -110,6 +151,7 @@ options._onDocumentLoaded = function () {
 
     let language = navigator.language;
 
+    options._optionElements = options._getOptionElements();
     options._languageSupported = helpers.languageIsFullySupported(language);
     options._scriptDirection = helpers.determineScriptDirection(language);
 
@@ -132,29 +174,11 @@ options._onOptionChanged = function ({target}) {
     }
 
     if (optionKey === Setting.DISABLE_PREFETCH) {
-
-        if (optionValue === false) {
-
-            // Restore default values of related preference values.
-            chrome.privacy.network.networkPredictionEnabled.clear({});
-
-        } else {
-
-            chrome.privacy.network.networkPredictionEnabled.set({
-                'value': false
-            });
-        }
+        options._configureLinkPrefetching(optionValue);
     }
 
     if (optionKey === Setting.WHITELISTED_DOMAINS) {
-
-        let domainWhitelist = optionValue;
-
-        optionValue = {};
-
-        domainWhitelist.split(Whitelist.VALUE_SEPARATOR).forEach(function (domain) {
-            optionValue[helpers.normalizeDomain(domain)] = true;
-        });
+        optionValue = options._parseDomainWhitelist(optionValue);
     }
 
     chrome.storage.local.set({
