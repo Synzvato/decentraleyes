@@ -44,15 +44,15 @@
     "description": "Disable prefetch title."
   },
   "disablePrefetchDescription": {
-    "message": "Prevent disallowed requests from leaking out to delivery networks.",
+    "message": "配信ネットワークに許可されていないリクエストの漏れから予防する。",
     "description": "Disable prefetch description."
   },
   "stripMetadataTitle": {
-    "message": "Strip metadata from allowed requests",
+    "message": "許可されていたるリクエストからメタデータを取り除く",
     "description": "Strip metadata title."
   },
   "stripMetadataDescription": {
-    "message": "Erase sensitive data from allowed CDN requests for improved privacy.",
+    "message": "プライバシー向上のために許可されたCDNリクエストから機密データを消去する。",
     "description": "Strip metadata description."
   },
   "whitelistedDomainsTitle": {

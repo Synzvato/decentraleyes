@@ -11,7 +11,7 @@ body {
     margin: 0 auto;
     overflow: hidden;
     padding: 0;
-    width: 348px;
+    max-width: 348px;
 }
 
 header {
@@ -246,4 +246,15 @@ footer {
     color: #a5a5a5;
     font-style: italic;
     font-weight: 400;
+}
+
+/**
+ * Compatibility
+ */
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+    body {
+        width: 348px;
+    }
 }

@@ -20,7 +20,7 @@
 var helpers = {};
 
 /**
- * Public Functions
+ * Public Methods
  */
 
 helpers.insertI18nContentIntoDocument = function (document) {
@@ -62,8 +62,8 @@ helpers.languageIsFullySupported = function (language) {
     languageSupported = false;
 
     supportedLanguages = [
-        'ar', 'bg', 'zh-CN', 'zh-TW', 'da', 'nl', 'en', 'et', 'fi', 'fr', 'de',
-        'el', 'is', 'id', 'pl', 'pt-PT', 'ro', 'ru', 'es', 'sv', 'tr'
+        'ar', 'bg', 'zh', 'da', 'nl', 'en', 'et', 'fi', 'fr', 'de', 'el', 'is',
+        'id', 'it', 'ja', 'ko', 'pl', 'pt', 'ro', 'ru', 'es', 'sv', 'tr'
     ];
 
     for (let supportedLanguage of supportedLanguages) {
@@ -74,6 +74,48 @@ helpers.languageIsFullySupported = function (language) {
     }
 
     return languageSupported;
+};
+
+helpers.normalizeDomain = function (domain) {
+
+    domain = domain.toLowerCase().trim();
+
+    if (domain.startsWith(Address.WWW_PREFIX)) {
+        domain = domain.slice(Address.WWW_PREFIX.length);
+    }
+
+    return domain;
+};
+
+helpers.extractDomainFromUrl = function (url, normalize) {
+
+    let extractedDomain;
+
+    try {
+        extractedDomain = new URL(url).host;
+    } catch (exception) {
+        extractedDomain = null;
+    }
+
+    if (extractedDomain === '') {
+        extractedDomain = null;
+    }
+
+    if (extractedDomain !== null && normalize === true) {
+        extractedDomain = helpers.normalizeDomain(extractedDomain);
+    }
+
+    return extractedDomain;
+};
+
+helpers.extractFilenameFromPath = function (path) {
+
+    let pathSegments, filename;
+
+    pathSegments = path.split('/');
+    filename = pathSegments[pathSegments.length - 1];
+
+    return filename;
 };
 
 helpers.determineCdnName = function (domainName) {

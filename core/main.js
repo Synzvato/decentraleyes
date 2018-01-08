@@ -90,6 +90,6 @@ main._showReleaseNotes = function (details) {
 chrome.runtime.onInstalled.addListener(main._showReleaseNotes);
 main._initializeOptions();
 
-chrome.browserAction.setBadgeBackgroundColor({
+wrappers.setBadgeBackgroundColor({
     'color': [74, 130, 108, 255]
 });

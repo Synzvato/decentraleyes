@@ -36,19 +36,21 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         };
     }
 
-    try {
-        tabDomain = tab.url.match(Address.DOMAIN_EXPRESSION)[1];
-        tabDomain = requestAnalyzer._normalizeDomain(tabDomain);
-    } catch (exception) {
+    tabDomain = helpers.extractDomainFromUrl(tab.url, true);
+
+    if (tabDomain === null) {
         tabDomain = Address.EXAMPLE;
     }
 
     // Temporary list of undetectable tainted domains.
     let undetectableTaintedDomains = {
+        '10fastfingers.com': true,
         'cdnjs.com': true,
         'dropbox.com': true,
         'glowing-bear.org': true,
         'minigames.mail.ru': true,
+        'miniquadtestbench.com': true,
+        'qwertee.com': true,
         'report-uri.io': true,
         'scotthelme.co.uk': true,
         'securityheaders.io': true,
@@ -98,12 +100,15 @@ interceptor._handleMissingCandidate = function (requestUrl) {
         };
     }
 
-    if (requestUrl.match(Address.HTTP_EXPRESSION)) {
+    let requestUrlSegments = new URL(requestUrl);
 
-        let secureRequestUrl = requestUrl.replace(Address.HTTP_EXPRESSION, Address.HTTPS);
+    if (requestUrlSegments.protocol === Address.HTTP) {
+
+        requestUrlSegments.protocol = Address.HTTPS;
+        requestUrl = requestUrlSegments.toString();
 
         return {
-            'redirectUrl': secureRequestUrl
+            'redirectUrl': requestUrl
         };
 
     } else {

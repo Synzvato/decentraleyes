@@ -1,70 +1,70 @@
 {
   "extensionDescription": {
-    "message": "Beschermt tegen tracking via het \"gratis\", gecentraliseerd, verzorgen van content.",
+    "message": "\"무료\"라는 미끼로 당신을 추적하는 대규모 CDN을 사용하지 않음으로써 개인 정보를 지킵니다.",
     "description": "Extension description."
   },
   "disableProtectionTitle": {
-    "message": "Bescherming voor deze website uitschakelen",
+    "message": "이 사이트의 보호 비활성화",
     "description": "Disable protection title."
   },
   "enableProtectionTitle": {
-    "message": "Bescherming inschakelen",
+    "message": "보호 활성화",
     "description": "Enable protection title."
   },
   "amountInjectedTitle": {
-    "message": "Teller voor lokaal geïnjecteerde bestanden",
+    "message": "로컬 리소스로 대체한 요청 횟수",
     "description": "Amount injected title."
   },
   "amountInjectedDescription": {
-    "message": "Aantal lokale Content Delivery Network-bestandsinjecties sinds installatie.",
+    "message": "Decentraleyes를 설치한 뒤, CDN에서 다운로드 하는 대신 로컬 자원을 사용한 횟수입니다.",
     "description": "Amount injected description."
   },
   "optionsTitle": {
-    "message": "Opties",
+    "message": "옵션",
     "description": "Options title."
   },
   "showIconBadgeTitle": {
-    "message": "Getelde injecties op icoon weergeven",
+    "message": "차단한 횟수를 아이콘에 표시",
     "description": "Show icon badge title."
   },
   "showIconBadgeDescription": {
-    "message": "Toon het aantal geïnjecteerde bestanden op het extensie-icoon.",
+    "message": "로컬 리소스로 대체한 요청 수를 확장 기능 아이콘에 표시합니다.",
     "description": "Show icon badge description."
   },
   "blockMissingTitle": {
-    "message": "Verzoeken voor ontbrekende items blokkeren",
+    "message": "존재하지 않는 리소스에 대한 요청을 차단",
     "description": "Block requests for missing resources title."
   },
   "blockMissingDescription": {
-    "message": "Annuleer een onderschept verzoek wanneer het bestand niet lokaal beschikbaar is.",
+    "message": "리소스를 로컬에서 가져올 수 없다면 리소스 요청을 취소합니다.",
     "description": "Block requests for missing resources description."
   },
   "disablePrefetchTitle": {
-    "message": "Link prefetching uitschakelen",
+    "message": "링크 프리페치를 비활성화",
     "description": "Disable prefetch title."
   },
   "disablePrefetchDescription": {
-    "message": "Voorkom dat geweigerde verzoeken naar afleveringsnetwerken uitlekken.",
+    "message": "허가되지 않은 요청이 전달 네트워크(DN)로 전송되는 것을 차단합니다.",
     "description": "Disable prefetch description."
   },
   "stripMetadataTitle": {
-    "message": "Metadata uit toegestane verzoeken verwijderen",
+    "message": "허용된 요청에서 메타데이터를 제거",
     "description": "Strip metadata title."
   },
   "stripMetadataDescription": {
-    "message": "Wis gevoelige gegevens uit toegestane CDN-verzoeken voor verbeterde privacy.",
+    "message": "프라이버시 보호를 위해 허가된 CDN 요청에서 민감한 데이터를 지웁니다.",
     "description": "Strip metadata description."
   },
   "whitelistedDomainsTitle": {
-    "message": "Sluit domeinen uit van inspecties",
+    "message": "Decentraleyes를 사용하지 않을 도메인",
     "description": "Whitelisted domains title."
   },
   "whitelistedDomainsDescription": {
-    "message": "Voer de te negeren domeinen in. Scheid de waarden met puntkomma's (;).",
+    "message": "화이트 리스트에 등록할 도메인을 입력하세요. 여러 개를 입력할 경우 세미콜론 (;) 을 이용해 구분합니다.",
     "description": "Whitelisted domains description."
   },
   "advancedLabel": {
-    "message": "Geavanceerd",
+    "message": "고급",
     "description": "Advanced label."
   }
 }

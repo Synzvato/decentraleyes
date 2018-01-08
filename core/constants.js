@@ -21,12 +21,10 @@ const Address = {
     'ANY': '*://*/*',
     'ANY_PATH': '/*',
     'ANY_PROTOCOL': '*://',
-    'DOMAIN_EXPRESSION': /:\/\/(.[^/]+)(.*)/,
     'EXAMPLE': 'example.org',
-    'HTTP_EXPRESSION': /^http?:\/\//,
-    'HTTPS': 'https://',
-    'WWW_PREFIX': 'www.',
-    'WWW_PREFIX_LENGTH': 4
+    'HTTP': 'http:',
+    'HTTPS': 'https:',
+    'WWW_PREFIX': 'www.'
 };
 
 const Resource = {

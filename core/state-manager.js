@@ -37,14 +37,14 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
 
         if (injectionCount > 0) {
 
-            chrome.browserAction.setBadgeText({
+            wrappers.setBadgeText({
                 'tabId': tabIdentifier,
                 'text': injectionCount.toString()
             });
 
         } else {
 
-            chrome.browserAction.setBadgeText({
+            wrappers.setBadgeText({
                 'tabId': tabIdentifier,
                 'text': ''
             });
@@ -137,7 +137,7 @@ stateManager._updateTab = function (details) {
 
     if (stateManager.showIconBadge === true) {
 
-        chrome.browserAction.setBadgeText({
+        wrappers.setBadgeText({
             'tabId': tabIdentifier,
             'text': ''
         });
@@ -199,7 +199,7 @@ stateManager._handleStorageChanged = function (changes) {
 
 stateManager._removeIconBadgeFromTab = function (tab) {
 
-    chrome.browserAction.setBadgeText({
+    wrappers.setBadgeText({
         'tabId': tab.id,
         'text': ''
     });
