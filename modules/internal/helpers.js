@@ -108,6 +108,16 @@ helpers.extractDomainFromUrl = function (url, normalize) {
     return extractedDomain;
 };
 
+helpers.extractFilenameFromPath = function (path) {
+
+    let pathSegments, filename;
+
+    pathSegments = path.split('/');
+    filename = pathSegments[pathSegments.length - 1];
+
+    return filename;
+};
+
 helpers.determineCdnName = function (domainName) {
 
     switch (domainName) {
