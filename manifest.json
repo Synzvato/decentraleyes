@@ -39,8 +39,8 @@
       "38": "icons/action/icon38.png",
       "64": "icons/action/icon64.png"
     },
-      "default_popup": "pages/popup/popup.html",
-      "browser_style": false
+    "default_popup": "pages/popup/popup.html",
+    "browser_style": false
   },
 
   "options_ui": {
