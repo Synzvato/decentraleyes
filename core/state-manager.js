@@ -148,22 +148,6 @@ stateManager._updateTab = function (details) {
     }
 };
 
-stateManager._stripMetadata = function (requestDetails) {
-
-    for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
-
-        if (requestDetails.requestHeaders[i].name === WebRequest.ORIGIN_HEADER) {
-            requestDetails.requestHeaders.splice(i--, 1);
-        } else if (requestDetails.requestHeaders[i].name === WebRequest.REFERER_HEADER) {
-            requestDetails.requestHeaders.splice(i--, 1);
-        }
-    }
-
-    return {
-        'requestHeaders': requestDetails.requestHeaders
-    };
-};
-
 stateManager._handleStorageChanged = function (changes) {
 
     if ('showIconBadge' in changes) {
@@ -180,19 +164,10 @@ stateManager._handleStorageChanged = function (changes) {
 
     if ('stripMetadata' in changes) {
 
-        let onBeforeSendHeaders;
-
-        onBeforeSendHeaders = chrome.webRequest.onBeforeSendHeaders;
-
-        onBeforeSendHeaders.removeListener(stateManager._stripMetadata, {
-            'urls': stateManager.validHosts
-        }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
+        requestSanitizer.disable();
 
         if (changes.stripMetadata.newValue !== false) {
-
-            onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
-                'urls': stateManager.validHosts
-            }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
+            requestSanitizer.enable();
         }
     }
 };
@@ -272,10 +247,7 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
 chrome.storage.local.get({'stripMetadata': true}, function (options) {
 
     if (options === null || options.stripMetadata !== false) {
-
-        chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
-            'urls': stateManager.validHosts
-        }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
+        requestSanitizer.enable();
     }
 });
 
