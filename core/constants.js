@@ -38,6 +38,7 @@ const Setting = {
     'BLOCK_MISSING': 'blockMissing',
     'DISABLE_PREFETCH': 'disablePrefetch',
     'SHOW_ICON_BADGE': 'showIconBadge',
+    'SHOW_RELEASE_NOTES': 'showReleaseNotes',
     'STRIP_METADATA': 'stripMetadata',
     'WHITELISTED_DOMAINS': 'whitelistedDomains'
 };

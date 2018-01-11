@@ -57,6 +57,17 @@ requestSanitizer._stripMetadata = function (requestDetails) {
     }
 
     return {
-        'requestHeaders': requestDetails.requestHeaders
+        [WebRequest.HEADERS]: requestDetails.requestHeaders
     };
 };
+
+/**
+ * Initializations
+ */
+
+chrome.storage.local.get({[Setting.STRIP_METADATA]: true}, function (options) {
+
+    if (options === null || options.stripMetadata !== false) {
+        requestSanitizer.enable();
+    }
+});

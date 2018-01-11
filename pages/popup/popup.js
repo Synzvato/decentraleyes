@@ -157,7 +157,7 @@ popup._determineAmountInjected = function () {
 
     return new Promise((resolve) => {
 
-        chrome.storage.local.get('amountInjected', function (items) {
+        chrome.storage.local.get(Setting.AMOUNT_INJECTED, function (items) {
 
             popup._amountInjected = items.amountInjected || 0;
             resolve();

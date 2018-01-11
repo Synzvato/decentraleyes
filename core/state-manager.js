@@ -58,14 +58,14 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
             interceptor.amountInjected = items.amountInjected;
 
             chrome.storage.local.set({
-                'amountInjected': ++interceptor.amountInjected
+                [Setting.AMOUNT_INJECTED]: ++interceptor.amountInjected
             });
         });
 
     } else {
 
         chrome.storage.local.set({
-            'amountInjected': ++interceptor.amountInjected
+            [Setting.AMOUNT_INJECTED]: ++interceptor.amountInjected
         });
     }
 };
@@ -150,7 +150,7 @@ stateManager._updateTab = function (details) {
 
 stateManager._handleStorageChanged = function (changes) {
 
-    if ('showIconBadge' in changes) {
+    if (Setting.SHOW_ICON_BADGE in changes) {
 
         stateManager.showIconBadge = changes.showIconBadge.newValue;
 
@@ -162,7 +162,7 @@ stateManager._handleStorageChanged = function (changes) {
         }
     }
 
-    if ('stripMetadata' in changes) {
+    if (Setting.STRIP_METADATA in changes) {
 
         requestSanitizer.disable();
 
@@ -198,7 +198,7 @@ chrome.tabs.query({}, function (tabs) {
     tabs.forEach(stateManager._createTab);
 });
 
-chrome.storage.local.get('showIconBadge', function (items) {
+chrome.storage.local.get(Setting.SHOW_ICON_BADGE, function (items) {
     stateManager.showIconBadge = items.showIconBadge || true;
 });
 
@@ -243,12 +243,5 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
     }
 
 }, {'urls': [Address.ANY]});
-
-chrome.storage.local.get({'stripMetadata': true}, function (options) {
-
-    if (options === null || options.stripMetadata !== false) {
-        requestSanitizer.enable();
-    }
-});
 
 chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);

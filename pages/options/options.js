@@ -90,11 +90,11 @@ options._getOptionElement = function (optionKey) {
 options._getOptionElements = function () {
 
     let optionElements = {
-        'showIconBadge': options._getOptionElement(Setting.SHOW_ICON_BADGE),
-        'blockMissing': options._getOptionElement(Setting.BLOCK_MISSING),
-        'disablePrefetch': options._getOptionElement(Setting.DISABLE_PREFETCH),
-        'stripMetadata': options._getOptionElement(Setting.STRIP_METADATA),
-        'whitelistedDomains': options._getOptionElement(Setting.WHITELISTED_DOMAINS)
+        [Setting.SHOW_ICON_BADGE]: options._getOptionElement(Setting.SHOW_ICON_BADGE),
+        [Setting.BLOCK_MISSING]: options._getOptionElement(Setting.BLOCK_MISSING),
+        [Setting.DISABLE_PREFETCH]: options._getOptionElement(Setting.DISABLE_PREFETCH),
+        [Setting.STRIP_METADATA]: options._getOptionElement(Setting.STRIP_METADATA),
+        [Setting.WHITELISTED_DOMAINS]: options._getOptionElement(Setting.WHITELISTED_DOMAINS)
     };
 
     return optionElements;
