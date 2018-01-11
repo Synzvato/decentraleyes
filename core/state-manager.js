@@ -41,13 +41,6 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
                 'tabId': tabIdentifier,
                 'text': injectionCount.toString()
             });
-
-        } else {
-
-            wrappers.setBadgeText({
-                'tabId': tabIdentifier,
-                'text': ''
-            });
         }
     }
 
