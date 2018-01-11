@@ -47,11 +47,11 @@ requestSanitizer.disable = function () {
 
 requestSanitizer._stripMetadata = function (requestDetails) {
 
+    let sensitiveHeaders = [Header.COOKIE, Header.ORIGIN, Header.REFERER];
+
     for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
 
-        if (requestDetails.requestHeaders[i].name === WebRequest.ORIGIN_HEADER) {
-            requestDetails.requestHeaders.splice(i--, 1);
-        } else if (requestDetails.requestHeaders[i].name === WebRequest.REFERER_HEADER) {
+        if (sensitiveHeaders.indexOf(requestDetails.requestHeaders[i].name) > -1) {
             requestDetails.requestHeaders.splice(i--, 1);
         }
     }

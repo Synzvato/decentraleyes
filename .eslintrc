@@ -8,6 +8,7 @@
   "globals": {
     "Address": true,
     "files": true,
+    "Header": true,
     "helpers": true,
     "interceptor": true,
     "mappings": true,
