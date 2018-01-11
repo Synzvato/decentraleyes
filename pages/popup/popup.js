@@ -47,7 +47,7 @@ popup._renderNonContextualContents = function () {
     optionsButtonElement = document.getElementById('options-button');
 
     versionLabelElement.innerText = popup._version;
-    counterElement.innerText = popup._amountInjected;
+    counterElement.innerText = helpers.formatNumber(popup._amountInjected);
 
     testingUtilityLinkElement.addEventListener('mouseup', popup._onTestingUtilityLinkClicked);
     optionsButtonElement.addEventListener('mouseup', popup._onOptionsButtonClicked);

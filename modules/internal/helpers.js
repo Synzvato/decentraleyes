@@ -201,6 +201,13 @@ helpers.determineScriptDirection = function (language) {
     return scriptDirection;
 };
 
+helpers.formatNumber = function (number) {
+
+    if (typeof number === 'number') {
+        return number.toLocaleString();
+    }
+};
+
 helpers.formatVersion = function (version) {
 
     if (version.indexOf('beta') === -1) {
