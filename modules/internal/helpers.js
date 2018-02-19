@@ -62,8 +62,8 @@ helpers.languageIsFullySupported = function (language) {
     languageSupported = false;
 
     supportedLanguages = [
-        'ar', 'bg', 'zh', 'da', 'nl', 'en', 'et', 'fi', 'fr', 'de', 'el', 'is',
-        'id', 'it', 'ja', 'ko', 'pl', 'pt', 'ro', 'ru', 'es', 'sv', 'tr'
+        'ar', 'bg', 'zh', 'cs', 'da', 'nl', 'en', 'et', 'fi', 'fr', 'de', 'el',
+        'is', 'id', 'it', 'ja', 'ko', 'pl', 'pt', 'ro', 'ru', 'es', 'sv', 'tr'
     ];
 
     for (let supportedLanguage of supportedLanguages) {
