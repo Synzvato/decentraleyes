@@ -45,11 +45,13 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
     // Temporary list of undetectable tainted domains.
     let undetectableTaintedDomains = {
         '10fastfingers.com': true,
+        'blog.datawrapper.de': true,
         'cdnjs.com': true,
         'dropbox.com': true,
         'glowing-bear.org': true,
         'minigames.mail.ru': true,
         'miniquadtestbench.com': true,
+        'openweathermap.org': true,
         'qwertee.com': true,
         'report-uri.io': true,
         'scotthelme.co.uk': true,
