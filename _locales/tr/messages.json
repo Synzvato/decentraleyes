@@ -1,70 +1,70 @@
 {
-  "extensionDescription":{
-    "message":"Sizi, \"ücretsiz\", merkezi, içerik dağıtımı aracılığıyla yapılan takipten korur.",
-    "description":"Extension description."
+  "extensionDescription": {
+    "message": "Sizi, \"ücretsiz\", merkezi, içerik dağıtımı aracılığıyla yapılan takipten korur.",
+    "description": "Extension description."
   },
-  "disableProtectionTitle":{
-    "message":"Bu sitede korumayı devre dışı bırak",
-    "description":"Disable protection title."
+  "disableProtectionTitle": {
+    "message": "Bu sitede korumayı devre dışı bırak",
+    "description": "Disable protection title."
   },
-  "enableProtectionTitle":{
-    "message":"Korumayı etkinleştir",
-    "description":"Enable protection title."
+  "enableProtectionTitle": {
+    "message": "Korumayı etkinleştir",
+    "description": "Enable protection title."
   },
-  "amountInjectedTitle":{
-    "message":"Yerel olarak eklenen kaynaklar için sayaç",
-    "description":"Amount injected title."
+  "amountInjectedTitle": {
+    "message": "Yerel olarak eklenen kaynaklar için sayaç",
+    "description": "Amount injected title."
   },
-  "amountInjectedDescription":{
-    "message":"Kurulumdan bu yana yerel İçerik Dağıtım Ağı kaynak eklemelerinin miktarı.",
-    "description":"Amount injected description."
+  "amountInjectedDescription": {
+    "message": "Kurulumdan bu yana yerel İçerik Dağıtım Ağı kaynak eklemelerinin miktarı.",
+    "description": "Amount injected description."
   },
-  "optionsTitle":{
-    "message":"Seçenekler",
-    "description":"Options title."
+  "optionsTitle": {
+    "message": "Seçenekler",
+    "description": "Options title."
   },
-  "showIconBadgeTitle":{
-    "message":"Simgede enjeksiyon sayaçlarını göster",
-    "description":"Show icon badge title."
+  "showIconBadgeTitle": {
+    "message": "Simgede enjeksiyon sayaçlarını göster",
+    "description": "Show icon badge title."
   },
-  "showIconBadgeDescription":{
-    "message":"Enjekte edilen kaynakların sayısını uzantı simgesinde gösterin.",
-    "description":"Show icon badge description."
+  "showIconBadgeDescription": {
+    "message": "Enjekte edilen kaynakların sayısını uzantı simgesinde gösterin.",
+    "description": "Show icon badge description."
   },
-  "blockMissingTitle":{
-    "message":"Eksik kaynaklar için gelen istekleri engelle",
-    "description":"Block requests for missing resources title."
+  "blockMissingTitle": {
+    "message": "Eksik kaynaklar için gelen istekleri engelle",
+    "description": "Block requests for missing resources title."
   },
-  "blockMissingDescription":{
-    "message":"İstenilen kaynak yerel olarak mevcut değilse, yakalanan isteği iptal et.",
-    "description":"Block requests for missing resources description."
+  "blockMissingDescription": {
+    "message": "İstenilen kaynak yerel olarak mevcut değilse, yakalanan isteği iptal et.",
+    "description": "Block requests for missing resources description."
   },
-  "disablePrefetchTitle":{
-    "message":"Bağlantı önalımını devre dışı bırak",
-    "description":"Disable prefetch title."
+  "disablePrefetchTitle": {
+    "message": "Bağlantı önalımını devre dışı bırak",
+    "description": "Disable prefetch title."
   },
-  "disablePrefetchDescription":{
-    "message":"İzin verilmeyen isteklerin dağıtım ağlarına sızmasını engelleyin.",
-    "description":"Disable prefetch description."
+  "disablePrefetchDescription": {
+    "message": "İzin verilmeyen isteklerin dağıtım ağlarına sızmasını engelleyin.",
+    "description": "Disable prefetch description."
   },
-  "stripMetadataTitle":{
-    "message":"Meta verilerini izin verilen isteklerden ayır",
-    "description":"Strip metadata title."
+  "stripMetadataTitle": {
+    "message": "Meta verilerini izin verilen isteklerden ayır",
+    "description": "Strip metadata title."
   },
-  "stripMetadataDescription":{
-    "message":"İzin verilen CDN isteklerine duyarlı verileri gelişmiş gizlilik için silin.",
-    "description":"Strip metadata description."
+  "stripMetadataDescription": {
+    "message": "İleri düzey gizlilik için, izin verilen CDN isteklerinden hassas verileri sil.",
+    "description": "Strip metadata description."
   },
-  "whitelistedDomainsTitle":{
-    "message":"Alanları denetimlerden hariç tut",
-    "description":"Whitelisted domains title."
+  "whitelistedDomainsTitle": {
+    "message": "Alanları denetimlerden hariç tut",
+    "description": "Whitelisted domains title."
   },
-  "whitelistedDomainsDescription":{
-    "message":"Beyaz listeye eklemek için alan adlarını girin. Birden çok girdiyi noktalı virgül (;) ile ayırın.",
-    "description":"Whitelisted domains description."
+  "whitelistedDomainsDescription": {
+    "message": "Beyaz listeye eklemek için alan adlarını girin. Birden çok girdiyi noktalı virgül (;) ile ayırın.",
+    "description": "Whitelisted domains description."
   },
-  "advancedLabel":{
-    "message":"Gelişmiş",
-    "description":"Advanced label."
+  "advancedLabel": {
+    "message": "Gelişmiş",
+    "description": "Advanced label."
   }
 }
