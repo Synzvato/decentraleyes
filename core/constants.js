@@ -27,6 +27,12 @@ const Address = {
     'WWW_PREFIX': 'www.'
 };
 
+const Header = {
+    'COOKIE': 'Cookie',
+    'ORIGIN': 'Origin',
+    'REFERER': 'Referer'
+};
+
 const Resource = {
     'MAPPING_EXPRESSION': /\.map$/i,
     'VERSION_EXPRESSION': /(?:\d{1,2}\.){1,3}\d{1,2}/,
@@ -38,6 +44,7 @@ const Setting = {
     'BLOCK_MISSING': 'blockMissing',
     'DISABLE_PREFETCH': 'disablePrefetch',
     'SHOW_ICON_BADGE': 'showIconBadge',
+    'SHOW_RELEASE_NOTES': 'showReleaseNotes',
     'STRIP_METADATA': 'stripMetadata',
     'WHITELISTED_DOMAINS': 'whitelistedDomains'
 };
@@ -45,9 +52,7 @@ const Setting = {
 const WebRequest = {
     'GET': 'GET',
     'BLOCKING': 'blocking',
-    'HEADERS': 'requestHeaders',
-    'ORIGIN_HEADER': 'Origin',
-    'REFERER_HEADER': 'Referer'
+    'HEADERS': 'requestHeaders'
 };
 
 const Whitelist = {

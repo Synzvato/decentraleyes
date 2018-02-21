@@ -1,70 +1,70 @@
 {
-  "extensionDescription":{
-    "message":"Te protejează împotriva urmăririi prin livrare \"gratuită\" de conținut centralizat.",
-    "description":"Extension description."
+  "extensionDescription": {
+    "message": "Te protejează împotriva urmăririi prin livrare \"gratuită\" de conținut centralizat.",
+    "description": "Extension description."
   },
-  "disableProtectionTitle":{
-    "message":"Dezactivează protecția pentru acest site",
-    "description":"Disable protection title."
+  "disableProtectionTitle": {
+    "message": "Dezactivează protecția pentru acest site",
+    "description": "Disable protection title."
   },
-  "enableProtectionTitle":{
-    "message":"Activează protecția",
-    "description":"Enable protection title."
+  "enableProtectionTitle": {
+    "message": "Activează protecția",
+    "description": "Enable protection title."
   },
-  "amountInjectedTitle":{
-    "message":"Contor pentru resursele injectate local",
-    "description":"Amount injected title."
+  "amountInjectedTitle": {
+    "message": "Contor pentru resursele injectate local",
+    "description": "Amount injected title."
   },
-  "amountInjectedDescription":{
-    "message":"Cantitatea de resurse locale injectate de Rețelele care Livrează Conținut din momentul instalării.",
-    "description":"Amount injected description."
+  "amountInjectedDescription": {
+    "message": "Cantitatea de resurse locale injectate de Rețelele care Livrează Conținut din momentul instalării.",
+    "description": "Amount injected description."
   },
-  "optionsTitle":{
-    "message":"Opțiuni",
-    "description":"Options title."
+  "optionsTitle": {
+    "message": "Opțiuni",
+    "description": "Options title."
   },
-  "showIconBadgeTitle":{
-    "message":"Afișează numărul de dependențe înlocuite pe iconiță",
-    "description":"Show icon badge title."
+  "showIconBadgeTitle": {
+    "message": "Afișează numărul de dependențe înlocuite pe iconiță",
+    "description": "Show icon badge title."
   },
-  "showIconBadgeDescription":{
-    "message":"Afișează numărul de resurse înlocuite pe iconița extensiei.",
-    "description":"Show icon badge description."
+  "showIconBadgeDescription": {
+    "message": "Afișează numărul de resurse înlocuite pe iconița extensiei.",
+    "description": "Show icon badge description."
   },
-  "blockMissingTitle":{
-    "message":"Blochează cererile pentru resursele care lipsesc",
-    "description":"Block requests for missing resources title."
+  "blockMissingTitle": {
+    "message": "Blochează cererile pentru resursele care lipsesc",
+    "description": "Block requests for missing resources title."
   },
-  "blockMissingDescription":{
-    "message":"Anulează cererile interceptate dacă resursa solicitată nu este disponibilă local.",
-    "description":"Block requests for missing resources description."
+  "blockMissingDescription": {
+    "message": "Anulează cererile interceptate dacă resursa solicitată nu este disponibilă local.",
+    "description": "Block requests for missing resources description."
   },
-  "disablePrefetchTitle":{
-    "message":"Dezactivează pre-încărcarea de linkuri",
-    "description":"Disable prefetch title."
+  "disablePrefetchTitle": {
+    "message": "Dezactivează pre-încărcarea de linkuri",
+    "description": "Disable prefetch title."
   },
-  "disablePrefetchDescription":{
-    "message":"Previne scurgerea request-uri nepermise către rețele de livrare.",
-    "description":"Disable prefetch description."
+  "disablePrefetchDescription": {
+    "message": "Previne scurgerea request-uri nepermise către rețele de livrare.",
+    "description": "Disable prefetch description."
   },
-  "stripMetadataTitle":{
-    "message":"Scoate metadatele din requesturi permise",
-    "description":"Strip metadata title."
+  "stripMetadataTitle": {
+    "message": "Scoate metadatele din requesturi permise",
+    "description": "Strip metadata title."
   },
-  "stripMetadataDescription":{
-    "message":"Șterge date sensibile din requesturi permise pentru îmbunătățirea confidențialității.",
-    "description":"Strip metadata description."
+  "stripMetadataDescription": {
+    "message": "Șterge date sensibile din requesturi permise pentru îmbunătățirea confidențialității.",
+    "description": "Strip metadata description."
   },
-  "whitelistedDomainsTitle":{
-    "message":"Exclude domeniile următoare de la inspecții",
-    "description":"Whitelisted domains title."
+  "whitelistedDomainsTitle": {
+    "message": "Exclude domeniile următoare de la inspecții",
+    "description": "Whitelisted domains title."
   },
-  "whitelistedDomainsDescription":{
-    "message":"Introduceți domeniile dorite în lista albă. Separați intrările multiple între ele prin punct și virgulă (;).",
-    "description":"Whitelisted domains description."
+  "whitelistedDomainsDescription": {
+    "message": "Introduceți domeniile dorite în lista albă. Separați intrările multiple între ele prin punct și virgulă (;).",
+    "description": "Whitelisted domains description."
   },
-  "advancedLabel":{
-    "message":"Avansat",
-    "description":"Advanced label."
+  "advancedLabel": {
+    "message": "Avansat",
+    "description": "Advanced label."
   }
 }

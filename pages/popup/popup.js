@@ -47,7 +47,7 @@ popup._renderNonContextualContents = function () {
     optionsButtonElement = document.getElementById('options-button');
 
     versionLabelElement.innerText = popup._version;
-    counterElement.innerText = popup._amountInjected;
+    counterElement.innerText = helpers.formatNumber(popup._amountInjected);
 
     testingUtilityLinkElement.addEventListener('mouseup', popup._onTestingUtilityLinkClicked);
     optionsButtonElement.addEventListener('mouseup', popup._onOptionsButtonClicked);
@@ -157,7 +157,7 @@ popup._determineAmountInjected = function () {
 
     return new Promise((resolve) => {
 
-        chrome.storage.local.get('amountInjected', function (items) {
+        chrome.storage.local.get(Setting.AMOUNT_INJECTED, function (items) {
 
             popup._amountInjected = items.amountInjected || 0;
             resolve();

@@ -1,70 +1,70 @@
 {
   "extensionDescription": {
-    "message": "Protege contra monitorização através de entrega de conteúdo centralizado.",
+    "message": "Ochrání vás přes sledováním skrze centralizované doručování obsahu.",
     "description": "Extension description."
   },
   "disableProtectionTitle": {
-    "message": "Desativar proteção para este site",
+    "message": "Zakázat ochranu na této stránce",
     "description": "Disable protection title."
   },
   "enableProtectionTitle": {
-    "message": "Ativar proteção",
+    "message": "Zapnout ochranu",
     "description": "Enable protection title."
   },
   "amountInjectedTitle": {
-    "message": "Contador para recursos injetados localmente",
+    "message": "Počítadlo vložených lokálních zdrojů",
     "description": "Amount injected title."
   },
   "amountInjectedDescription": {
-    "message": "Quantidade de injeções de recurso Content Delivery Network locais desde a instalação.",
+    "message": "Počet lokální uložených zdrojů vložených od instalace.",
     "description": "Amount injected description."
   },
   "optionsTitle": {
-    "message": "Opções",
+    "message": "Možnosti",
     "description": "Options title."
   },
   "showIconBadgeTitle": {
-    "message": "Mostrar contagem de injeções no ícone",
+    "message": "Zobrazovat počet vložení u ikony",
     "description": "Show icon badge title."
   },
   "showIconBadgeDescription": {
-    "message": "Mostrar o número de recursos injetados no ícone da extensão.",
+    "message": "Zobrazit počet vložených zdrojů u ikony rozšíření.",
     "description": "Show icon badge description."
   },
   "blockMissingTitle": {
-    "message": "Bloquear pedidos por falta de recursos",
+    "message": "Blokovat požadavky na chybějící zdroje",
     "description": "Block requests for missing resources title."
   },
   "blockMissingDescription": {
-    "message": "Cancelar pedido intercetado se o recurso necessário não estiver disponível localmente.",
+    "message": "Zrušit požadavky na sledované zdroje, pokud nejsou lokálně dostupné.",
     "description": "Block requests for missing resources description."
   },
   "disablePrefetchTitle": {
-    "message": "Desativar pré-obtenção de ligações",
+    "message": "Zakázat přednačítání odkazů",
     "description": "Disable prefetch title."
   },
   "disablePrefetchDescription": {
-    "message": "Impedir recursos não permitidos de vazar para as redes de entrega.",
+    "message": "Předejte nepovoleným požadavkům do sítí pro doručování obsahu.",
     "description": "Disable prefetch description."
   },
   "stripMetadataTitle": {
-    "message": "Retirar metadados dos pedidos permitidos",
+    "message": "Odstranit metadata z povolených požadavků",
     "description": "Strip metadata title."
   },
   "stripMetadataDescription": {
-    "message": "Limpar dados sensíveis de recursos CDN permitidos para melhoria de privacidade.",
+    "message": "Pro zlepšení soukromí odstraní citlivá data z povolených požadavků na CDN.",
     "description": "Strip metadata description."
   },
   "whitelistedDomainsTitle": {
-    "message": "Excluir domínios de inspeções",
+    "message": "Nekontrolovat pro domény",
     "description": "Whitelisted domains title."
   },
   "whitelistedDomainsDescription": {
-    "message": "Insira domínios para os colocar na lista branca. Separe múltiplas entradas com pontos e vírgulas (;).",
+    "message": "Zadejte domény pro jejich vynechání z kontroly. Jednotlivé domény oddělujte pomocí středníků (;).",
     "description": "Whitelisted domains description."
   },
   "advancedLabel": {
-    "message": "Avançado",
+    "message": "Rozšířené",
     "description": "Advanced label."
   }
 }

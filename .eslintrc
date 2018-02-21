@@ -8,10 +8,12 @@
   "globals": {
     "Address": true,
     "files": true,
+    "Header": true,
     "helpers": true,
     "interceptor": true,
     "mappings": true,
     "requestAnalyzer": true,
+    "requestSanitizer": true,
     "Resource": true,
     "resources": true,
     "Setting": true,

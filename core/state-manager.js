@@ -41,13 +41,6 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
                 'tabId': tabIdentifier,
                 'text': injectionCount.toString()
             });
-
-        } else {
-
-            wrappers.setBadgeText({
-                'tabId': tabIdentifier,
-                'text': ''
-            });
         }
     }
 
@@ -58,14 +51,14 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
             interceptor.amountInjected = items.amountInjected;
 
             chrome.storage.local.set({
-                'amountInjected': ++interceptor.amountInjected
+                [Setting.AMOUNT_INJECTED]: ++interceptor.amountInjected
             });
         });
 
     } else {
 
         chrome.storage.local.set({
-            'amountInjected': ++interceptor.amountInjected
+            [Setting.AMOUNT_INJECTED]: ++interceptor.amountInjected
         });
     }
 };
@@ -148,25 +141,9 @@ stateManager._updateTab = function (details) {
     }
 };
 
-stateManager._stripMetadata = function (requestDetails) {
-
-    for (let i = 0; i < requestDetails.requestHeaders.length; ++i) {
-
-        if (requestDetails.requestHeaders[i].name === WebRequest.ORIGIN_HEADER) {
-            requestDetails.requestHeaders.splice(i--, 1);
-        } else if (requestDetails.requestHeaders[i].name === WebRequest.REFERER_HEADER) {
-            requestDetails.requestHeaders.splice(i--, 1);
-        }
-    }
-
-    return {
-        'requestHeaders': requestDetails.requestHeaders
-    };
-};
-
 stateManager._handleStorageChanged = function (changes) {
 
-    if ('showIconBadge' in changes) {
+    if (Setting.SHOW_ICON_BADGE in changes) {
 
         stateManager.showIconBadge = changes.showIconBadge.newValue;
 
@@ -178,21 +155,12 @@ stateManager._handleStorageChanged = function (changes) {
         }
     }
 
-    if ('stripMetadata' in changes) {
+    if (Setting.STRIP_METADATA in changes) {
 
-        let onBeforeSendHeaders;
-
-        onBeforeSendHeaders = chrome.webRequest.onBeforeSendHeaders;
-
-        onBeforeSendHeaders.removeListener(stateManager._stripMetadata, {
-            'urls': stateManager.validHosts
-        }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
+        requestSanitizer.disable();
 
         if (changes.stripMetadata.newValue !== false) {
-
-            onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
-                'urls': stateManager.validHosts
-            }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
+            requestSanitizer.enable();
         }
     }
 };
@@ -223,8 +191,13 @@ chrome.tabs.query({}, function (tabs) {
     tabs.forEach(stateManager._createTab);
 });
 
-chrome.storage.local.get('showIconBadge', function (items) {
-    stateManager.showIconBadge = items.showIconBadge || true;
+chrome.storage.local.get(Setting.SHOW_ICON_BADGE, function (items) {
+
+    if (items.showIconBadge === undefined) {
+        items.showIconBadge = true;
+    }
+
+    stateManager.showIconBadge = items.showIconBadge;
 });
 
 /**
@@ -268,15 +241,5 @@ chrome.webRequest.onBeforeRedirect.addListener(function (requestDetails) {
     }
 
 }, {'urls': [Address.ANY]});
-
-chrome.storage.local.get({'stripMetadata': true}, function (options) {
-
-    if (options === null || options.stripMetadata !== false) {
-
-        chrome.webRequest.onBeforeSendHeaders.addListener(stateManager._stripMetadata, {
-            'urls': stateManager.validHosts
-        }, [WebRequest.BLOCKING, WebRequest.HEADERS]);
-    }
-});
 
 chrome.storage.onChanged.addListener(stateManager._handleStorageChanged);

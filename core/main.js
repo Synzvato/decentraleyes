@@ -26,11 +26,11 @@ var main = {};
 main._initializeOptions = function () {
 
     let optionDefaults = {
-        'showIconBadge': true,
-        'blockMissing': false,
-        'disablePrefetch': true,
-        'stripMetadata': true,
-        'whitelistedDomains': {}
+        [Setting.SHOW_ICON_BADGE]: true,
+        [Setting.BLOCK_MISSING]: false,
+        [Setting.DISABLE_PREFETCH]: true,
+        [Setting.STRIP_METADATA]: true,
+        [Setting.WHITELISTED_DOMAINS]: {}
     };
 
     chrome.storage.local.get(optionDefaults, function (options) {
@@ -68,7 +68,7 @@ main._showReleaseNotes = function (details) {
         if (details.temporary !== true) {
 
             chrome.storage.local.get({
-                'showReleaseNotes': true
+                [Setting.SHOW_RELEASE_NOTES]: true
             }, function (options) {
 
                 if (options.showReleaseNotes === true) {

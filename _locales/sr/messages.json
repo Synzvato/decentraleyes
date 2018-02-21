@@ -60,7 +60,7 @@
     "description": "Whitelisted domains title."
   },
   "whitelistedDomainsDescription": {
-    "message": "Унесите домене да их ставите на бели списак. Више одвојених ставки са тачка-запетама (;).",
+    "message": "Унесите домене да их ставите на бели списак. Одвојите више ставки са тачка-запетама (;).",
     "description": "Whitelisted domains description."
   },
   "advancedLabel": {
