@@ -46,6 +46,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
     let undetectableTaintedDomains = {
         '10fastfingers.com': true,
         'blog.datawrapper.de': true,
+        'bundleofholding.com': true,
         'cdnjs.com': true,
         'dropbox.com': true,
         'glowing-bear.org': true,
