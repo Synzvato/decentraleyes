@@ -192,7 +192,12 @@ chrome.tabs.query({}, function (tabs) {
 });
 
 chrome.storage.local.get(Setting.SHOW_ICON_BADGE, function (items) {
-    stateManager.showIconBadge = items.showIconBadge || true;
+
+    if (items.showIconBadge === undefined) {
+        items.showIconBadge = true;
+    }
+
+    stateManager.showIconBadge = items.showIconBadge;
 });
 
 /**
