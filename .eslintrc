@@ -17,6 +17,7 @@
     "Resource": true,
     "resources": true,
     "Setting": true,
+    "shorthands": true,
     "stateManager": true,
     "WebRequest": true,
     "Whitelist": true,
@@ -27,7 +28,8 @@
       "core/constants.js",
       "core/files.js",
       "core/mappings.js",
-      "core/resources.js"
+      "core/resources.js",
+      "core/shorthands.js"
     ],
     "rules": {
       "no-unused-vars": "off"
