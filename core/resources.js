@@ -29,6 +29,11 @@ var resources = {
         'path': 'resources/backbone.js/{version}/backbone-min.js.dec',
         'type': 'application/javascript'
     },
+	// Chart.js
+    'chart': {
+        'path': 'resources/chart.js/{version}/Chart.min.js.dec',
+        'type': 'application/javascript'
+    },
     // Dojo
     'dojo': {
         'path': 'resources/dojo/{version}/dojo/dojo.js.dec',
