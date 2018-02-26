@@ -176,6 +176,11 @@ var files = {
     'resources/mootools/1.5.0/mootools-yui-compressed.js.dec': true,
     'resources/mootools/1.5.1/mootools-yui-compressed.js.dec': true,
 
+	// Piwik
+    'resources/piwik/3.2.0/piwik.js.dec': true,
+    'resources/piwik/3.2.1/piwik.js.dec': true,
+    'resources/piwik/3.3.0/piwik.js.dec': true,
+	
     // Prototype
     'resources/prototype/1.6.0.2/prototype.js.dec': true,
     'resources/prototype/1.6.0.3/prototype.js.dec': true,
