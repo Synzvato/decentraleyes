@@ -69,6 +69,7 @@ var files = {
     'resources/chart.js/2.6.0/Chart.min.js.dec': true,
     'resources/chart.js/2.7.0/Chart.min.js.dec': true,
     'resources/chart.js/2.7.1/Chart.min.js.dec': true,
+	'resources/chart.js/2.7.2/Chart.min.js.dec': true,
 	
     // Dojo
     'resources/dojo/1.4.1/dojo/dojo.js.dec': true,
