@@ -111,7 +111,7 @@ interceptor._handleMissingCandidate = function (requestUrl) {
         requestUrl = requestUrlSegments.toString();
 
         return {
-            'redirectUrl': requestUrl
+            'redirectUrl': requestUrl + interceptor.warSecret
         };
 
     } else {
@@ -147,3 +147,22 @@ chrome.storage.local.get([Setting.AMOUNT_INJECTED, Setting.BLOCK_MISSING], funct
  */
 
 chrome.storage.onChanged.addListener(interceptor._handleStorageChanged);
+
+/**
+ * Guard web accessible resources from direct access by web pages
+ */
+
+interceptor.warSecret = '?_=' +
+    Math.floor(Math.random() * 982451653 + 982451653).toString(36) +
+    Math.floor(Math.random() * 982451653 + 982451653).toString(36);
+
+chrome.webRequest.onBeforeRequest.addListener(
+    function(requestDetails) {
+
+        if (!requestDetails.url.endsWith(interceptor.warSecret)) {
+            return { redirectUrl: chrome.runtime.getURL('/') };
+        }
+    },
+    {'urls': [chrome.runtime.getURL('/') + 'resources/*']},
+    [WebRequest.BLOCKING]
+);
