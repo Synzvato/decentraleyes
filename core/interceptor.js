@@ -52,6 +52,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         'glowing-bear.org': true,
         'minigames.mail.ru': true,
         'miniquadtestbench.com': true,
+        'nhm.ac.uk': true,
         'openweathermap.org': true,
         'qwertee.com': true,
         'report-uri.io': true,
