@@ -1,0 +1,70 @@
+{
+  "extensionDescription": {
+    "message": "Schützt virun Tracking duerch \"gratis\" Content Delivery Networks.",
+    "description": "Extension description."
+  },
+  "disableProtectionTitle": {
+    "message": "Schutz fir dëse Site ausschalten",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Schutz aktivéieren",
+    "description": "Enable protection title."
+  },
+  "amountInjectedTitle": {
+    "message": "Zieler fir lokal injizéierte Ressourcen",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Unzuel vu lokalen Injektiounen vun CDN-Ressourcen säit der Installatioun.",
+    "description": "Amount injected description."
+  },
+  "optionsTitle": {
+    "message": "Astellungen",
+    "description": "Options title."
+  },
+  "showIconBadgeTitle": {
+    "message": "Unzuel vun Injektiounen op der Ikon uweisen",
+    "description": "Show icon badge title."
+  },
+  "showIconBadgeDescription": {
+    "message": "D'Unzuel vun injizéierte Ressourcen op der Decentraleyes-Ikon uweisen.",
+    "description": "Show icon badge description."
+  },
+  "blockMissingTitle": {
+    "message": "Eroflueden vu fehlenden Ressourcen blockéieren",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Ofgefaangen Ressourcen-Downloads blockéieren, wann déi ugefuerdert Datei net lokal um System verfügbar ass.",
+    "description": "Block requests for missing resources description."
+  },
+  "disablePrefetchTitle": {
+    "message": "\"Link Prefetching\" ausschalten",
+    "description": "Disable prefetch title."
+  },
+  "disablePrefetchDescription": {
+    "message": "Verhënnert, dass onerlaabten Ressourcen entgéint den aneren Astellungen trotzdeem ugefuerdert/erofgeluede ginn.",
+    "description": "Disable prefetch description."
+  },
+  "stripMetadataTitle": {
+    "message": "Metadaten aus den erlaabten Downloads erausläschen",
+    "description": "Strip metadata title."
+  },
+  "stripMetadataDescription": {
+    "message": "Läscht sensibel Daten aus den erlaabten CDN-Downloads fir den Dateschutz ze verbesseren.",
+    "description": "Strip metadata description."
+  },
+  "whitelistedDomainsTitle": {
+    "message": "Downloads fir dës Siten ëmmer erlaaben (Whitelist)",
+    "description": "Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription": {
+    "message": "Gitt hei d'Domains un, deenen hir Downloads ëmmer sollen erlaabt ginn. Trennt déi eenzel Domains duerch e Semikolon (;).",
+    "description": "Whitelisted domains description."
+  },
+  "advancedLabel": {
+    "message": "Erweidert",
+    "description": "Advanced label."
+  }
+}
