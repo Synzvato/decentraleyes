@@ -42,6 +42,13 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         tabDomain = Address.EXAMPLE;
     }
 
+    if (requestDetails.type === WebRequestType.XHR) {
+
+        if (tabDomain !== interceptor.xhrTestDomain) {
+            return interceptor._handleMissingCandidate(requestDetails.url);
+        }
+    }
+
     // Temporary list of undetectable tainted domains.
     let undetectableTaintedDomains = {
         '10fastfingers.com': true,
@@ -125,6 +132,10 @@ interceptor._handleMissingCandidate = function (requestUrl) {
 
 interceptor._handleStorageChanged = function (changes) {
 
+    if (Setting.XHR_TEST_DOMAIN in changes) {
+        interceptor.xhrTestDomain = changes.xhrTestDomain.newValue;
+    }
+
     if (Setting.BLOCK_MISSING in changes) {
         interceptor.blockMissing = changes.blockMissing.newValue;
     }
@@ -137,9 +148,17 @@ interceptor._handleStorageChanged = function (changes) {
 interceptor.amountInjected = 0;
 interceptor.blockMissing = false;
 
-chrome.storage.local.get([Setting.AMOUNT_INJECTED, Setting.BLOCK_MISSING], function (items) {
+interceptor.relatedSettings = [
+
+    Setting.AMOUNT_INJECTED,
+    Setting.XHR_TEST_DOMAIN,
+    Setting.BLOCK_MISSING
+];
+
+chrome.storage.local.get(interceptor.relatedSettings, function (items) {
 
     interceptor.amountInjected = items.amountInjected || 0;
+    interceptor.xhrTestDomain = items.xhrTestDomain || 'decentraleyes.org';
     interceptor.blockMissing = items.blockMissing || false;
 });
 

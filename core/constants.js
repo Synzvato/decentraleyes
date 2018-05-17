@@ -47,13 +47,18 @@ const Setting = {
     'SHOW_ICON_BADGE': 'showIconBadge',
     'SHOW_RELEASE_NOTES': 'showReleaseNotes',
     'STRIP_METADATA': 'stripMetadata',
-    'WHITELISTED_DOMAINS': 'whitelistedDomains'
+    'WHITELISTED_DOMAINS': 'whitelistedDomains',
+    'XHR_TEST_DOMAIN': 'xhrTestDomain'
 };
 
 const WebRequest = {
     'GET': 'GET',
     'BLOCKING': 'blocking',
     'HEADERS': 'requestHeaders'
+};
+
+const WebRequestType = {
+    'XHR': 'xmlhttprequest'
 };
 
 const Whitelist = {

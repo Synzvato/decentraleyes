@@ -21,6 +21,7 @@
     "shorthands": true,
     "stateManager": true,
     "WebRequest": true,
+    "WebRequestType": true,
     "Whitelist": true,
     "wrappers": true
   },
