@@ -119,6 +119,23 @@ helpers.extractFilenameFromPath = function (path) {
     return filename;
 };
 
+helpers.generateRandomHexString = function (length) {
+
+    let randomValues, randomHexString;
+
+    randomValues = crypto.getRandomValues(new Uint8Array(length));
+    randomHexString = '';
+
+    for (let value of randomValues) {
+
+        // eslint-disable-next-line no-bitwise
+        let hexValue = (0 ^ value & 15 >> 0 / 4).toString(16);
+        randomHexString = `${randomHexString}${hexValue}`;
+    }
+
+    return randomHexString;
+};
+
 helpers.determineCdnName = function (domainName) {
 
     switch (domainName) {

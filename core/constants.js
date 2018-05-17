@@ -21,6 +21,7 @@ const Address = {
     'ANY': '*://*/*',
     'ANY_PATH': '/*',
     'ANY_PROTOCOL': '*://',
+    'CHROME_EXTENSION': 'chrome-extension:',
     'EXAMPLE': 'example.org',
     'HTTP': 'http:',
     'HTTPS': 'https:',
