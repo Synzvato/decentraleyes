@@ -62,9 +62,9 @@ helpers.languageIsFullySupported = function (language) {
     languageSupported = false;
 
     supportedLanguages = [
-        'ar', 'bg', 'zh', 'cs', 'da', 'nl', 'en', 'et', 'fi', 'fr', 'de', 'el',
-        'is', 'id', 'it', 'ja', 'ko', 'lb', 'pl', 'pt', 'ro', 'ru', 'es', 'sv',
-        'tr'
+        'ar', 'bg', 'zh', 'cs', 'da', 'nl', 'en', 'et', 'fi',
+        'fr', 'de', 'el', 'is', 'id', 'it', 'ja', 'ko', 'lb',
+        'pl', 'pt', 'ro', 'ru', 'es', 'sv', 'tr'
     ];
 
     for (let supportedLanguage of supportedLanguages) {
@@ -130,7 +130,7 @@ helpers.generateRandomHexString = function (length) {
 
         // eslint-disable-next-line no-bitwise
         let hexValue = (0 ^ value & 15 >> 0 / 4).toString(16);
-        randomHexString = `${randomHexString}${hexValue}`;
+        randomHexString += hexValue;
     }
 
     return randomHexString;
