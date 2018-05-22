@@ -162,6 +162,10 @@ helpers.determineCdnName = function (domainName) {
         return 'Sina Public Resources';
     case 'upcdn.b0.upaiyun.com':
         return 'UpYun Library';
+    case 'sdn.geekzu.org':
+        return 'Geekzu Public Service [Mirror]';
+    case 'ajax.proxy.ustclug.org':
+        return 'USTC Linux User Group [Mirror]';
     default:
         return 'Unknown';
     }

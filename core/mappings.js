@@ -238,5 +238,10 @@ var mappings = {
     }
 };
 
-// Mirror
+// Geekzu Public Service [Mirror]
+mappings['sdn.geekzu.org'] = {
+    '/ajax/ajax/libs/': mappings['ajax.googleapis.com']['/ajax/libs/']
+};
+
+// USTC Linux User Group [Mirror]
 mappings['ajax.proxy.ustclug.org'] = mappings['ajax.googleapis.com'];
