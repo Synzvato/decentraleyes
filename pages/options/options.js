@@ -48,16 +48,33 @@ options._renderOptionsPanel = function () {
     elements.whitelistedDomains.value = domainWhitelist;
 
     options._registerOptionChangedEventListeners(elements);
+    options._registerMiscellaneousEventListeners();
+
+    if (options._optionValues.blockMissing === true) {
+        options._renderBlockMissingNotice();
+    }
 
     if (options._languageSupported === false) {
         options._renderLocaleNotice();
     }
 };
 
+options._renderBlockMissingNotice = function () {
+
+    let blockMissingNoticeElement = document.getElementById('notice-block-missing');
+    blockMissingNoticeElement.setAttribute('class', 'notice notice-warning');
+};
+
+options._hideBlockMissingNotice = function () {
+
+    let blockMissingNoticeElement = document.getElementById('notice-block-missing');
+    blockMissingNoticeElement.setAttribute('class', 'notice notice-warning hidden');
+};
+
 options._renderLocaleNotice = function () {
 
     let localeNoticeElement = document.getElementById('notice-locale');
-    localeNoticeElement.setAttribute('class', 'notice');
+    localeNoticeElement.setAttribute('class', 'notice notice-default');
 };
 
 options._registerOptionChangedEventListeners = function (elements) {
@@ -67,6 +84,19 @@ options._registerOptionChangedEventListeners = function (elements) {
     elements.disablePrefetch.addEventListener('change', options._onOptionChanged);
     elements.stripMetadata.addEventListener('change', options._onOptionChanged);
     elements.whitelistedDomains.addEventListener('keyup', options._onOptionChanged);
+};
+
+options._registerMiscellaneousEventListeners = function () {
+
+    let blockMissingButtonElement = document.getElementById('button-block-missing');
+
+    blockMissingButtonElement.addEventListener('click', function () {
+
+        let changeEvent = new Event('change');
+
+        options._optionElements.blockMissing.checked = false;
+        options._optionElements.blockMissing.dispatchEvent(changeEvent);
+    });
 };
 
 options._determineOptionValues = function () {
@@ -171,6 +201,15 @@ options._onOptionChanged = function ({target}) {
         break;
     default:
         optionValue = target.value;
+    }
+
+    if (optionKey === Setting.BLOCK_MISSING) {
+
+        if (optionValue === true) {
+            options._renderBlockMissingNotice();
+        } else {
+            options._hideBlockMissingNotice();
+        }
     }
 
     if (optionKey === Setting.DISABLE_PREFETCH) {
