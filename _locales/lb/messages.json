@@ -44,7 +44,7 @@
     "description": "Disable prefetch title."
   },
   "disablePrefetchDescription": {
-    "message": "Verhënnert, dass onerlaabten Ressourcen entgéint den aneren Astellungen trotzdeem ugefuerdert/erofgeluede ginn.",
+    "message": "Verhënnert, dass onerlaabten Ressourcen entgéint den aneren Astellungen trotzdeem ugefuerdert\/erofgeluede ginn.",
     "description": "Disable prefetch description."
   },
   "stripMetadataTitle": {

@@ -1,0 +1,70 @@
+{
+  "extensionDescription": {
+    "message": "Para protektahan ka laban sa pagsubaybay sa pamamagitan ng \"libre\", sentralisadong, paghahatid ng nilalaman.",
+    "description": "Extension description."
+  },
+  "disableProtectionTitle": {
+    "message": "Huwag paganahin ang proteksyon para sa sayt na ito",
+    "description": "Disable protection title."
+  },
+  "enableProtectionTitle": {
+    "message": "Paganahin ang proteksyon",
+    "description": "Enable protection title."
+  },
+  "amountInjectedTitle": {
+    "message": "Laban para sa mga lokal na iniksiyong mga mapagkukunan",
+    "description": "Amount injected title."
+  },
+  "amountInjectedDescription": {
+    "message": "Ang halaga ng mga lokal na Nilalaman sa Network ng Paghahatid ng pinagmulan sa pag-install mula noong pag-install.",
+    "description": "Amount injected description."
+  },
+  "optionsTitle": {
+    "message": "Ang mga pagpipilian",
+    "description": "Options title."
+  },
+  "showIconBadgeTitle": {
+    "message": "Ang naka-displey na ineksyon ay mabibilang sa imahe",
+    "description": "Show icon badge title."
+  },
+  "showIconBadgeDescription": {
+    "message": "Ipakita ang bilang ng mga injected na pinagmulan sa ekstensyon nang imahe.",
+    "description": "Show icon badge description."
+  },
+  "blockMissingTitle": {
+    "message": "Harangan ang mga kahilingan para sa mga nawawalang mapagkukunan",
+    "description": "Block requests for missing resources title."
+  },
+  "blockMissingDescription": {
+    "message": "Kanselahin ang kahilingan na intercepted kung ang mga kinakailangang mapagkukunan ay hindi available sa lokal.",
+    "description": "Block requests for missing resources description."
+  },
+  "disablePrefetchTitle": {
+    "message": "Huwag paganahin ang prefetching link",
+    "description": "Disable prefetch title."
+  },
+  "disablePrefetchDescription": {
+    "message": "Pigilan ang mga kahilingan na hindi pinayagan mula sa pagkalat sa paghahatid ng mga network.",
+    "description": "Disable prefetch description."
+  },
+  "stripMetadataTitle": {
+    "message": "Iliston ang metadata mula sa mga pinayagan na kahilingan",
+    "description": "Strip metadata title."
+  },
+  "stripMetadataDescription": {
+    "message": "Burahin ang sensitibong datus mula sa mga pinahihintulutang kahilingan ng CDN para sa pinahusay na pagiging pribado nito.",
+    "description": "Strip metadata description."
+  },
+  "whitelistedDomainsTitle": {
+    "message": "Ibukod ang mga domain mula sa mga iinspeksyon",
+    "description": "Whitelisted domains title."
+  },
+  "whitelistedDomainsDescription": {
+    "message": "Ipasok ang mga domain upang i-whitelist sila. Paghiwalayin ang maramihang mga entry na may tuldok kuwit (;).",
+    "description": "Whitelisted domains description."
+  },
+  "advancedLabel": {
+    "message": "Naka-usad",
+    "description": "Advanced label."
+  }
+}

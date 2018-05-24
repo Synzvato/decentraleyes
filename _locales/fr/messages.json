@@ -1,70 +1,70 @@
 {
-  "extensionDescription":{
-    "message":"Protège du pistage lié aux diffuseurs de contenus \"gratuits\", centralisés.",
-    "description":"Extension description."
+  "extensionDescription": {
+    "message": "Protège du pistage lié aux diffuseurs de contenus \"gratuits\", centralisés.",
+    "description": "Extension description."
   },
-  "disableProtectionTitle":{
-    "message":"Désactiver la protection pour ce site",
-    "description":"Disable protection title."
+  "disableProtectionTitle": {
+    "message": "Désactiver la protection pour ce site",
+    "description": "Disable protection title."
   },
-  "enableProtectionTitle":{
-    "message":"Activer la protection",
-    "description":"Enable protection title."
+  "enableProtectionTitle": {
+    "message": "Activer la protection",
+    "description": "Enable protection title."
   },
-  "amountInjectedTitle":{
-    "message":"Compteur de ressources injectées localement",
-    "description":"Amount injected title."
+  "amountInjectedTitle": {
+    "message": "Compteur de ressources injectées localement",
+    "description": "Amount injected title."
   },
-  "amountInjectedDescription":{
-    "message":"Quantité de ressource CDN injectées localement depuis l'installation.",
-    "description":"Amount injected description."
+  "amountInjectedDescription": {
+    "message": "Quantité de ressources CDN injectées localement depuis l'installation.",
+    "description": "Amount injected description."
   },
-  "optionsTitle":{
-    "message":"Options",
-    "description":"Options title."
+  "optionsTitle": {
+    "message": "Options",
+    "description": "Options title."
   },
-  "showIconBadgeTitle":{
-    "message":"Affichage du nombre d'injections sur l'icône",
-    "description":"Show icon badge title."
+  "showIconBadgeTitle": {
+    "message": "Afficher le nombre d’injections sur l’icône",
+    "description": "Show icon badge title."
   },
-  "showIconBadgeDescription":{
-    "message":"Affiche le nombre de ressources injectées sur l'icône d'extension.",
-    "description":"Show icon badge description."
+  "showIconBadgeDescription": {
+    "message": "Affiche le nombre de ressources injectées sur l'icône d'extension.",
+    "description": "Show icon badge description."
   },
-  "blockMissingTitle":{
-    "message":"Bloquer les requêtes de ressources manquantes",
-    "description":"Block requests for missing resources title."
+  "blockMissingTitle": {
+    "message": "Bloquer les requêtes de ressources manquantes",
+    "description": "Block requests for missing resources title."
   },
-  "blockMissingDescription":{
-    "message":"Annule la requête interceptée si la ressource requise n'est pas disponible localement.",
-    "description":"Block requests for missing resources description."
+  "blockMissingDescription": {
+    "message": "Annule la requête interceptée si la ressource requise n'est pas disponible localement.",
+    "description": "Block requests for missing resources description."
   },
-  "disablePrefetchTitle":{
-    "message":"Désactiver le préchargement de lien",
-    "description":"Disable prefetch title."
+  "disablePrefetchTitle": {
+    "message": "Désactiver le préchargement de lien",
+    "description": "Disable prefetch title."
   },
-  "disablePrefetchDescription":{
-    "message":"Empêcher que des requêtes non autorisées fuit du réseaux de distribution.",
-    "description":"Disable prefetch description."
+  "disablePrefetchDescription": {
+    "message": "Empêche que des requêtes non autorisées fuient vers les réseaux de distribution.",
+    "description": "Disable prefetch description."
   },
-  "stripMetadataTitle":{
-    "message":"Découper les métadonnées des requêtes autorisées",
-    "description":"Strip metadata title."
+  "stripMetadataTitle": {
+    "message": "Découper les métadonnées des requêtes autorisées",
+    "description": "Strip metadata title."
   },
-  "stripMetadataDescription":{
-    "message":"Efface les données sensibles des demandes de CDN autorisées pour améliorer la confidentialité.",
-    "description":"Strip metadata description."
+  "stripMetadataDescription": {
+    "message": "Efface les données sensibles des demandes de CDN autorisées pour améliorer la confidentialité.",
+    "description": "Strip metadata description."
   },
-  "whitelistedDomainsTitle":{
-    "message":"Exclure les domaines des inspections",
-    "description":"Whitelisted domains title."
+  "whitelistedDomainsTitle": {
+    "message": "Exclure les domaines des inspections",
+    "description": "Whitelisted domains title."
   },
-  "whitelistedDomainsDescription":{
-    "message":"Entrez des domaines pour la liste blanche. Séparez les entrées multiples par des points-virgules (;).",
-    "description":"Whitelisted domains description."
+  "whitelistedDomainsDescription": {
+    "message": "Entrez des domaines pour la liste blanche. Séparez les entrées multiples par des points-virgules (;).",
+    "description": "Whitelisted domains description."
   },
-  "advancedLabel":{
-    "message":"Avancé",
-    "description":"Advanced label."
+  "advancedLabel": {
+    "message": "Avancé",
+    "description": "Advanced label."
   }
 }
