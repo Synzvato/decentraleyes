@@ -4,7 +4,10 @@
     "es6": true,
     "webextensions": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:no-unsanitized/DOM"
+  ],
   "globals": {
     "Address": true,
     "fileGuard": true,
@@ -37,6 +40,9 @@
       "no-unused-vars": "off"
     }
   },
+  "plugins": [
+    "no-unsanitized"
+  ],
   "rules": {
     "array-bracket-newline": "error",
     "array-bracket-spacing": "error",
