@@ -67,6 +67,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         'miniquadtestbench.com': true,
         'nhm.ac.uk': true,
         'openweathermap.org': true,
+        'poedb.tw': true,
         'qwertee.com': true,
         'regentgreymouth.co.nz': true,
         'report-uri.io': true,
