@@ -74,3 +74,9 @@ var shorthands = {
         }
     }
 };
+
+// Geekzu Public Service [Mirror]
+shorthands['sdn.geekzu.org'] = shorthands['ajax.googleapis.com'];
+
+// USTC Linux User Group [Mirror]
+shorthands['ajax.proxy.ustclug.org'] = shorthands['ajax.googleapis.com'];
