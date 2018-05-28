@@ -74,7 +74,7 @@ stateManager.addDomainToWhitelist = function (domain) {
     });
 };
 
-stateManager.deleteDomainFromWhitelist = function (domain) {
+stateManager.removeDomainFromWhitelist = function (domain) {
 
     return new Promise((resolve) => {
 

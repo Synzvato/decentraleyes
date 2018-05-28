@@ -42,6 +42,13 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         tabDomain = Address.EXAMPLE;
     }
 
+    if (requestDetails.type === WebRequestType.XHR) {
+
+        if (tabDomain !== interceptor.xhrTestDomain) {
+            return interceptor._handleMissingCandidate(requestDetails.url);
+        }
+    }
+
     // Temporary list of undetectable tainted domains.
     let undetectableTaintedDomains = {
         '10fastfingers.com': true,
@@ -49,15 +56,27 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         'bundleofholding.com': true,
         'cdnjs.com': true,
         'dropbox.com': true,
+        'evoice.com': true,
+        'freebusy.io': true,
+        'gazetadopovo.com.br': true,
         'glowing-bear.org': true,
+        'manualslib.com': true,
+        'meslieux.paris.fr': true,
+        'mgm.gov.tr': true,
         'minigames.mail.ru': true,
         'miniquadtestbench.com': true,
+        'nhm.ac.uk': true,
         'openweathermap.org': true,
+        'poedb.tw': true,
         'qwertee.com': true,
+        'regentgreymouth.co.nz': true,
         'report-uri.io': true,
+        'scan.nextcloud.com': true,
         'scotthelme.co.uk': true,
+        'securityheaders.com': true,
         'securityheaders.io': true,
         'stefansundin.github.io': true,
+        'transcend-info.com': true,
         'udacity.com': true,
         'yadi.sk': true,
         'yourvotematters.co.uk': true
@@ -86,7 +105,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
     };
 
     return {
-        'redirectUrl': chrome.extension.getURL(targetPath)
+        'redirectUrl': chrome.extension.getURL(targetPath + fileGuard.secret)
     };
 };
 
@@ -111,7 +130,7 @@ interceptor._handleMissingCandidate = function (requestUrl) {
         requestUrl = requestUrlSegments.toString();
 
         return {
-            'redirectUrl': requestUrl + interceptor.warSecret
+            'redirectUrl': requestUrl
         };
 
     } else {
@@ -124,6 +143,10 @@ interceptor._handleMissingCandidate = function (requestUrl) {
 
 interceptor._handleStorageChanged = function (changes) {
 
+    if (Setting.XHR_TEST_DOMAIN in changes) {
+        interceptor.xhrTestDomain = changes.xhrTestDomain.newValue;
+    }
+
     if (Setting.BLOCK_MISSING in changes) {
         interceptor.blockMissing = changes.blockMissing.newValue;
     }
@@ -134,11 +157,19 @@ interceptor._handleStorageChanged = function (changes) {
  */
 
 interceptor.amountInjected = 0;
+interceptor.xhrTestDomain = 'decentraleyes.org';
 interceptor.blockMissing = false;
 
-chrome.storage.local.get([Setting.AMOUNT_INJECTED, Setting.BLOCK_MISSING], function (items) {
+interceptor.relatedSettings = [];
+
+interceptor.relatedSettings.push(Setting.AMOUNT_INJECTED);
+interceptor.relatedSettings.push(Setting.XHR_TEST_DOMAIN);
+interceptor.relatedSettings.push(Setting.BLOCK_MISSING);
+
+chrome.storage.local.get(interceptor.relatedSettings, function (items) {
 
     interceptor.amountInjected = items.amountInjected || 0;
+    interceptor.xhrTestDomain = items.xhrTestDomain || 'decentraleyes.org';
     interceptor.blockMissing = items.blockMissing || false;
 });
 
@@ -147,22 +178,3 @@ chrome.storage.local.get([Setting.AMOUNT_INJECTED, Setting.BLOCK_MISSING], funct
  */
 
 chrome.storage.onChanged.addListener(interceptor._handleStorageChanged);
-
-/**
- * Guard web accessible resources from direct access by web pages
- */
-
-interceptor.warSecret = '?_=' +
-    Math.floor(Math.random() * 982451653 + 982451653).toString(36) +
-    Math.floor(Math.random() * 982451653 + 982451653).toString(36);
-
-chrome.webRequest.onBeforeRequest.addListener(
-    function(requestDetails) {
-
-        if (!requestDetails.url.endsWith(interceptor.warSecret)) {
-            return { redirectUrl: chrome.runtime.getURL('/') };
-        }
-    },
-    {'urls': [chrome.runtime.getURL('/') + 'resources/*']},
-    [WebRequest.BLOCKING]
-);

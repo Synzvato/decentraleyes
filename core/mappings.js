@@ -35,7 +35,7 @@ var mappings = {
             'swfobject/{version}/swfobject.': resources.swfobject,
             'webfont/{version}/webfont.': resources.webfont,
 
-            // Common Shorthand Notations [Deprecated]
+            // Basic Shorthand Notations [Deprecated]
             'dojo/1/dojo/dojo.': {
                 'path': 'resources/dojo/1.6.1/dojo/dojo.js.dec',
                 'type': 'application/javascript'
@@ -116,53 +116,13 @@ var mappings = {
             'ui/{version}/jquery-ui.js': resources.jQueryUI,
             'ui/{version}/jquery-ui.min.js': resources.jQueryUI,
 
-            // Common Shorthand Notations [Deprecated]
+            // Basic Shorthand Notations [Deprecated]
             'jquery-latest.': {
                 'path': 'resources/jquery/1.11.1/jquery.min.js.dec',
                 'type': 'application/javascript'
             },
             'jquery.': {
                 'path': 'resources/jquery/1.11.1/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.3.min.js': {
-                'path': 'resources/jquery/1.3.0/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.3.js': {
-                'path': 'resources/jquery/1.3.0/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.4.min.js': {
-                'path': 'resources/jquery/1.4.0/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.4.js': {
-                'path': 'resources/jquery/1.4.0/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.5.min.js': {
-                'path': 'resources/jquery/1.5.0/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.5.js': {
-                'path': 'resources/jquery/1.5.0/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.6.min.js': {
-                'path': 'resources/jquery/1.6.0/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.6.js': {
-                'path': 'resources/jquery/1.6.0/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.7.min.js': {
-                'path': 'resources/jquery/1.7.0/jquery.min.js.dec',
-                'type': 'application/javascript'
-            },
-            'jquery-1.7.js': {
-                'path': 'resources/jquery/1.7.0/jquery.min.js.dec',
                 'type': 'application/javascript'
             }
         }
@@ -277,3 +237,11 @@ var mappings = {
         }
     }
 };
+
+// Geekzu Public Service [Mirror]
+mappings['sdn.geekzu.org'] = {
+    '/ajax/ajax/libs/': mappings['ajax.googleapis.com']['/ajax/libs/']
+};
+
+// USTC Linux User Group [Mirror]
+mappings['ajax.proxy.ustclug.org'] = mappings['ajax.googleapis.com'];

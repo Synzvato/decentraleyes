@@ -21,6 +21,7 @@ const Address = {
     'ANY': '*://*/*',
     'ANY_PATH': '/*',
     'ANY_PROTOCOL': '*://',
+    'CHROME_EXTENSION': 'chrome-extension:',
     'EXAMPLE': 'example.org',
     'HTTP': 'http:',
     'HTTPS': 'https:',
@@ -31,6 +32,11 @@ const Header = {
     'COOKIE': 'Cookie',
     'ORIGIN': 'Origin',
     'REFERER': 'Referer'
+};
+
+const MessageResponse = {
+    'ASYNCHRONOUS': true,
+    'SYNCHRONOUS': false
 };
 
 const Resource = {
@@ -46,13 +52,18 @@ const Setting = {
     'SHOW_ICON_BADGE': 'showIconBadge',
     'SHOW_RELEASE_NOTES': 'showReleaseNotes',
     'STRIP_METADATA': 'stripMetadata',
-    'WHITELISTED_DOMAINS': 'whitelistedDomains'
+    'WHITELISTED_DOMAINS': 'whitelistedDomains',
+    'XHR_TEST_DOMAIN': 'xhrTestDomain'
 };
 
 const WebRequest = {
     'GET': 'GET',
     'BLOCKING': 'blocking',
     'HEADERS': 'requestHeaders'
+};
+
+const WebRequestType = {
+    'XHR': 'xmlhttprequest'
 };
 
 const Whitelist = {

@@ -23,6 +23,29 @@
 
         <script src="options.js"></script>
 
+        <section class="notice notice-warning hidden" id="notice-block-missing">
+
+            <div class="notice-head">
+
+                <i class="fai fa-exclamation-triangle icon"></i>
+                <span data-i18n-content="blockMissingTitle"></span>
+
+            </div>
+
+            <div class="notice-body" dir="ltr">
+
+                <div class="notice-message">
+                    This feature breaks websites. Do not leave it enabled, unless you are prepared to manually whitelist any affected domains.
+                </div>
+                
+                <div class="button button-notice button-warning" id="button-block-missing">
+                    Disable
+                </div>
+
+            </div>
+
+        </section>
+
         <section class="option">
 
             <div class="title-option">
@@ -105,13 +128,18 @@
 
         </section>
 
-        <section class="notice hidden" id="notice-locale">
+        <section class="notice notice-default hidden" id="notice-locale">
 
             <div class="notice-body" dir="ltr">
 
-                <i class="fai fa-exclamation-triangle icon"></i>
-                Your preferred language is not yet fully supported.
-                <a class="link-text" href="https://crowdin.com/project/decentraleyes" target="_blank">
+                <div class="notice-message">
+
+                    <i class="fai fa-exclamation-triangle icon"></i>
+                    Your preferred language is not yet fully supported.
+
+                </div>
+                
+                <a class="button button-notice" href="https://crowdin.com/project/decentraleyes" target="_blank">
                     Help Translate
                 </a>
 

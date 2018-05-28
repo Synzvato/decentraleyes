@@ -4,21 +4,28 @@
     "es6": true,
     "webextensions": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:no-unsanitized/DOM"
+  ],
   "globals": {
     "Address": true,
+    "fileGuard": true,
     "files": true,
     "Header": true,
     "helpers": true,
     "interceptor": true,
     "mappings": true,
+    "MessageResponse": true,
     "requestAnalyzer": true,
     "requestSanitizer": true,
     "Resource": true,
     "resources": true,
     "Setting": true,
+    "shorthands": true,
     "stateManager": true,
     "WebRequest": true,
+    "WebRequestType": true,
     "Whitelist": true,
     "wrappers": true
   },
@@ -27,12 +34,16 @@
       "core/constants.js",
       "core/files.js",
       "core/mappings.js",
-      "core/resources.js"
+      "core/resources.js",
+      "core/shorthands.js"
     ],
     "rules": {
       "no-unused-vars": "off"
     }
   },
+  "plugins": [
+    "no-unsanitized"
+  ],
   "rules": {
     "array-bracket-newline": "error",
     "array-bracket-spacing": "error",

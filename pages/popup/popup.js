@@ -30,11 +30,10 @@ popup._renderContents = function () {
 
     popup._renderNonContextualContents();
 
-    if (popup._backgroundPage !== null) {
-
-        popup._determineTargetTab()
-            .then(popup._renderContextualContents);
-    }
+    popup._determineTargetTab()
+        .then(popup._determineDomainWhitelistStatus)
+        .then(popup._determineResourceInjections)
+        .then(popup._renderContextualContents);
 };
 
 popup._renderNonContextualContents = function () {
@@ -55,24 +54,12 @@ popup._renderNonContextualContents = function () {
 
 popup._renderContextualContents = function () {
 
-    let injections, groupedInjections;
-
-    popup._domain = helpers.extractDomainFromUrl(popup._targetTab.url);
-
-    popup._requestAnalyzer = popup._backgroundPage.requestAnalyzer;
-    popup._stateManager = popup._backgroundPage.stateManager;
-
     if (popup._domain !== null) {
-
-        popup._domain = helpers.normalizeDomain(popup._domain);
         popup._renderDomainWhitelistPanel();
     }
 
-    injections = popup._stateManager.tabs[popup._targetTab.id].injections;
-    groupedInjections = popup._groupResourceInjections(injections);
-
-    if (Object.keys(groupedInjections).length > 0) {
-        popup._renderInjectionPanel(groupedInjections);
+    if (Object.keys(popup._resourceInjections).length > 0) {
+        popup._renderInjectionPanel(popup._resourceInjections);
     }
 };
 
@@ -87,7 +74,7 @@ popup._renderDomainWhitelistPanel = function () {
     protectionToggleElement.setAttribute('dir', popup._scriptDirection);
     domainIndicatorElement.innerText = popup._domain;
 
-    if (popup._requestAnalyzer.whitelistedDomains[popup._domain]) {
+    if (popup._domainIsWhitelisted === true) {
 
         let enableProtectionTitle = chrome.i18n.getMessage('enableProtectionTitle');
 
@@ -119,23 +106,59 @@ popup._renderInjectionPanel = function (groupedInjections) {
 
 popup._enableProtection = function () {
 
-    popup._stateManager.deleteDomainFromWhitelist(popup._domain)
-        .then(popup._onProtectionToggled);
+    let message = {
+        'topic': 'whitelist:remove-domain',
+        'value': popup._domain
+    };
+
+    chrome.runtime.sendMessage(message, function () {
+        popup._onProtectionToggled();
+    });
 };
 
 popup._disableProtection = function () {
 
-    popup._stateManager.addDomainToWhitelist(popup._domain)
-        .then(popup._onProtectionToggled);
+    let message = {
+        'topic': 'whitelist:add-domain',
+        'value': popup._domain
+    };
+
+    chrome.runtime.sendMessage(message, function () {
+        popup._onProtectionToggled();
+    });
 };
 
-popup._determineBackgroundPage = function () {
+popup._determineDomainWhitelistStatus = function () {
 
     return new Promise((resolve) => {
 
-        chrome.runtime.getBackgroundPage(function (backgroundPage) {
+        let message = {
+            'topic': 'domain:fetch-is-whitelisted',
+            'value': popup._domain
+        };
 
-            popup._backgroundPage = backgroundPage;
+        chrome.runtime.sendMessage(message, function (response) {
+
+            popup._domainIsWhitelisted = response.value;
+            resolve();
+        });
+    });
+};
+
+popup._determineResourceInjections = function () {
+
+    return new Promise((resolve) => {
+
+        let message = {
+            'topic': 'tab:fetch-injections',
+            'value': popup._targetTab.id
+        };
+
+        chrome.runtime.sendMessage(message, function (response) {
+
+            let groupedInjections = popup._groupResourceInjections(response.value);
+            popup._resourceInjections = groupedInjections;
+
             resolve();
         });
     });
@@ -148,6 +171,12 @@ popup._determineTargetTab = function () {
         chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
 
             popup._targetTab = tabs[0];
+            popup._domain = helpers.extractDomainFromUrl(tabs[0].url);
+
+            if (popup._domain !== null) {
+                popup._domain = helpers.normalizeDomain(popup._domain);
+            }
+
             resolve();
         });
     });
@@ -292,8 +321,7 @@ popup._onDocumentLoaded = function () {
     popup._version = helpers.formatVersion(manifest.version);
     popup._scriptDirection = helpers.determineScriptDirection(language);
 
-    popup._determineBackgroundPage()
-        .then(popup._determineAmountInjected)
+    popup._determineAmountInjected()
         .then(popup._renderContents);
 };
 

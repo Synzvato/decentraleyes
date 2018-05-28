@@ -62,8 +62,9 @@ helpers.languageIsFullySupported = function (language) {
     languageSupported = false;
 
     supportedLanguages = [
-        'ar', 'bg', 'zh', 'cs', 'da', 'nl', 'en', 'et', 'fi', 'fr', 'de', 'el',
-        'is', 'id', 'it', 'ja', 'ko', 'pl', 'pt', 'ro', 'ru', 'es', 'sv', 'tr'
+        'ar', 'bg', 'zh', 'cs', 'da', 'nl', 'en', 'et', 'fi',
+        'fr', 'de', 'el', 'is', 'id', 'it', 'ja', 'ko', 'lb',
+        'pl', 'pt', 'ro', 'ru', 'es', 'sv', 'tr'
     ];
 
     for (let supportedLanguage of supportedLanguages) {
@@ -118,6 +119,23 @@ helpers.extractFilenameFromPath = function (path) {
     return filename;
 };
 
+helpers.generateRandomHexString = function (length) {
+
+    let randomValues, randomHexString;
+
+    randomValues = crypto.getRandomValues(new Uint8Array(length));
+    randomHexString = '';
+
+    for (let value of randomValues) {
+
+        // eslint-disable-next-line no-bitwise
+        let hexValue = (0 ^ value & 15 >> 0 / 4).toString(16);
+        randomHexString += hexValue;
+    }
+
+    return randomHexString;
+};
+
 helpers.determineCdnName = function (domainName) {
 
     switch (domainName) {
@@ -144,6 +162,10 @@ helpers.determineCdnName = function (domainName) {
         return 'Sina Public Resources';
     case 'upcdn.b0.upaiyun.com':
         return 'UpYun Library';
+    case 'sdn.geekzu.org':
+        return 'Geekzu Public Service [Mirror]';
+    case 'ajax.proxy.ustclug.org':
+        return 'USTC Linux User Group [Mirror]';
     default:
         return 'Unknown';
     }

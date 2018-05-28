@@ -1,70 +1,70 @@
 {
-  "extensionDescription":{
-    "message":"Decentraleyes protektas vin kontraŭ sekvado per senkosta, centra enhavoprovizado.",
-    "description":"Extension description."
+  "extensionDescription": {
+    "message": "Decentraleyes protektas vin kontraŭ sekvado per senkosta, centra enhavoprovizado.",
+    "description": "Extension description."
   },
-  "disableProtectionTitle":{
-    "message":"Malaktivigi protekton por tiu ĉi retejo",
-    "description":"Disable protection title."
+  "disableProtectionTitle": {
+    "message": "Malaktivigi protekton por tiu ĉi retejo",
+    "description": "Disable protection title."
   },
-  "enableProtectionTitle":{
-    "message":"Aktivigi protekton",
-    "description":"Enable protection title."
+  "enableProtectionTitle": {
+    "message": "Aktivigi protekton",
+    "description": "Enable protection title."
   },
-  "amountInjectedTitle":{
-    "message":"Nombrilo de loke enmetiaj risurcoj",
-    "description":"Amount injected title."
+  "amountInjectedTitle": {
+    "message": "Nombrilo de loke enmetiaj risurcoj",
+    "description": "Amount injected title."
   },
-  "amountInjectedDescription":{
-    "message":"Kvanto de lokaj CDN-risurcoj enmetitaj ekde instaliĝo.",
-    "description":"Amount injected description."
+  "amountInjectedDescription": {
+    "message": "Kvanto de lokaj CDN-risurcoj enmetitaj ekde instaliĝo.",
+    "description": "Amount injected description."
   },
-  "optionsTitle":{
-    "message":"Elektebloj",
-    "description":"Options title."
+  "optionsTitle": {
+    "message": "Elektebloj",
+    "description": "Options title."
   },
-  "showIconBadgeTitle":{
-    "message":"Display injection counts on icon",
-    "description":"Show icon badge title."
+  "showIconBadgeTitle": {
+    "message": "Montri nombrilon sur piktogramo",
+    "description": "Show icon badge title."
   },
-  "showIconBadgeDescription":{
-    "message":"Show the number of injected resources on the extension icon.",
-    "description":"Show icon badge description."
+  "showIconBadgeDescription": {
+    "message": "Montri nombron da enmetataj risurcoj sur la aldonaĵa piktogramo.",
+    "description": "Show icon badge description."
   },
-  "blockMissingTitle":{
-    "message":"Bloki petojn por mankaj risurcoj",
-    "description":"Block requests for missing resources title."
+  "blockMissingTitle": {
+    "message": "Bloki petojn por mankaj risurcoj",
+    "description": "Block requests for missing resources title."
   },
-  "blockMissingDescription":{
-    "message":"Bloki petojn interkaptitajn se la petitan risurcon ne loke haveblas.",
-    "description":"Block requests for missing resources description."
+  "blockMissingDescription": {
+    "message": "Bloki petojn interkaptitajn se la petitan risurcon ne loke haveblas.",
+    "description": "Block requests for missing resources description."
   },
-  "disablePrefetchTitle":{
-    "message":"Disable link prefetching",
-    "description":"Disable prefetch title."
+  "disablePrefetchTitle": {
+    "message": "Ne antaŭlegi ligilojn",
+    "description": "Disable prefetch title."
   },
-  "disablePrefetchDescription":{
-    "message":"Prevent disallowed requests from leaking out to delivery networks.",
-    "description":"Disable prefetch description."
+  "disablePrefetchDescription": {
+    "message": "Bloki malpermesatajn petojn por preventi tralasojn al enhav-proviz-retoj.",
+    "description": "Disable prefetch description."
   },
-  "stripMetadataTitle":{
-    "message":"Strip metadata from allowed requests",
-    "description":"Strip metadata title."
+  "stripMetadataTitle": {
+    "message": "Forigi metadatumojn el permesataj petoj",
+    "description": "Strip metadata title."
   },
-  "stripMetadataDescription":{
-    "message":"Erase sensitive data from allowed CDN requests for improved privacy.",
-    "description":"Strip metadata description."
+  "stripMetadataDescription": {
+    "message": "Forviŝi delikatajn datumojn el permesataj CDN-petoj por plibonigi privatecon.",
+    "description": "Strip metadata description."
   },
-  "whitelistedDomainsTitle":{
-    "message":"Neinspektendaj domajnoj",
-    "description":"Whitelisted domains title."
+  "whitelistedDomainsTitle": {
+    "message": "Neinspektendaj domajnoj",
+    "description": "Whitelisted domains title."
   },
-  "whitelistedDomainsDescription":{
-    "message":"Entajpu demajnojn, kiujn Decentraleyes ne devas inspekti. Disigu domajnojn per punktokomoj (;).",
-    "description":"Whitelisted domains description."
+  "whitelistedDomainsDescription": {
+    "message": "Entajpu demajnojn, kiujn Decentraleyes ne devas inspekti. Disigu domajnojn per punktokomoj (;).",
+    "description": "Whitelisted domains description."
   },
-  "advancedLabel":{
-    "message":"Spertula",
-    "description":"Advanced label."
+  "advancedLabel": {
+    "message": "Spertula",
+    "description": "Advanced label."
   }
 }
