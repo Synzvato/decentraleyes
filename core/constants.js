@@ -34,6 +34,11 @@ const Header = {
     'REFERER': 'Referer'
 };
 
+const MessageResponse = {
+    'ASYNCHRONOUS': true,
+    'SYNCHRONOUS': false
+};
+
 const Resource = {
     'MAPPING_EXPRESSION': /\.map$/i,
     'VERSION_EXPRESSION': /(?:\d{1,2}\.){1,3}\d{1,2}/,

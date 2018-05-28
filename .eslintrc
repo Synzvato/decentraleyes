@@ -16,6 +16,7 @@
     "helpers": true,
     "interceptor": true,
     "mappings": true,
+    "MessageResponse": true,
     "requestAnalyzer": true,
     "requestSanitizer": true,
     "Resource": true,
