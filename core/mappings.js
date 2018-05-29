@@ -94,6 +94,7 @@ var mappings = {
             'angular.js/{version}/angular.': resources.angular,
             'backbone.js/{version}/backbone.': resources.backbone,
             'backbone.js/{version}/backbone-min.': resources.backbone,
+			'Chart.js/{version}/Chart.min.': resources.chart,
             'dojo/{version}/dojo.': resources.dojo,
             'ember.js/{version}/ember.': resources.ember,
             'ext-core/{version}/ext-core.': resources.extCore,

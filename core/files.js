@@ -63,6 +63,14 @@ var files = {
     'resources/backbone.js/1.2.2/backbone-min.js.dec': true,
     'resources/backbone.js/1.2.3/backbone-min.js.dec': true,
 
+	// Chart.js
+	'resources/chart.js/2.4.0/Chart.min.js.dec': true,
+	'resources/chart.js/2.5.0/Chart.min.js.dec': true,
+    'resources/chart.js/2.6.0/Chart.min.js.dec': true,
+    'resources/chart.js/2.7.0/Chart.min.js.dec': true,
+    'resources/chart.js/2.7.1/Chart.min.js.dec': true,
+	'resources/chart.js/2.7.2/Chart.min.js.dec': true,
+	
     // Dojo
     'resources/dojo/1.4.1/dojo/dojo.js.dec': true,
     'resources/dojo/1.4.5/dojo/dojo.js.dec': true,
