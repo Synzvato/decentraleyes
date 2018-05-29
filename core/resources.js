@@ -64,7 +64,12 @@ var resources = {
         'path': 'resources/mootools/{version}/mootools-yui-compressed.js.dec',
         'type': 'application/javascript'
     },
-    // Prototype
+    // Piwik
+    'piwik': {
+        'path': 'resources/piwik/{version}/piwik.js.dec',
+        'type': 'application/javascript'
+    },
+	// Prototype
     'prototypeJS': {
         'path': 'resources/prototype/{version}/prototype.js.dec',
         'type': 'application/javascript'

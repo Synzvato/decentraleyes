@@ -102,6 +102,7 @@ var mappings = {
             'jqueryui/{version}/jquery-ui.min.js': resources.jQueryUI,
             'modernizr/{version}/modernizr.': resources.modernizr,
             'mootools/{version}/mootools-core': resources.mootools,
+			'piwik/{version}/piwik': resources.piwik,
             'scriptaculous/{version}/scriptaculous.': resources.scriptaculous,
             'swfobject/{version}/swfobject.': resources.swfobject,
             'underscore.js/{version}/underscore.': resources.underscore,
