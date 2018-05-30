@@ -84,6 +84,15 @@ var resources = {
         'path': 'resources/underscore.js/{version}/underscore-min.js.dec',
         'type': 'application/javascript'
     },
+    // React
+    'react': {
+        'path': 'resources/react/{version}/react.production.min.js.dec',
+        'type': 'application/javascript'
+    },
+    'reactDom': {
+        'path': 'resources/react-dom/{version}/react-dom.production.min.js.dec',
+        'type': 'application/javascript'
+    },
     // Web Font Loader
     'webfont': {
         'path': 'resources/webfont/{version}/webfont.js.dec',
