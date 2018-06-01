@@ -1,8 +1,10 @@
+'use strict';
+
 /**
  * Imports
  */
 
-var dataHandler = require("../lib/data-handler");
+var dataHandler = require('../lib/data-handler');
 
 /**
  * Get Redirection URI Tests
@@ -31,4 +33,4 @@ exports['test get redirection uri for non-existing file'] = function (assert) {
  * Run Tests
  */
 
-require("sdk/test").run(exports);
+require('sdk/test').run(exports);

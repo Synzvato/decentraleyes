@@ -1,41 +1,43 @@
+'use strict';
+
 /**
  * Imports
  */
 
-var requestAnalyzer = require("../lib/request-analyzer");
+var requestAnalyzer = require('../lib/request-analyzer');
 
 /**
  * Variables
  */
 
 var localPaths = {
-    angular: 'resources/angularjs/1.2.19/angular.min.js.dec',
-    backbone: [
+    'angular': 'resources/angularjs/1.2.19/angular.min.js.dec',
+    'backbone': [
         'resources/backbone.js/0.9.2/backbone-min.js.dec',
         'resources/backbone.js/1.1.2/backbone-min.js.dec'
     ],
-    dojo: 'resources/dojo/1.8.3/dojo/dojo.js.dec',
-    ember: [
+    'dojo': 'resources/dojo/1.8.3/dojo/dojo.js.dec',
+    'ember': [
         'resources/ember.js/1.1.0/ember.min.js.dec',
         'resources/ember.js/2.1.0/ember.min.js.dec'
     ],
-    extCore: 'resources/ext-core/3.1.0/ext-core.js.dec',
-    jQuery: [
+    'extCore': 'resources/ext-core/3.1.0/ext-core.js.dec',
+    'jQuery': [
         'resources/jquery/1.10.2/jquery.min.js.dec',
         'resources/jquery/1.11.1/jquery.min.js.dec'
     ],
-    jQueryUI: 'resources/jqueryui/1.10.2/jquery-ui.min.js.dec',
-    modernizr: 'resources/modernizr/2.6.2/modernizr.min.js.dec',
-    mootools: 'resources/mootools/1.4.5/mootools-yui-compressed.js.dec',
-    prototypeJS: 'resources/prototype/1.6.1.0/prototype.js.dec',
-    scriptaculous: 'resources/scriptaculous/1.9.0/scriptaculous.js.dec',
-    swfobject: 'resources/swfobject/2.2/swfobject.js.dec',
-    underscore: [
+    'jQueryUI': 'resources/jqueryui/1.10.2/jquery-ui.min.js.dec',
+    'modernizr': 'resources/modernizr/2.6.2/modernizr.min.js.dec',
+    'mootools': 'resources/mootools/1.4.5/mootools-yui-compressed.js.dec',
+    'prototypeJS': 'resources/prototype/1.6.1.0/prototype.js.dec',
+    'scriptaculous': 'resources/scriptaculous/1.9.0/scriptaculous.js.dec',
+    'swfobject': 'resources/swfobject/2.2/swfobject.js.dec',
+    'underscore': [
         'resources/underscore.js/1.3.3/underscore-min.js.dec',
         'resources/underscore.js/1.4.4/underscore-min.js.dec',
         'resources/underscore.js/1.6.0/underscore-min.js.dec'
     ],
-    webfont: [
+    'webfont': [
         'resources/webfont/1.0.19/webfont.js.dec',
         'resources/webfont/1.5.18/webfont.js.dec'
     ]
@@ -48,7 +50,7 @@ var localPaths = {
 exports['test get request to known cdn'] = function (assert) {
 
     var result = requestAnalyzer.isValidCandidate({
-        requestMethod: 'GET', URI: { host: 'ajax.googleapis.com' }
+        'requestMethod': 'GET', 'URI': {'host': 'ajax.googleapis.com'}
     });
 
     assert.ok(result, 'Valid candidate was successfully identified.');
@@ -57,7 +59,7 @@ exports['test get request to known cdn'] = function (assert) {
 exports['test post request to known cdn'] = function (assert) {
 
     var result = requestAnalyzer.isValidCandidate({
-        requestMethod: 'POST', URI: { host: 'ajax.googleapis.com' }
+        'requestMethod': 'POST', 'URI': {'host': 'ajax.googleapis.com'}
     });
 
     assert.equal(result, false, 'Invalid candidate was successfully identified.');
@@ -66,7 +68,7 @@ exports['test post request to known cdn'] = function (assert) {
 exports['test get request to unknown domain'] = function (assert) {
 
     var result = requestAnalyzer.isValidCandidate({
-        requestMethod: 'GET', URI: { host: 'ajax.example.com' }
+        'requestMethod': 'GET', 'URI': {'host': 'ajax.example.com'}
     });
 
     assert.equal(result, false, 'Invalid candidate was successfully identified.');
@@ -74,11 +76,14 @@ exports['test get request to unknown domain'] = function (assert) {
 
 exports['test get request from whitelisted domain'] = function (assert) {
 
-    require('sdk/simple-prefs').prefs.domainWhitelist = 'example.com';
+    var result, simplePreferences;
 
-    var result = requestAnalyzer.isValidCandidate({
-        requestMethod: 'GET', URI: { host: 'ajax.googleapis.com' },
-            referrer: { host: 'example.com' }, setRequestHeader: function () { return false; }
+    simplePreferences = require('sdk/simple-prefs');
+    simplePreferences.prefs.domainWhitelist = 'example.com';
+
+    result = requestAnalyzer.isValidCandidate({
+        'requestMethod': 'GET', 'URI': {'host': 'ajax.googleapis.com'},
+        'referrer': {'host': 'example.com'}, 'setRequestHeader': function () { return false; }
     });
 
     assert.equal(result, false, 'Whitelisted request was successfully ignored.');
@@ -625,4 +630,4 @@ exports['test mootools on upyun library'] = function (assert) {
  * Run Tests
  */
 
-require("sdk/test").run(exports);
+require('sdk/test').run(exports);

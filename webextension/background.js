@@ -73,7 +73,7 @@ webextensionPort.onMessage.addListener((message) => {
         chrome.storage.local.get({
 
             // The stored amount, or zero.
-            amountInjected: 0
+            'amountInjected': 0
 
         }, function (items) {
 
