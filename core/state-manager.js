@@ -44,6 +44,14 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
         }
     }
 
+    if (injectionCount > 0) {
+        let title = 'Decentraleyes (' + injectionCount.toString() + ')'; 
+        wrappers.setTitle({
+            'title': title, 
+            'tabId': tabIdentifier
+        });
+    }
+
     if (isNaN(interceptor.amountInjected)) {
 
         chrome.storage.local.get(Setting.AMOUNT_INJECTED, function (items) {
