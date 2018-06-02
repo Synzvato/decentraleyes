@@ -181,7 +181,6 @@ footer {
 */
 
 .link-text {
-    color: #bdbdbd;
     cursor: pointer;
     float: left;
     font-size: 13px;
@@ -234,7 +233,6 @@ footer {
 }
 
 .label-domain {
-    color: #bbb;
     display: flex;
     font-style: italic;
     overflow: hidden;
