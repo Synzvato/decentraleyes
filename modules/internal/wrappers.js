@@ -36,3 +36,13 @@ wrappers.setBadgeText = function (details) {
         chrome.browserAction.setBadgeText(details);
     }
 };
+
+// In firefox android, browser action shows as a menu entry instead of icon.
+// Use the below 'setTitle' to show injected count in menu entry.
+
+wrappers.setTitle = function (details){ 
+     
+    if (chrome.browserAction.setTitle !== undefined) {
+        chrome.browserAction.setTitle(details); 
+    }
+}; 
