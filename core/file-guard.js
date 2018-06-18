@@ -2,7 +2,7 @@
  * File Guard
  * Belongs to Decentraleyes.
  *
- * @see https://github.com/Synzvato/decentraleyes/pull/258
+ * @see https://git.synz.io/Synzvato/decentraleyes/merge_requests/258
  *
  * @author      Thomas Rientjes
  * @since       2018-05-17
