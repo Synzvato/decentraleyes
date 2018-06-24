@@ -157,7 +157,7 @@ interceptor._handleStorageChanged = function (changes) {
  */
 
 interceptor.amountInjected = 0;
-interceptor.xhrTestDomain = 'decentraleyes.org';
+interceptor.xhrTestDomain = Address.DECENTRALEYES;
 interceptor.blockMissing = false;
 
 interceptor.relatedSettings = [];
@@ -169,7 +169,7 @@ interceptor.relatedSettings.push(Setting.BLOCK_MISSING);
 chrome.storage.local.get(interceptor.relatedSettings, function (items) {
 
     interceptor.amountInjected = items.amountInjected || 0;
-    interceptor.xhrTestDomain = items.xhrTestDomain || 'decentraleyes.org';
+    interceptor.xhrTestDomain = items.xhrTestDomain || Address.DECENTRALEYES;
     interceptor.blockMissing = items.blockMissing || false;
 });
 

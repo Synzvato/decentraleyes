@@ -26,7 +26,7 @@ var main = {};
 main._initializeOptions = function () {
 
     let optionDefaults = {
-        [Setting.XHR_TEST_DOMAIN]: 'decentraleyes.org',
+        [Setting.XHR_TEST_DOMAIN]: Address.DECENTRALEYES,
         [Setting.SHOW_ICON_BADGE]: true,
         [Setting.BLOCK_MISSING]: false,
         [Setting.DISABLE_PREFETCH]: true,

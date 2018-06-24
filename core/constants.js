@@ -22,6 +22,7 @@ const Address = {
     'ANY_PATH': '/*',
     'ANY_PROTOCOL': '*://',
     'CHROME_EXTENSION': 'chrome-extension:',
+    'DECENTRALEYES': 'decentraleyes.org',
     'EXAMPLE': 'example.org',
     'HTTP': 'http:',
     'HTTPS': 'https:',

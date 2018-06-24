@@ -32,7 +32,7 @@ fileGuard._startListening = function () {
 
     chrome.webRequest.onBeforeRequest.addListener(
         fileGuard._verifyRequest,
-        {'urls': [`${fileGuard.path}/*`]},
+        {'urls': [fileGuard.path + Address.ANY_PATH]},
         [WebRequest.BLOCKING]
     );
 };
