@@ -33,23 +33,20 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
     registeredTab.injections[injectionIdentifier] = injection;
     injectionCount = Object.keys(registeredTab.injections).length || 0;
 
-    if (stateManager.showIconBadge === true) {
+    if (injectionCount > 0) {
 
-        if (injectionCount > 0) {
+        chrome.browserAction.setTitle({
+            'tabId': tabIdentifier,
+            'title': `Decentraleyes (${injectionCount})`
+        });
+
+        if (stateManager.showIconBadge === true) {
 
             wrappers.setBadgeText({
                 'tabId': tabIdentifier,
                 'text': injectionCount.toString()
             });
         }
-    }
-
-    if (injectionCount > 0) {
-        let title = 'Decentraleyes (' + injectionCount.toString() + ')'; 
-        wrappers.setTitle({
-            'title': title, 
-            'tabId': tabIdentifier
-        });
     }
 
     if (isNaN(interceptor.amountInjected)) {
