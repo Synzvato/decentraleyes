@@ -243,7 +243,7 @@ var mappings = {
             'backbone.js/{version}/backbone.': resources.backbone,
             'backbone.js/{version}/backbone-min.': resources.backbone,
             'dojo/{version}/dojo.': resources.dojo,
-            'ember.js/{version}/ember.min.js': resources.ember.js,
+            'ember.js/{version}/ember.': resources.ember,
             'ext-core/{version}/ext-core.': resources.extCore,
             'jquery/{version}/jquery.': resources.jQuery,
             'jqueryui/{version}/jquery-ui.js': resources.jQueryUI,
@@ -255,10 +255,9 @@ var mappings = {
             'swfobject/{version}/swfobject.': resources.swfobject,
             'underscore.js/{version}/underscore.': resources.underscore,
             'underscore.js/{version}/underscore-min.': resources.underscore,
-            'webfont/{version}/webfont.': resources.webfont,
-            'webfont/{version}/webfont_debug.': resources.webfont
+            'webfont/{version}/webfontloader.': resources.webfont
         }
-    },
+    }
 };
 
 // Geekzu Public Service [Mirror]

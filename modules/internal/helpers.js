@@ -162,6 +162,8 @@ helpers.determineCdnName = function (domainName) {
         return 'Sina Public Resources';
     case 'upcdn.b0.upaiyun.com':
         return 'UpYun Library';
+    case 'cdn.bootcss.com':
+        return 'BootCDN';
     case 'sdn.geekzu.org':
         return 'Geekzu Public Service [Mirror]';
     case 'ajax.proxy.ustclug.org':
