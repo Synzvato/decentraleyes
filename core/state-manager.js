@@ -105,7 +105,6 @@ stateManager._createTab = function (tab) {
     };
 
     requestFilters = {
-
         'tabId': tabIdentifier,
         'urls': stateManager.validHosts
     };
@@ -226,7 +225,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (requestDetails) {
         };
     }
 
-}, {'types': ['main_frame'], 'urls': [Address.ANY]});
+}, {'types': [WebRequestType.MAIN_FRAME], 'urls': [Address.ANY]});
 
 chrome.webNavigation.onCommitted.addListener(stateManager._updateTab, {
     'url': [{'urlContains': ':'}]

@@ -64,6 +64,7 @@ const WebRequest = {
 };
 
 const WebRequestType = {
+    'MAIN_FRAME': 'main_frame',
     'XHR': 'xmlhttprequest'
 };
 
