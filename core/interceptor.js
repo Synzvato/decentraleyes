@@ -83,10 +83,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
     };
 
     if (undetectableTaintedDomains[tabDomain] || (/yandex\./).test(tabDomain)) {
-
-        if (tabDomain !== 'yandex.ru') {
-            return interceptor._handleMissingCandidate(requestDetails.url);
-        }
+        return interceptor._handleMissingCandidate(requestDetails.url);
     }
 
     targetDetails = requestAnalyzer.getLocalTarget(requestDetails);
