@@ -133,12 +133,13 @@ stateManager._updateTab = function (details) {
         return;
     }
 
-    if (stateManager.showIconBadge === true) {
+    chrome.browserAction.setTitle({
+        'tabId': tabIdentifier,
+        'title': 'Decentraleyes'
+    });
 
-        wrappers.setBadgeText({
-            'tabId': tabIdentifier,
-            'text': ''
-        });
+    if (stateManager.showIconBadge === true) {
+        stateManager._clearBadgeText(tabIdentifier);
     }
 
     if (stateManager.tabs[tabIdentifier]) {
@@ -170,12 +171,16 @@ stateManager._handleStorageChanged = function (changes) {
     }
 };
 
-stateManager._removeIconBadgeFromTab = function (tab) {
+stateManager._clearBadgeText = function (tabIdentifier) {
 
     wrappers.setBadgeText({
-        'tabId': tab.id,
+        'tabId': tabIdentifier,
         'text': ''
     });
+};
+
+stateManager._removeIconBadgeFromTab = function (tab) {
+    stateManager._clearBadgeText(tab.id);
 };
 
 /**
