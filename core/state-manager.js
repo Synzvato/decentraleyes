@@ -123,13 +123,22 @@ stateManager._removeTab = function (tabIdentifier) {
 
 stateManager._updateTab = function (details) {
 
-    let tabIdentifier, frameIdentifier;
+    let tabDomain, domainIsWhitelisted, tabIdentifier, frameIdentifier;
 
-    tabIdentifier = details.tabId;
+    tabDomain = helpers.extractDomainFromUrl(details.url);
+    domainIsWhitelisted = stateManager._domainIsWhitelisted(tabDomain);
+
     frameIdentifier = details.frameId;
+    tabIdentifier = details.tabId;
 
-    if (tabIdentifier === -1 || frameIdentifier !== 0) {
+    if (frameIdentifier !== 0 || tabIdentifier === -1) {
         return;
+    }
+
+    if (domainIsWhitelisted) {
+        stateManager._setIconDisabled(tabIdentifier);
+    } else {
+        stateManager._setIconDefault(tabIdentifier);
     }
 
     chrome.browserAction.setTitle({
@@ -182,12 +191,62 @@ stateManager._removeIconBadgeFromTab = function (tab) {
     stateManager._clearBadgeText(tab.id);
 };
 
+stateManager._domainIsWhitelisted = function (domain) {
+
+    if (domain !== null) {
+
+        let whitelistRecord, isWhitelisted;
+
+        whitelistRecord = requestAnalyzer.whitelistedDomains[domain];
+        isWhitelisted = Boolean(whitelistRecord);
+
+        return isWhitelisted;
+    }
+
+    return false;
+};
+
+stateManager._setIconDefault = function (tabIdentifier) {
+
+    wrappers.setIcon({
+        'path': stateManager.defaultIconPath,
+        'tabId': tabIdentifier
+    });
+};
+
+stateManager._setIconDisabled = function (tabIdentifier) {
+
+    wrappers.setIcon({
+        'path': stateManager.disabledIconPath,
+        'tabId': tabIdentifier
+    });
+};
+
 /**
  * Initializations
  */
 
 stateManager.requests = {};
 stateManager.tabs = {};
+
+stateManager.defaultIconPath = {
+    '18': chrome.runtime.getURL('icons/action/icon18-default.png'),
+    '19': chrome.runtime.getURL('icons/action/icon19-default.png'),
+    '32': chrome.runtime.getURL('icons/action/icon32-default.png'),
+    '36': chrome.runtime.getURL('icons/action/icon36-default.png'),
+    '38': chrome.runtime.getURL('icons/action/icon38-default.png'),
+    '64': chrome.runtime.getURL('icons/action/icon64-default.png')
+};
+
+stateManager.disabledIconPath = {
+    '18': chrome.runtime.getURL('icons/action/icon18-disabled.png'),
+    '19': chrome.runtime.getURL('icons/action/icon19-disabled.png'),
+    '32': chrome.runtime.getURL('icons/action/icon32-disabled.png'),
+    '36': chrome.runtime.getURL('icons/action/icon36-disabled.png'),
+    '38': chrome.runtime.getURL('icons/action/icon38-disabled.png'),
+    '64': chrome.runtime.getURL('icons/action/icon64-disabled.png')
+};
+
 stateManager.validHosts = [];
 
 for (let mapping in mappings) {

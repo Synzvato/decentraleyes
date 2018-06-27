@@ -32,12 +32,12 @@
 
   "browser_action": {
     "default_icon": {
-      "18": "icons/action/icon18.png",
-      "19": "icons/action/icon19.png",
-      "32": "icons/action/icon32.png",
-      "36": "icons/action/icon36.png",
-      "38": "icons/action/icon38.png",
-      "64": "icons/action/icon64.png"
+      "18": "icons/action/icon18-default.png",
+      "19": "icons/action/icon19-default.png",
+      "32": "icons/action/icon32-default.png",
+      "36": "icons/action/icon36-default.png",
+      "38": "icons/action/icon38-default.png",
+      "64": "icons/action/icon64-default.png"
     },
     "default_popup": "pages/popup/popup.html",
     "browser_style": false

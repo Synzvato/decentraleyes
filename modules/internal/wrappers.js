@@ -36,3 +36,10 @@ wrappers.setBadgeText = function (details) {
         chrome.browserAction.setBadgeText(details);
     }
 };
+
+wrappers.setIcon = function (details) {
+
+    if (chrome.browserAction.setIcon !== undefined) {
+        chrome.browserAction.setIcon(details);
+    }
+};
