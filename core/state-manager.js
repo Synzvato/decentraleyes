@@ -230,6 +230,7 @@ stateManager.requests = {};
 stateManager.tabs = {};
 
 stateManager.defaultIconPath = {
+    '16': chrome.runtime.getURL('icons/action/icon16-default.png'),
     '18': chrome.runtime.getURL('icons/action/icon18-default.png'),
     '19': chrome.runtime.getURL('icons/action/icon19-default.png'),
     '32': chrome.runtime.getURL('icons/action/icon32-default.png'),
@@ -239,6 +240,7 @@ stateManager.defaultIconPath = {
 };
 
 stateManager.disabledIconPath = {
+    '16': chrome.runtime.getURL('icons/action/icon16-disabled.png'),
     '18': chrome.runtime.getURL('icons/action/icon18-disabled.png'),
     '19': chrome.runtime.getURL('icons/action/icon19-disabled.png'),
     '32': chrome.runtime.getURL('icons/action/icon32-disabled.png'),
