@@ -148,9 +148,6 @@ stateManager._updateTab = function (details) {
             'tabId': tabIdentifier,
             'title': 'Decentraleyes (–)'
         });
-
-    } else {
-        stateManager._setIconDefault(tabIdentifier);
     }
 
     if (stateManager.showIconBadge === true) {
@@ -213,14 +210,6 @@ stateManager._domainIsWhitelisted = function (domain) {
     return false;
 };
 
-stateManager._setIconDefault = function (tabIdentifier) {
-
-    wrappers.setIcon({
-        'path': stateManager.defaultIconPath,
-        'tabId': tabIdentifier
-    });
-};
-
 stateManager._setIconDisabled = function (tabIdentifier) {
 
     wrappers.setIcon({
@@ -235,16 +224,6 @@ stateManager._setIconDisabled = function (tabIdentifier) {
 
 stateManager.requests = {};
 stateManager.tabs = {};
-
-stateManager.defaultIconPath = {
-    '16': chrome.runtime.getURL('icons/action/icon16-default.png'),
-    '18': chrome.runtime.getURL('icons/action/icon18-default.png'),
-    '19': chrome.runtime.getURL('icons/action/icon19-default.png'),
-    '32': chrome.runtime.getURL('icons/action/icon32-default.png'),
-    '36': chrome.runtime.getURL('icons/action/icon36-default.png'),
-    '38': chrome.runtime.getURL('icons/action/icon38-default.png'),
-    '64': chrome.runtime.getURL('icons/action/icon64-default.png')
-};
 
 stateManager.disabledIconPath = {
     '16': chrome.runtime.getURL('icons/action/icon16-disabled.png'),

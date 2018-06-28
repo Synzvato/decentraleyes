@@ -98,6 +98,10 @@ helpers.extractDomainFromUrl = function (url, normalize) {
         extractedDomain = null;
     }
 
+    if (url.startsWith(Address.CHROME)) {
+        extractedDomain = null;
+    }
+
     if (extractedDomain === '') {
         extractedDomain = null;
     }
