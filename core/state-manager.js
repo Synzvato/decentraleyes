@@ -135,16 +135,23 @@ stateManager._updateTab = function (details) {
         return;
     }
 
+    chrome.browserAction.setTitle({
+        'tabId': tabIdentifier,
+        'title': 'Decentraleyes (0)'
+    });
+
     if (domainIsWhitelisted) {
+
         stateManager._setIconDisabled(tabIdentifier);
+
+        chrome.browserAction.setTitle({
+            'tabId': tabIdentifier,
+            'title': 'Decentraleyes (–)'
+        });
+
     } else {
         stateManager._setIconDefault(tabIdentifier);
     }
-
-    chrome.browserAction.setTitle({
-        'tabId': tabIdentifier,
-        'title': 'Decentraleyes'
-    });
 
     if (stateManager.showIconBadge === true) {
         stateManager._clearBadgeText(tabIdentifier);
