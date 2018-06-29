@@ -125,7 +125,7 @@ stateManager._updateTab = function (details) {
 
     let tabDomain, domainIsWhitelisted, frameIdentifier, tabIdentifier;
 
-    tabDomain = helpers.extractDomainFromUrl(details.url);
+    tabDomain = helpers.extractDomainFromUrl(details.url, true);
     domainIsWhitelisted = stateManager._domainIsWhitelisted(tabDomain);
 
     frameIdentifier = details.frameId;
