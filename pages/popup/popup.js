@@ -171,11 +171,7 @@ popup._determineTargetTab = function () {
         chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
 
             popup._targetTab = tabs[0];
-            popup._domain = helpers.extractDomainFromUrl(tabs[0].url);
-
-            if (popup._domain !== null) {
-                popup._domain = helpers.normalizeDomain(popup._domain);
-            }
+            popup._domain = helpers.extractDomainFromUrl(tabs[0].url, true);
 
             resolve();
         });
