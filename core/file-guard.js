@@ -39,7 +39,7 @@ fileGuard._startListening = function () {
 
 fileGuard._verifyRequest = function (requestDetails) {
 
-    let redirectUrl = chrome.runtime.getURL('/');
+    let redirectUrl = chrome.runtime.getURL(Address.ROOT_PATH);
 
     if (!requestDetails.url.endsWith(fileGuard.secret)) {
         return {redirectUrl};
@@ -50,7 +50,7 @@ fileGuard._verifyRequest = function (requestDetails) {
  * Initializations
  */
 
-fileGuard.path = chrome.runtime.getURL('/resources');
+fileGuard.path = chrome.runtime.getURL(Address.RESOURCE_PATH);
 fileGuard.secret = '';
 
 if (fileGuard.path.startsWith(Address.CHROME_EXTENSION)) {

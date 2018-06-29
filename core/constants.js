@@ -27,6 +27,8 @@ const Address = {
     'EXAMPLE': 'example.org',
     'HTTP': 'http:',
     'HTTPS': 'https:',
+    'RESOURCE_PATH': '/resources',
+    'ROOT_PATH': '/',
     'WWW_PREFIX': 'www.'
 };
 

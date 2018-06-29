@@ -123,7 +123,7 @@ stateManager._removeTab = function (tabIdentifier) {
 
 stateManager._updateTab = function (details) {
 
-    let tabDomain, domainIsWhitelisted, tabIdentifier, frameIdentifier;
+    let tabDomain, domainIsWhitelisted, frameIdentifier, tabIdentifier;
 
     tabDomain = helpers.extractDomainFromUrl(details.url);
     domainIsWhitelisted = stateManager._domainIsWhitelisted(tabDomain);
