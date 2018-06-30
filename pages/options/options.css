@@ -12,6 +12,8 @@ body {
 }
 
 .option {
+    display: flex;
+    flex-direction: column;
     margin-top: 25px;
 }
 
@@ -81,6 +83,7 @@ body {
 
 .input-text {
     margin-left: 29px;
+    max-width: 320px;
 }
 
 /**
