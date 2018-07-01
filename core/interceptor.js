@@ -55,6 +55,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         'blog.datawrapper.de': true,
         'bundleofholding.com': true,
         'cdnjs.com': true,
+        'code.world': true,
         'dropbox.com': true,
         'evoice.com': true,
         'freebusy.io': true,
