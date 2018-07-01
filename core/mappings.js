@@ -184,6 +184,29 @@ var mappings = {
         }
     },
     // Baidu CDN
+    'apps.bdimg.com': {
+        '/libs/': {
+            'angular.js/{version}/angular.': resources.angular,
+            'backbone.js/{version}/backbone.': resources.backbone,
+            'backbone.js/{version}/backbone-min.': resources.backbone,
+            'dojo/{version}/dojo.': resources.dojo,
+            'ember.js/{version}/ember.': resources.ember,
+            'ext-core/{version}/ext-core.': resources.extCore,
+            'jquery/{version}/jquery.': resources.jQuery,
+            'jqueryui/{version}/jquery-ui.js': resources.jQueryUI,
+            'jqueryui/{version}/jquery-ui.min.js': resources.jQueryUI,
+            'mootools/{version}/mootools-yui-compressed.': resources.mootools,
+            'prototype/{version}/prototype.': resources.prototypeJS,
+            'scriptaculous/{version}/scriptaculous.': resources.scriptaculous,
+            'swfobject/{version}/swfobject.': resources.swfobject,
+            'swfobject/{version}/swfobject_src.': resources.swfobject,
+            'underscore.js/{version}/underscore.': resources.underscore,
+            'underscore.js/{version}/underscore-min.': resources.underscore,
+            'webfont/{version}/webfont.': resources.webfont,
+            'webfont/{version}/webfont_debug.': resources.webfont
+        }
+    },
+    // Baidu CDN [Deprecated]
     'libs.baidu.com': {
         '/': {
             'backbone/{version}/backbone.': resources.backbone,

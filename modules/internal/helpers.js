@@ -160,8 +160,10 @@ helpers.determineCdnName = function (domainName) {
         return 'Yandex CDN';
     case 'yandex.st':
         return 'Yandex CDN [Deprecated]';
-    case 'libs.baidu.com':
+    case 'apps.bdimg.com':
         return 'Baidu CDN';
+    case 'libs.baidu.com':
+        return 'Baidu CDN [Deprecated]';
     case 'lib.sinaapp.com':
         return 'Sina Public Resources';
     case 'upcdn.b0.upaiyun.com':
