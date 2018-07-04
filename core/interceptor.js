@@ -61,6 +61,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         'freebusy.io': true,
         'gazetadopovo.com.br': true,
         'glowing-bear.org': true,
+        'ico.org.uk': true,
         'manualslib.com': true,
         'meslieux.paris.fr': true,
         'mgm.gov.tr': true,
