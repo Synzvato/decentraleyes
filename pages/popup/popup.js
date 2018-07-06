@@ -326,7 +326,7 @@ popup._onTestingUtilityLinkClicked = function (event) {
     if (event.button === 0 || event.button === 1) {
 
         chrome.tabs.create({
-            'url': 'https://decentraleyes.org/test',
+            'url': 'https://decentraleyes.org/test/',
             'active': (event.button === 0)
         });
     }
