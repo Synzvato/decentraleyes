@@ -77,6 +77,7 @@ var mappings = {
     // Microsoft Ajax CDN
     'ajax.aspnetcdn.com': {
         '/ajax/': {
+            'jQuery/jquery-{version}.': resources.jQuery,
             'jquery/jquery-{version}.': resources.jQuery,
             'modernizr/modernizr-{version}.': resources.modernizr
         }
@@ -84,6 +85,7 @@ var mappings = {
     // Microsoft Ajax CDN [Deprecated]
     'ajax.microsoft.com': {
         '/ajax/': {
+            'jQuery/jquery-{version}.': resources.jQuery,
             'jquery/jquery-{version}.': resources.jQuery,
             'modernizr/modernizr-{version}.': resources.modernizr
         }
