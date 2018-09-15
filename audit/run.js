@@ -207,7 +207,7 @@ resourceAmount = localResourcePaths.length;
 localResourcePaths.forEach(function (resourcePath) {
 
     var resourceRoute = resourcePath.substr(localResourceLocationLength + 1);
-    resourceRoute = resourceRoute.substring(0, resourceRoute.length - 4);
+    resourceRoute = resourceRoute.substring(0, resourceRoute.length - 1);
 
     _getLocalResourceContents(resourcePath, function (localResourceContents) {
 
