@@ -42,10 +42,6 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         tabDomain = Address.EXAMPLE;
     }
 
-    if (interceptor.browserVersion === '63' || interceptor.browserVersion === '64') {
-        return interceptor._handleMissingCandidate(requestDetails.url);
-    }
-
     if (requestDetails.type === WebRequestType.XHR) {
 
         if (tabDomain !== interceptor.xhrTestDomain) {
@@ -179,12 +175,6 @@ chrome.storage.local.get(interceptor.relatedSettings, function (items) {
     interceptor.amountInjected = items.amountInjected || 0;
     interceptor.xhrTestDomain = items.xhrTestDomain || Address.DECENTRALEYES;
     interceptor.blockMissing = items.blockMissing || false;
-});
-
-chrome.runtime.getBrowserInfo(function (browserInformation) {
-
-    let browserVersion = browserInformation.version.substring(0, 2);
-    interceptor.browserVersion = browserVersion;
 });
 
 /**

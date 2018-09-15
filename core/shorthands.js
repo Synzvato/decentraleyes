@@ -21,55 +21,55 @@ var shorthands = {
 
     // Google Hosted Libraries [Deprecated]
     'ajax.googleapis.com': {
-        'resources/jquery/1.8/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.8.3/jquery.min.js.dec',
+        'resources/jquery/1.8/jquery.min.jsm': {
+            'path': 'resources/jquery/1.8.3/jquery.min.jsm',
             'version': '1.8.3'
         },
-        'resources/jquery/1.7/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.7.2/jquery.min.js.dec',
+        'resources/jquery/1.7/jquery.min.jsm': {
+            'path': 'resources/jquery/1.7.2/jquery.min.jsm',
             'version': '1.7.2'
         },
-        'resources/jquery/1.6/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.6.4/jquery.min.js.dec',
+        'resources/jquery/1.6/jquery.min.jsm': {
+            'path': 'resources/jquery/1.6.4/jquery.min.jsm',
             'version': '1.6.4'
         },
-        'resources/jquery/1.5/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.5.2/jquery.min.js.dec',
+        'resources/jquery/1.5/jquery.min.jsm': {
+            'path': 'resources/jquery/1.5.2/jquery.min.jsm',
             'version': '1.5.2'
         },
-        'resources/jquery/1.4/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.4.4/jquery.min.js.dec',
+        'resources/jquery/1.4/jquery.min.jsm': {
+            'path': 'resources/jquery/1.4.4/jquery.min.jsm',
             'version': '1.4.4'
         },
-        'resources/jquery/1.3/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.3.2/jquery.min.js.dec',
+        'resources/jquery/1.3/jquery.min.jsm': {
+            'path': 'resources/jquery/1.3.2/jquery.min.jsm',
             'version': '1.3.2'
         },
-        'resources/jquery/1.2/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.2.6/jquery.min.js.dec',
+        'resources/jquery/1.2/jquery.min.jsm': {
+            'path': 'resources/jquery/1.2.6/jquery.min.jsm',
             'version': '1.2.6'
         }
     },
     // jQuery CDN [Deprecated]
     'code.jquery.com': {
-        'resources/jquery/1.7/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.7.0/jquery.min.js.dec',
+        'resources/jquery/1.7/jquery.min.jsm': {
+            'path': 'resources/jquery/1.7.0/jquery.min.jsm',
             'version': '1.7.0'
         },
-        'resources/jquery/1.6/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.6.0/jquery.min.js.dec',
+        'resources/jquery/1.6/jquery.min.jsm': {
+            'path': 'resources/jquery/1.6.0/jquery.min.jsm',
             'version': '1.6.0'
         },
-        'resources/jquery/1.5/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.5.0/jquery.min.js.dec',
+        'resources/jquery/1.5/jquery.min.jsm': {
+            'path': 'resources/jquery/1.5.0/jquery.min.jsm',
             'version': '1.5.0'
         },
-        'resources/jquery/1.4/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.4.0/jquery.min.js.dec',
+        'resources/jquery/1.4/jquery.min.jsm': {
+            'path': 'resources/jquery/1.4.0/jquery.min.jsm',
             'version': '1.4.0'
         },
-        'resources/jquery/1.3/jquery.min.js.dec': {
-            'path': 'resources/jquery/1.3.0/jquery.min.js.dec',
+        'resources/jquery/1.3/jquery.min.jsm': {
+            'path': 'resources/jquery/1.3.0/jquery.min.jsm',
             'version': '1.3.0'
         }
     }

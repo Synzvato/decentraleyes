@@ -37,39 +37,39 @@ var mappings = {
 
             // Basic Shorthand Notations [Deprecated]
             'dojo/1/dojo/dojo.': {
-                'path': 'resources/dojo/1.6.1/dojo/dojo.js.dec',
+                'path': 'resources/dojo/1.6.1/dojo/dojo.jsm',
                 'type': 'application/javascript'
             },
             'jquery/1/jquery.': {
-                'path': 'resources/jquery/1.11.1/jquery.min.js.dec',
+                'path': 'resources/jquery/1.11.1/jquery.min.jsm',
                 'type': 'application/javascript'
             },
             'jqueryui/1/jquery-ui.js': {
-                'path': 'resources/jqueryui/1.10.4/jquery-ui.min.js.dec',
+                'path': 'resources/jqueryui/1.10.4/jquery-ui.min.jsm',
                 'type': 'application/javascript'
             },
             'jqueryui/1/jquery-ui.min.js': {
-                'path': 'resources/jqueryui/1.10.4/jquery-ui.min.js.dec',
+                'path': 'resources/jqueryui/1.10.4/jquery-ui.min.jsm',
                 'type': 'application/javascript'
             },
             'mootools/1/mootools-yui-compressed.': {
-                'path': 'resources/mootools/1.1.2/mootools-yui-compressed.js.dec',
+                'path': 'resources/mootools/1.1.2/mootools-yui-compressed.jsm',
                 'type': 'application/javascript'
             },
             'prototype/1/prototype.': {
-                'path': 'resources/prototype/1.7.1.0/prototype.js.dec',
+                'path': 'resources/prototype/1.7.1.0/prototype.jsm',
                 'type': 'application/javascript'
             },
             'scriptaculous/1/scriptaculous.': {
-                'path': 'resources/scriptaculous/1.9.0/scriptaculous.js.dec',
+                'path': 'resources/scriptaculous/1.9.0/scriptaculous.jsm',
                 'type': 'application/javascript'
             },
             'swfobject/2/swfobject.': {
-                'path': 'resources/swfobject/2.2/swfobject.js.dec',
+                'path': 'resources/swfobject/2.2/swfobject.jsm',
                 'type': 'application/javascript'
             },
             'webfont/1/webfont.': {
-                'path': 'resources/webfont/1.5.18/webfont.js.dec',
+                'path': 'resources/webfont/1.5.18/webfont.jsm',
                 'type': 'application/javascript'
             }
         }
@@ -120,11 +120,11 @@ var mappings = {
 
             // Basic Shorthand Notations [Deprecated]
             'jquery-latest.': {
-                'path': 'resources/jquery/1.11.1/jquery.min.js.dec',
+                'path': 'resources/jquery/1.11.1/jquery.min.jsm',
                 'type': 'application/javascript'
             },
             'jquery.': {
-                'path': 'resources/jquery/1.11.1/jquery.min.js.dec',
+                'path': 'resources/jquery/1.11.1/jquery.min.jsm',
                 'type': 'application/javascript'
             }
         }

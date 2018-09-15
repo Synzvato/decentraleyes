@@ -183,33 +183,33 @@ helpers.determineResourceName = function (filename) {
 
     switch (filename) {
 
-    case 'angular.min.js.dec':
+    case 'angular.min.jsm':
         return 'AngularJS';
-    case 'backbone-min.js.dec':
+    case 'backbone-min.jsm':
         return 'Backbone.js';
-    case 'dojo.js.dec':
+    case 'dojo.jsm':
         return 'Dojo';
-    case 'ember.min.js.dec':
+    case 'ember.min.jsm':
         return 'Ember.js';
-    case 'ext-core.js.dec':
+    case 'ext-core.jsm':
         return 'Ext Core';
-    case 'jquery.min.js.dec':
+    case 'jquery.min.jsm':
         return 'jQuery';
-    case 'jquery-ui.min.js.dec':
+    case 'jquery-ui.min.jsm':
         return 'jQuery UI';
-    case 'modernizr.min.js.dec':
+    case 'modernizr.min.jsm':
         return 'Modernizr';
-    case 'mootools-yui-compressed.js.dec':
+    case 'mootools-yui-compressed.jsm':
         return 'MooTools';
-    case 'prototype.js.dec':
+    case 'prototype.jsm':
         return 'Prototype';
-    case 'scriptaculous.js.dec':
+    case 'scriptaculous.jsm':
         return 'Scriptaculous';
-    case 'swfobject.js.dec':
+    case 'swfobject.jsm':
         return 'SWFObject';
-    case 'underscore-min.js.dec':
+    case 'underscore-min.jsm':
         return 'Underscore.js';
-    case 'webfont.js.dec':
+    case 'webfont.jsm':
         return 'Web Font Loader';
     default:
         return 'Unknown';
