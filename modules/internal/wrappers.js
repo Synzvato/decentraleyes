@@ -37,6 +37,13 @@ wrappers.setBadgeText = function (details) {
     }
 };
 
+wrappers.setBadgeTextColor = function (details) {
+
+    if (chrome.browserAction.setBadgeTextColor !== undefined) {
+        chrome.browserAction.setBadgeTextColor(details);
+    }
+};
+
 wrappers.setIcon = function (details) {
 
     if (chrome.browserAction.setIcon !== undefined) {

@@ -94,3 +94,7 @@ main._initializeOptions();
 wrappers.setBadgeBackgroundColor({
     'color': [74, 130, 108, 255]
 });
+
+wrappers.setBadgeTextColor({
+    'color': [255, 255, 255, 255]
+});
