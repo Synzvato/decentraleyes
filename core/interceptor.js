@@ -86,6 +86,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         'transcend-info.com': true,
         'udacity.com': true,
         'yadi.sk': true,
+        'yelp.com': true,
         'yourvotematters.co.uk': true
     };
 
