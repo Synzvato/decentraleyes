@@ -49,53 +49,8 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         }
     }
 
-    // Temporary list of undetectable tainted domains.
-    let undetectableTaintedDomains = {
-        '10fastfingers.com': true,
-        'blog.datawrapper.de': true,
-        'bundleofholding.com': true,
-        'cdnjs.com': true,
-        'cellmapper.net': true,
-        'code.world': true,
-        'creativecommons.org': true,
-        'docs.servicenow.com': true,
-        'dropbox.com': true,
-        'echo-news.co.uk': true,
-        'epey.com': true,
-        'evoice.com': true,
-        'freebusy.io': true,
-        'gazetadopovo.com.br': true,
-        'glowing-bear.org': true,
-        'ico.org.uk': true,
-        'labdoor.com': true,
-        'manualslib.com': true,
-        'meslieux.paris.fr': true,
-        'mgm.gov.tr': true,
-        'minigames.mail.ru': true,
-        'miniquadtestbench.com': true,
-        'nhm.ac.uk': true,
-        'opavote.com': true,
-        'openweathermap.org': true,
-        'poedb.tw': true,
-        'qwertee.com': true,
-        'regentgreymouth.co.nz': true,
-        'report-uri.io': true,
-        'scan.nextcloud.com': true,
-        'scotthelme.co.uk': true,
-        'securityheaders.com': true,
-        'securityheaders.io': true,
-        'somiibo.com': true,
-        'stefansundin.github.io': true,
-        'timescale.com': true,
-        'transcend-info.com': true,
-        'udacity.com': true,
-        'yadi.sk': true,
-        'yelp.com': true,
-        'yourvotematters.co.uk': true
-    };
-
-    if (undetectableTaintedDomains[tabDomain] || (/yandex\./).test(tabDomain)) {
-        return interceptor._handleMissingCandidate(requestDetails.url);
+    if (interceptor.taintedDomains[tabDomain] || (/yandex\./).test(tabDomain)) {
+        return interceptor._handleMissingCandidate(requestDetails.url, true);
     }
 
     targetDetails = requestAnalyzer.getLocalTarget(requestDetails);
@@ -122,7 +77,9 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
  * Private Methods
  */
 
-interceptor._handleMissingCandidate = function (requestUrl) {
+interceptor._handleMissingCandidate = function (requestUrl, preserveUrl) {
+
+    let requestUrlSegments;
 
     if (interceptor.blockMissing === true) {
 
@@ -131,7 +88,14 @@ interceptor._handleMissingCandidate = function (requestUrl) {
         };
     }
 
-    let requestUrlSegments = new URL(requestUrl);
+    if (preserveUrl === true) {
+
+        return {
+            'cancel': false
+        };
+    }
+
+    requestUrlSegments = new URL(requestUrl);
 
     if (requestUrlSegments.protocol === Address.HTTP) {
 
@@ -164,6 +128,51 @@ interceptor._handleStorageChanged = function (changes) {
 /**
  * Initializations
  */
+
+// Temporary list of tainted domains.
+interceptor.taintedDomains = {
+    '10fastfingers.com': true,
+    'blog.datawrapper.de': true,
+    'bundleofholding.com': true,
+    'cdnjs.com': true,
+    'cellmapper.net': true,
+    'code.world': true,
+    'creativecommons.org': true,
+    'docs.servicenow.com': true,
+    'dropbox.com': true,
+    'echo-news.co.uk': true,
+    'epey.com': true,
+    'evoice.com': true,
+    'freebusy.io': true,
+    'gazetadopovo.com.br': true,
+    'glowing-bear.org': true,
+    'ico.org.uk': true,
+    'labdoor.com': true,
+    'manualslib.com': true,
+    'meslieux.paris.fr': true,
+    'mgm.gov.tr': true,
+    'minigames.mail.ru': true,
+    'miniquadtestbench.com': true,
+    'nhm.ac.uk': true,
+    'opavote.com': true,
+    'openweathermap.org': true,
+    'poedb.tw': true,
+    'qwertee.com': true,
+    'regentgreymouth.co.nz': true,
+    'report-uri.io': true,
+    'scan.nextcloud.com': true,
+    'scotthelme.co.uk': true,
+    'securityheaders.com': true,
+    'securityheaders.io': true,
+    'somiibo.com': true,
+    'stefansundin.github.io': true,
+    'timescale.com': true,
+    'transcend-info.com': true,
+    'udacity.com': true,
+    'yadi.sk': true,
+    'yelp.com': true,
+    'yourvotematters.co.uk': true
+};
 
 interceptor.amountInjected = 0;
 interceptor.xhrTestDomain = Address.DECENTRALEYES;
