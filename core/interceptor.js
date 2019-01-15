@@ -145,6 +145,7 @@ interceptor.taintedDomains = {
     'evoice.com': true,
     'freebusy.io': true,
     'gazetadopovo.com.br': true,
+    'gdt.oqlf.gouv.qc.ca': true,
     'glowing-bear.org': true,
     'ico.org.uk': true,
     'labdoor.com': true,
