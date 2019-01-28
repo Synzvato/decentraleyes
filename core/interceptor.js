@@ -154,6 +154,7 @@ interceptor.taintedDomains = {
     'mgm.gov.tr': true,
     'minigames.mail.ru': true,
     'miniquadtestbench.com': true,
+    'newlook.dteenergy.com': true,
     'nhm.ac.uk': true,
     'opavote.com': true,
     'openweathermap.org': true,
