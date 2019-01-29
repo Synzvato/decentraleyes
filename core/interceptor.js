@@ -148,6 +148,7 @@ interceptor.taintedDomains = {
     'gdt.oqlf.gouv.qc.ca': true,
     'glowing-bear.org': true,
     'ico.org.uk': true,
+    'identi.ca': true,
     'labdoor.com': true,
     'manualslib.com': true,
     'meslieux.paris.fr': true,
