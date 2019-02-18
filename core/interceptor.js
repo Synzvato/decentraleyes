@@ -150,6 +150,7 @@ interceptor.taintedDomains = {
     'ico.org.uk': true,
     'identi.ca': true,
     'labdoor.com': true,
+    'lemon-aid.de': true,
     'manualslib.com': true,
     'meslieux.paris.fr': true,
     'mgm.gov.tr': true,
