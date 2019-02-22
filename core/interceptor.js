@@ -60,7 +60,7 @@ interceptor.handleRequest = function (requestDetails, tabIdentifier, tab) {
         return interceptor._handleMissingCandidate(requestDetails.url);
     }
 
-    if (!files[targetPath]) {
+    if (!files.active[targetPath]) {
         return interceptor._handleMissingCandidate(requestDetails.url);
     }
 

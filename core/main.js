@@ -89,6 +89,8 @@ main._showReleaseNotes = function (details) {
  */
 
 chrome.runtime.onInstalled.addListener(main._showReleaseNotes);
+stateManager.setExtensionEnvironment('stable');
+
 main._initializeOptions();
 
 wrappers.setBadgeBackgroundColor({

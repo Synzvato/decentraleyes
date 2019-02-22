@@ -68,6 +68,17 @@ stateManager.registerInjection = function (tabIdentifier, injection) {
     }
 };
 
+stateManager.setExtensionEnvironment = function (environment) {
+
+    switch (environment) {
+    case 'staging':
+        files.active = Object.assign({}, files.stable, files.staging);
+        break;
+    default:
+        files.active = files.stable;
+    }
+};
+
 stateManager.addDomainToWhitelist = function (domain) {
 
     return new Promise((resolve) => {
