@@ -30,6 +30,7 @@ main._initializeOptions = function () {
         [Setting.SHOW_ICON_BADGE]: true,
         [Setting.BLOCK_MISSING]: false,
         [Setting.DISABLE_PREFETCH]: true,
+        [Setting.ENFORCE_STAGING]: false,
         [Setting.STRIP_METADATA]: true,
         [Setting.WHITELISTED_DOMAINS]: {}
     };
@@ -37,7 +38,13 @@ main._initializeOptions = function () {
     chrome.storage.local.get(optionDefaults, function (options) {
 
         if (options === null) {
-            options = optionDefaults;
+            options = optionDefaults; // Restore option defaults.
+        }
+
+        if (options.enforceStaging === true) {
+
+            // Improve coverage at the cost of website stability.
+            stateManager.setExtensionEnvironment('staging');
         }
 
         if (options.disablePrefetch !== false) {

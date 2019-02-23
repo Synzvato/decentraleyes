@@ -53,6 +53,7 @@ const Setting = {
     'AMOUNT_INJECTED': 'amountInjected',
     'BLOCK_MISSING': 'blockMissing',
     'DISABLE_PREFETCH': 'disablePrefetch',
+    'ENFORCE_STAGING': 'enforceStaging',
     'SHOW_ICON_BADGE': 'showIconBadge',
     'SHOW_RELEASE_NOTES': 'showReleaseNotes',
     'STRIP_METADATA': 'stripMetadata',
